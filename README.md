@@ -13,6 +13,6 @@ At first, you need [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs
     npm install
     npm start
 
-Now you can link to (http://localhost:9000)[http://localhost:9000]
+Now you can link to [http://localhost:9000](http://localhost:9000)
 Feel free to see around the codebase.
 There will be grateful to be given advices, if you have any idea to improve the code.                                      
