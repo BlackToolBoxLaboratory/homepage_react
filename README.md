@@ -17,4 +17,6 @@ Now you can link to [http://localhost:9000](http://localhost:9000).
 
 Feel free to see around the codebase.
 
-There will be grateful to be given advices, if you have any idea to improve the code.                                      
+There will be grateful to be given advices. 
+
+Please file the [issue](https://github.com/BlackToolBoxLaboratory/blacktbox-demo/issues), if you have any idea to enhance it.                                      
