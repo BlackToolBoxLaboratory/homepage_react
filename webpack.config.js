@@ -6,7 +6,6 @@ const style_config = require(path.join(__dirname, "/configs/style_config.js"));
 
 const sourcehPath = "/src";
 const distributePath = "/dist";
-const pulishPath = "/dist/app";
 
 const webpack_config = {
     "devServer": {
@@ -20,7 +19,7 @@ const webpack_config = {
         "vendors": ["react", "react-dom", "react-router-dom", "react-fontawesome"]
     },
     "output": {
-        "path": path.join(__dirname, pulishPath),
+        "path": path.join(__dirname, distributePath),
         "filename": "[name].js"
     },
     "module": {
