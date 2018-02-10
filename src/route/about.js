@@ -3,6 +3,16 @@ import FA from 'react-fontawesome';
 
 import {SideContent_backdoor} from './home.js';
 
+const LibraryList = new Array(
+  {name: 'Blacktbox-list',  link: 'BTB_LIST_BASIC'},
+  {name: 'Blacktbox-table', link: 'BTB_TABLE_BASIC'},
+  {name: 'Blacktbox-menu',  link: 'BTB_MENU_BASIC'}
+);
+const ContactList = new Array(
+  {name: 'Email',     linkName:'vannoel0628@gmail.com',             href:'mailto://vannoel0628@gmail.com',            FA:'envelope-o'},
+  {name: 'Homepage',  linkName:'blacktoolboxlaboratory.github.io',  href:'https://blacktoolboxlaboratory.github.io',  FA:'external-link'}
+);
+
 class About extends Component {
   constructor(props) {
       super(props);
@@ -15,54 +25,42 @@ class About extends Component {
               <div className='context'>
                 <div className='title'>ABOUT</div>
                 <div className='content'>
-                  {
-                    `Hi! I am Noel. I established The Black Toolbox Laboratory(BTB Lab) since November 1, 2017. The mainly purpose to start the project is to develop some useful libraries for helping building Website easier. And there is a hard work and also a challenge to let libraries applicated with highly free degree. Though, I am not full-time in this project. I still sincerely welcome to recieve your great idea or your needing by sending mails or booking issues on GitHub.`
-                  }
+                  <span>Hi! I am Noel. I established The Black Toolbox Laboratory(BTB Lab) since November 1, 2017. The mainly purpose to start the project is to develop some useful tools for helping coding Website easier. And there is a hard work and also a challenge to let tools applicated with highly free degree. Though, I am not full-time in this project. I still sincerely welcome to recieve your great idea or your needing by sending mails or booking issues on GitHub.</span>
                 </div>
               </div>
               <div className='context'>
                 <div className='title'>LIBRARY LIST</div>
                 <ul>
-                  <li>Blacktbox-demo <FA className='linkBtn' onClick={()=>{this._redirectHandler('BTB_DEMO')}} name='link' fixedWidth/></li>
-                  <div className='content'>
-                    {
-                      `This is not a library actually, but it shows demonstrations for all the BTB Lab's libraries. For Build the Webside up, I also use some others' libraries. With great appreciations for their masterpieces. If you have some problem of using their's, welcome to ask by sending mails. I will do my best as I can to help you.`
-                    }
-                  </div>
-                  <li>Blacktbox-menu <FA className='linkBtn' onClick={()=>{this._redirectHandler('BTB_MENU_BASIC')}} name='link' fixedWidth/></li>
-                  <div className='content'>
-                    {
-                      `This is A menu-maker library, and you can use it just as list-maker tool, too.`
-                    }
-                  </div>
+                {
+                  LibraryList.map((entry)=>{
+                    let content_li = [];
+                    content_li.push(
+                      <li>{entry.name}<FA className='linkBtn' onClick={()=>{this._redirectHandler(entry.link)}} name='link' fixedWidth/></li>
+                    )
+                    return content_li;
+                  })
+                }
                 </ul>
               </div>
               <div className='context'>
                 <div className='title'>CONTACT ME</div>
                 <ul>
-                    <li>
-                      <FA name='envelope-o' fixedWidth/>
-                      <span style={{'margin-left':'5px'}}>E-mail:</span>
-                      <span style={{'margin-left':'5px'}}>
-                        <a target='_blank' href='mailto://vannoel0628@gmail.com'>
-                          {
-                            `vannoel0628@gmail.com`
-                          }
-                        </a>
-                      </span>
-                    </li>
-                    <li>
-                      <FA name='external-link' fixedWidth/>
-                      <span style={{'margin-left':'5px'}}>Homepage:</span>
-                      <span style={{'margin-left':'5px'}}>
-                        <a target='_blank' href='https://blacktoolboxlaboratory.github.io/'>
-                          {
-                            `blacktoolboxlaboratory.github.io`
-                          }
-                        </a>
-                      </span>
-                    </li>
-                  </ul>
+                {
+                  ContactList.map((entry)=>{
+                    let content_li = [];
+                    content_li.push(
+                      <li>
+                        <FA name={entry.FA} fixedWidth/>
+                        <span style={{'margin-left':'5px'}}>{`${entry.name}:`}</span>
+                        <span style={{'margin-left':'5px'}}>
+                          <a target='_blank' href={entry.href}>{entry.linkName}</a>
+                        </span>
+                      </li>
+                    );
+                    return content_li;
+                  })
+                }
+                </ul>
               </div>
           </div>
       );

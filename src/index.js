@@ -9,13 +9,15 @@ import './css/index.less';
 import Home from './route/home.js';
 
 class Index extends Component {
-    render () {
-        return (
-            <HashRouter>
-                <Route path='/' component={Home} />
-            </HashRouter>
-        );
-    };
+  render () {
+    let content = [];
+    content.push(
+      <HashRouter>
+        <Route path='/' component={Home} />
+      </HashRouter>
+    );
+    return content;
+  };
 };
 
 render((<Index />), document.getElementById('main'));

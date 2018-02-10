@@ -10,6 +10,8 @@ import history from '../asset/history.js';
 
 import About from './about.js';
 import BTBDemo_index from './blacktbox-demo/index.js';
+import BTBList_basic from './blacktbox-list/basic.js';
+import BTBTable_basic from './blacktbox-table/basic.js'
 import BTBMenu_basic from './blacktbox-menu/basic.js';
 import NotFound from './404.js';
 
@@ -39,20 +41,21 @@ class Home extends Component {
     };
   };
   render () {
-    return (
+    let content = [];
+    content.push(
       <div className='wrapper wrapper-home'>
+        <div className='sideContentBG' />
         <SideContent />
         <MainContent />
       </div>
-    )
+    );
+    return content;
   };
 };
 
 class SideContent extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
     this.env = {
       menuActiveIndex: 'ABOUT'
     };
@@ -64,20 +67,22 @@ class SideContent extends Component {
     SideContentThis = this;
   };  
   render () {
-    return (
+    let content = [];
+    content.push(
       <div className='sideContent'>
         {this.header()}
         <BTBMenu 
           className='menu' 
-          menuList={menuList} 
+          menuArr={menuList} 
           acticveIndex={this.env.menuActiveIndex} 
           itemOnClickFn={(infoObj)=>{this._itemOnClickFn(infoObj);}}
-          featureCollapse={{
+          featureCollapsible={{
             enable: true
           }}
         />
       </div>
-    )
+    );
+    return content;
   };
 
   header () {
@@ -111,19 +116,23 @@ class MainContent extends Component {
     };
   };
   render () {
-    return (
+    let content = [];
+    content.push(
       <div className='mainContent'>
           <Switch>
             <Route exact path='/' component={About}/>
             <Route exact path='/about' component={About}/>
 
             <Route exact path='/blacktbox-demo' component={BTBDemo_index}/>
+            <Route exact path='/blacktbox-list/basic' component={BTBList_basic}/>
+            <Route exact path='/blacktbox-table/basic' component={BTBTable_basic}/>
             <Route exact path='/blacktbox-menu/basic' component={BTBMenu_basic}/>
 
             <Route path='*' component={NotFound}/>
           </Switch>
       </div>
-    )
+    );
+    return content;
   };
 };  
 

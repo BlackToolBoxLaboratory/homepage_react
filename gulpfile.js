@@ -15,6 +15,12 @@ gulp.task("copy2dist", function() {
   /* blacktbox-menu */
   gulp.src(["node_modules/blacktbox-menu/css/blacktbox-menu.min.css"])
       .pipe(gulp.dest("dist/vendor/blacktbox-menu/css"));
+  /* blacktbox-list */
+  gulp.src(["node_modules/blacktbox-list/css/blacktbox-list.min.css"])
+      .pipe(gulp.dest("dist/vendor/blacktbox-list/css"));
+  /* blacktbox-table */
+  gulp.src(["node_modules/blacktbox-table/css/blacktbox-table.min.css"])
+      .pipe(gulp.dest("dist/vendor/blacktbox-table/css"));
 });       
 gulp.task("copy2homepage", function() { 
   /* all */

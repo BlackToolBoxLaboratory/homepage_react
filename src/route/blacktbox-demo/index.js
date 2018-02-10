@@ -1,86 +1,86 @@
 import React, { Component } from 'react';
 import FA from 'react-fontawesome';
-import MD from 'react-markdown';
 
 import {SideContent_backdoor} from '../home.js';
 
-const SETUP_MD = `
-## Environment
-Firstly, you need [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com).
-## Run
-Now you can clone our code and run it by these commands:
-\`\`\`
-  git clone https://github.com/BlackToolBoxLaboratory/blacktbox-demo.git
-  cd blacktbox-demo
-  npm install
-  npm start
-\`\`\`
-Then, welcome to [http://localhost:9000](http://localhost:9000).
+const SETUP_PRE = 
+`git clone https://github.com/BlackToolBoxLaboratory/blacktbox-demo.git
+cd blacktbox-demo
+npm install
+npm start
 `;
+const LibraryList = new Array(
+  {name: 'Blacktbox-list',  link: 'BTB_LIST_BASIC'},
+  {name: 'Blacktbox-table', link: 'BTB_TABLE_BASIC'},
+  {name: 'Blacktbox-menu',  link: 'BTB_MENU_BASIC'}
+);
+const ContactList = new Array(
+  {name: 'Email',   linkName:'vannoel0628@gmail.com', href:'mailto://vannoel0628@gmail.com',                            FA:'envelope-o'},
+  {name: 'GitHub',  linkName:'blacktbox-demo',        href:'https://github.com/BlackToolBoxLaboratory/blacktbox-demo',  FA:'external-link'}
+);
 
 class Index extends Component {
   constructor(props) {
-      super(props);
-      this.state = {
-      };
+    super(props);
   };
   render () {
-      return (
-          <div className='wrapper wrapper-basic'>
-              <div className='context'>
-                <div className='title'>ABOUT</div>
-                <div className='content'>
-                  {
-                    `The Blacktbox-demo shows demonstrations for all the BTB Lab's libraries.`
-                  }
-                </div>
-              </div>
-              <div className='context'>
-                <div className='title'>SETUP</div>
-                <div className='content'>
-                  <MD className='content-MD' source={SETUP_MD} />
-                </div>
-              </div>
-              <div className='context'>
-                <div className='title'>BLB PACKAGE LIST</div>
-                <div className='content'>
-                  {
-                    `This is the list of BLB Lab's API demonstrated here.`
-                  }
-                </div>
-                <ul>
-                  <li>Blacktbox-menu <FA className='linkBtn' onClick={()=>{this._redirectHandler('BTB_MENU_BASIC')}} name='link' fixedWidth/></li>
-                </ul>
-              </div>
-              <div className='context'>
-                <div className='title'>CONTACT ME</div>
-                <ul>
-                    <li>
-                      <FA name='envelope-o' fixedWidth/>
-                      <span style={{'margin-left':'5px'}}>E-mail:</span>
-                      <span style={{'margin-left':'5px'}}>
-                        <a target='_blank' href='mailto://vannoel0628@gmail.com'>
-                          {
-                            `vannoel0628@gmail.com`
-                          }
-                        </a>
-                      </span>
-                    </li>
-                    <li>
-                      <FA name='github' fixedWidth/>
-                      <span style={{'margin-left':'5px'}}>GitHub:</span>
-                      <span style={{'margin-left':'5px'}}>
-                        <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo'>
-                          {
-                            `blacktbox-demo`
-                          }
-                        </a>
-                      </span>
-                    </li>
-                  </ul>
-              </div>
+    let content = [];
+    content.push(
+      <div className='wrapper wrapper-basic'>
+        <div className='context'>
+          <div className='content'>
+            <h1>Blacktbox-demo</h1>
+            <span>The Blacktbox-demo shows demonstrations for all the BTB Lab's tools.</span>
           </div>
-      );
+        </div>
+          <div className='context'>
+            <div className='title'>SETUP</div>
+            <div className='content'>
+              <span>Firstly, you need <a target='_blank' href='https://nodejs.org/en/'>{`Node.js`}</a> and <a target='_blank' href='https://www.npmjs.com'>{`NPM`}</a>. And then you can clone our code and run it by these commands:</span>
+              <pre className='content-pre'>{SETUP_PRE}</pre>
+              <span>Welcome to <a target='_blank' href='http://localhost:9000'>{`http://localhost:9000`}</a>.</span>
+            </div>
+          </div>
+          <div className='context'>
+            <div className='title'>BLB PACKAGE LIST</div>
+            <div className='content'>
+              <span>This is the list of BLB Lab's API demonstrated here.</span>
+            </div>
+            <ul>
+            {
+              LibraryList.map((entry)=>{
+                let content_li = [];
+                content_li.push(
+                  <li>{entry.name}<FA className='linkBtn' onClick={()=>{this._redirectHandler(entry.link)}} name='link' fixedWidth/></li>
+                )
+                return content_li;
+              })
+            }
+            </ul>
+          </div>
+          <div className='context'>
+            <div className='title'>CONTACT ME</div>
+            <ul>
+            {
+              ContactList.map((entry)=>{
+                let content_li = [];
+                content_li.push(
+                  <li>
+                    <FA name={entry.FA} fixedWidth/>
+                    <span style={{'margin-left':'5px'}}>{`${entry.name}:`}</span>
+                    <span style={{'margin-left':'5px'}}>
+                      <a target='_blank' href={entry.href}>{entry.linkName}</a>
+                    </span>
+                  </li>
+                );
+                return content_li;
+              })
+            }
+            </ul>
+          </div>
+      </div>
+    );
+    return content;
   };
 
   _redirectHandler (index) {

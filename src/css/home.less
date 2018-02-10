@@ -1,11 +1,20 @@
-@main_color: #ff0000;
-@background_color: #000;
-@background_sec_color: #fff;
-@sidebar_width: 200px;
-@text-line-height: 20px;
-@iconbox_size: 50px ; 
 
 .wrapper {
+  @main_color: #ff0000;
+  @background_color: #000;
+  @background_sec_color: #fff;
+  @sidebar_width: 200px;
+  @text-line-height: 20px;
+  @iconbox_size: 50px ; 
+
+  .sideContentBG {
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 200px;
+  }
   .sideContent {
     width: @sidebar_width;
     background-color: @background_color;
@@ -47,7 +56,6 @@
         right: 0;
     }
   }
-
   .mainContent {
     width: calc(~"100% - @{sidebar_width}");
     margin-left: @sidebar_width;

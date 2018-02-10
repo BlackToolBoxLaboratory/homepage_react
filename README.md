@@ -25,4 +25,4 @@ Please file [issue](https://github.com/BlackToolBoxLaboratory/blacktbox-demo/iss
 
 # Homepage
 
-You also can see our demo website [on-line](https://blacktoolboxlaboratory.github.io/).                                    
+You also can see our document website [on-line](https://blacktoolboxlaboratory.github.io/).
