@@ -53,7 +53,9 @@ class Adavnce extends Component {
       <div className='wrapper wrapper-advance'>
         <div className='context'>
           <div className='content'>
-            <h1>Blacktbox-menu <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA className='linkBtn' name='github' fixedWidth/></a></h1>
+            <h1>Blacktbox-menu 
+              <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA name='github' fixedWidth/></a>
+            </h1>
             <span>Advanced application with Blacktbox-menu.</span>
           </div>
         </div>
