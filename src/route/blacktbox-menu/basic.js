@@ -21,6 +21,7 @@ const USING_PRE =
   itemOnClickFn: ()=>{},
   featureCollapsible: {
     enable: false,
+    customCollapseButton: '',
     itemOnCollapseFn: ()=>{}
   }
 />`;
@@ -54,18 +55,19 @@ const PARAM_HEAD = new Array(
   {name: 'Notice',        index: 'notice'}
 );
 const PARAM_BODY = new Array(
-  {name: 'menuArr',             type: 'Array',          default:  '[]',     notice: (<pre className='content-pre'>{MENUARR_PRE}</pre>)},
-  {name: '- name',              type: 'String or Node', default:  '\'\'',   notice: 'String or Node to show layer name.'},
-  {name: '- index',             type: 'String',         default:  '\'\'',   notice: 'Menu entry\'s ID.'},
-  {name: '- defaultCollapse',   type: 'Boolean',        default:  'false',  notice: 'Menu entry\'s default collapse status. While featureCollapsible enabled, the default is true'},
-  {name: '- children',          type: 'Array',          default:  '[]',     notice: (<pre className='content-pre'>{SUBMENUARR_PRE}</pre>)},
-  {name: 'acticveIndex',        type: 'String',         default:  '\'\'',   notice: 'Default active menu entry\'s ID.'},
-  {name: 'itemOnClickFn',       type: 'Function',       default:  '()=>{}', notice: 'Menu entry\'s onClick function.'},
-  {name: 'featureCollapsible',  type: 'Object',         default:  '{}',     notice: ''},
-  {name: '- enable',            type: 'Boolean',        default:  'false',  notice: 'Enable collapse function of menu.'},
-  {name: '- itemOnCollapseFn',  type: 'Function',       default:  '()=>{}', notice: 'Menu entry\'s arrow onClick function.'},
-  {name: 'styleObj',            type: 'Object',         default:  '{}',     notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name: 'inputRefFn',          type: 'Function',       default:  '()=>{}', notice: 'To catch ref with (ref)=>{variable = ref}.'},
+  {name: 'menuArr',                 type: 'Array',          default:  '[]',     notice: (<pre className='content-pre'>{MENUARR_PRE}</pre>)},
+  {name: '- name',                  type: 'String or Node', default:  '\'\'',   notice: 'String or Node to show layer name.'},
+  {name: '- index',                 type: 'String',         default:  '\'\'',   notice: 'Menu entry\'s ID.'},
+  {name: '- defaultCollapse',       type: 'Boolean',        default:  'false',  notice: 'Menu entry\'s default collapse status. While featureCollapsible enabled, the default is true'},
+  {name: '- children',              type: 'Array',          default:  '[]',     notice: (<pre className='content-pre'>{SUBMENUARR_PRE}</pre>)},
+  {name: 'acticveIndex',            type: 'String',         default:  '\'\'',   notice: 'Default active menu entry\'s ID.'},
+  {name: 'itemOnClickFn',           type: 'Function',       default:  '()=>{}', notice: 'Menu entry\'s onClick function.'},
+  {name: 'featureCollapsible',      type: 'Object',         default:  '{}',     notice: ''},
+  {name: '- enable',                type: 'Boolean',        default:  'false',  notice: 'Enable collapse function of menu.'},
+  {name: '- customCollapseButton',  type: 'String or Node', default:  '\'\'',   notice: 'We have default collapse button, but you can customize our collapse button by using this.'},
+  {name: '- itemOnCollapseFn',      type: 'Function',       default:  '()=>{}', notice: 'Menu entry\'s arrow onClick function.'},
+  {name: 'styleObj',                type: 'Object',         default:  '{}',     notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
+  {name: 'inputRefFn',              type: 'Function',       default:  '()=>{}', notice: 'To catch ref with (ref)=>{variable = ref}.'},
 );
 
 const NODE_TREE = new Array(
@@ -85,10 +87,18 @@ const NODE_TREE = new Array(
                     'name': '<div> .content-name',
                   },
                   {
-                    'name': '<div> .content-collapse',
+                    'name': '<div> .content-collapse (.collapsed)',
                     'children': [
                       {
-                        'name': '<div> .collapse-arrow (.collapsed)'
+                        'name': '<div> .collapse-arrow'
+                      }
+                    ]
+                  },
+                  {
+                    'name': '<div> .content-custom-collapse (.collapsed)',
+                    'children': [
+                      {
+                        'name': '{customized}'
                       }
                     ]
                   }
