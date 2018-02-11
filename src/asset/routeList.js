@@ -1,14 +1,16 @@
 const routeList = {
-  'ABOUT':          '/about',
+  'ROOT':             '/',
 
-  'BTB_DEMO':       '/blacktbox-demo',
+  'ABOUT':            '/about',
 
-  'BTB_LIST_BASIC': '/blacktbox-list/basic',
+  'BTB_DEMO':         '/blacktbox-demo',
 
-  'BTB_TABLE_BASIC': '/blacktbox-table/basic',
+  'BTB_LIST_BASIC':   '/blacktbox-list/basic',
 
-  'BTB_MENU_BASIC': '/blacktbox-menu/basic',
-  'BTB_MENU_ADV':   '/blacktbox-menu/adv'
+  'BTB_TABLE_BASIC':  '/blacktbox-table/basic',
+
+  'BTB_MENU_BASIC':   '/blacktbox-menu/basic',
+  'BTB_MENU_ADV':     '/blacktbox-menu/advanced'
 };
 
 export default routeList;

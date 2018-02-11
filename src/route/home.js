@@ -13,6 +13,7 @@ import BTBDemo_index from './blacktbox-demo/index.js';
 import BTBList_basic from './blacktbox-list/basic.js';
 import BTBTable_basic from './blacktbox-table/basic.js'
 import BTBMenu_basic from './blacktbox-menu/basic.js';
+import BTBMenu_advanced from './blacktbox-menu/advanced.js';
 import NotFound from './404.js';
 
 let SideContentThis;
@@ -28,6 +29,7 @@ export function SideContent_backdoor (type, obj) {
         if(path)
         {
           history.push(path);
+          window.scrollTo(0,0);
         };
       }
       break;
@@ -37,8 +39,6 @@ export function SideContent_backdoor (type, obj) {
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
   };
   render () {
     let content = [];
@@ -59,6 +59,8 @@ class SideContent extends Component {
     this.env = {
       menuActiveIndex: 'ABOUT'
     };
+    history.push(routeList[this.env.menuActiveIndex]); // redirect to default page
+    window.scrollTo(0,0);
   };
   componentWillMount () {
     SideContentThis = this;
@@ -105,30 +107,30 @@ class SideContent extends Component {
     if(path)
     {
       history.push(path);
-    }
+      window.scrollTo(0,0);
+    };
   };
 };
 
 class MainContent extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
   };
   render () {
     let content = [];
     content.push(
       <div className='mainContent'>
           <Switch>
-            <Route exact path='/' component={About}/>
-            <Route exact path='/about' component={About}/>
+            <Route exact path={routeList.ROOT} component={About}/>
+            <Route exact path={routeList.ABOUT} component={About}/>
 
-            <Route exact path='/blacktbox-demo' component={BTBDemo_index}/>
-            <Route exact path='/blacktbox-list/basic' component={BTBList_basic}/>
-            <Route exact path='/blacktbox-table/basic' component={BTBTable_basic}/>
-            <Route exact path='/blacktbox-menu/basic' component={BTBMenu_basic}/>
+            <Route exact path={routeList.BTB_DEMO} component={BTBDemo_index}/>
+            <Route exact path={routeList.BTB_LIST_BASIC} component={BTBList_basic}/>
+            <Route exact path={routeList.BTB_TABLE_BASIC} component={BTBTable_basic}/>
+            <Route exact path={routeList.BTB_MENU_BASIC} component={BTBMenu_basic}/>
+            <Route exact path={routeList.BTB_MENU_ADV} component={BTBMenu_advanced}/>
 
-            <Route path='*' component={NotFound}/>
+            <Route component={NotFound}/>
           </Switch>
       </div>
     );

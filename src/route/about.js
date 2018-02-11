@@ -9,8 +9,8 @@ const LibraryList = new Array(
   {name: 'Blacktbox-menu',  link: 'BTB_MENU_BASIC'}
 );
 const ContactList = new Array(
-  {name: 'Email',     linkName:'vannoel0628@gmail.com',             href:'mailto://vannoel0628@gmail.com',            FA:'envelope-o'},
-  {name: 'Homepage',  linkName:'blacktoolboxlaboratory.github.io',  href:'https://blacktoolboxlaboratory.github.io',  FA:'external-link'}
+  {name: 'Email',     linkName:'vannoel0628@gmail.com',             href:'mailto://vannoel0628@gmail.com',            FA:'envelope'},
+  {name: 'Homepage',  linkName:'blacktoolboxlaboratory.github.io',  href:'https://blacktoolboxlaboratory.github.io',  FA:'home'}
 );
 
 class About extends Component {
@@ -53,7 +53,7 @@ class About extends Component {
                         <FA name={entry.FA} fixedWidth/>
                         <span style={{'margin-left':'5px'}}>{`${entry.name}:`}</span>
                         <span style={{'margin-left':'5px'}}>
-                          <a target='_blank' href={entry.href}>{entry.linkName}</a>
+                          <a target='_blank' href={entry.href}>{entry.linkName} <FA name='external-link' fixedWidth/></a>
                         </span>
                       </li>
                     );

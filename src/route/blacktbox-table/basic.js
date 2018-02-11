@@ -45,10 +45,6 @@ const STYLEOBJ_PRE =
   'Node's className': {CSS Object}
   , ...
 }`;
-const ContactList = new Array(
-  {name: 'Email',   linkName:'vannoel0628@gmail.com', href:'mailto://vannoel0628@gmail.com',                            FA:'envelope-o'},
-  {name: 'GitHub',  linkName:'blacktbox-table',       href:'https://github.com/BlackToolBoxLaboratory/blacktbox-table', FA:'external-link'}
-);
 const PARAM_HEAD = new Array(
   {name: 'Property Name', index: 'name'},
   {name: 'Type',          index: 'type'},
@@ -158,14 +154,16 @@ class Basic extends Component {
       <div className='wrapper wrapper-basic'>
         <div className='context'>
           <div className='content'>
-            <h1>Blacktbox-table</h1>
+            <h1>Blacktbox-table 
+              <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-table'><FA name='github' fixedWidth/></a>
+            </h1>
             <span>Table-maker tool.</span>
           </div>
         </div>
         <div className='context'>
           <div className='title'>INSTALLATION</div>
           <div className='content'>
-            <span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}</a>.</span>
+            <span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>.</span>
           </div>
           <div className='content'>
             <pre className='content-pre'>{INSTALLATION_PRE}</pre>
@@ -183,7 +181,7 @@ class Basic extends Component {
             />
           </div>
           <div className='content'>
-            <span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}</a>.</span>
+            <span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>.</span>
           </div>
         </div>
         <div className='context'>
@@ -209,27 +207,7 @@ class Basic extends Component {
             <span>Notice: The th.index come from tableHeadArr.</span>
           </div>
         </div>
-        <div className='context'>
-          <div className='title'>CONTACT ME</div>
-          <ul>
-          {
-            ContactList.map((entry)=>{
-              let content_li = [];
-              content_li.push(
-                <li>
-                  <FA name={entry.FA} fixedWidth/>
-                  <span style={{'margin-left':'5px'}}>{`${entry.name}:`}</span>
-                  <span style={{'margin-left':'5px'}}>
-                    <a target='_blank' href={entry.href}>{entry.linkName}</a>
-                  </span>
-                </li>
-              );
-              return content_li;
-            })
-          }
-          </ul>
-        </div>
-    </div>
+      </div>
     );
     return content;
   };
