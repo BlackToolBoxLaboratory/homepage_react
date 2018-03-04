@@ -4,11 +4,6 @@ import FA from 'react-fontawesome';
 import {SideContent_backdoor} from './home.js';
 
 class NotFound extends Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-      };
-  };
   render () {
       return (
           <div className='wrapper wrapper-basic'>

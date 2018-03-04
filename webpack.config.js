@@ -3,6 +3,7 @@ const path = require("path");
 
 const babel_config = require(path.join(__dirname, "/configs/babel_config.js"));
 const style_config = require(path.join(__dirname, "/configs/style_config.js"));
+const file_config = require(path.join(__dirname, "/configs/file_config.js"));
 
 const sourcehPath = "/src";
 const distributePath = "/dist";
@@ -25,7 +26,8 @@ const webpack_config = {
     "module": {
         "loaders": [
             {...babel_config},
-            {...style_config}
+            {...style_config},
+            {...file_config}
         ]
     },
     "plugins": [
@@ -34,7 +36,6 @@ const webpack_config = {
                 NODE_ENV: JSON.stringify("production")
             }
         }),
-        new webpack.optimize.UglifyJsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: ["index","vendors"]
         })

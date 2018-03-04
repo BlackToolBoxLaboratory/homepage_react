@@ -14,11 +14,6 @@ const ContactList = new Array(
 );
 
 class About extends Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-      };
-  };
   render () {
       return (
           <div className='wrapper wrapper-basic'>
@@ -26,6 +21,21 @@ class About extends Component {
                 <div className='title'>ABOUT</div>
                 <div className='content'>
                   <span>Hi! I am Noel. I established The Black Toolbox Laboratory(BTB Lab) since November 1, 2017. The mainly purpose to start the project is to develop some useful tools for helping coding Website easier. And there is a hard work and also a challenge to let tools applicated with highly free degree. Though, I am not full-time in this project. I still sincerely welcome to recieve your great idea or your needing by sending mails or booking issues on GitHub.</span>
+                  <FA className='linkBtn' onClick={()=>{this._redirectHandler('ABOUT')}} name='link' fixedWidth/>
+                </div>
+              </div>
+              <div className='context'>
+                <div className='title'>ARTICLES</div>
+                <div className='content'>
+                  <span>Here, I want to introduce some others masterpiece in conceptual. I hope the articles will do help in algorithmic angle. But if you have problem to use them, welcome to mail to me. We can figure it out together.</span>
+                  <FA className='linkBtn' onClick={()=>{this._redirectHandler('BTB_ATCS')}} name='link' fixedWidth/>
+                </div>
+              </div>
+              <div className='context'>
+                <div className='title'>DEMONSTRATION</div>
+                <div className='content'>
+                  <span>The demonstration is this webside actually. It is local-side version, and you can see the source code.</span>
+                  <FA className='linkBtn' onClick={()=>{this._redirectHandler('BTB_DEMO')}} name='link' fixedWidth/>
                 </div>
               </div>
               <div className='context'>
@@ -35,7 +45,10 @@ class About extends Component {
                   LibraryList.map((entry)=>{
                     let content_li = [];
                     content_li.push(
-                      <li>{entry.name}<FA className='linkBtn' onClick={()=>{this._redirectHandler(entry.link)}} name='link' fixedWidth/></li>
+                      <li>
+                        <span>{entry.name}</span>
+                        <FA className='linkBtn' onClick={()=>{this._redirectHandler(entry.link)}} name='link' fixedWidth/>
+                      </li>
                     )
                     return content_li;
                   })

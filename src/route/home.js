@@ -9,6 +9,9 @@ import routeList from '../asset/routeList.js';
 import history from '../asset/history.js';
 
 import About from './about.js';
+import BTBATCS_index from './articles/index.js';
+import BTBATCS_Flux_index from './articles/articleFluxNRedux/indexFlux.js';
+import BTBATCS_Redux_index from './articles/articleFluxNRedux/indexRedux.js';
 import BTBDemo_index from './blacktbox-demo/index.js';
 import BTBList_basic from './blacktbox-list/basic.js';
 import BTBTable_basic from './blacktbox-table/basic.js'
@@ -37,9 +40,6 @@ export function SideContent_backdoor (type, obj) {
 }
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-  };
   render () {
     let content = [];
     content.push(
@@ -54,7 +54,7 @@ class Home extends Component {
 };
 
 class SideContent extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.env = {
       menuActiveIndex: 'ABOUT'
@@ -65,7 +65,7 @@ class SideContent extends Component {
   componentWillMount () {
     SideContentThis = this;
   };
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     SideContentThis = this;
   };  
   render () {
@@ -113,9 +113,6 @@ class SideContent extends Component {
 };
 
 class MainContent extends Component {
-  constructor(props) {
-    super(props);
-  };
   render () {
     let content = [];
     content.push(
@@ -124,6 +121,9 @@ class MainContent extends Component {
             <Route exact path={routeList.ROOT} component={About}/>
             <Route exact path={routeList.ABOUT} component={About}/>
 
+            <Route exact path={routeList.BTB_ATCS} component={BTBATCS_index}/>
+            <Route exact path={routeList.BTB_ATCS_FLUX} component={BTBATCS_Flux_index}/>
+            <Route exact path={routeList.BTB_ATCS_REDUX} component={BTBATCS_Redux_index}/>
             <Route exact path={routeList.BTB_DEMO} component={BTBDemo_index}/>
             <Route exact path={routeList.BTB_LIST_BASIC} component={BTBList_basic}/>
             <Route exact path={routeList.BTB_TABLE_BASIC} component={BTBTable_basic}/>

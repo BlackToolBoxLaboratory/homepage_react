@@ -84,9 +84,6 @@ const PARAM_MODE = {
 };
 
 class Basic extends Component {
-  constructor(props) {
-    super(props);
-  };
   render () {
     let content = [];
     content.push(

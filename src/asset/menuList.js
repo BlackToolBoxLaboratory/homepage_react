@@ -4,6 +4,10 @@ const menuList = new Array(
     'name':   'About'
   },
   {
+    'index':  'BTB_ATCS',
+    'name':   'Articles'
+  },
+  {
     'index':  'BTB_DEMO',
     'name':   'Demonstration'
   },

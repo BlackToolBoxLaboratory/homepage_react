@@ -1,7 +1,10 @@
 const routeList = {
   'ROOT':             '/',
-
   'ABOUT':            '/about',
+  
+  'BTB_ATCS':         '/articles',
+  'BTB_ATCS_FLUX':    '/articles/flux',
+  'BTB_ATCS_REDUX':   '/articles/redux',
 
   'BTB_DEMO':         '/blacktbox-demo',
 

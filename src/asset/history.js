@@ -1,2 +1,3 @@
 import { createHashHistory } from 'history';
-export default createHashHistory();
+let hashHistory = new createHashHistory();
+export default hashHistory;

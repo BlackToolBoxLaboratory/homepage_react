@@ -16,9 +16,6 @@ const LibraryList = new Array(
 );
 
 class Index extends Component {
-  constructor(props) {
-    super(props);
-  };
   render () {
     let content = [];
     content.push(
@@ -40,7 +37,7 @@ class Index extends Component {
           </div>
         </div>
         <div className='context'>
-          <div className='title'>BLB PACKAGE LIST</div>
+          <div className='title'>BLB LIBRARY LIST</div>
           <div className='content'>
             <span>This is the list of BLB Lab's API demonstrated here.</span>
           </div>
