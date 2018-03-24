@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { HashRouter, Route } from 'react-router-dom';
 
-/* css */
-import './css/index.less';
+import Dispatcher from './assets/dispatcher.js';
 
-/* route */
-import Home from './route/home.js';
+import './css/index.less';
+import Home from './routes/home.js';
 
 class Index extends Component {
   render () {
