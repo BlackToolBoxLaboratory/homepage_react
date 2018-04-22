@@ -173,18 +173,18 @@ class Index extends Component {
         <div className='context'>
           <div className='title'>INTRODUCTION</div>
           <div className='content'>
-            <span>In this article, we are going to talk about <a target='_blank' href='https://www.npmjs.com/package/flux'>{`Flux`}<FA name='external-link' fixedWidth/></a>. My source code of example is <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/route/articles/articleFluxNRedux/exampleBasic'>{`here`}<FA name='external-link' fixedWidth/></a>. If you need more clear example code. The other article <a target='_blank' href='https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture'>{`Getting To Know Flux, the React.js Architecture`}<FA name='external-link' fixedWidth/></a> may be more suitable.</span>
+            <span>In this article, we are going to talk about <a target='_blank' href='https://www.npmjs.com/package/flux'>{`Flux`}<FA name='external-link' fixedWidth/></a>. If you need more clear example about learning Flux. The other article <a target='_blank' href='https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture'>{`Getting To Know Flux, the React.js Architecture`}<FA name='external-link' fixedWidth/></a> may be more suitable.</span>
           </div>
           <div className='content'>
             <h3>Example</h3>
             <div className='content'>
-              <span>The following shown is a user list, and it is the example with our discussion to Flux.</span>
+              <span>The following shown is a user list. It is the example with our discussion to Flux. And here is source code of <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleFlux/example'>{`example`}<FA name='external-link' fixedWidth/></a>.</span>
             </div>
             <div className='content-example'>
               <ExampleBasic/>
             </div>
             <div className='content'>
-              <span>To implement the User List. Basically we need three factors: render(View), data(Store), access handler(Action). It is quite easy to implement it by coding them all together. However in systemic angle, if we want to separate them to keep system construction defined and used clear(to unify or generalize), we may need to use some framework to let system keep clear like Flux. And next, we will show it in Flux way. Comparing my <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/assets/articleFlux/example'>{`Example`}<FA name='external-link' fixedWidth/></a>, I simplify the source code for more focus on the construction and add some notation, like this:</span>
+              <span>To implement the User List. Basically we need three factors: render(View), data(Store), access handler(Action). It is quite easy to implement it by coding them all together. However in systemic angle, if we want to separate them to keep system construction defined and used clear(to unify or generalize), we may need to use some framework to let system keep clear like Flux. And next, we will show it in Flux way. Comparing my <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleFlux/exampleFlux'>{`Flux's example`}<FA name='external-link' fixedWidth/></a>, I simplify the source code for more focus on the construction and add some notation, like this:</span>
               <pre className='content-pre'>{EXAMPLE_BASIC_ALGORITHM}</pre>
             </div>
           </div>
@@ -197,7 +197,7 @@ class Index extends Component {
               <img src={ImageFlux}/>
             </div>
             <div className='content'>
-              <span>The source code of example in Flux version is <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/route/articles/articleFluxNRedux/exampleFlux'>{`here`}<FA name='external-link' fixedWidth/></a>. And to implement the example in Flux. We need to install some packages:</span>
+              <span>To implement the example in Flux. We need to install some packages:</span>
               <pre className='content-pre'>{EXAMPLE_FLUX_INSTALL}</pre>
             </div>
             <div className='content'>
@@ -227,7 +227,7 @@ class Index extends Component {
         <div className='context'>
           <div className='title'>PRODUCTION</div>
           <div className='content'>
-            <span>Here we go! This example in Flux version.</span>
+            <span>Here we go! This is the example in Flux version.</span>
           </div>
           <div className='content-example'>
             <ExamplFlux/>
@@ -242,7 +242,7 @@ class Index extends Component {
             <img src={ImageFlux_Server}/>
           </div>
           <div className='content'>
-            <span>Then, here is the User List work with server API. And also the source code <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/assets/articleFlux/exampleFlux_server'>{`here`}<FA name='external-link' fixedWidth/></a></span>
+            <span>Then, here is the User List work with server API. And also here is the source code of <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleFlux/exampleFlux_server'>{`Flux's example with server`}<FA name='external-link' fixedWidth/></a></span>
           </div>
           <div className='content-example'>
             <ExamplFlux_Server/>

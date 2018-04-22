@@ -62,14 +62,14 @@ Dispatcher.register((event)=>{
       ExampleStore.exampleFlux_emitChange();
       break;
     case 'add':
-      if(DATAMEMBERS <= dataList.length)
-      {
-        alert('User is full.');
-        return;
-      };
       if('' == event['userName'])
       {
         alert('Input is empty.');
+        return;
+      };
+      if(DATAMEMBERS <= dataList.length)
+      {
+        alert('User is full.');
         return;
       };
       let dataTemp = new DataObj();

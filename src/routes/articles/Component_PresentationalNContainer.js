@@ -149,7 +149,7 @@ class Index extends Component {
               <div className='content-image'>
                 <img src={ImageExample}/>
               </div>
-              <span>Comparing my <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/assets/articleComponent_PnC/example'>{`Example`}<FA name='external-link' fixedWidth/></a>, I simplify the source code for more focus on the construction and add some notation, like this:</span>
+              <span>Comparing my <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleComponent_PnC/example'>{`Example`}<FA name='external-link' fixedWidth/></a>, I simplify the source code for more focus on the construction and add some notation, like this:</span>
               <pre className='content-pre'>{EXAMPLE_BASIC_ALGORITHM}</pre>
             </div>
           </div>
@@ -188,7 +188,7 @@ class Index extends Component {
         <div className='context'>
           <div className='title'>PRODUCTION</div>
           <div className='content'>
-            <span>Here we go! This is the example separate component into Presentational component and Container.</span>
+            <span>Here we go! This is the example separate component into Presentational component and Container. And the source code is <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleComponent_PnC/exampleComponent_PnC'>{`here`}<FA name='external-link' fixedWidth/></a></span>
           </div>
           <div className='content-example'>
             <ExampleComponent_PnC/>

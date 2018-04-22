@@ -36,7 +36,7 @@ function randomData (type, base) {
       valueLength = Math.ceil(Math.random()*10);
       for (let idIndex=0; idIndex<valueLength; idIndex++)
       {
-        randomNumber = Math.round(Math.random()*random_name.length);
+        randomNumber = Math.floor(Math.random()*random_name.length);
         value += random_name.split('')[randomNumber];
       };
       break;

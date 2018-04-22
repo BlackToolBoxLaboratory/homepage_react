@@ -36,7 +36,7 @@ class Example extends Component {
     content.push(
       <div className='example-wrapper example-userList'>
         <div className='example-part'>
-          <h3>Example - Flux</h3>
+          <div className='example-headerTitle'>Example - Flux</div>
         </div>
         <div className='example-part'>
           <div className='userList-add'>
@@ -45,6 +45,7 @@ class Example extends Component {
           </div>
           <ul className='userList-list'>
           {
+            (0 < this.dataList.length)?
             this.dataList.map((entry)=>{
               let content_datalist_tr = [];
               content_datalist_tr.push(
@@ -55,6 +56,7 @@ class Example extends Component {
               );
               return content_datalist_tr;
             })
+            : (<li className='userList-entry'>No data available.</li>)
           }
           </ul>
         </div>

@@ -34,17 +34,17 @@ class AddUser extends Component {
   };
 
   _addHandler () {
-    if(this.env['dataLimit'] <= this.env['dataCounter'])
-    {
-      alert('User is full.');
-      return;
-    };
     let obj = {
       'name': ReactDOM.findDOMNode(this.refs['userName']).value.trim()
     };
     if('' == obj['name'])
     {
       alert('Input is empty.');
+      return;
+    };
+    if(this.env['dataLimit'] <= this.env['dataCounter'])
+    {
+      alert('User is full.');
       return;
     };
     this.dataList = ServerAPI.addData(obj);

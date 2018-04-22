@@ -40,22 +40,17 @@ export function SideContent_backdoor (type, obj) {
   }
 }
 
-class Home extends Component {
-  constructor (props) {
-    super(props);
-    window.scrollTo(0,0);
-  };
-  render () {
-    let content = [];
-    content.push(
-      <div className='wrapper wrapper-home'>
-        <div className='sideContentBG' />
-        <SideContent />
-        <MainContent />
-      </div>
-    );
-    return content;
-  };
+const Home = (props) => {
+  window.scrollTo(0,0);
+  let content = [];
+  content.push(
+    <div className='wrapper wrapper-home'>
+      <div className='sideContentBG' />
+      <SideContent />
+      <MainContent />
+    </div>
+  );
+  return content;
 };
 
 class SideContent extends Component {
@@ -65,8 +60,26 @@ class SideContent extends Component {
       menuActiveIndex: 'ABOUT'
     };
   };
-  componentWillMount () {
-    SideContentThis = this;
+  componentDidMount () {
+    let currentPathname = hashHistory.location.pathname;
+    for (let routeIndex in routeList)
+    {
+      if (routeList[routeIndex] == currentPathname)
+      {
+        this.env.menuActiveIndex = routeIndex;
+        this.forceUpdate();
+        break;
+      };
+      if ('BTB_ATCS' == routeIndex)
+      {
+        if(currentPathname.match(routeList[routeIndex]))
+        {
+          this.env.menuActiveIndex = routeIndex;
+          this.forceUpdate();
+          break;
+        };
+      };
+    };
   };
   componentWillReceiveProps (nextProps) {
     SideContentThis = this;
@@ -75,7 +88,11 @@ class SideContent extends Component {
     let content = [];
     content.push(
       <div className='sideContent'>
-        {this.header()}
+        <div className='header'>
+          <div className='groupname'>BTB Laboratory</div>
+          <div className='icon'><FA name='user-circle-o' fixedWidth/></div>
+          <div className='welcome'>Hello! Friend.</div>
+        </div>
         <BTBMenu 
           className='menu' 
           menuArr={menuList} 
@@ -85,20 +102,6 @@ class SideContent extends Component {
             enable: true
           }}
         />
-      </div>
-    );
-    return content;
-  };
-
-  header () {
-    let content = [];
-    let groupname = 'BTB Laboratory';
-    let welcome = 'Hello! Friend.';
-    content.push(
-      <div className='header'>
-        <div className='groupname'>{groupname}</div>
-        <div className='icon'><FA name='user-circle-o' fixedWidth/></div>
-        <div className='welcome'>{welcome}</div>
       </div>
     );
     return content;
@@ -115,31 +118,29 @@ class SideContent extends Component {
   };
 };
 
-class MainContent extends Component {
-  render () {
-    let content = [];
-    content.push(
-      <div className='mainContent'>
-          <Switch>
-            <Route exact path={routeList.ROOT} component={About}/>
-            <Route exact path={routeList.ABOUT} component={About}/>
+const MainContent = (props) => {
+  let content = [];
+  content.push(
+    <div className='mainContent'>
+      <Switch>
+        <Route exact path={routeList.ROOT} component={About}/>
+        <Route exact path={routeList.ABOUT} component={About}/>
 
-            <Route exact path={routeList.BTB_ATCS} component={BTBATCS_index}/>
-            <Route exact path={routeList.BTB_ATCS_FLUX} component={BTBATCS_Flux}/>
-            <Route exact path={routeList.BTB_ATCS_REDUX} component={BTBATCS_Redux}/>
-            <Route exact path={routeList.BTB_ATCS_COMPONENT_PNC} component={BTBATCS_Component_PnC}/>
-            <Route exact path={routeList.BTB_DEMO} component={BTBDemo_index}/>
-            <Route exact path={routeList.BTB_LIST_BASIC} component={BTBList_basic}/>
-            <Route exact path={routeList.BTB_TABLE_BASIC} component={BTBTable_basic}/>
-            <Route exact path={routeList.BTB_MENU_BASIC} component={BTBMenu_basic}/>
-            <Route exact path={routeList.BTB_MENU_ADV} component={BTBMenu_advanced}/>
+        <Route exact path={routeList.BTB_ATCS} component={BTBATCS_index}/>
+        <Route exact path={routeList.BTB_ATCS_FLUX} component={BTBATCS_Flux}/>
+        <Route exact path={routeList.BTB_ATCS_REDUX} component={BTBATCS_Redux}/>
+        <Route exact path={routeList.BTB_ATCS_COMPONENT_PNC} component={BTBATCS_Component_PnC}/>
+        <Route exact path={routeList.BTB_DEMO} component={BTBDemo_index}/>
+        <Route exact path={routeList.BTB_LIST_BASIC} component={BTBList_basic}/>
+        <Route exact path={routeList.BTB_TABLE_BASIC} component={BTBTable_basic}/>
+        <Route exact path={routeList.BTB_MENU_BASIC} component={BTBMenu_basic}/>
+        <Route exact path={routeList.BTB_MENU_ADV} component={BTBMenu_advanced}/>
 
-            <Route component={NotFound}/>
-          </Switch>
-      </div>
-    );
-    return content;
-  };
-};  
+        <Route component={NotFound}/>
+      </Switch>
+    </div>
+  );
+  return content;
+};
 
 export default Home;

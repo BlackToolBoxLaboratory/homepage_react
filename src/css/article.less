@@ -1,8 +1,29 @@
 .example-wrapper {
   display: inline-block;
 
+  .example-headerTitle {
+    font-size: 16px;
+    color: #000;
+    font-weight: 700;
+    margin: 5px 0;
+  }
   .example-part {
     margin: 5px;
+  }
+  .example-block {
+    min-width: 150px;
+    display: inline-block;
+    vertical-align: top;
+    & + .example-block {
+      margin-left: 10px;
+    }
+    
+    .userList-info {
+      margin-right: 40px;
+    }
+  }
+  .example-title {
+    color: #aaa;
   }
 }
 
@@ -15,6 +36,7 @@
   border-radius: 5px;
   box-shadow: 2px 2px 4px 2px @color;
   .userList-add{
+    margin-top: 10px;
     .userList-input {
       border: 2px solid @color;
       border-radius: 5px;
@@ -45,7 +67,7 @@
     border: 2px solid @color;
     border-radius: 7px;
     padding:0px;
-    margin: 10px 0;
+    margin: 5px 0;
     .userList-entry {
       border-radius: 5px;
       cursor: default;
@@ -53,6 +75,9 @@
       position: relative;
       text-align: left;
       overflow: hidden;
+      .userList-info {
+        margin-right: 20px;
+      }
       .userList-deleteButton {
         -webkit-transition: @transition_actionButton;
            -moz-transition: @transition_actionButton;
@@ -72,6 +97,29 @@
           opacity: 1;
         }
       }
+      .userList-moveButton {
+        -webkit-transition: @transition_actionButton;
+           -moz-transition: @transition_actionButton;
+             -o-transition: @transition_actionButton;
+                transition: @transition_actionButton;
+        color: @active-color;
+        opacity: 0;
+        position: absolute;
+        right: -20px;
+        top: 3px;
+        cursor: pointer;
+      }
+      &:hover {
+        background-color: @hover-bgcolor;
+        .userList-moveButton {
+          right: 22px;
+          opacity: 1;
+        }
+      }
+    }
+    .userList-entry-empty{
+      list-style: outside none none;
+      text-align: center;
     }
   }
 }

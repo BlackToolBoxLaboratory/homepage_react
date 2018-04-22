@@ -24,7 +24,7 @@ class App extends Component {
     content.push(
       <div className='example-wrapper example-userList'>
         <div className='example-part'>
-          <h3>Example</h3>
+          <div className='example-headerTitle'>Example</div>
         </div>
         <div className='example-part'>
           <div className='userList-add'>
@@ -33,6 +33,7 @@ class App extends Component {
           </div>
           <ul className='userList-list'>
           {
+            (0 < this.dataList.length)?
             this.dataList.map((entry)=>{
               // container
               let content_datalist_tr = [];
@@ -44,6 +45,7 @@ class App extends Component {
               );
               return content_datalist_tr;
             })
+            : (<li className='userList-entry'>No data available.</li>)
           }
           </ul>
         </div>
@@ -59,16 +61,16 @@ class App extends Component {
   };
 
   _addHandler () {
-    if(DATAMEMBERS <= this.dataList.length)
-    {
-      alert('User is full.');
-      return;
-    };
     let obj = new DataObj();
     obj['name'] = ReactDOM.findDOMNode(this.refs['userName']).value.trim();
     if('' == obj['name'])
     {
       alert('Input is empty.');
+      return;
+    };
+    if(DATAMEMBERS <= this.dataList.length)
+    {
+      alert('User is full.');
       return;
     };
     this.dataList = ServerAPI.addData(obj);

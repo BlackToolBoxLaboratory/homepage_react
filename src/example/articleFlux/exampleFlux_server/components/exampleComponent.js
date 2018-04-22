@@ -36,7 +36,7 @@ class Example extends Component {
     content.push(
       <div className='example-wrapper example-userList'>
         <div className='example-part'>
-          <h3>Example - Flux with server API</h3>
+          <div className='example-headerTitle'>Example - Flux with server</div>
         </div>
         <div className='example-part'>
           <div className='userList-add'>
@@ -45,6 +45,7 @@ class Example extends Component {
           </div>
           <ul className='userList-list'>
           {
+            (0 < this.dataList.length)?
             this.dataList.map((entry)=>{
               let content_datalist_tr = [];
               content_datalist_tr.push(
@@ -55,6 +56,7 @@ class Example extends Component {
               );
               return content_datalist_tr;
             })
+            : (<li className='userList-entry'>No data available.</li>)
           }
           </ul>
         </div>
@@ -74,11 +76,6 @@ class Example extends Component {
   };
 
   _addHandler () {
-    if(DATAMEMBERS <= this.dataList.length)
-    {
-      alert('User is full.');
-      return;
-    };
     let obj = new DataObj();
     obj['name'] = ReactDOM.findDOMNode(this.refs['userName']).value.trim();
     if('' == obj['name'])
@@ -86,7 +83,11 @@ class Example extends Component {
       alert('Input is empty.');
       return;
     };
-
+    if(DATAMEMBERS <= this.dataList.length)
+    {
+      alert('User is full.');
+      return;
+    };
     let res = ServerAPI.addData(obj);
     ReactDOM.findDOMNode(this.refs['userName']).value = '';
     ExampleAction.update(res);

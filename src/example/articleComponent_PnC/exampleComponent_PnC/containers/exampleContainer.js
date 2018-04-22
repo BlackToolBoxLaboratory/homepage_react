@@ -32,6 +32,7 @@ class App extends Component {
         />
         <ul className='userList-list'>
         {
+          (0 < this.dataList.length)?
           this.dataList.map((entry)=>{
             let content_datalist_tr = [];
             content_datalist_tr.push(
@@ -45,6 +46,7 @@ class App extends Component {
             );
             return content_datalist_tr;
           })
+          : (<li className='userList-entry'>No data available.</li>)
         }
         </ul>
       </div>

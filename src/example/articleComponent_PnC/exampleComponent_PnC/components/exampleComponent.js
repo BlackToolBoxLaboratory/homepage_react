@@ -8,7 +8,7 @@ const App = () => {
   content.push(
     <div className='example-wrapper example-userList'>
       <div className='example-part'>
-        <h3>Example - PnC</h3>
+        <div className='example-headerTitle'>Example - PnC</div>
       </div>
       <UserList />
     </div>
