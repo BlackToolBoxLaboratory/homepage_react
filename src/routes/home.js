@@ -66,7 +66,14 @@ class SideContent extends Component {
     {
       if (routeList[routeIndex] == currentPathname)
       {
-        this.env.menuActiveIndex = routeIndex;
+        if ('ROOT' == routeIndex)
+        {
+          this.env.menuActiveIndex = 'ABOUT';
+        }
+        else
+        {
+          this.env.menuActiveIndex = routeIndex;
+        }
         this.forceUpdate();
         break;
       };
