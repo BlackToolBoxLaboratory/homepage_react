@@ -46,14 +46,14 @@ class Example extends Component {
                 let content_datalist_tr = [];
                 content_datalist_tr.push(
                   <li className='userList-entry'>
-                    <div className='userList-info'>{entry['name'].substring(0, 1).toUpperCase() + entry['name'].substring(1)}</div>
+                    <div className='userList-info'>{entry['name']}</div>
                     <div className='userList-moveButton' onClick={()=>{this._moveHandler('right', entry['uId'])}}><FA name='toggle-right' fixedWidth/></div>
                     <div className='userList-deleteButton' onClick={()=>{this._deleteHandler('left', entry['uId'])}}><FA name='trash' fixedWidth/></div>
                   </li>
                 );
                 return content_datalist_tr;
               })
-              : (<li className='userList-entry'>No data available.</li>)
+              : (<li className='userList-entry-empty'>No data available.</li>)
             }
             </ul>
           </div>
@@ -70,14 +70,14 @@ class Example extends Component {
                 let content_datalist_tr = [];
                 content_datalist_tr.push(
                   <li className='userList-entry'>
-                    <div className='userList-info'>{entry['name'].substring(0, 1).toUpperCase() + entry['name'].substring(1)}</div>
+                    <div className='userList-info'>{entry['name']}</div>
                     <div className='userList-moveButton' onClick={()=>{this._moveHandler('left', entry['uId'])}}><FA name='toggle-left' fixedWidth/></div>
                     <div className='userList-deleteButton' onClick={()=>{this._deleteHandler('right', entry['uId'])}}><FA name='trash' fixedWidth/></div>
                   </li>
                 );
                 return content_datalist_tr;
               })
-              : (<li className='userList-entry'>No data available.</li>)
+              : (<li className='userList-entry-empty'>No data available.</li>)
             }
             </ul>
           </div>

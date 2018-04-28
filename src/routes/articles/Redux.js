@@ -1,15 +1,50 @@
 import React, { Component } from 'react';
 import FA from 'react-fontawesome';
 
-import routeList from '../../assets/routeList.js';
-import hashHistory from '../../assets/history.js';
-
 import ExampleBasic from '../../example/articleRedux/example/app.js';
 import ExampleRedux from '../../example/articleRedux/exampleRedux/index.js';
 import ExampleRedux_Server from '../../example/articleRedux/exampleRedux_server/index.js';
 
 import ImageRedux from '../../images/articleRedux.png';
 import ImageRedux_server from '../../images/articleRedux_server.png';
+
+import Layout from '../../components/layout.js';
+import ArticleRedirecter from '../../components/articleRedirecter.js';
+
+const mainTitle = `Redux Introduction`;
+const mainDescriptionStr = `Conceptual introduction and simple example`;
+
+const introductionTitle = `INTRODUCTION`;
+const introductionContent = (<span>After knowing the concept of Flux. We are going to learn the concept of <a target='_blank' href='https://www.npmjs.com/package/redux'>{`Redux`}<FA name='external-link' fixedWidth/></a> and use in our example for practice. My source code of example is <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/example'>{`here`}<FA name='external-link' fixedWidth/></a>.</span>);
+
+const introductionExampleTitle = `Example`;
+const introductionExampleContent = `For Redux's example, I made a little different from Flux's.`;
+const introductionExampleAlgorithmDescription = `Basically, the code structure is same as original version of Flux's. Just made user list into two part: left and right. Actually in this case, we can do mode of left and right by single function. But It is in the purpose to simulate the situation of multiple data. It can be implemented in traditional way as source code. It also can be implemented in Flux way. For what if we take them to two totally different function? That is our next step.`;
+
+const introductionReduxTitle = `Redux`;
+const introductionReduxContent = `Here is the picture of Redux's relationship.`;
+const introductionReduxAlgorithmDescription = (<span>To simplify our code base, it also works with <a target='_blank' href='index.html#/article/component_presentational_and_container'>{`Component: Presentational and Container`}<FA name='external-link' fixedWidth/></a>. And to implement the example in Redux. We need to install some packages:</span>);
+
+const introductionReduxViewTitle = `View`;
+const introductionReduxViewContent = `About view, it has three type of view contained pure-container, pure-component and mixed-container-and-component. The pure container is for which view will access data, but not rendered with data. And the pure component is for which view will not access data but rendered with data, or it rendered without data but state for necessary. The last type of view is mixed with container and component means the view can access data and rendered with data. Cause the pure component is used usually. We only show you the pure container view and mixed view here.`;
+const introductionReduxViewContainerTitle = `Pure-container`;
+const introductionReduxViewConnectTitle = `Mixed-container-and-component`;
+const introductionReduxViewConnectContent = `To mixed view, First we need to define status and dispatch. Then connect to component to allow component access data.`;
+const introductionReduxViewConnectContainerTag = `Container part`;
+const introductionReduxViewConnectComponentTag = `Component part`;
+const introductionReduxActionTitle = `Action`;
+const introductionReduxActionContent = `In Action, we just define each Action type correspond to dispatch event.`;
+const introductionReduxReducerTitle = `Reducer`;
+const introductionReduxReducerContent = `Cause dispatch and store are accessed by Redux.js. We just need to define reducer. In general used, we need to define lots of reducer, and combine them to gether for redux.js`;
+const introductionReduxReducerCombinedTitle = `Combined`;
+const introductionReduxReducerBranchTitle = `Branch`;
+
+const productionTitle = `PRODUCTION`;
+const productionContent = `Here we go! This is the example in Redux version.`;
+
+const advancedTitle = `ADVANCED`;
+const advancedContent = `In Flux's, We can update by ourself. However in Redux's, we centralize all state in Redux. So that with difference from Flux's, we need fetch API beneath reducer. And that is reason why we almost use stateless function both in Container and Component.`;
+const advancedServerContent = (<span>Then, here is the User List work with server API. And also here is the source code of <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/exampleRedux_server'>{`Redux's example with server`}<FA name='external-link' fixedWidth/></a></span>);
 
 const EXAMPLE_BASIC_ALGORITHM = 
 `<!-- Require or Import what you need -->
@@ -118,126 +153,83 @@ const EXAMPLE_REDUX_REDUCER_BRANCH =
 export default ReducerBranch;
 `;
 
-class Index extends Component {
-  render () {
-    let content = [];
-    content.push(
-      <div className='wrapper wrapper-basic'>
-        <div className='context'>
-          <div className='content'>
-            <h1>Redux Intruduction</h1>
-            <span>Conceptual Introduction and simple example</span>
-          </div>
-        </div>
-        <div className='context'>
-          <div className='title'>INTRODUCTION</div>
-          <div className='content'>
-            <span>After knowing the concept of Flux. We are going to learn the concept of <a target='_blank' href='https://www.npmjs.com/package/redux'>{`Redux`}<FA name='external-link' fixedWidth/></a> and use in our example for practice. My source code of example is <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/example'>{`here`}<FA name='external-link' fixedWidth/></a>.</span>
-          </div>
-          <div className='content'>
-            <h3>Example</h3>
-            <div className='content'>
-              <span>For Redux's example, I made a little different from Flux's.</span>
-            </div>
-            <div className='content-example'>
-              <ExampleBasic/>
-            </div>
-            <div className='content'>
-              <span>Basically, the code structure is same as original version of Flux's. Just made user list into two part: left and right. Actually in this case, we can do mode of left and right by single function. But It is in the purpose to simulate the situation of multiple data. It can be implemented in traditional way as source code. It also can be implemented in Flux way. For what if we take them to two totally different function? That is our next step.</span>
-              <pre className='content-pre'>{EXAMPLE_BASIC_ALGORITHM}</pre>
-            </div>
-          </div>
-          <div className='content'>
-            <h3>Redux</h3>
-            <div className='content'>
-              <span>Here is the picture of Redux's relationship.</span>
-            </div>
-            <div className='content-image'>
-              <img src={ImageRedux}/>
-            </div>
-            <div className='content'>
-              <span>To simplify our code base, it also works with <a target='_blank' href='index.html#/article/component_presentational_and_container'>{`Component: Presentational and Container`}<FA name='external-link' fixedWidth/></a>. And to implement the example in Redux. We need to install some packages:</span>
-              <pre className='content-pre'>{EXAMPLE_REDUX_INSTALL}</pre>
-            </div>
-            <div className='content'>
-              <h3>View</h3>
-              <div className='content'>
-                <span>Here, View seperate to Component and Container. We can just render Container to app.js, or render Component to app.js. If our component show with store, we can connect it with container.</span>
-                <h3>Render Container</h3>
-                <div className='content'>
-                  <pre className='content-pre'>{EXAMPLE_REDUX_VIEW_CONTAINER}</pre>
-                </div>
-                <h3>Render Component connected with Container</h3>
-                <div className='content'>
-                  <span>Container part</span>
-                  <pre className='content-pre'>{EXAMPLE_REDUX_VIEW_CONNECT_CONTAINER}</pre>
-                </div>
-                <div className='content'>
-                  <span>Component part</span>
-                  <pre className='content-pre'>{EXAMPLE_REDUX_VIEW_CONNECT_COMPONENT}</pre>
-                </div>
-              </div>
-              <h3>Action</h3>
-              <div className='content'>
-                <span>In Action, we just define each Action type correspond to dispatch event.</span>
-                <pre className='content-pre'>{EXAMPLE_REDUX_ACTION}</pre>
-              </div>
-              <h3>Reducer</h3>
-              <div className='content'>
-                <span>Cause dispatch and store are accessed by Redux.js. We just need to define reducer. In general used, we need to define lots of reducer, and combine them to gether for redux.js.</span>
-                <h3>Combined</h3>
-                <div className='content'>
-                  <pre className='content-pre'>{EXAMPLE_REDUX_REDUCER_INDEX}</pre>
-                </div>
-                <h3>Branch</h3>
-                <div className='content'>
-                  <pre className='content-pre'>{EXAMPLE_REDUX_REDUCER_BRANCH}</pre>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='context'>
-          <div className='title'>PRODUCTION</div>
-          <div className='content'>
-            <span>Here we go! This is the example in Redux version.</span>
-          </div>
-          <div className='content-example'>
-            <ExampleRedux/>
-          </div>
-        </div>
-        <div className='context'>
-          <div className='title'>ADVANCED</div>
-          <div className='content'>
-            <span>In Flux's, We can update by ourself. However in Redux's, we centralize all state in Redux. So that with difference from Flux's, we need fetch API beneath reducer. And that is reason why we almost use stateless function both in Container and Component.</span>
-          </div>
-          <div className='content-image'>
-            <img src={ImageRedux_server}/>
-          </div>
-          <div className='content'>
-            <span>Then, here is the User List work with server API. And also here is the source code of <a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/exampleRedux_server'>{`Redux's example with server`}<FA name='external-link' fixedWidth/></a></span>
-          </div>
-          <div className='content-example'>
-            <ExampleRedux_Server/>
-          </div>
-        </div>
-        <div className='context'>
-          <div className='buttonGroup'>
-            <div className='backButton' onClick={()=>{this._redirectHandler('BTB_ATCS')}}>
-              <FA name='arrow-left' fixedWidth />
-              <span>Back to Articles</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-    return content;
-  };
-
-  _redirectHandler (index) {
-    hashHistory.push(routeList[index]);
-    window.scrollTo(0,0);
-  };
+const Index = (props) => {
+  let content = [];
+  content.push(
+    <div className='wrapper wrapper-basic'>
+      <Layout.MainTitle>{mainTitle}</Layout.MainTitle>
+      <Layout.MainDescription>{mainDescriptionStr}</Layout.MainDescription>
+      <Layout.Section>
+        <Layout.SectionTitle>{introductionTitle}</Layout.SectionTitle>
+        <Layout.Content>{introductionContent}</Layout.Content>
+        <Layout.Content>
+          <Layout.SectionSubtitle>{introductionExampleTitle}</Layout.SectionSubtitle>
+          <Layout.Content>{introductionExampleContent}</Layout.Content>
+          <Layout.Item><ExampleBasic/></Layout.Item>
+          <Layout.Content>{introductionExampleAlgorithmDescription}</Layout.Content>
+          <Layout.Pre>{EXAMPLE_BASIC_ALGORITHM}</Layout.Pre>
+        </Layout.Content>
+        <Layout.Content>
+          <Layout.SectionSubtitle>{introductionReduxTitle}</Layout.SectionSubtitle>
+          <Layout.Content>{introductionReduxContent}</Layout.Content>
+          <Layout.Item><img src={ImageRedux}/></Layout.Item>
+          <Layout.Content>{introductionReduxAlgorithmDescription}</Layout.Content>
+          <Layout.Pre>{EXAMPLE_REDUX_INSTALL}</Layout.Pre>
+          <Layout.Content>
+            <Layout.SectionSubtitle>{introductionReduxViewTitle}</Layout.SectionSubtitle>
+            <Layout.Content>{introductionReduxViewContent}</Layout.Content>
+            <Layout.Content>
+              <Layout.SectionSubtitle>{introductionReduxViewContainerTitle}</Layout.SectionSubtitle>
+              <Layout.Pre>{EXAMPLE_REDUX_VIEW_CONTAINER}</Layout.Pre>
+            </Layout.Content>
+            <Layout.Content>
+              <Layout.SectionSubtitle>{introductionReduxViewConnectTitle}</Layout.SectionSubtitle>
+              <Layout.Content>{introductionReduxViewConnectContent}</Layout.Content>
+              <Layout.Content>
+                <Layout.SectionSubtitle>{introductionReduxViewConnectContainerTag}</Layout.SectionSubtitle>
+                <Layout.Pre>{EXAMPLE_REDUX_VIEW_CONNECT_CONTAINER}</Layout.Pre>
+                <Layout.SectionSubtitle>{introductionReduxViewConnectComponentTag}</Layout.SectionSubtitle>
+                <Layout.Pre>{EXAMPLE_REDUX_VIEW_CONNECT_COMPONENT}</Layout.Pre>
+              </Layout.Content>
+            </Layout.Content>
+          </Layout.Content>
+          <Layout.Content>
+            <Layout.SectionSubtitle>{introductionReduxActionTitle}</Layout.SectionSubtitle>
+            <Layout.Content>{introductionReduxActionContent}</Layout.Content>
+            <Layout.Pre>{EXAMPLE_REDUX_ACTION}</Layout.Pre>
+          </Layout.Content>
+          <Layout.Content>
+            <Layout.SectionSubtitle>{introductionReduxReducerTitle}</Layout.SectionSubtitle>
+            <Layout.Content>{introductionReduxReducerContent}</Layout.Content>
+            <Layout.Content>
+              <Layout.SectionSubtitle>{introductionReduxReducerCombinedTitle}</Layout.SectionSubtitle>
+              <Layout.Pre>{EXAMPLE_REDUX_REDUCER_INDEX}</Layout.Pre>
+              <Layout.SectionSubtitle>{introductionReduxReducerBranchTitle}</Layout.SectionSubtitle>
+              <Layout.Pre>{EXAMPLE_REDUX_REDUCER_BRANCH}</Layout.Pre>
+            </Layout.Content>
+          </Layout.Content>
+        </Layout.Content>
+      </Layout.Section>
+      <Layout.Section>
+        <Layout.SectionTitle>{productionTitle}</Layout.SectionTitle>
+        <Layout.Content>{productionContent}</Layout.Content>
+        <Layout.Item><ExampleRedux/></Layout.Item>
+      </Layout.Section>
+      <Layout.Section>
+        <Layout.SectionTitle>{advancedTitle}</Layout.SectionTitle>
+        <Layout.Content>{advancedContent}</Layout.Content>
+        <Layout.Item><img src={ImageRedux_server}/></Layout.Item>
+        <Layout.Content>{advancedServerContent}</Layout.Content>
+        <Layout.Item><ExampleRedux_Server/></Layout.Item>
+      </Layout.Section>
+      <Layout.Section>
+        <Layout.BtnGroup>
+          <Layout.Btn><ArticleRedirecter redirectTo={'BTB_ATCS'} /></Layout.Btn>
+        </Layout.BtnGroup>
+      </Layout.Section>
+    </div>
+  );
+  return content;
 };
 
 export default Index;

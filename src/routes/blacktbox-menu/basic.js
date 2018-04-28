@@ -4,6 +4,18 @@ import FA from 'react-fontawesome';
 import BTBTable from 'blacktbox-table';
 import BTBList from 'blacktbox-list';
 
+import Layout from '../../components/layout.js';
+
+const mainTitle = (<span>Blacktbox-menu <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA name='github' fixedWidth/></a></span>);
+const mainDescriptionStr = `Menu-maker tool.`;
+
+const usingTitle = `USING`;
+const usingContent = (<span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>.</span>);
+
+const nodeTreeTitle = `NODE TREE`;
+const nodeTreeContent = `Here showing the node structure. Each node with className is for convenience to style. You have two way to use it. The first way is used with css selector, and the other way is used component's input: styleObj.`;
+const nodeTreeNotice = `Notice: The layer.index is count base on 0.`;
+
 const INSTALLATION_PRE = 
 `$ npm install --save blacktbox-menu
 
@@ -124,53 +136,37 @@ class Basic extends Component {
     let content = [];
     content.push(
       <div className='wrapper wrapper-basic'>
-        <div className='context'>
-          <div className='content'>
-            <h1>Blacktbox-menu 
-              <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA name='github' fixedWidth/></a>
-            </h1>
-            <span>Menu-maker tool.</span>
-          </div>
-        </div>
-        <div className='context'>
-          <div className='title'>INSTALLATION</div>
-          <div className='content'>
+        <Layout.MainTitle>{mainTitle}</Layout.MainTitle>
+        <Layout.MainDescription>{mainDescriptionStr}</Layout.MainDescription>
+        <Layout.Section>
+          <Layout.SectionTitle>INSTALLATION</Layout.SectionTitle>
+          <Layout.Content>
             <span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>.</span>
-          </div>
-          <div className='content'>
-            <pre className='content-pre'>{INSTALLATION_PRE}</pre>
-          </div>
-        </div>
-        <div className='context'>
-          <div className='title'>USING</div>
-          <div className='content'>
-            <pre className='content-pre'>{USING_PRE}</pre>
-            <BTBTable
-              tableHeadArr={PARAM_HEAD}
-              tableBobyArr={PARAM_BODY}
-              modeObj={PARAM_MODE}
-              className='content-paramlist'
-            />
-          </div>
-          <div className='content'>
-            <span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>.</span>
-          </div>
-        </div>
-        <div className='context'>
-          <div className='title'>NODE TREE</div>
-          <div className='content'>
-            <span>Here showing the node structure. Each node with className is for convenience to style. You have two way to use it. The first way is used with css selector, and the other way is used component's input: styleObj.</span>
-          </div>
-          <div className='content'>
+          </Layout.Content>
+          <Layout.Pre>{INSTALLATION_PRE}</Layout.Pre>
+        </Layout.Section>
+        <Layout.Section>
+          <Layout.SectionTitle>{usingTitle}</Layout.SectionTitle>
+          <Layout.Pre>{USING_PRE}</Layout.Pre>
+          <BTBTable
+            tableHeadArr={PARAM_HEAD}
+            tableBobyArr={PARAM_BODY}
+            modeObj={PARAM_MODE}
+            className='content-paramlist'
+          />
+          <Layout.Content>{usingContent}</Layout.Content>
+        </Layout.Section>
+        <Layout.Section>
+          <Layout.SectionTitle>{nodeTreeTitle}</Layout.SectionTitle>
+          <Layout.Content>{nodeTreeContent}</Layout.Content>
+          <Layout.Content>
             <BTBList 
               className='content-nodetree'
               listArr={NODE_TREE}
             />
-          </div>
-          <div className='content'>
-            <span>Notice: The layer.index is count base on 0.</span>
-          </div>
-        </div>
+          </Layout.Content>
+          <Layout.Content>{nodeTreeNotice}</Layout.Content>
+        </Layout.Section>
       </div>
     );
     return content;

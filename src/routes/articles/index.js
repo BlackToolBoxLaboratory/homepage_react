@@ -2,49 +2,56 @@ import React, { Component } from 'react';
 import FA from 'react-fontawesome';
 
 import routeList from '../../assets/routeList.js';
-import aritcalList from '../../assets/articleList.js';
 import hashHistory from '../../assets/history.js';
+
+import Layout from '../../components/layout.js';
+
+const mainTitle = `Articles`;
+const mainDescriptionStr = `There are my articles introducing some knowledge in conceptual.`;
+
+const articleListTitle = `ARTICLE LIST`;
+const articleListContent = `We would list to introduce you some others masterpiece in conceptual. Hope our articles will do help somehow in algorithmic angle. And if you have problem to use them, welcome to contact me. We can figure it out together.`;
+
+const articleList = new Array(
+  {'name': 'Component: Presentational and Container', 'link': 'BTB_ATCS_COMPONENT_PNC', 'update': '2018-03-24'},
+  {'name': 'Flux Introduction',                       'link': 'BTB_ATCS_FLUX',          'update': '2018-03-11'},
+  {'name': 'Redux Introduction',                      'link': 'BTB_ATCS_REDUX',         'update': '2018-04-22'}
+)
 
 class Index extends Component {
   render () {
     let content = [];
     content.push(
       <div className='wrapper wrapper-basic'>
-        <div className='context'>
-          <div className='content'>
-            <h1>Articles</h1>
-            <span>There are my articles introducing some knowledge in conceptual.</span>
-          </div>
-        </div>
-        <div className='context'>
-          <div className='title'>ARTICLE LIST</div>
-          <div className='content'>
-            <span>Here, I want to introduce some others masterpiece in conceptual. I hope the articles will help in algorithmic. After all, we build system not only by toolbox but also our algorithm, right? But if you have problem to use but not bug issue, welcome to mail to me. We can figure it out together.</span>
-          </div>
-          <div className='content'>
+        <Layout.MainTitle>{mainTitle}</Layout.MainTitle>
+        <Layout.MainDescription>{mainDescriptionStr}</Layout.MainDescription>
+        <Layout.Section>
+          <Layout.SectionTitle>{articleListTitle}</Layout.SectionTitle>
+          <Layout.Content>{articleListContent}</Layout.Content>
+          <Layout.Content>
             <ul>
             {
-              aritcalList.map((entry)=>{
+              articleList.map((entry)=>{
                 let content_li = [];
                 content_li.push(
                   <li>
                     <span>{entry.name}</span>
                     <FA className='linkBtn' onClick={()=>{this._redirectHandler(entry.link)}} name='link' fixedWidth/>
-                    <span className='update'>[UPDATE: {entry.update}]</span>
+                    <Layout.Notice>[UPDATE: {entry.update}]</Layout.Notice>
                   </li>
                 )
                 return content_li;
               })
             }
             </ul>
-          </div>
-        </div>
+          </Layout.Content>
+        </Layout.Section>
       </div>
     );
     return content;
   };
 
-  _redirectHandler (index) {
+  _redirectHandler ( index ) {
     hashHistory.push(routeList[index]);
     window.scrollTo(0,0);
   };
