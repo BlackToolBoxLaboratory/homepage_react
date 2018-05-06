@@ -1,32 +1,3 @@
-.example-wrapper {
-  display: inline-block;
-
-  .example-headerTitle {
-    font-size: 16px;
-    color: #000;
-    font-weight: 700;
-    margin: 5px 0;
-  }
-  .example-part {
-    margin: 5px;
-  }
-  .example-block {
-    min-width: 150px;
-    display: inline-block;
-    vertical-align: top;
-    & + .example-block {
-      margin-left: 10px;
-    }
-    
-    .userList-info {
-      margin-right: 40px;
-    }
-  }
-  .example-title {
-    color: #aaa;
-  }
-}
-
 .example-userList {
   @color: #aaa;
   @active-color: #ff0000;
@@ -61,6 +32,11 @@
       }
     }
   }
+  .example-block {
+    .userList-info {
+      margin-right: 40px;
+    }
+  }
   .userList-list {
     @hover-bgcolor: #ccc;
     @transition_actionButton: opacity .5s ease 0s, right .5s ease 0s;
@@ -76,7 +52,7 @@
       text-align: left;
       overflow: hidden;
       .userList-info {
-        margin-right: 20px;
+        margin-right: 40px;
       }
       .userList-deleteButton {
         -webkit-transition: @transition_actionButton;

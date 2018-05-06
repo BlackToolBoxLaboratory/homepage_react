@@ -4,7 +4,7 @@ import FA from 'react-fontawesome';
 import BTBTable from 'blacktbox-table';
 import BTBList from 'blacktbox-list';
 
-import Layout from '../../components/layout.js';
+import ALayout from 'components/articleLayout.js';
 
 const mainTitle = (<span>Blacktbox-table <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-table'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `Table-maker tool.`;
@@ -166,43 +166,43 @@ class Basic extends Component {
     let content = [];
     content.push(
       <div className='wrapper wrapper-basic'>
-        <Layout.MainTitle>{mainTitle}</Layout.MainTitle>
-        <Layout.MainDescription>{mainDescriptionStr}</Layout.MainDescription>
-        <Layout.Section>
-          <Layout.SectionTitle>{installationTitle}</Layout.SectionTitle>
-          <Layout.Content>{installationContent}</Layout.Content>
-          <Layout.Pre>{INSTALLATION_PRE}</Layout.Pre>
-        </Layout.Section>
-        <Layout.Section>
-          <Layout.SectionTitle>{usingTitle}</Layout.SectionTitle>
-          <Layout.Pre>{USING_PRE}</Layout.Pre>
+        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
+        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
+        <ALayout.Section>
+          <ALayout.SectionTitle>{installationTitle}</ALayout.SectionTitle>
+          <ALayout.Content>{installationContent}</ALayout.Content>
+          <ALayout.Pre>{INSTALLATION_PRE}</ALayout.Pre>
+        </ALayout.Section>
+        <ALayout.Section>
+          <ALayout.SectionTitle>{usingTitle}</ALayout.SectionTitle>
+          <ALayout.Pre>{USING_PRE}</ALayout.Pre>
           <BTBTable
             tableHeadArr={PARAM_HEAD}
             tableBobyArr={PARAM_BODY}
             modeObj={PARAM_MODE}
             className='content-paramlist'
           />
-          <Layout.Content>{usingContent}</Layout.Content>
-        </Layout.Section>
-        <Layout.Section>
-          <Layout.SectionTitle>{nodeTreeTitle}</Layout.SectionTitle>
-          <Layout.Content>{nodeTreeContent}</Layout.Content>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{nodeTreeInfoTitle}</Layout.SectionSubtitle>
+          <ALayout.Content>{usingContent}</ALayout.Content>
+        </ALayout.Section>
+        <ALayout.Section>
+          <ALayout.SectionTitle>{nodeTreeTitle}</ALayout.SectionTitle>
+          <ALayout.Content>{nodeTreeContent}</ALayout.Content>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{nodeTreeInfoTitle}</ALayout.SectionSubtitle>
             <BTBList 
               className='content-nodetree'
               listArr={NODE_TREE_INFO}
             />
-          </Layout.Content>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{nodeTreeListTitle}</Layout.SectionSubtitle>
+          </ALayout.Content>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{nodeTreeListTitle}</ALayout.SectionSubtitle>
             <BTBList 
               className='content-nodetree'
               listArr={NODE_TREE_LIST}
             />
-            <Layout.Content>{nodeTreeNotice}</Layout.Content>
-          </Layout.Content>
-        </Layout.Section>
+            <ALayout.Content>{nodeTreeNotice}</ALayout.Content>
+          </ALayout.Content>
+        </ALayout.Section>
       </div>
     );
     return content;

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import FA from 'react-fontawesome';
 
+import ELayout from 'components/exampleLayout.js';
+
 // definitions
 function DataObj () {
   this['uId'] = '';
@@ -11,7 +13,7 @@ const DATAMEMBERS = 5;
 const random_uId = 'abcdefghijklmnopqrstuvwxyz0123456789';
 const random_name = 'abcdefghijklmnopqrstuvwxyz';
 
-class Example extends Component {
+class App extends Component {
   constructor (props) {
     super(props);
     this.dataList = {
@@ -25,20 +27,27 @@ class Example extends Component {
   render () {
     let content = [];
     content.push(
-      <div className='example-wrapper example-userList'>
-        <div className='example-part'>
-          <div className='example-headerTitle'>Example</div>
-        </div>
-        <div className='example-part'>
-          <div className='userList-add'>
-            <input className='userList-input' type='text' maxLength='10' ref='userName' placeholder='Enter 1-10 character(s).'/>
-          </div>
-          <div className='example-block'>
-            <div className='example-title'>
-              <div className='userList-add'>
-                <button className='userList-addButton' onClick={()=>{this._addHandler('left')}} style={{'vertical-align': 'bottom'}}><span>Left</span><FA name='plus-square' fixedWidth/></button>
-              </div>
+      <ELayout.Wrapper className='example-userList'>
+        <ELayout.Part><ELayout.Title>Example</ELayout.Title></ELayout.Part>
+        <ELayout.Part>
+          <ELayout.Block>
+            <div className='userList-add'>
+              <input className='userList-input' type='text' maxLength='10' ref='userName' placeholder='Enter 1-10 character(s).'/>
             </div>
+          </ELayout.Block>
+          <ELayout.InlineBlock>
+            <div className='userList-add'>
+              <button className='userList-addButton' onClick={()=>{this._addHandler('left')}} style={{'vertical-align': 'bottom'}}><span>Left</span><FA name='plus-square' fixedWidth/></button>
+            </div>
+          </ELayout.InlineBlock>
+          <ELayout.InlineBlock>
+            <div className='userList-add'>
+              <button className='userList-addButton' onClick={()=>{this._addHandler('right')}} style={{'vertical-align': 'bottom'}}><span>Right</span><FA name='plus-square' fixedWidth/></button>
+            </div>
+          </ELayout.InlineBlock>
+        </ELayout.Part>
+        <ELayout.Part>
+          <ELayout.InlineBlock>
             <ul className='userList-list'>
             {
               (0 < this.dataList.left.length)?
@@ -56,13 +65,8 @@ class Example extends Component {
               : (<li className='userList-entry-empty'>No data available.</li>)
             }
             </ul>
-          </div>
-          <div className='example-block'>
-            <div className='example-title'>
-              <div className='userList-add'>
-                <button className='userList-addButton' onClick={()=>{this._addHandler('right')}} style={{'vertical-align': 'bottom'}}><span>Right</span><FA name='plus-square' fixedWidth/></button>
-              </div>
-            </div>
+          </ELayout.InlineBlock>
+          <ELayout.InlineBlock>
             <ul className='userList-list'>
             {
               (0 < this.dataList.right.length)?
@@ -80,9 +84,9 @@ class Example extends Component {
               : (<li className='userList-entry-empty'>No data available.</li>)
             }
             </ul>
-          </div>
-        </div>
-      </div>
+          </ELayout.InlineBlock>
+        </ELayout.Part>
+      </ELayout.Wrapper>
     );
     return content;
   };
@@ -200,4 +204,4 @@ class Example extends Component {
   };
 };
 
-export default Example;
+export default App;

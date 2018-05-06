@@ -30,6 +30,12 @@ const webpack_config = {
             {...file_config}
         ]
     },
+    "resolve": {
+      "modules": [
+        path.resolve('./node_modules'),
+        path.resolve('./src')
+      ]
+    },
     "plugins": [
         new webpack.DefinePlugin({
             "process.env": {

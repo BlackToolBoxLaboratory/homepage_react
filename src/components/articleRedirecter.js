@@ -1,8 +1,8 @@
 import React from 'react';
 import FA from 'react-fontawesome';
 
-import routeList from '../assets/routeList.js';
-import hashHistory from '../assets/history.js';
+import routeList from 'assets/routeList.js';
+import hashHistory from 'assets/history.js';
 
 const _redirectHandler = ( index ) => {
   hashHistory.push(routeList[index]);

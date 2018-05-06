@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import FA from 'react-fontawesome';
 
+import ELayout from 'components/exampleLayout.js';
+
 // definitions
 function DataObj () {
   this['uId'] = '';
@@ -22,33 +24,35 @@ class Example extends Component {
   render () {
     let content = [];
     content.push(
-      <div className='example-wrapper example-userList'>
-        <div className='example-part'>
-          <div className='example-headerTitle'>Example</div>
-        </div>
-        <div className='example-part'>
-          <div className='userList-add'>
-            <input className='userList-input' type='text' maxLength='10' ref='userName' placeholder='Enter 1-10 character(s).'/>
-            <button className='userList-addButton' onClick={()=>{this._addHandler()}}><FA name='plus-square' fixedWidth/></button>
-          </div>
-          <ul className='userList-list'>
-          {
-            (0 < this.dataList.length)?
-            this.dataList.map((entry)=>{
-              let content_datalist_tr = [];
-              content_datalist_tr.push(
-                <li className='userList-entry'>
-                  <div className='userList-info'>{entry['name'].substring(0, 1).toUpperCase() + entry['name'].substring(1)}</div>
-                  <div className='userList-deleteButton' onClick={()=>{this._deleteHandler(entry['uId'])}}><FA name='trash' fixedWidth/></div>
-                </li>
-              );
-              return content_datalist_tr;
-            })
-            : (<li className='userList-entry'>No data available.</li>)
-          }
-          </ul>
-        </div>
-      </div>
+      <ELayout.Wrapper className='example-userList'>
+        <ELayout.Part><ELayout.Title>Example</ELayout.Title></ELayout.Part>
+        <ELayout.Part>
+          <ELayout.Block>
+            <div className='userList-add'>
+              <input className='userList-input' type='text' maxLength='10' ref='userName' placeholder='Enter 1-10 character(s).'/>
+              <button className='userList-addButton' onClick={()=>{this._addHandler()}}><FA name='plus-square' fixedWidth/></button>
+            </div>
+          </ELayout.Block>
+          <ELayout.Block>
+            <ul className='userList-list'>
+            {
+              (0 < this.dataList.length)?
+              this.dataList.map((entry)=>{
+                let content_datalist_tr = [];
+                content_datalist_tr.push(
+                  <li className='userList-entry'>
+                    <div className='userList-info'>{entry['name'].substring(0, 1).toUpperCase() + entry['name'].substring(1)}</div>
+                    <div className='userList-deleteButton' onClick={()=>{this._deleteHandler(entry['uId'])}}><FA name='trash' fixedWidth/></div>
+                  </li>
+                );
+                return content_datalist_tr;
+              })
+              : (<li className='userList-entry'>No data available.</li>)
+            }
+            </ul>
+          </ELayout.Block>
+        </ELayout.Part>
+      </ELayout.Wrapper>
     );
     return content;
   };

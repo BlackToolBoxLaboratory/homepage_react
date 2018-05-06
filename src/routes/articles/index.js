@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import FA from 'react-fontawesome';
 
-import routeList from '../../assets/routeList.js';
-import hashHistory from '../../assets/history.js';
+import routeList from 'assets/routeList.js';
+import hashHistory from 'assets/history.js';
 
-import Layout from '../../components/layout.js';
+import ALayout from 'components/articleLayout.js';
 
 const mainTitle = `Articles`;
 const mainDescriptionStr = `There are my articles introducing some knowledge in conceptual.`;
@@ -13,9 +13,8 @@ const articleListTitle = `ARTICLE LIST`;
 const articleListContent = `We would list to introduce you some others masterpiece in conceptual. Hope our articles will do help somehow in algorithmic angle. And if you have problem to use them, welcome to contact me. We can figure it out together.`;
 
 const articleList = new Array(
-  {'name': 'Component: Presentational and Container', 'link': 'BTB_ATCS_COMPONENT_PNC', 'update': '2018-03-24'},
-  {'name': 'Flux Introduction',                       'link': 'BTB_ATCS_FLUX',          'update': '2018-03-11'},
-  {'name': 'Redux Introduction',                      'link': 'BTB_ATCS_REDUX',         'update': '2018-04-22'}
+  {'name': 'Flux Introduction',                       'link': 'BTB_ATCS_FLUX',          'updated': '2018-05-06'},
+  {'name': 'Redux Introduction',                      'link': 'BTB_ATCS_REDUX',         'updated': '2018-05-06'}
 )
 
 class Index extends Component {
@@ -23,12 +22,12 @@ class Index extends Component {
     let content = [];
     content.push(
       <div className='wrapper wrapper-basic'>
-        <Layout.MainTitle>{mainTitle}</Layout.MainTitle>
-        <Layout.MainDescription>{mainDescriptionStr}</Layout.MainDescription>
-        <Layout.Section>
-          <Layout.SectionTitle>{articleListTitle}</Layout.SectionTitle>
-          <Layout.Content>{articleListContent}</Layout.Content>
-          <Layout.Content>
+        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
+        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
+        <ALayout.Section>
+          <ALayout.SectionTitle>{articleListTitle}</ALayout.SectionTitle>
+          <ALayout.Content>{articleListContent}</ALayout.Content>
+          <ALayout.Content>
             <ul>
             {
               articleList.map((entry)=>{
@@ -37,15 +36,15 @@ class Index extends Component {
                   <li>
                     <span>{entry.name}</span>
                     <FA className='linkBtn' onClick={()=>{this._redirectHandler(entry.link)}} name='link' fixedWidth/>
-                    <Layout.Notice>[UPDATE: {entry.update}]</Layout.Notice>
+                    <ALayout.Notice>[UPDATED: {entry.updated}]</ALayout.Notice>
                   </li>
                 )
                 return content_li;
               })
             }
             </ul>
-          </Layout.Content>
-        </Layout.Section>
+          </ALayout.Content>
+        </ALayout.Section>
       </div>
     );
     return content;

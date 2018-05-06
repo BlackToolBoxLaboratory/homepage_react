@@ -5,7 +5,6 @@ const routeList = {
   'BTB_ATCS':               '/articles',
   'BTB_ATCS_FLUX':          '/articles/flux',
   'BTB_ATCS_REDUX':         '/articles/redux',
-  'BTB_ATCS_COMPONENT_PNC': '/articles/component_presentational_and_container',
 
   'BTB_DEMO':               '/blacktbox-demo',
 

@@ -2,11 +2,11 @@
 var serverData = new Array();
 
 const DATAMEMBERS = 5;
-const random_uId = 'abcdefghijklmnopqrstuvwxyz0123456789';
+const random_ID = 'abcdefghijklmnopqrstuvwxyz0123456789';
 const random_name = 'abcdefghijklmnopqrstuvwxyz';
 
 function DataObj () {
-  this['uId'] = '';
+  this['ID'] = '';
   this['name'] = '';
 };
 
@@ -21,12 +21,12 @@ function randomData (type, base) {
       for (let idIndex=0; idIndex<valueLength; idIndex++)
       {
         randomNumber = Math.round(Math.random()*100);
-        value += random_uId.split('')[randomNumber%random_uId.length];
+        value += random_ID.split('')[randomNumber%random_ID.length];
       };
       for (let baseIndex=0; baseIndex<base.length; baseIndex++)
       {
-        if(base[baseIndex].uId == value)
-        { // if duplicate uId, random again
+        if(base[baseIndex].ID == value)
+        { // if duplicate ID, random again
           value = randomData('id', base);
           break;
         };
@@ -52,7 +52,7 @@ const ServerAPI = (()=>{
     for (let i=0; i<DATAMEMBERS; i++)
     {
       dataTemp = new DataObj();
-      dataTemp['uId'] = randomData('id', serverData);
+      dataTemp['ID'] = randomData('id', serverData);
       dataTemp['name'] = randomData('name');
       serverData.push(dataTemp);
     };
@@ -63,7 +63,7 @@ const ServerAPI = (()=>{
   };
   const addData = (obj) => {
     let dataTemp = new DataObj();
-    dataTemp['uId'] = randomData('id', serverData);
+    dataTemp['ID'] = randomData('id', serverData);
     dataTemp['name'] = obj['name'];
     serverData.push(dataTemp);
     return serverData;
@@ -71,7 +71,7 @@ const ServerAPI = (()=>{
   const deleteData = (obj) => {
     for(let i=0; i<serverData.length; i++)
     {
-      if(obj['uId'] == serverData[i].uId)
+      if(obj['ID'] == serverData[i].ID)
       {
         serverData.splice(i,1);
         break;

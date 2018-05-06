@@ -4,15 +4,14 @@ import FA from 'react-fontawesome';
 
 import BTBMenu from 'blacktbox-menu';
 
-import menuList from '../assets/menuList.js';
-import routeList from '../assets/routeList.js';
-import hashHistory from '../assets/history.js';
+import menuList from 'assets/menuList.js';
+import routeList from 'assets/routeList.js';
+import hashHistory from 'assets/history.js';
 
 import About from './about.js';
 import BTBATCS_index from './articles/index.js';
 import BTBATCS_Flux from './articles/Flux.js';
 import BTBATCS_Redux from './articles/Redux.js';
-import BTBATCS_Component_PnC from './articles/Component_PresentationalNContainer.js';
 import BTBDemo_index from './blacktbox-demo/index.js';
 import BTBList_basic from './blacktbox-list/basic.js';
 import BTBTable_basic from './blacktbox-table/basic.js'
@@ -136,7 +135,6 @@ const MainContent = (props) => {
         <Route exact path={routeList.BTB_ATCS} component={BTBATCS_index}/>
         <Route exact path={routeList.BTB_ATCS_FLUX} component={BTBATCS_Flux}/>
         <Route exact path={routeList.BTB_ATCS_REDUX} component={BTBATCS_Redux}/>
-        <Route exact path={routeList.BTB_ATCS_COMPONENT_PNC} component={BTBATCS_Component_PnC}/>
         <Route exact path={routeList.BTB_DEMO} component={BTBDemo_index}/>
         <Route exact path={routeList.BTB_LIST_BASIC} component={BTBList_basic}/>
         <Route exact path={routeList.BTB_TABLE_BASIC} component={BTBTable_basic}/>

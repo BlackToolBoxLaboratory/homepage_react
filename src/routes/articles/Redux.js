@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import FA from 'react-fontawesome';
 
-import ExampleBasic from '../../example/articleRedux/example/app.js';
-import ExampleRedux from '../../example/articleRedux/exampleRedux/index.js';
-import ExampleRedux_Server from '../../example/articleRedux/exampleRedux_server/index.js';
+import ExampleBasic from 'example/articleRedux/example/index.js';
+import ExampleRedux from 'example/articleRedux/exampleRedux/index.js';
+import ExampleRedux_Server from 'example/articleRedux/exampleRedux_server/index.js';
 
-import ImageRedux from '../../images/articleRedux.png';
-import ImageRedux_server from '../../images/articleRedux_server.png';
+import ImageRedux from 'images/articleRedux.png';
+import ImageRedux_server from 'images/articleRedux_server.png';
 
-import Layout from '../../components/layout.js';
-import ArticleRedirecter from '../../components/articleRedirecter.js';
+import ALayout from 'components/articleLayout.js';
+import ArticleRedirecter from 'components/articleRedirecter.js';
 
 const mainTitle = `Redux Introduction`;
 const mainDescriptionStr = `Conceptual introduction and simple example`;
@@ -157,76 +157,76 @@ const Index = (props) => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-basic'>
-      <Layout.MainTitle>{mainTitle}</Layout.MainTitle>
-      <Layout.MainDescription>{mainDescriptionStr}</Layout.MainDescription>
-      <Layout.Section>
-        <Layout.SectionTitle>{introductionTitle}</Layout.SectionTitle>
-        <Layout.Content>{introductionContent}</Layout.Content>
-        <Layout.Content>
-          <Layout.SectionSubtitle>{introductionExampleTitle}</Layout.SectionSubtitle>
-          <Layout.Content>{introductionExampleContent}</Layout.Content>
-          <Layout.Item><ExampleBasic/></Layout.Item>
-          <Layout.Content>{introductionExampleAlgorithmDescription}</Layout.Content>
-          <Layout.Pre>{EXAMPLE_BASIC_ALGORITHM}</Layout.Pre>
-        </Layout.Content>
-        <Layout.Content>
-          <Layout.SectionSubtitle>{introductionReduxTitle}</Layout.SectionSubtitle>
-          <Layout.Content>{introductionReduxContent}</Layout.Content>
-          <Layout.Item><img src={ImageRedux}/></Layout.Item>
-          <Layout.Content>{introductionReduxAlgorithmDescription}</Layout.Content>
-          <Layout.Pre>{EXAMPLE_REDUX_INSTALL}</Layout.Pre>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{introductionReduxViewTitle}</Layout.SectionSubtitle>
-            <Layout.Content>{introductionReduxViewContent}</Layout.Content>
-            <Layout.Content>
-              <Layout.SectionSubtitle>{introductionReduxViewContainerTitle}</Layout.SectionSubtitle>
-              <Layout.Pre>{EXAMPLE_REDUX_VIEW_CONTAINER}</Layout.Pre>
-            </Layout.Content>
-            <Layout.Content>
-              <Layout.SectionSubtitle>{introductionReduxViewConnectTitle}</Layout.SectionSubtitle>
-              <Layout.Content>{introductionReduxViewConnectContent}</Layout.Content>
-              <Layout.Content>
-                <Layout.SectionSubtitle>{introductionReduxViewConnectContainerTag}</Layout.SectionSubtitle>
-                <Layout.Pre>{EXAMPLE_REDUX_VIEW_CONNECT_CONTAINER}</Layout.Pre>
-                <Layout.SectionSubtitle>{introductionReduxViewConnectComponentTag}</Layout.SectionSubtitle>
-                <Layout.Pre>{EXAMPLE_REDUX_VIEW_CONNECT_COMPONENT}</Layout.Pre>
-              </Layout.Content>
-            </Layout.Content>
-          </Layout.Content>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{introductionReduxActionTitle}</Layout.SectionSubtitle>
-            <Layout.Content>{introductionReduxActionContent}</Layout.Content>
-            <Layout.Pre>{EXAMPLE_REDUX_ACTION}</Layout.Pre>
-          </Layout.Content>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{introductionReduxReducerTitle}</Layout.SectionSubtitle>
-            <Layout.Content>{introductionReduxReducerContent}</Layout.Content>
-            <Layout.Content>
-              <Layout.SectionSubtitle>{introductionReduxReducerCombinedTitle}</Layout.SectionSubtitle>
-              <Layout.Pre>{EXAMPLE_REDUX_REDUCER_INDEX}</Layout.Pre>
-              <Layout.SectionSubtitle>{introductionReduxReducerBranchTitle}</Layout.SectionSubtitle>
-              <Layout.Pre>{EXAMPLE_REDUX_REDUCER_BRANCH}</Layout.Pre>
-            </Layout.Content>
-          </Layout.Content>
-        </Layout.Content>
-      </Layout.Section>
-      <Layout.Section>
-        <Layout.SectionTitle>{productionTitle}</Layout.SectionTitle>
-        <Layout.Content>{productionContent}</Layout.Content>
-        <Layout.Item><ExampleRedux/></Layout.Item>
-      </Layout.Section>
-      <Layout.Section>
-        <Layout.SectionTitle>{advancedTitle}</Layout.SectionTitle>
-        <Layout.Content>{advancedContent}</Layout.Content>
-        <Layout.Item><img src={ImageRedux_server}/></Layout.Item>
-        <Layout.Content>{advancedServerContent}</Layout.Content>
-        <Layout.Item><ExampleRedux_Server/></Layout.Item>
-      </Layout.Section>
-      <Layout.Section>
-        <Layout.BtnGroup>
-          <Layout.Btn><ArticleRedirecter redirectTo={'BTB_ATCS'} /></Layout.Btn>
-        </Layout.BtnGroup>
-      </Layout.Section>
+      <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
+      <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
+      <ALayout.Section>
+        <ALayout.SectionTitle>{introductionTitle}</ALayout.SectionTitle>
+        <ALayout.Content>{introductionContent}</ALayout.Content>
+        <ALayout.Content>
+          <ALayout.SectionSubtitle>{introductionExampleTitle}</ALayout.SectionSubtitle>
+          <ALayout.Content>{introductionExampleContent}</ALayout.Content>
+          <ALayout.Item><ExampleBasic/></ALayout.Item>
+          <ALayout.Content>{introductionExampleAlgorithmDescription}</ALayout.Content>
+          <ALayout.Pre>{EXAMPLE_BASIC_ALGORITHM}</ALayout.Pre>
+        </ALayout.Content>
+        <ALayout.Content>
+          <ALayout.SectionSubtitle>{introductionReduxTitle}</ALayout.SectionSubtitle>
+          <ALayout.Content>{introductionReduxContent}</ALayout.Content>
+          <ALayout.Item><img src={ImageRedux}/></ALayout.Item>
+          <ALayout.Content>{introductionReduxAlgorithmDescription}</ALayout.Content>
+          <ALayout.Pre>{EXAMPLE_REDUX_INSTALL}</ALayout.Pre>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{introductionReduxViewTitle}</ALayout.SectionSubtitle>
+            <ALayout.Content>{introductionReduxViewContent}</ALayout.Content>
+            <ALayout.Content>
+              <ALayout.SectionSubtitle>{introductionReduxViewContainerTitle}</ALayout.SectionSubtitle>
+              <ALayout.Pre>{EXAMPLE_REDUX_VIEW_CONTAINER}</ALayout.Pre>
+            </ALayout.Content>
+            <ALayout.Content>
+              <ALayout.SectionSubtitle>{introductionReduxViewConnectTitle}</ALayout.SectionSubtitle>
+              <ALayout.Content>{introductionReduxViewConnectContent}</ALayout.Content>
+              <ALayout.Content>
+                <ALayout.SectionSubtitle>{introductionReduxViewConnectContainerTag}</ALayout.SectionSubtitle>
+                <ALayout.Pre>{EXAMPLE_REDUX_VIEW_CONNECT_CONTAINER}</ALayout.Pre>
+                <ALayout.SectionSubtitle>{introductionReduxViewConnectComponentTag}</ALayout.SectionSubtitle>
+                <ALayout.Pre>{EXAMPLE_REDUX_VIEW_CONNECT_COMPONENT}</ALayout.Pre>
+              </ALayout.Content>
+            </ALayout.Content>
+          </ALayout.Content>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{introductionReduxActionTitle}</ALayout.SectionSubtitle>
+            <ALayout.Content>{introductionReduxActionContent}</ALayout.Content>
+            <ALayout.Pre>{EXAMPLE_REDUX_ACTION}</ALayout.Pre>
+          </ALayout.Content>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{introductionReduxReducerTitle}</ALayout.SectionSubtitle>
+            <ALayout.Content>{introductionReduxReducerContent}</ALayout.Content>
+            <ALayout.Content>
+              <ALayout.SectionSubtitle>{introductionReduxReducerCombinedTitle}</ALayout.SectionSubtitle>
+              <ALayout.Pre>{EXAMPLE_REDUX_REDUCER_INDEX}</ALayout.Pre>
+              <ALayout.SectionSubtitle>{introductionReduxReducerBranchTitle}</ALayout.SectionSubtitle>
+              <ALayout.Pre>{EXAMPLE_REDUX_REDUCER_BRANCH}</ALayout.Pre>
+            </ALayout.Content>
+          </ALayout.Content>
+        </ALayout.Content>
+      </ALayout.Section>
+      <ALayout.Section>
+        <ALayout.SectionTitle>{productionTitle}</ALayout.SectionTitle>
+        <ALayout.Content>{productionContent}</ALayout.Content>
+        <ALayout.Item><ExampleRedux/></ALayout.Item>
+      </ALayout.Section>
+      <ALayout.Section>
+        <ALayout.SectionTitle>{advancedTitle}</ALayout.SectionTitle>
+        <ALayout.Content>{advancedContent}</ALayout.Content>
+        <ALayout.Item><img src={ImageRedux_server}/></ALayout.Item>
+        <ALayout.Content>{advancedServerContent}</ALayout.Content>
+        <ALayout.Item><ExampleRedux_Server/></ALayout.Item>
+      </ALayout.Section>
+      <ALayout.Section>
+        <ALayout.BtnGroup>
+          <ALayout.Btn><ArticleRedirecter redirectTo={'BTB_ATCS'} /></ALayout.Btn>
+        </ALayout.BtnGroup>
+      </ALayout.Section>
     </div>
   );
   return content;

@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import ELayout from 'components/exampleLayout.js';
+
 import leftListAction from '../actions/leftListAction.js';
 import rightListAction from '../actions/rightListAction.js';
 import UserAdder from './userAdder.js';
@@ -12,22 +14,16 @@ const App = ({ dispatch }) => {
   dispatch(leftListAction.init());
   dispatch(rightListAction.init());
   content.push(
-    <div className='example-wrapper example-userList'>
-      <div className='example-part'>
-        <div className='example-headerTitle'>Example - Redux</div>
-      </div>
-      <div className='example-part'>
-        <UserAdder />
-      </div>
-      <div className='example-part'>
-        <div className='example-block'>
-          <UserListLeft />
-        </div>
-        <div className='example-block'>
-          <UserListRight />
-        </div>
-      </div>
-    </div>
+    <ELayout.Wrapper className='example-userList'>
+      <ELayout.Part>
+        <ELayout.Title>Example - Redux</ELayout.Title>
+      </ELayout.Part>
+      <ELayout.Part><UserAdder /></ELayout.Part>
+      <ELayout.Part>
+        <ELayout.InlineBlock><UserListLeft /></ELayout.InlineBlock>
+        <ELayout.InlineBlock><UserListRight /></ELayout.InlineBlock>
+      </ELayout.Part>
+    </ELayout.Wrapper>
   );
   return content;
 };

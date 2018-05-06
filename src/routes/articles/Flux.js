@@ -3,15 +3,15 @@ import FA from 'react-fontawesome';
 
 import BTBList from 'blacktbox-list';
 
-import ExampleBasic from '../../example/articleFlux/example/app.js';
-import ExamplFlux from '../../example/articleFlux/exampleFlux/app.js';
-import ExamplFlux_Server from '../../example/articleFlux/exampleFlux_server/app.js';
+import ExampleBasic from 'example/articleFlux/example/index.js';
+import ExamplFlux from 'example/articleFlux/exampleFlux/index.js';
+import ExamplFlux_Server from 'example/articleFlux/exampleFlux_server/index.js';
 
-import ImageFlux from '../../images/articleFlux.png';
-import ImageFlux_Server from '../../images/articleFlux_server.png';
+import ImageFlux from 'images/articleFlux.png';
+import ImageFlux_Server from 'images/articleFlux_server.png';
 
-import Layout from '../../components/layout.js';
-import ArticleRedirecter from '../../components/articleRedirecter.js';
+import ALayout from 'components/articleLayout.js';
+import ArticleRedirecter from 'components/articleRedirecter.js';
 
 const mainTitle = `Flux Introduction`;
 const mainDescriptionStr = `Conceptual introduction and simple example`;
@@ -196,62 +196,62 @@ const Index = (props) => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-basic'>
-      <Layout.MainTitle>{mainTitle}</Layout.MainTitle>
-      <Layout.MainDescription>{mainDescriptionStr}</Layout.MainDescription>
-      <Layout.Section>
-        <Layout.SectionTitle>{introductionTitle}</Layout.SectionTitle>
-        <Layout.Content>{introductionContent}</Layout.Content>
-        <Layout.Content>
-          <Layout.SectionSubtitle>{introductionExampleTitle}</Layout.SectionSubtitle>
-          <Layout.Content>{introductionExampleContent}</Layout.Content>
-          <Layout.Item><ExampleBasic/></Layout.Item>
-          <Layout.Content>{introductionExampleAlgorithmDescription}</Layout.Content>
-          <Layout.Pre>{EXAMPLE_BASIC_ALGORITHM}</Layout.Pre>
-        </Layout.Content>
-        <Layout.Content>
-          <Layout.SectionSubtitle>{introductionFluxTitle}</Layout.SectionSubtitle>
-          <Layout.Content>{introductionFluxContent}</Layout.Content>
-          <Layout.Item><img src={ImageFlux}/></Layout.Item>
-          <Layout.Content>{introductionFluxAlgorithmDescription}</Layout.Content>
-          <Layout.Pre>{EXAMPLE_FLUX_INSTALL}</Layout.Pre>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{introductionFluxViewTitle}</Layout.SectionSubtitle>
-            <Layout.Content>{introductionFluxViewContent}</Layout.Content>
-            <Layout.Pre>{EXAMPLE_FLUX_VIEW}</Layout.Pre>
-          </Layout.Content>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{introductionFluxActionTitle}</Layout.SectionSubtitle>
-            <Layout.Content>{introductionFluxActionContent}</Layout.Content>
-            <Layout.Pre>{EXAMPLE_FLUX_ACTION}</Layout.Pre>
-          </Layout.Content>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{introductionFluxDispatcherTitle}</Layout.SectionSubtitle>
-            <Layout.Content>{introductionFluxDispatcherContent}</Layout.Content>
-            <Layout.Pre>{EXAMPLE_FLUX_DISPATCHER}</Layout.Pre>
-          </Layout.Content>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{introductionFluxStoreTitle}</Layout.SectionSubtitle>
-            <Layout.Content>{introductionFluxStoreContent}</Layout.Content>
-            <Layout.Pre>{EXAMPLE_FLUX_STORE}</Layout.Pre>
-          </Layout.Content>
-        </Layout.Content>
-      </Layout.Section>
-      <Layout.Section>
-        <Layout.SectionTitle>{productionTitle}</Layout.SectionTitle>
-        <Layout.Content>{productionContent}</Layout.Content>
-        <Layout.Item><ExamplFlux/></Layout.Item>
-      </Layout.Section>
-      <Layout.Section>
-        <Layout.SectionTitle>{advancedTitle}</Layout.SectionTitle>
-        <Layout.Content>{advancedContent}</Layout.Content>
-        <Layout.Item><img src={ImageFlux_Server}/></Layout.Item>
-        <Layout.Content>{advancedServerContent}</Layout.Content>
-        <Layout.Item><ExamplFlux_Server/></Layout.Item>
-      </Layout.Section>
-      <Layout.Section>
-        <Layout.SectionTitle>{noticeTitle}</Layout.SectionTitle>
-        <Layout.Content>{noticeContent}</Layout.Content>
-        <Layout.Content>
+      <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
+      <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
+      <ALayout.Section>
+        <ALayout.SectionTitle>{introductionTitle}</ALayout.SectionTitle>
+        <ALayout.Content>{introductionContent}</ALayout.Content>
+        <ALayout.Content>
+          <ALayout.SectionSubtitle>{introductionExampleTitle}</ALayout.SectionSubtitle>
+          <ALayout.Content>{introductionExampleContent}</ALayout.Content>
+          <ALayout.Item><ExampleBasic/></ALayout.Item>
+          <ALayout.Content>{introductionExampleAlgorithmDescription}</ALayout.Content>
+          <ALayout.Pre>{EXAMPLE_BASIC_ALGORITHM}</ALayout.Pre>
+        </ALayout.Content>
+        <ALayout.Content>
+          <ALayout.SectionSubtitle>{introductionFluxTitle}</ALayout.SectionSubtitle>
+          <ALayout.Content>{introductionFluxContent}</ALayout.Content>
+          <ALayout.Item><img src={ImageFlux}/></ALayout.Item>
+          <ALayout.Content>{introductionFluxAlgorithmDescription}</ALayout.Content>
+          <ALayout.Pre>{EXAMPLE_FLUX_INSTALL}</ALayout.Pre>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{introductionFluxViewTitle}</ALayout.SectionSubtitle>
+            <ALayout.Content>{introductionFluxViewContent}</ALayout.Content>
+            <ALayout.Pre>{EXAMPLE_FLUX_VIEW}</ALayout.Pre>
+          </ALayout.Content>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{introductionFluxActionTitle}</ALayout.SectionSubtitle>
+            <ALayout.Content>{introductionFluxActionContent}</ALayout.Content>
+            <ALayout.Pre>{EXAMPLE_FLUX_ACTION}</ALayout.Pre>
+          </ALayout.Content>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{introductionFluxDispatcherTitle}</ALayout.SectionSubtitle>
+            <ALayout.Content>{introductionFluxDispatcherContent}</ALayout.Content>
+            <ALayout.Pre>{EXAMPLE_FLUX_DISPATCHER}</ALayout.Pre>
+          </ALayout.Content>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{introductionFluxStoreTitle}</ALayout.SectionSubtitle>
+            <ALayout.Content>{introductionFluxStoreContent}</ALayout.Content>
+            <ALayout.Pre>{EXAMPLE_FLUX_STORE}</ALayout.Pre>
+          </ALayout.Content>
+        </ALayout.Content>
+      </ALayout.Section>
+      <ALayout.Section>
+        <ALayout.SectionTitle>{productionTitle}</ALayout.SectionTitle>
+        <ALayout.Content>{productionContent}</ALayout.Content>
+        <ALayout.Item><ExamplFlux/></ALayout.Item>
+      </ALayout.Section>
+      <ALayout.Section>
+        <ALayout.SectionTitle>{advancedTitle}</ALayout.SectionTitle>
+        <ALayout.Content>{advancedContent}</ALayout.Content>
+        <ALayout.Item><img src={ImageFlux_Server}/></ALayout.Item>
+        <ALayout.Content>{advancedServerContent}</ALayout.Content>
+        <ALayout.Item><ExamplFlux_Server/></ALayout.Item>
+      </ALayout.Section>
+      <ALayout.Section>
+        <ALayout.SectionTitle>{noticeTitle}</ALayout.SectionTitle>
+        <ALayout.Content>{noticeContent}</ALayout.Content>
+        <ALayout.Content>
           <BTBList 
             STYLE={{
               'margin': 'auto',
@@ -260,13 +260,13 @@ const Index = (props) => {
             }}
             listArr={NOTICE}
           />
-        </Layout.Content>
-      </Layout.Section>
-      <Layout.Section>
-        <Layout.BtnGroup>
-          <Layout.Btn><ArticleRedirecter redirectTo={'BTB_ATCS'} /></Layout.Btn>
-        </Layout.BtnGroup>
-      </Layout.Section>
+        </ALayout.Content>
+      </ALayout.Section>
+      <ALayout.Section>
+        <ALayout.BtnGroup>
+          <ALayout.Btn><ArticleRedirecter redirectTo={'BTB_ATCS'} /></ALayout.Btn>
+        </ALayout.BtnGroup>
+      </ALayout.Section>
     </div>
   );
   return content;

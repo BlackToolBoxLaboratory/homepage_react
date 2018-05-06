@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FA from 'react-fontawesome';
 
-import Layout from '../components/layout.js';
+import ALayout from 'components/articleLayout.js';
 import {SideContent_backdoor} from './home.js';
 
 const mainTitle = `About`;
@@ -28,25 +28,25 @@ class About extends Component {
   render () {
     return (
       <div className='wrapper wrapper-basic'>
-        <Layout.MainTitle>{mainTitle}</Layout.MainTitle>
-        <Layout.MainDescription>{mainDescriptionStr}</Layout.MainDescription>
-        <Layout.Section>
-          <Layout.SectionTitle>{articlesTitle}</Layout.SectionTitle>
-          <Layout.Content>
+        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
+        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
+        <ALayout.Section>
+          <ALayout.SectionTitle>{articlesTitle}</ALayout.SectionTitle>
+          <ALayout.Content>
             <span>{articlesContent}</span>
             <FA className='linkBtn' onClick={()=>{this._redirectHandler('BTB_ATCS')}} name='link' fixedWidth/>
-          </Layout.Content>
-        </Layout.Section>
-        <Layout.Section>
-          <Layout.SectionTitle>{demonstrationTitle}</Layout.SectionTitle>
-          <Layout.Content>
+          </ALayout.Content>
+        </ALayout.Section>
+        <ALayout.Section>
+          <ALayout.SectionTitle>{demonstrationTitle}</ALayout.SectionTitle>
+          <ALayout.Content>
             <span>{demonstrationContent}</span>
             <FA className='linkBtn' onClick={()=>{this._redirectHandler('BTB_DEMO')}} name='link' fixedWidth/>
-          </Layout.Content>
-        </Layout.Section>
-        <Layout.Section>
-          <Layout.SectionTitle>{libraryTitle}</Layout.SectionTitle>
-          <Layout.Content>{libraryContent}</Layout.Content>
+          </ALayout.Content>
+        </ALayout.Section>
+        <ALayout.Section>
+          <ALayout.SectionTitle>{libraryTitle}</ALayout.SectionTitle>
+          <ALayout.Content>{libraryContent}</ALayout.Content>
           <ul>
           {
             LibraryList.map((entry)=>{
@@ -61,9 +61,9 @@ class About extends Component {
             })
           }
           </ul>
-        </Layout.Section>
-        <Layout.Section>
-          <Layout.SectionTitle>CONTACT ME</Layout.SectionTitle>
+        </ALayout.Section>
+        <ALayout.Section>
+          <ALayout.SectionTitle>CONTACT ME</ALayout.SectionTitle>
           <ul>
           {
             ContactList.map((entry)=>{
@@ -81,7 +81,7 @@ class About extends Component {
             })
           }
           </ul>
-        </Layout.Section>
+        </ALayout.Section>
       </div>
     );
   };

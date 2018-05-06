@@ -3,7 +3,7 @@ import FA from 'react-fontawesome';
 
 import {SideContent_backdoor} from '../home.js';
 
-import Layout from '../../components/layout.js';
+import ALayout from 'components/articleLayout.js';
 
 const mainTitle = (<span>Blacktbox-demo <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `The Blacktbox-demo shows demonstrations for all the BTB Lab's tools.`;
@@ -32,17 +32,17 @@ class Index extends Component {
     let content = [];
     content.push(
       <div className='wrapper wrapper-basic'>
-        <Layout.MainTitle>{mainTitle}</Layout.MainTitle>
-        <Layout.MainDescription>{mainDescriptionStr}</Layout.MainDescription>
-        <Layout.Section>
-          <Layout.SectionTitle>{setupTitle}</Layout.SectionTitle>
-          <Layout.Content>{setupContent}</Layout.Content>
-          <Layout.Pre>{SETUP_PRE}</Layout.Pre>
-          <Layout.Content>{setupFinishedContent}</Layout.Content>
-        </Layout.Section>
-        <Layout.Section>
-          <Layout.SectionTitle>{libraryListTitle}</Layout.SectionTitle>
-          <Layout.Content>{libraryListContent}</Layout.Content>
+        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
+        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
+        <ALayout.Section>
+          <ALayout.SectionTitle>{setupTitle}</ALayout.SectionTitle>
+          <ALayout.Content>{setupContent}</ALayout.Content>
+          <ALayout.Pre>{SETUP_PRE}</ALayout.Pre>
+          <ALayout.Content>{setupFinishedContent}</ALayout.Content>
+        </ALayout.Section>
+        <ALayout.Section>
+          <ALayout.SectionTitle>{libraryListTitle}</ALayout.SectionTitle>
+          <ALayout.Content>{libraryListContent}</ALayout.Content>
           <ul>
           {
             LibraryList.map((entry)=>{
@@ -54,7 +54,7 @@ class Index extends Component {
             })
           }
           </ul>
-        </Layout.Section>
+        </ALayout.Section>
       </div>
     );
     return content;

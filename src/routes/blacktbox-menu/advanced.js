@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FA from 'react-fontawesome';
 
-import Layout from '../../components/layout.js';
+import ALayout from 'components/articleLayout.js';
 
 const mainTitle = (<span>Blacktbox-menu <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `Advanced application with Blacktbox-menu.`;
@@ -65,30 +65,30 @@ class Adavnce extends Component {
     let content = [];
     content.push(
       <div className='wrapper wrapper-advance'>
-        <Layout.MainTitle>{mainTitle}</Layout.MainTitle>
-        <Layout.MainDescription>{mainDescriptionStr}</Layout.MainDescription>
-        <Layout.Section>
-          <Layout.SectionTitle>{redirectTitle}</Layout.SectionTitle>
-          <Layout.Content>{redirectContent}</Layout.Content>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{reactRouterVersion23Title}</Layout.SectionSubtitle>
-            <Layout.Content>{reactRouterVersion23RouterListContent}</Layout.Content>
-            <Layout.Pre>{REACTROUTER_23_ROUTER}</Layout.Pre>
-            <Layout.Content>{reactRouterVersion23RedirectContent}</Layout.Content>
-            <Layout.Pre>{REACTROUTER_23_REDIRECT}</Layout.Pre>
-          </Layout.Content>
-          <Layout.Content>
-            <Layout.SectionSubtitle>{reactRouterVersion4Title}</Layout.SectionSubtitle>
-            <Layout.Content>{reactRouterVersion4RouterListContent}</Layout.Content>
-            <Layout.Pre>{REACTROUTER_4_ROUTER}</Layout.Pre>
-            <Layout.Content>{reactRouterVersion4RedirectContent}</Layout.Content>
-            <Layout.Pre>{HISTORY_INSTALL}</Layout.Pre>
-            <Layout.Content>{reactRouterVersion4CreateHistoryContent}</Layout.Content>
-            <Layout.Pre>{HISTORY_CREATE}</Layout.Pre>
-            <Layout.Content>{reactRouterVersion4HistoryPushContent}</Layout.Content>
-            <Layout.Pre>{REACTROUTER_4_REDIRECT}</Layout.Pre>
-          </Layout.Content>
-        </Layout.Section>
+        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
+        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
+        <ALayout.Section>
+          <ALayout.SectionTitle>{redirectTitle}</ALayout.SectionTitle>
+          <ALayout.Content>{redirectContent}</ALayout.Content>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{reactRouterVersion23Title}</ALayout.SectionSubtitle>
+            <ALayout.Content>{reactRouterVersion23RouterListContent}</ALayout.Content>
+            <ALayout.Pre>{REACTROUTER_23_ROUTER}</ALayout.Pre>
+            <ALayout.Content>{reactRouterVersion23RedirectContent}</ALayout.Content>
+            <ALayout.Pre>{REACTROUTER_23_REDIRECT}</ALayout.Pre>
+          </ALayout.Content>
+          <ALayout.Content>
+            <ALayout.SectionSubtitle>{reactRouterVersion4Title}</ALayout.SectionSubtitle>
+            <ALayout.Content>{reactRouterVersion4RouterListContent}</ALayout.Content>
+            <ALayout.Pre>{REACTROUTER_4_ROUTER}</ALayout.Pre>
+            <ALayout.Content>{reactRouterVersion4RedirectContent}</ALayout.Content>
+            <ALayout.Pre>{HISTORY_INSTALL}</ALayout.Pre>
+            <ALayout.Content>{reactRouterVersion4CreateHistoryContent}</ALayout.Content>
+            <ALayout.Pre>{HISTORY_CREATE}</ALayout.Pre>
+            <ALayout.Content>{reactRouterVersion4HistoryPushContent}</ALayout.Content>
+            <ALayout.Pre>{REACTROUTER_4_REDIRECT}</ALayout.Pre>
+          </ALayout.Content>
+        </ALayout.Section>
       </div>
     );
     return content;

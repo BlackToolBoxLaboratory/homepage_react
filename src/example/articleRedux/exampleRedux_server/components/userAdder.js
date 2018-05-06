@@ -1,6 +1,8 @@
 import React from 'react';
 import FA from 'react-fontawesome';
 
+import ELayout from 'components/exampleLayout.js';
+
 const DATAMEMBERS = 5;
 
 function DataObj () {
@@ -12,27 +14,25 @@ const UserAdder = ({ data, handler }) => {
   let content = [];
   let formList = {};
   content.push(
-    <div className='userList-add'>
-      <input className='userList-input' type='text' maxLength='10' ref={(node) => {formList['userName'] = node}} placeholder='Enter 1-10 character(s).'/>
-    </div>
+    <ELayout.Block>
+      <div className='userList-add'>
+        <input className='userList-input' type='text' maxLength='10' ref={(node) => {formList['userName'] = node}} placeholder='Enter 1-10 character(s).'/>
+      </div>
+    </ELayout.Block>
   );
   content.push(
-    <div className='example-block'>
-      <div className='example-title'>
-        <div className='userList-add'>
-          <button className='userList-addButton' onClick={()=>{addUserLeftHandler()}} style={{'vertical-align': 'bottom'}}><span>Left</span><FA name='plus-square' fixedWidth/></button>
-        </div>
+    <ELayout.InlineBlock>
+      <div className='userList-add'>
+        <button className='userList-addButton' onClick={()=>{addUserLeftHandler()}} style={{'vertical-align': 'bottom'}}><span>Left</span><FA name='plus-square' fixedWidth/></button>
       </div>
-    </div>
+    </ELayout.InlineBlock>
   );
   content.push(
-    <div className='example-block'>
-      <div className='example-title'>
-        <div className='userList-add'>
-          <button className='userList-addButton' onClick={()=>{addUserRightHandler()}} style={{'vertical-align': 'bottom'}}><span>Right</span><FA name='plus-square' fixedWidth/></button>
-        </div>
+    <ELayout.InlineBlock>
+      <div className='userList-add'>
+        <button className='userList-addButton' onClick={()=>{addUserRightHandler()}} style={{'vertical-align': 'bottom'}}><span>Right</span><FA name='plus-square' fixedWidth/></button>
       </div>
-    </div>
+    </ELayout.InlineBlock>
   );
 
   function addUserLeftHandler ()
