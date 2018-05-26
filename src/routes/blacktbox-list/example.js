@@ -4,7 +4,7 @@ import FA from 'react-fontawesome';
 
 import BTBList from 'blacktbox-list';
 
-import ALayout from 'components/articleLayout.js';
+import AL from 'components/articleLayout.js';
 
 const mainTitle = (<span>Blacktbox-list <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-list'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `Example`;
@@ -151,54 +151,50 @@ const styleObj = {
     'font-size': '14px'
   }
 };;
-class Example extends Component {
-  constructor (props) {
-    super(props);
-    this.listRef = [];
-  };
-  render () {
-    let content = [];
-    content.push(
-      <div className='wrapper wrapper-basic'>
-        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
-        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{exampleTitle}</ALayout.SectionTitle>
-          <ALayout.Content>
-            <BTBList
-              listArr={listArr}
-              styleObj={styleObj}
-              inputRefFn={(ref)=>{this.listRef=ref}}
-            />
-          </ALayout.Content>
-          <ALayout.Item>
-            <button onClick={()=>{this._consoleLogRef()}}>{exampleButtonText}</button>
-          </ALayout.Item>
-        </ALayout.Section>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{rourceCodeTitle}</ALayout.SectionTitle>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{rourceCodeSubTitle_Render}</ALayout.SectionSubtitle>
-            <ALayout.Pre>{ROURCECODE_RENDER_PRE}</ALayout.Pre>
-          </ALayout.Content>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{rourceCodeSubTitle_Style}</ALayout.SectionSubtitle>
-            <ALayout.Pre>{ROURCECODE_STYLE_PRE}</ALayout.Pre>
-          </ALayout.Content>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{rourceCodeSubTitle_List}</ALayout.SectionSubtitle>
-            <ALayout.Pre>{ROURCECODE_LIST_PRE}</ALayout.Pre>
-          </ALayout.Content>
-        </ALayout.Section>
-      </div>
-    );
-    return content;
-  };
 
-  _consoleLogRef () {
-    let listRef = ReactDOM.findDOMNode(this.listRef);
+const Example = (props) => {
+  let content = [];
+  let listRef;
+  content.push(
+    <div className='wrapper wrapper-basic'>
+      <AL.MainTitle>{mainTitle}</AL.MainTitle>
+      <AL.MainDescription>{mainDescriptionStr}</AL.MainDescription>
+      <AL.Section>
+        <AL.SectionTitle>{exampleTitle}</AL.SectionTitle>
+        <AL.Content>
+          <BTBList
+            listArr={listArr}
+            styleObj={styleObj}
+            inputRefFn={(ref)=>{listRef=ref}}
+          />
+        </AL.Content>
+        <AL.Item>
+          <button onClick={()=>{_consoleLogRef()}}>{exampleButtonText}</button>
+        </AL.Item>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{rourceCodeTitle}</AL.SectionTitle>
+        <AL.Content>
+          <AL.SectionSubtitle>{rourceCodeSubTitle_Render}</AL.SectionSubtitle>
+          <AL.Pre>{ROURCECODE_RENDER_PRE}</AL.Pre>
+        </AL.Content>
+        <AL.Content>
+          <AL.SectionSubtitle>{rourceCodeSubTitle_Style}</AL.SectionSubtitle>
+          <AL.Pre>{ROURCECODE_STYLE_PRE}</AL.Pre>
+        </AL.Content>
+        <AL.Content>
+          <AL.SectionSubtitle>{rourceCodeSubTitle_List}</AL.SectionSubtitle>
+          <AL.Pre>{ROURCECODE_LIST_PRE}</AL.Pre>
+        </AL.Content>
+      </AL.Section>
+    </div>
+  );
+  return content;
+
+  function _consoleLogRef () {
+    let listRef = ReactDOM.findDOMNode(listRef);
     console.log('listRef', listRef)
   };
-}
+};
 
 export default Example;

@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
 import FA from 'react-fontawesome';
 
+import AL from 'components/articleLayout.js';
+
 import {SideContent_backdoor} from './home.js';
 
-class NotFound extends Component {
-  render () {
-      return (
-          <div className='wrapper wrapper-basic'>
-              <div className='context'>
-                <div className='title'>404 Page Not Found</div>
-                <div className='content'>
-                  {
-                    `Oops, the page of URL is not exist, or we are working on it.`
-                  }
-                </div>
-              </div>
-          </div>
-      );
-  };
+const notFoundTitle = `404 Page Not Found`;
+const notFoundContent = `Oops, the page of URL is not exist, or we are working on it.`;
+
+const NotFound = (props) => {
+  let content = [];
+  content.push(
+    <div className='wrapper wrapper-basic'>
+      <AL.MainTitle>{notFoundTitle}</AL.MainTitle>
+      <AL.MainDescription>{notFoundContent}</AL.MainDescription>
+    </div>
+  );
+  return content;
 };
 
 export default NotFound;

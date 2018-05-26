@@ -8,7 +8,7 @@ import ExampleRedux_Server from 'example/articleRedux/exampleRedux_server/index.
 import ImageRedux from 'images/articleRedux.png';
 import ImageRedux_server from 'images/articleRedux_server.png';
 
-import ALayout from 'components/articleLayout.js';
+import AL from 'components/articleLayout.js';
 import ArticleRedirecter from 'components/articleRedirecter.js';
 
 const mainTitle = `Redux Introduction`;
@@ -23,7 +23,7 @@ const introductionExampleAlgorithmDescription = `Basically, the code structure i
 
 const introductionReduxTitle = `Redux`;
 const introductionReduxContent = `Here is the picture of Redux's relationship.`;
-const introductionReduxAlgorithmDescription = (<span>To simplify our code base, it also works with <a target='_blank' href='index.html#/article/component_presentational_and_container'>{`Component: Presentational and Container`}<FA name='external-link' fixedWidth/></a>. And to implement the example in Redux. We need to install some packages:</span>);
+const introductionReduxAlgorithmDescription = (<span>To simplify our code base, it also works with <a target='_blank' href='https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0'>{`Component: Presentational and Container`}<FA name='external-link' fixedWidth/></a>. And to implement the example in Redux. We need to install some packages:</span>);
 
 const introductionReduxViewTitle = `View`;
 const introductionReduxViewContent = `About view, it has three type of view contained pure-container, pure-component and mixed-container-and-component. The pure container is for which view will access data, but not rendered with data. And the pure component is for which view will not access data but rendered with data, or it rendered without data but state for necessary. The last type of view is mixed with container and component means the view can access data and rendered with data. Cause the pure component is used usually. We only show you the pure container view and mixed view here.`;
@@ -157,76 +157,76 @@ const Index = (props) => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-basic'>
-      <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
-      <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
-      <ALayout.Section>
-        <ALayout.SectionTitle>{introductionTitle}</ALayout.SectionTitle>
-        <ALayout.Content>{introductionContent}</ALayout.Content>
-        <ALayout.Content>
-          <ALayout.SectionSubtitle>{introductionExampleTitle}</ALayout.SectionSubtitle>
-          <ALayout.Content>{introductionExampleContent}</ALayout.Content>
-          <ALayout.Item><ExampleBasic/></ALayout.Item>
-          <ALayout.Content>{introductionExampleAlgorithmDescription}</ALayout.Content>
-          <ALayout.Pre>{EXAMPLE_BASIC_ALGORITHM}</ALayout.Pre>
-        </ALayout.Content>
-        <ALayout.Content>
-          <ALayout.SectionSubtitle>{introductionReduxTitle}</ALayout.SectionSubtitle>
-          <ALayout.Content>{introductionReduxContent}</ALayout.Content>
-          <ALayout.Item><img src={ImageRedux}/></ALayout.Item>
-          <ALayout.Content>{introductionReduxAlgorithmDescription}</ALayout.Content>
-          <ALayout.Pre>{EXAMPLE_REDUX_INSTALL}</ALayout.Pre>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{introductionReduxViewTitle}</ALayout.SectionSubtitle>
-            <ALayout.Content>{introductionReduxViewContent}</ALayout.Content>
-            <ALayout.Content>
-              <ALayout.SectionSubtitle>{introductionReduxViewContainerTitle}</ALayout.SectionSubtitle>
-              <ALayout.Pre>{EXAMPLE_REDUX_VIEW_CONTAINER}</ALayout.Pre>
-            </ALayout.Content>
-            <ALayout.Content>
-              <ALayout.SectionSubtitle>{introductionReduxViewConnectTitle}</ALayout.SectionSubtitle>
-              <ALayout.Content>{introductionReduxViewConnectContent}</ALayout.Content>
-              <ALayout.Content>
-                <ALayout.SectionSubtitle>{introductionReduxViewConnectContainerTag}</ALayout.SectionSubtitle>
-                <ALayout.Pre>{EXAMPLE_REDUX_VIEW_CONNECT_CONTAINER}</ALayout.Pre>
-                <ALayout.SectionSubtitle>{introductionReduxViewConnectComponentTag}</ALayout.SectionSubtitle>
-                <ALayout.Pre>{EXAMPLE_REDUX_VIEW_CONNECT_COMPONENT}</ALayout.Pre>
-              </ALayout.Content>
-            </ALayout.Content>
-          </ALayout.Content>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{introductionReduxActionTitle}</ALayout.SectionSubtitle>
-            <ALayout.Content>{introductionReduxActionContent}</ALayout.Content>
-            <ALayout.Pre>{EXAMPLE_REDUX_ACTION}</ALayout.Pre>
-          </ALayout.Content>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{introductionReduxReducerTitle}</ALayout.SectionSubtitle>
-            <ALayout.Content>{introductionReduxReducerContent}</ALayout.Content>
-            <ALayout.Content>
-              <ALayout.SectionSubtitle>{introductionReduxReducerCombinedTitle}</ALayout.SectionSubtitle>
-              <ALayout.Pre>{EXAMPLE_REDUX_REDUCER_INDEX}</ALayout.Pre>
-              <ALayout.SectionSubtitle>{introductionReduxReducerBranchTitle}</ALayout.SectionSubtitle>
-              <ALayout.Pre>{EXAMPLE_REDUX_REDUCER_BRANCH}</ALayout.Pre>
-            </ALayout.Content>
-          </ALayout.Content>
-        </ALayout.Content>
-      </ALayout.Section>
-      <ALayout.Section>
-        <ALayout.SectionTitle>{productionTitle}</ALayout.SectionTitle>
-        <ALayout.Content>{productionContent}</ALayout.Content>
-        <ALayout.Item><ExampleRedux/></ALayout.Item>
-      </ALayout.Section>
-      <ALayout.Section>
-        <ALayout.SectionTitle>{advancedTitle}</ALayout.SectionTitle>
-        <ALayout.Content>{advancedContent}</ALayout.Content>
-        <ALayout.Item><img src={ImageRedux_server}/></ALayout.Item>
-        <ALayout.Content>{advancedServerContent}</ALayout.Content>
-        <ALayout.Item><ExampleRedux_Server/></ALayout.Item>
-      </ALayout.Section>
-      <ALayout.Section>
-        <ALayout.BtnGroup>
-          <ALayout.Btn><ArticleRedirecter redirectTo={'BTB_ATCS'} /></ALayout.Btn>
-        </ALayout.BtnGroup>
-      </ALayout.Section>
+      <AL.MainTitle>{mainTitle}</AL.MainTitle>
+      <AL.MainDescription>{mainDescriptionStr}</AL.MainDescription>
+      <AL.Section>
+        <AL.SectionTitle>{introductionTitle}</AL.SectionTitle>
+        <AL.Content>{introductionContent}</AL.Content>
+        <AL.Content>
+          <AL.SectionSubtitle>{introductionExampleTitle}</AL.SectionSubtitle>
+          <AL.Content>{introductionExampleContent}</AL.Content>
+          <AL.Item><ExampleBasic/></AL.Item>
+          <AL.Content>{introductionExampleAlgorithmDescription}</AL.Content>
+          <AL.Pre>{EXAMPLE_BASIC_ALGORITHM}</AL.Pre>
+        </AL.Content>
+        <AL.Content>
+          <AL.SectionSubtitle>{introductionReduxTitle}</AL.SectionSubtitle>
+          <AL.Content>{introductionReduxContent}</AL.Content>
+          <AL.Item><img src={ImageRedux}/></AL.Item>
+          <AL.Content>{introductionReduxAlgorithmDescription}</AL.Content>
+          <AL.Pre>{EXAMPLE_REDUX_INSTALL}</AL.Pre>
+          <AL.Content>
+            <AL.SectionSubtitle>{introductionReduxViewTitle}</AL.SectionSubtitle>
+            <AL.Content>{introductionReduxViewContent}</AL.Content>
+            <AL.Content>
+              <AL.SectionSubtitle>{introductionReduxViewContainerTitle}</AL.SectionSubtitle>
+              <AL.Pre>{EXAMPLE_REDUX_VIEW_CONTAINER}</AL.Pre>
+            </AL.Content>
+            <AL.Content>
+              <AL.SectionSubtitle>{introductionReduxViewConnectTitle}</AL.SectionSubtitle>
+              <AL.Content>{introductionReduxViewConnectContent}</AL.Content>
+              <AL.Content>
+                <AL.SectionSubtitle>{introductionReduxViewConnectContainerTag}</AL.SectionSubtitle>
+                <AL.Pre>{EXAMPLE_REDUX_VIEW_CONNECT_CONTAINER}</AL.Pre>
+                <AL.SectionSubtitle>{introductionReduxViewConnectComponentTag}</AL.SectionSubtitle>
+                <AL.Pre>{EXAMPLE_REDUX_VIEW_CONNECT_COMPONENT}</AL.Pre>
+              </AL.Content>
+            </AL.Content>
+          </AL.Content>
+          <AL.Content>
+            <AL.SectionSubtitle>{introductionReduxActionTitle}</AL.SectionSubtitle>
+            <AL.Content>{introductionReduxActionContent}</AL.Content>
+            <AL.Pre>{EXAMPLE_REDUX_ACTION}</AL.Pre>
+          </AL.Content>
+          <AL.Content>
+            <AL.SectionSubtitle>{introductionReduxReducerTitle}</AL.SectionSubtitle>
+            <AL.Content>{introductionReduxReducerContent}</AL.Content>
+            <AL.Content>
+              <AL.SectionSubtitle>{introductionReduxReducerCombinedTitle}</AL.SectionSubtitle>
+              <AL.Pre>{EXAMPLE_REDUX_REDUCER_INDEX}</AL.Pre>
+              <AL.SectionSubtitle>{introductionReduxReducerBranchTitle}</AL.SectionSubtitle>
+              <AL.Pre>{EXAMPLE_REDUX_REDUCER_BRANCH}</AL.Pre>
+            </AL.Content>
+          </AL.Content>
+        </AL.Content>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{productionTitle}</AL.SectionTitle>
+        <AL.Content>{productionContent}</AL.Content>
+        <AL.Item><ExampleRedux/></AL.Item>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{advancedTitle}</AL.SectionTitle>
+        <AL.Content>{advancedContent}</AL.Content>
+        <AL.Item><img src={ImageRedux_server}/></AL.Item>
+        <AL.Content>{advancedServerContent}</AL.Content>
+        <AL.Item><ExampleRedux_Server/></AL.Item>
+      </AL.Section>
+      <AL.Section>
+        <AL.BtnGroup>
+          <AL.Btn><ArticleRedirecter redirectTo={'BTB_ATCS'} /></AL.Btn>
+        </AL.BtnGroup>
+      </AL.Section>
     </div>
   );
   return content;

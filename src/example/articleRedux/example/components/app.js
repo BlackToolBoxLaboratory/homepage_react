@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import FA from 'react-fontawesome';
 
-import ELayout from 'components/exampleLayout.js';
+import EL from 'components/exampleLayout.js';
 
 // definitions
 function DataObj () {
@@ -27,27 +27,27 @@ class App extends Component {
   render () {
     let content = [];
     content.push(
-      <ELayout.Wrapper className='example-userList'>
-        <ELayout.Part><ELayout.Title>Example</ELayout.Title></ELayout.Part>
-        <ELayout.Part>
-          <ELayout.Block>
+      <EL.Wrapper className='example-userList'>
+        <EL.Part><EL.Title>Example</EL.Title></EL.Part>
+        <EL.Part>
+          <EL.Block>
             <div className='userList-add'>
               <input className='userList-input' type='text' maxLength='10' ref='userName' placeholder='Enter 1-10 character(s).'/>
             </div>
-          </ELayout.Block>
-          <ELayout.InlineBlock>
+          </EL.Block>
+          <EL.InlineBlock>
             <div className='userList-add'>
               <button className='userList-addButton' onClick={()=>{this._addHandler('left')}} style={{'vertical-align': 'bottom'}}><span>Left</span><FA name='plus-square' fixedWidth/></button>
             </div>
-          </ELayout.InlineBlock>
-          <ELayout.InlineBlock>
+          </EL.InlineBlock>
+          <EL.InlineBlock>
             <div className='userList-add'>
               <button className='userList-addButton' onClick={()=>{this._addHandler('right')}} style={{'vertical-align': 'bottom'}}><span>Right</span><FA name='plus-square' fixedWidth/></button>
             </div>
-          </ELayout.InlineBlock>
-        </ELayout.Part>
-        <ELayout.Part>
-          <ELayout.InlineBlock>
+          </EL.InlineBlock>
+        </EL.Part>
+        <EL.Part>
+          <EL.InlineBlock>
             <ul className='userList-list'>
             {
               (0 < this.dataList.left.length)?
@@ -65,8 +65,8 @@ class App extends Component {
               : (<li className='userList-entry-empty'>No data available.</li>)
             }
             </ul>
-          </ELayout.InlineBlock>
-          <ELayout.InlineBlock>
+          </EL.InlineBlock>
+          <EL.InlineBlock>
             <ul className='userList-list'>
             {
               (0 < this.dataList.right.length)?
@@ -84,9 +84,9 @@ class App extends Component {
               : (<li className='userList-entry-empty'>No data available.</li>)
             }
             </ul>
-          </ELayout.InlineBlock>
-        </ELayout.Part>
-      </ELayout.Wrapper>
+          </EL.InlineBlock>
+        </EL.Part>
+      </EL.Wrapper>
     );
     return content;
   };

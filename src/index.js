@@ -7,16 +7,14 @@ import Dispatcher from 'assets/dispatcher.js';
 import 'css/index.less';
 import Home from 'routes/home.js';
 
-class Index extends Component {
-  render () {
-    let content = [];
-    content.push(
-      <HashRouter>
-        <Route path='/' component={Home} />
-      </HashRouter>
-    );
-    return content;
-  };
+const Index = (props) => {
+  let content = [];
+  content.push(
+    <HashRouter>
+      <Route path='/' component={Home} />
+    </HashRouter>
+  );
+  return content;
 };
 
 render((<Index />), document.getElementById('main'));

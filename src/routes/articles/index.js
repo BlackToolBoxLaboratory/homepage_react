@@ -4,7 +4,7 @@ import FA from 'react-fontawesome';
 import routeList from 'assets/routeList.js';
 import hashHistory from 'assets/history.js';
 
-import ALayout from 'components/articleLayout.js';
+import AL from 'components/articleLayout.js';
 
 const mainTitle = `Articles`;
 const mainDescriptionStr = `There are my articles introducing some knowledge in conceptual.`;
@@ -17,40 +17,38 @@ const articleList = new Array(
   {'name': 'Redux Introduction',                      'link': 'BTB_ATCS_REDUX',         'updated': '2018-05-06'}
 )
 
-class Index extends Component {
-  render () {
-    let content = [];
-    content.push(
-      <div className='wrapper wrapper-basic'>
-        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
-        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{articleListTitle}</ALayout.SectionTitle>
-          <ALayout.Content>{articleListContent}</ALayout.Content>
-          <ALayout.Content>
-            <ul>
-            {
-              articleList.map((entry)=>{
-                let content_li = [];
-                content_li.push(
-                  <li>
-                    <span>{entry.name}</span>
-                    <FA className='linkBtn' onClick={()=>{this._redirectHandler(entry.link)}} name='link' fixedWidth/>
-                    <ALayout.Notice>[UPDATED: {entry.updated}]</ALayout.Notice>
-                  </li>
-                )
-                return content_li;
-              })
-            }
-            </ul>
-          </ALayout.Content>
-        </ALayout.Section>
-      </div>
-    );
-    return content;
-  };
+const Index = (props) => {
+  let content = [];
+  content.push(
+    <div className='wrapper wrapper-basic'>
+      <AL.MainTitle>{mainTitle}</AL.MainTitle>
+      <AL.MainDescription>{mainDescriptionStr}</AL.MainDescription>
+      <AL.Section>
+        <AL.SectionTitle>{articleListTitle}</AL.SectionTitle>
+        <AL.Content>{articleListContent}</AL.Content>
+        <AL.Content>
+          <ul>
+          {
+            articleList.map((entry)=>{
+              let content_li = [];
+              content_li.push(
+                <li>
+                  <span>{entry.name}</span>
+                  <FA className='linkBtn' onClick={()=>{_redirectHandler(entry.link)}} name='link' fixedWidth/>
+                  <AL.Notice>[UPDATED: {entry.updated}]</AL.Notice>
+                </li>
+              )
+              return content_li;
+            })
+          }
+          </ul>
+        </AL.Content>
+      </AL.Section>
+    </div>
+  );
+  return content;
 
-  _redirectHandler ( index ) {
+  function _redirectHandler ( index ) {
     hashHistory.push(routeList[index]);
     window.scrollTo(0,0);
   };

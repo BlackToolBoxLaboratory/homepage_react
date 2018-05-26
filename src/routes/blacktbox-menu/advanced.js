@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FA from 'react-fontawesome';
 
-import ALayout from 'components/articleLayout.js';
+import AL from 'components/articleLayout.js';
 
 const mainTitle = (<span>Blacktbox-menu <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `Advanced application with Blacktbox-menu.`;
@@ -60,39 +60,38 @@ _itemOnClickFn (infoObj) {
   }
 };
 `;
-class Adavnce extends Component {
-  render () {
-    let content = [];
-    content.push(
-      <div className='wrapper wrapper-advance'>
-        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
-        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{redirectTitle}</ALayout.SectionTitle>
-          <ALayout.Content>{redirectContent}</ALayout.Content>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{reactRouterVersion23Title}</ALayout.SectionSubtitle>
-            <ALayout.Content>{reactRouterVersion23RouterListContent}</ALayout.Content>
-            <ALayout.Pre>{REACTROUTER_23_ROUTER}</ALayout.Pre>
-            <ALayout.Content>{reactRouterVersion23RedirectContent}</ALayout.Content>
-            <ALayout.Pre>{REACTROUTER_23_REDIRECT}</ALayout.Pre>
-          </ALayout.Content>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{reactRouterVersion4Title}</ALayout.SectionSubtitle>
-            <ALayout.Content>{reactRouterVersion4RouterListContent}</ALayout.Content>
-            <ALayout.Pre>{REACTROUTER_4_ROUTER}</ALayout.Pre>
-            <ALayout.Content>{reactRouterVersion4RedirectContent}</ALayout.Content>
-            <ALayout.Pre>{HISTORY_INSTALL}</ALayout.Pre>
-            <ALayout.Content>{reactRouterVersion4CreateHistoryContent}</ALayout.Content>
-            <ALayout.Pre>{HISTORY_CREATE}</ALayout.Pre>
-            <ALayout.Content>{reactRouterVersion4HistoryPushContent}</ALayout.Content>
-            <ALayout.Pre>{REACTROUTER_4_REDIRECT}</ALayout.Pre>
-          </ALayout.Content>
-        </ALayout.Section>
-      </div>
-    );
-    return content;
-  }
+
+const Adavnce = (props) => {
+  let content = [];
+  content.push(
+    <div className='wrapper wrapper-advance'>
+      <AL.MainTitle>{mainTitle}</AL.MainTitle>
+      <AL.MainDescription>{mainDescriptionStr}</AL.MainDescription>
+      <AL.Section>
+        <AL.SectionTitle>{redirectTitle}</AL.SectionTitle>
+        <AL.Content>{redirectContent}</AL.Content>
+        <AL.Content>
+          <AL.SectionSubtitle>{reactRouterVersion23Title}</AL.SectionSubtitle>
+          <AL.Content>{reactRouterVersion23RouterListContent}</AL.Content>
+          <AL.Pre>{REACTROUTER_23_ROUTER}</AL.Pre>
+          <AL.Content>{reactRouterVersion23RedirectContent}</AL.Content>
+          <AL.Pre>{REACTROUTER_23_REDIRECT}</AL.Pre>
+        </AL.Content>
+        <AL.Content>
+          <AL.SectionSubtitle>{reactRouterVersion4Title}</AL.SectionSubtitle>
+          <AL.Content>{reactRouterVersion4RouterListContent}</AL.Content>
+          <AL.Pre>{REACTROUTER_4_ROUTER}</AL.Pre>
+          <AL.Content>{reactRouterVersion4RedirectContent}</AL.Content>
+          <AL.Pre>{HISTORY_INSTALL}</AL.Pre>
+          <AL.Content>{reactRouterVersion4CreateHistoryContent}</AL.Content>
+          <AL.Pre>{HISTORY_CREATE}</AL.Pre>
+          <AL.Content>{reactRouterVersion4HistoryPushContent}</AL.Content>
+          <AL.Pre>{REACTROUTER_4_REDIRECT}</AL.Pre>
+        </AL.Content>
+      </AL.Section>
+    </div>
+  );
+  return content;
 };
 
 export default Adavnce;

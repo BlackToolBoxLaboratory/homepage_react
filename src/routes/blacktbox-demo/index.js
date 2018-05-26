@@ -3,7 +3,7 @@ import FA from 'react-fontawesome';
 
 import {SideContent_backdoor} from '../home.js';
 
-import ALayout from 'components/articleLayout.js';
+import AL from 'components/articleLayout.js';
 
 const mainTitle = (<span>Blacktbox-demo <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `The Blacktbox-demo shows demonstrations for all the BTB Lab's tools.`;
@@ -27,40 +27,38 @@ const LibraryList = new Array(
   {name: 'Blacktbox-menu',  link: 'BTB_MENU_BASIC'}
 );
 
-class Index extends Component {
-  render () {
-    let content = [];
-    content.push(
-      <div className='wrapper wrapper-basic'>
-        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
-        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{setupTitle}</ALayout.SectionTitle>
-          <ALayout.Content>{setupContent}</ALayout.Content>
-          <ALayout.Pre>{SETUP_PRE}</ALayout.Pre>
-          <ALayout.Content>{setupFinishedContent}</ALayout.Content>
-        </ALayout.Section>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{libraryListTitle}</ALayout.SectionTitle>
-          <ALayout.Content>{libraryListContent}</ALayout.Content>
-          <ul>
-          {
-            LibraryList.map((entry)=>{
-              let content_li = [];
-              content_li.push(
-                <li>{entry.name}<FA className='linkBtn' onClick={()=>{this._redirectHandler(entry.link)}} name='link' fixedWidth/></li>
-              )
-              return content_li;
-            })
-          }
-          </ul>
-        </ALayout.Section>
-      </div>
-    );
-    return content;
-  };
-
-  _redirectHandler (index) {
+const Index = (props) => {
+  let content = [];
+  content.push(
+    <div className='wrapper wrapper-basic'>
+      <AL.MainTitle>{mainTitle}</AL.MainTitle>
+      <AL.MainDescription>{mainDescriptionStr}</AL.MainDescription>
+      <AL.Section>
+        <AL.SectionTitle>{setupTitle}</AL.SectionTitle>
+        <AL.Content>{setupContent}</AL.Content>
+        <AL.Pre>{SETUP_PRE}</AL.Pre>
+        <AL.Content>{setupFinishedContent}</AL.Content>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{libraryListTitle}</AL.SectionTitle>
+        <AL.Content>{libraryListContent}</AL.Content>
+        <ul>
+        {
+          LibraryList.map((entry)=>{
+            let content_li = [];
+            content_li.push(
+              <li>{entry.name}<FA className='linkBtn' onClick={()=>{_redirectHandler(entry.link)}} name='link' fixedWidth/></li>
+            )
+            return content_li;
+          })
+        }
+        </ul>
+      </AL.Section>
+    </div>
+  );
+  return content;
+  
+  function _redirectHandler (index) {
     let obj = {
       acticveIndex: index
     }

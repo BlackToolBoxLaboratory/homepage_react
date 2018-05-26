@@ -1,7 +1,7 @@
 import React from 'react';
 import FA from 'react-fontawesome';
 
-import ELayout from 'components/exampleLayout.js';
+import EL from 'components/exampleLayout.js';
 
 const DATAMEMBERS = 5;
 
@@ -14,25 +14,25 @@ const UserAdder = ({ data, handler }) => {
   let content = [];
   let formList = {};
   content.push(
-    <ELayout.Block>
+    <EL.Block>
       <div className='userList-add'>
         <input className='userList-input' type='text' maxLength='10' ref={(node) => {formList['userName'] = node}} placeholder='Enter 1-10 character(s).'/>
       </div>
-    </ELayout.Block>
+    </EL.Block>
   );
   content.push(
-    <ELayout.InlineBlock>
+    <EL.InlineBlock>
       <div className='userList-add'>
         <button className='userList-addButton' onClick={()=>{addUserLeftHandler()}} style={{'vertical-align': 'bottom'}}><span>Left</span><FA name='plus-square' fixedWidth/></button>
       </div>
-    </ELayout.InlineBlock>
+    </EL.InlineBlock>
   );
   content.push(
-    <ELayout.InlineBlock>
+    <EL.InlineBlock>
       <div className='userList-add'>
         <button className='userList-addButton' onClick={()=>{addUserRightHandler()}} style={{'vertical-align': 'bottom'}}><span>Right</span><FA name='plus-square' fixedWidth/></button>
       </div>
-    </ELayout.InlineBlock>
+    </EL.InlineBlock>
   );
 
   function addUserLeftHandler ()

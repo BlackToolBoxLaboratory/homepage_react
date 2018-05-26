@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import FA from 'react-fontawesome';
 
-import ELayout from 'components/exampleLayout.js';
+import EL from 'components/exampleLayout.js';
 
 /* In our webside we import it in first time at index.js */
 // import Dispatcher from '../../../../assets/dispatcher.js';
@@ -30,16 +30,16 @@ class Example extends Component {
   render  () {
     let content = [];
     content.push(
-      <ELayout.Wrapper className='example-userList'>
-        <ELayout.Part><ELayout.Title>Example - Flux</ELayout.Title></ELayout.Part>
-        <ELayout.Part>
-          <ELayout.Block>
+      <EL.Wrapper className='example-userList'>
+        <EL.Part><EL.Title>Example - Flux</EL.Title></EL.Part>
+        <EL.Part>
+          <EL.Block>
             <div className='userList-add'>
               <input className='userList-input' type='text' maxLength='10' ref='userName' placeholder='Enter 1-10 character(s).'/>
               <button className='userList-addButton' onClick={()=>{this._addHandler()}}><FA name='plus-square' fixedWidth/></button>
             </div>
-          </ELayout.Block>
-          <ELayout.Block>
+          </EL.Block>
+          <EL.Block>
             <ul className='userList-list'>
             {
               (0 < this.dataList.length)?
@@ -56,9 +56,9 @@ class Example extends Component {
               : (<li className='userList-entry'>No data available.</li>)
             }
             </ul>
-          </ELayout.Block>
-        </ELayout.Part>
-      </ELayout.Wrapper>
+          </EL.Block>
+        </EL.Part>
+      </EL.Wrapper>
     );
     return content;
   };

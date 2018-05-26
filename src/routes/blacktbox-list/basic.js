@@ -4,7 +4,7 @@ import FA from 'react-fontawesome';
 import BTBTable from 'blacktbox-table';
 import BTBList from 'blacktbox-list';
 
-import ALayout from 'components/articleLayout.js';
+import AL from 'components/articleLayout.js';
 
 const mainTitle = (<span>Blacktbox-list <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-list'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `List-maker tool.`;
@@ -56,7 +56,7 @@ const PARAM_HEAD = new Array(
 );
 const PARAM_BODY = new Array(
   {name: 'listArr',     type: 'Array',          default:  '[]',     notice: (<pre className='content-pre'>{LISTARR_PRE}</pre>)},
-  {name: '- name',      type: 'String or Node', default:  '\'\'',   notice: 'String or Node to show layer name.'},
+  {name: '- name',      type: 'String or Node', default:  '\'\', ()',   notice: 'String or Node to show layer name.'},
   {name: '- children',  type: 'Array',          default:  '[]',     notice: (<pre className='content-pre'>{SUBLISTARR_PRE}</pre>)},
   {name: 'styleObj',    type: 'Object',         default:  '{}',     notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
   {name: 'inputRefFn',  type: 'Function',       default:  '()=>{}', notice: 'To catch ref with (ref)=>{variable = ref}.'}
@@ -98,44 +98,42 @@ const PARAM_MODE = {
   mode: 'list'
 };
 
-class Basic extends Component {
-  render () {
-    let content = [];
-    content.push(
-      <div className='wrapper wrapper-basic'>
-        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
-        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{installationTitle}</ALayout.SectionTitle>
-          <ALayout.Content>{installationContent}</ALayout.Content>
-          <ALayout.Pre>{INSTALLATION_PRE}</ALayout.Pre>
-        </ALayout.Section>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{renderTitle}</ALayout.SectionTitle>
-          <ALayout.Pre>{RENDER_PRE}</ALayout.Pre>
-          <BTBTable
-            tableHeadArr={PARAM_HEAD}
-            tableBobyArr={PARAM_BODY}
-            modeObj={PARAM_MODE}
-            className='content-paramlist'
+const Basic = (props) => {
+  let content = [];
+  content.push(
+    <div className='wrapper wrapper-basic'>
+      <AL.MainTitle>{mainTitle}</AL.MainTitle>
+      <AL.MainDescription>{mainDescriptionStr}</AL.MainDescription>
+      <AL.Section>
+        <AL.SectionTitle>{installationTitle}</AL.SectionTitle>
+        <AL.Content>{installationContent}</AL.Content>
+        <AL.Pre>{INSTALLATION_PRE}</AL.Pre>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{renderTitle}</AL.SectionTitle>
+        <AL.Pre>{RENDER_PRE}</AL.Pre>
+        <BTBTable
+          tableHeadArr={PARAM_HEAD}
+          tableBobyArr={PARAM_BODY}
+          modeObj={PARAM_MODE}
+          className='content-paramlist'
+        />
+        <AL.Content>{renderContent}</AL.Content>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{nodeTreeTitle}</AL.SectionTitle>
+        <AL.Content>{nodeTreeContent}</AL.Content>
+        <AL.Content>
+          <BTBList 
+            className='content-nodetree'
+            listArr={NODE_TREE}
           />
-          <ALayout.Content>{renderContent}</ALayout.Content>
-        </ALayout.Section>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{nodeTreeTitle}</ALayout.SectionTitle>
-          <ALayout.Content>{nodeTreeContent}</ALayout.Content>
-          <ALayout.Content>
-            <BTBList 
-              className='content-nodetree'
-              listArr={NODE_TREE}
-            />
-          </ALayout.Content>
-          <ALayout.Content>{nodeTreeNotice}</ALayout.Content>
-        </ALayout.Section>
-      </div>
-    );
-    return content;
-  };
+        </AL.Content>
+        <AL.Content>{nodeTreeNotice}</AL.Content>
+      </AL.Section>
+    </div>
+  );
+  return content;
 };
 
 export default Basic;

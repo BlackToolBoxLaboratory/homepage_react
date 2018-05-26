@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FA from 'react-fontawesome';
 
-import ALayout from 'components/articleLayout.js';
+import AL from 'components/articleLayout.js';
 import {SideContent_backdoor} from './home.js';
 
 const mainTitle = `About`;
@@ -24,69 +24,69 @@ const ContactList = new Array(
   {name: 'Homepage',  linkName:'blacktoolboxlaboratory.github.io',  href:'https://blacktoolboxlaboratory.github.io',  FA:'home'}
 );
 
-class About extends Component {
-  render () {
-    return (
-      <div className='wrapper wrapper-basic'>
-        <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
-        <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{articlesTitle}</ALayout.SectionTitle>
-          <ALayout.Content>
-            <span>{articlesContent}</span>
-            <FA className='linkBtn' onClick={()=>{this._redirectHandler('BTB_ATCS')}} name='link' fixedWidth/>
-          </ALayout.Content>
-        </ALayout.Section>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{demonstrationTitle}</ALayout.SectionTitle>
-          <ALayout.Content>
-            <span>{demonstrationContent}</span>
-            <FA className='linkBtn' onClick={()=>{this._redirectHandler('BTB_DEMO')}} name='link' fixedWidth/>
-          </ALayout.Content>
-        </ALayout.Section>
-        <ALayout.Section>
-          <ALayout.SectionTitle>{libraryTitle}</ALayout.SectionTitle>
-          <ALayout.Content>{libraryContent}</ALayout.Content>
-          <ul>
-          {
-            LibraryList.map((entry)=>{
-              let content_li = [];
-              content_li.push(
-                <li>
-                  <span>{entry.name}</span>
-                  <FA className='linkBtn' onClick={()=>{this._redirectHandler(entry.link)}} name='link' fixedWidth/>
-                </li>
-              )
-              return content_li;
-            })
-          }
-          </ul>
-        </ALayout.Section>
-        <ALayout.Section>
-          <ALayout.SectionTitle>CONTACT ME</ALayout.SectionTitle>
-          <ul>
-          {
-            ContactList.map((entry)=>{
-              let content_li = [];
-              content_li.push(
-                <li>
-                  <FA name={entry.FA} fixedWidth/>
-                  <span style={{'margin-left':'5px'}}>{`${entry.name}:`}</span>
-                  <span style={{'margin-left':'5px'}}>
-                    <a target='_blank' href={entry.href}>{entry.linkName} <FA name='external-link' fixedWidth/></a>
-                  </span>
-                </li>
-              );
-              return content_li;
-            })
-          }
-          </ul>
-        </ALayout.Section>
-      </div>
-    );
-  };
+const About = (props) => {
+  let content = [];
+  content.push(
+    <div className='wrapper wrapper-basic'>
+      <AL.MainTitle>{mainTitle}</AL.MainTitle>
+      <AL.MainDescription>{mainDescriptionStr}</AL.MainDescription>
+      <AL.Section>
+        <AL.SectionTitle>{articlesTitle}</AL.SectionTitle>
+        <AL.Content>
+          <span>{articlesContent}</span>
+          <FA className='linkBtn' onClick={()=>{_redirectHandler('BTB_ATCS')}} name='link' fixedWidth/>
+        </AL.Content>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{demonstrationTitle}</AL.SectionTitle>
+        <AL.Content>
+          <span>{demonstrationContent}</span>
+          <FA className='linkBtn' onClick={()=>{_redirectHandler('BTB_DEMO')}} name='link' fixedWidth/>
+        </AL.Content>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{libraryTitle}</AL.SectionTitle>
+        <AL.Content>{libraryContent}</AL.Content>
+        <ul>
+        {
+          LibraryList.map((entry)=>{
+            let content_li = [];
+            content_li.push(
+              <li>
+                <span>{entry.name}</span>
+                <FA className='linkBtn' onClick={()=>{_redirectHandler(entry.link)}} name='link' fixedWidth/>
+              </li>
+            )
+            return content_li;
+          })
+        }
+        </ul>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>CONTACT ME</AL.SectionTitle>
+        <ul>
+        {
+          ContactList.map((entry)=>{
+            let content_li = [];
+            content_li.push(
+              <li>
+                <FA name={entry.FA} fixedWidth/>
+                <span style={{'margin-left':'5px'}}>{`${entry.name}:`}</span>
+                <span style={{'margin-left':'5px'}}>
+                  <a target='_blank' href={entry.href}>{entry.linkName} <FA name='external-link' fixedWidth/></a>
+                </span>
+              </li>
+            );
+            return content_li;
+          })
+        }
+        </ul>
+      </AL.Section>
+    </div>
+  );
+  return content;
 
-  _redirectHandler ( index ) {
+  function _redirectHandler ( index ) {
     let obj = {
       acticveIndex: index
     }

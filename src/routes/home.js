@@ -88,8 +88,9 @@ class SideContent extends Component {
         };
       };
     };
+    SideContentThis = this;
   };
-  componentWillReceiveProps (nextProps) {
+  componentDidUpdate () {
     SideContentThis = this;
   };  
   render () {

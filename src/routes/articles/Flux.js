@@ -10,7 +10,7 @@ import ExamplFlux_Server from 'example/articleFlux/exampleFlux_server/index.js';
 import ImageFlux from 'images/articleFlux.png';
 import ImageFlux_Server from 'images/articleFlux_server.png';
 
-import ALayout from 'components/articleLayout.js';
+import AL from 'components/articleLayout.js';
 import ArticleRedirecter from 'components/articleRedirecter.js';
 
 const mainTitle = `Flux Introduction`;
@@ -196,62 +196,62 @@ const Index = (props) => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-basic'>
-      <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
-      <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
-      <ALayout.Section>
-        <ALayout.SectionTitle>{introductionTitle}</ALayout.SectionTitle>
-        <ALayout.Content>{introductionContent}</ALayout.Content>
-        <ALayout.Content>
-          <ALayout.SectionSubtitle>{introductionExampleTitle}</ALayout.SectionSubtitle>
-          <ALayout.Content>{introductionExampleContent}</ALayout.Content>
-          <ALayout.Item><ExampleBasic/></ALayout.Item>
-          <ALayout.Content>{introductionExampleAlgorithmDescription}</ALayout.Content>
-          <ALayout.Pre>{EXAMPLE_BASIC_ALGORITHM}</ALayout.Pre>
-        </ALayout.Content>
-        <ALayout.Content>
-          <ALayout.SectionSubtitle>{introductionFluxTitle}</ALayout.SectionSubtitle>
-          <ALayout.Content>{introductionFluxContent}</ALayout.Content>
-          <ALayout.Item><img src={ImageFlux}/></ALayout.Item>
-          <ALayout.Content>{introductionFluxAlgorithmDescription}</ALayout.Content>
-          <ALayout.Pre>{EXAMPLE_FLUX_INSTALL}</ALayout.Pre>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{introductionFluxViewTitle}</ALayout.SectionSubtitle>
-            <ALayout.Content>{introductionFluxViewContent}</ALayout.Content>
-            <ALayout.Pre>{EXAMPLE_FLUX_VIEW}</ALayout.Pre>
-          </ALayout.Content>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{introductionFluxActionTitle}</ALayout.SectionSubtitle>
-            <ALayout.Content>{introductionFluxActionContent}</ALayout.Content>
-            <ALayout.Pre>{EXAMPLE_FLUX_ACTION}</ALayout.Pre>
-          </ALayout.Content>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{introductionFluxDispatcherTitle}</ALayout.SectionSubtitle>
-            <ALayout.Content>{introductionFluxDispatcherContent}</ALayout.Content>
-            <ALayout.Pre>{EXAMPLE_FLUX_DISPATCHER}</ALayout.Pre>
-          </ALayout.Content>
-          <ALayout.Content>
-            <ALayout.SectionSubtitle>{introductionFluxStoreTitle}</ALayout.SectionSubtitle>
-            <ALayout.Content>{introductionFluxStoreContent}</ALayout.Content>
-            <ALayout.Pre>{EXAMPLE_FLUX_STORE}</ALayout.Pre>
-          </ALayout.Content>
-        </ALayout.Content>
-      </ALayout.Section>
-      <ALayout.Section>
-        <ALayout.SectionTitle>{productionTitle}</ALayout.SectionTitle>
-        <ALayout.Content>{productionContent}</ALayout.Content>
-        <ALayout.Item><ExamplFlux/></ALayout.Item>
-      </ALayout.Section>
-      <ALayout.Section>
-        <ALayout.SectionTitle>{advancedTitle}</ALayout.SectionTitle>
-        <ALayout.Content>{advancedContent}</ALayout.Content>
-        <ALayout.Item><img src={ImageFlux_Server}/></ALayout.Item>
-        <ALayout.Content>{advancedServerContent}</ALayout.Content>
-        <ALayout.Item><ExamplFlux_Server/></ALayout.Item>
-      </ALayout.Section>
-      <ALayout.Section>
-        <ALayout.SectionTitle>{noticeTitle}</ALayout.SectionTitle>
-        <ALayout.Content>{noticeContent}</ALayout.Content>
-        <ALayout.Content>
+      <AL.MainTitle>{mainTitle}</AL.MainTitle>
+      <AL.MainDescription>{mainDescriptionStr}</AL.MainDescription>
+      <AL.Section>
+        <AL.SectionTitle>{introductionTitle}</AL.SectionTitle>
+        <AL.Content>{introductionContent}</AL.Content>
+        <AL.Content>
+          <AL.SectionSubtitle>{introductionExampleTitle}</AL.SectionSubtitle>
+          <AL.Content>{introductionExampleContent}</AL.Content>
+          <AL.Item><ExampleBasic/></AL.Item>
+          <AL.Content>{introductionExampleAlgorithmDescription}</AL.Content>
+          <AL.Pre>{EXAMPLE_BASIC_ALGORITHM}</AL.Pre>
+        </AL.Content>
+        <AL.Content>
+          <AL.SectionSubtitle>{introductionFluxTitle}</AL.SectionSubtitle>
+          <AL.Content>{introductionFluxContent}</AL.Content>
+          <AL.Item><img src={ImageFlux}/></AL.Item>
+          <AL.Content>{introductionFluxAlgorithmDescription}</AL.Content>
+          <AL.Pre>{EXAMPLE_FLUX_INSTALL}</AL.Pre>
+          <AL.Content>
+            <AL.SectionSubtitle>{introductionFluxViewTitle}</AL.SectionSubtitle>
+            <AL.Content>{introductionFluxViewContent}</AL.Content>
+            <AL.Pre>{EXAMPLE_FLUX_VIEW}</AL.Pre>
+          </AL.Content>
+          <AL.Content>
+            <AL.SectionSubtitle>{introductionFluxActionTitle}</AL.SectionSubtitle>
+            <AL.Content>{introductionFluxActionContent}</AL.Content>
+            <AL.Pre>{EXAMPLE_FLUX_ACTION}</AL.Pre>
+          </AL.Content>
+          <AL.Content>
+            <AL.SectionSubtitle>{introductionFluxDispatcherTitle}</AL.SectionSubtitle>
+            <AL.Content>{introductionFluxDispatcherContent}</AL.Content>
+            <AL.Pre>{EXAMPLE_FLUX_DISPATCHER}</AL.Pre>
+          </AL.Content>
+          <AL.Content>
+            <AL.SectionSubtitle>{introductionFluxStoreTitle}</AL.SectionSubtitle>
+            <AL.Content>{introductionFluxStoreContent}</AL.Content>
+            <AL.Pre>{EXAMPLE_FLUX_STORE}</AL.Pre>
+          </AL.Content>
+        </AL.Content>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{productionTitle}</AL.SectionTitle>
+        <AL.Content>{productionContent}</AL.Content>
+        <AL.Item><ExamplFlux/></AL.Item>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{advancedTitle}</AL.SectionTitle>
+        <AL.Content>{advancedContent}</AL.Content>
+        <AL.Item><img src={ImageFlux_Server}/></AL.Item>
+        <AL.Content>{advancedServerContent}</AL.Content>
+        <AL.Item><ExamplFlux_Server/></AL.Item>
+      </AL.Section>
+      <AL.Section>
+        <AL.SectionTitle>{noticeTitle}</AL.SectionTitle>
+        <AL.Content>{noticeContent}</AL.Content>
+        <AL.Content>
           <BTBList 
             STYLE={{
               'margin': 'auto',
@@ -260,13 +260,13 @@ const Index = (props) => {
             }}
             listArr={NOTICE}
           />
-        </ALayout.Content>
-      </ALayout.Section>
-      <ALayout.Section>
-        <ALayout.BtnGroup>
-          <ALayout.Btn><ArticleRedirecter redirectTo={'BTB_ATCS'} /></ALayout.Btn>
-        </ALayout.BtnGroup>
-      </ALayout.Section>
+        </AL.Content>
+      </AL.Section>
+      <AL.Section>
+        <AL.BtnGroup>
+          <AL.Btn><ArticleRedirecter redirectTo={'BTB_ATCS'} /></AL.Btn>
+        </AL.BtnGroup>
+      </AL.Section>
     </div>
   );
   return content;
