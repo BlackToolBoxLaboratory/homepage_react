@@ -3,7 +3,8 @@
   @main_color: #61dafb;
   @background_color: #000;
   @background_sec_color: #fff;
-  @sidebar_width: 200px;
+  @content_left: 200px;
+  @content_right: 100px;
   @text-line-height: 20px;
   @iconbox_size: 50px ; 
 
@@ -16,7 +17,7 @@
     width: 200px;
   }
   .sideContent {
-    width: @sidebar_width;
+    width: @content_left;
     background-color: @background_color;
     color: @background_sec_color;
     float: left;
@@ -60,8 +61,7 @@
     }
   }
   .mainContent {
-    width: calc(~"100% - @{sidebar_width}");
-    margin-left: @sidebar_width;
+    margin: 0 @content_right 0 @content_left;
     background-color: transparent;
     min-height: 100vh;
   }
