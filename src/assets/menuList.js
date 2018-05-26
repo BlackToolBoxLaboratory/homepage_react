@@ -22,6 +22,10 @@ const menuList = new Array(
           {
             'index':  'BTB_LIST_BASIC',
             'name':   'Basic'
+          },
+          {
+            'index':  'BTB_LIST_EXAMPLE',
+            'name':   'Example'
           }
         ]
       },

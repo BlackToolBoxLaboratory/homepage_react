@@ -9,12 +9,15 @@ import ALayout from 'components/articleLayout.js';
 const mainTitle = (<span>Blacktbox-menu <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `Menu-maker tool.`;
 
-const usingTitle = `USING`;
-const usingContent = (<span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>.</span>);
+const installationTitle = `INSTALLATION`;
+const installationContent = (<span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>.</span>);
+
+const renderTitle = `RENDER`;
+const renderContent = (<span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>.</span>);
 
 const nodeTreeTitle = `NODE TREE`;
 const nodeTreeContent = `Here showing the node structure. Each node with className is for convenience to style. You have two way to use it. The first way is used with css selector, and the other way is used component's input: styleObj.`;
-const nodeTreeNotice = `Notice: The layer.index is count base on 0.`;
+const nodeTreeNotice = `Notice: The layer.index is counted base on 0.`;
 
 const INSTALLATION_PRE = 
 `$ npm install --save blacktbox-menu
@@ -24,7 +27,7 @@ import BTBMenu from 'blacktbox-menu';
 
 // using CommonJS modules
 var BTBMenu = require('blacktbox-menu');`;
-const USING_PRE = 
+const RENDER_PRE = 
 `<BTBMenu 
   menuArr: [],
   styleObj: {},
@@ -139,22 +142,20 @@ class Basic extends Component {
         <ALayout.MainTitle>{mainTitle}</ALayout.MainTitle>
         <ALayout.MainDescription>{mainDescriptionStr}</ALayout.MainDescription>
         <ALayout.Section>
-          <ALayout.SectionTitle>INSTALLATION</ALayout.SectionTitle>
-          <ALayout.Content>
-            <span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>.</span>
-          </ALayout.Content>
+          <ALayout.SectionTitle>{installationTitle}</ALayout.SectionTitle>
+          <ALayout.Content>{installationContent}</ALayout.Content>
           <ALayout.Pre>{INSTALLATION_PRE}</ALayout.Pre>
         </ALayout.Section>
         <ALayout.Section>
-          <ALayout.SectionTitle>{usingTitle}</ALayout.SectionTitle>
-          <ALayout.Pre>{USING_PRE}</ALayout.Pre>
+          <ALayout.SectionTitle>{renderTitle}</ALayout.SectionTitle>
+          <ALayout.Pre>{RENDER_PRE}</ALayout.Pre>
           <BTBTable
             tableHeadArr={PARAM_HEAD}
             tableBobyArr={PARAM_BODY}
             modeObj={PARAM_MODE}
             className='content-paramlist'
           />
-          <ALayout.Content>{usingContent}</ALayout.Content>
+          <ALayout.Content>{renderContent}</ALayout.Content>
         </ALayout.Section>
         <ALayout.Section>
           <ALayout.SectionTitle>{nodeTreeTitle}</ALayout.SectionTitle>

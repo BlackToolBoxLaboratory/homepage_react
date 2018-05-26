@@ -14,6 +14,7 @@ import BTBATCS_Flux from './articles/Flux.js';
 import BTBATCS_Redux from './articles/Redux.js';
 import BTBDemo_index from './blacktbox-demo/index.js';
 import BTBList_basic from './blacktbox-list/basic.js';
+import BTBList_example from './blacktbox-list/example.js';
 import BTBTable_basic from './blacktbox-table/basic.js'
 import BTBMenu_basic from './blacktbox-menu/basic.js';
 import BTBMenu_advanced from './blacktbox-menu/advanced.js';
@@ -40,7 +41,6 @@ export function SideContent_backdoor (type, obj) {
 }
 
 const Home = (props) => {
-  window.scrollTo(0,0);
   let content = [];
   content.push(
     <div className='wrapper wrapper-home'>
@@ -73,6 +73,7 @@ class SideContent extends Component {
         {
           this.env.menuActiveIndex = routeIndex;
         }
+        window.scrollTo(0,0);
         this.forceUpdate();
         break;
       };
@@ -81,6 +82,7 @@ class SideContent extends Component {
         if(currentPathname.match(routeList[routeIndex]))
         {
           this.env.menuActiveIndex = routeIndex;
+          window.scrollTo(0,0);
           this.forceUpdate();
           break;
         };
@@ -137,6 +139,7 @@ const MainContent = (props) => {
         <Route exact path={routeList.BTB_ATCS_REDUX} component={BTBATCS_Redux}/>
         <Route exact path={routeList.BTB_DEMO} component={BTBDemo_index}/>
         <Route exact path={routeList.BTB_LIST_BASIC} component={BTBList_basic}/>
+        <Route exact path={routeList.BTB_LIST_EXAMPLE} component={BTBList_example}/>
         <Route exact path={routeList.BTB_TABLE_BASIC} component={BTBTable_basic}/>
         <Route exact path={routeList.BTB_MENU_BASIC} component={BTBMenu_basic}/>
         <Route exact path={routeList.BTB_MENU_ADV} component={BTBMenu_advanced}/>

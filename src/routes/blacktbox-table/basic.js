@@ -12,8 +12,8 @@ const mainDescriptionStr = `Table-maker tool.`;
 const installationTitle = `INSTALLATION`;
 const installationContent = (<span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>.</span>);
 
-const usingTitle = `USING`;
-const usingContent = (<span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>.</span>);
+const renderTitle = `RENDER`;
+const renderContent = (<span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>.</span>);
 
 const nodeTreeTitle = `NODE TREE`;
 const nodeTreeContent = `Here showing the node structure. Each node with className is for convenience to style. You have two way to use it. The first way is used with css selector, and the other way is used component's input: styleObj. But for blacktbox-table, we have two structure for two mode used.`;
@@ -29,7 +29,7 @@ import BTBTable from 'blacktbox-table';
 
 // using CommonJS modules
 var BTBTable = require('blacktbox-table');`;
-const USING_PRE = 
+const RENDER_PRE = 
 `<BTBTable 
   tableHeadArr: [],
   tableBobyArr: [],
@@ -174,15 +174,15 @@ class Basic extends Component {
           <ALayout.Pre>{INSTALLATION_PRE}</ALayout.Pre>
         </ALayout.Section>
         <ALayout.Section>
-          <ALayout.SectionTitle>{usingTitle}</ALayout.SectionTitle>
-          <ALayout.Pre>{USING_PRE}</ALayout.Pre>
+          <ALayout.SectionTitle>{renderTitle}</ALayout.SectionTitle>
+          <ALayout.Pre>{RENDER_PRE}</ALayout.Pre>
           <BTBTable
             tableHeadArr={PARAM_HEAD}
             tableBobyArr={PARAM_BODY}
             modeObj={PARAM_MODE}
             className='content-paramlist'
           />
-          <ALayout.Content>{usingContent}</ALayout.Content>
+          <ALayout.Content>{renderContent}</ALayout.Content>
         </ALayout.Section>
         <ALayout.Section>
           <ALayout.SectionTitle>{nodeTreeTitle}</ALayout.SectionTitle>
