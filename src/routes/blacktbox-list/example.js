@@ -6,7 +6,7 @@ import BTBList from 'blacktbox-list';
 
 import AL from 'components/articleLayout.js';
 
-const mainTitle = (<span>Blacktbox-list <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-list'><FA name='github' fixedWidth/></a></span>);
+const mainTitle = (<span>{`Blacktbox-list `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-list'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `Example`;
 
 const exampleTitle = `EXAMPLE`;
@@ -150,49 +150,54 @@ const styleObj = {
     'color': '#8c8c8c',
     'font-size': '14px'
   }
-};;
+};
 
-const Example = (props) => {
-  let content = [];
-  let listRef;
-  content.push(
-    <div className='wrapper wrapper-basic'>
-      <AL.MainTitle>{mainTitle}</AL.MainTitle>
-      <AL.MainDescription>{mainDescriptionStr}</AL.MainDescription>
-      <AL.Section>
-        <AL.SectionTitle>{exampleTitle}</AL.SectionTitle>
-        <AL.Content>
-          <BTBList
-            listArr={listArr}
-            styleObj={styleObj}
-            inputRefFn={(ref)=>{listRef=ref}}
-          />
-        </AL.Content>
-        <AL.Item>
-          <button onClick={()=>{_consoleLogRef()}}>{exampleButtonText}</button>
-        </AL.Item>
-      </AL.Section>
-      <AL.Section>
-        <AL.SectionTitle>{rourceCodeTitle}</AL.SectionTitle>
-        <AL.Content>
-          <AL.SectionSubtitle>{rourceCodeSubTitle_Render}</AL.SectionSubtitle>
-          <AL.Pre>{ROURCECODE_RENDER_PRE}</AL.Pre>
-        </AL.Content>
-        <AL.Content>
-          <AL.SectionSubtitle>{rourceCodeSubTitle_Style}</AL.SectionSubtitle>
-          <AL.Pre>{ROURCECODE_STYLE_PRE}</AL.Pre>
-        </AL.Content>
-        <AL.Content>
-          <AL.SectionSubtitle>{rourceCodeSubTitle_List}</AL.SectionSubtitle>
-          <AL.Pre>{ROURCECODE_LIST_PRE}</AL.Pre>
-        </AL.Content>
-      </AL.Section>
-    </div>
-  );
-  return content;
+class Example extends Component {
+  constructor (props) {
+    super(props);
+    this.listRef =[];
+  };
+  render () {
+    let content = [];
+    content.push(
+      <div className='wrapper wrapper-basic'>
+        <AL.MainTitle>{mainTitle}</AL.MainTitle>
+        <AL.MainDescription>{mainDescriptionStr}</AL.MainDescription>
+        <AL.Section>
+          <AL.SectionTitle>{exampleTitle}</AL.SectionTitle>
+          <AL.Content>
+            <BTBList
+              listArr={listArr}
+              styleObj={styleObj}
+              inputRefFn={(ref)=>{this.listRef=ref}}
+            />
+          </AL.Content>
+          <AL.Item>
+            <button onClick={()=>{this._consoleLogRef()}}>{exampleButtonText}</button>
+          </AL.Item>
+        </AL.Section>
+        <AL.Section>
+          <AL.SectionTitle>{rourceCodeTitle}</AL.SectionTitle>
+          <AL.Content>
+            <AL.SectionSubtitle>{rourceCodeSubTitle_Render}</AL.SectionSubtitle>
+            <AL.Pre>{ROURCECODE_RENDER_PRE}</AL.Pre>
+          </AL.Content>
+          <AL.Content>
+            <AL.SectionSubtitle>{rourceCodeSubTitle_Style}</AL.SectionSubtitle>
+            <AL.Pre>{ROURCECODE_STYLE_PRE}</AL.Pre>
+          </AL.Content>
+          <AL.Content>
+            <AL.SectionSubtitle>{rourceCodeSubTitle_List}</AL.SectionSubtitle>
+            <AL.Pre>{ROURCECODE_LIST_PRE}</AL.Pre>
+          </AL.Content>
+        </AL.Section>
+      </div>
+    );
+    return content;
+  };
 
-  function _consoleLogRef () {
-    let listRef = ReactDOM.findDOMNode(listRef);
+  _consoleLogRef () {
+    let listRef = ReactDOM.findDOMNode(this.listRef);
     console.log('listRef', listRef)
   };
 };

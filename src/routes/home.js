@@ -17,6 +17,7 @@ import BTBList_basic from './blacktbox-list/basic.js';
 import BTBList_example from './blacktbox-list/example.js';
 import BTBTable_basic from './blacktbox-table/basic.js'
 import BTBMenu_basic from './blacktbox-menu/basic.js';
+import BTBMenu_example from './blacktbox-menu/example.js';
 import BTBMenu_advanced from './blacktbox-menu/advanced.js';
 import NotFound from './404.js';
 
@@ -108,7 +109,8 @@ class SideContent extends Component {
           acticveIndex={this.env.menuActiveIndex} 
           itemOnClickFn={(infoObj)=>{this._itemOnClickFn(infoObj);}}
           featureCollapsible={{
-            enable: true
+            'enable': true,
+            'itemClickWithCollapseEnable': true
           }}
         />
       </div>
@@ -143,6 +145,7 @@ const MainContent = (props) => {
         <Route exact path={routeList.BTB_LIST_EXAMPLE} component={BTBList_example}/>
         <Route exact path={routeList.BTB_TABLE_BASIC} component={BTBTable_basic}/>
         <Route exact path={routeList.BTB_MENU_BASIC} component={BTBMenu_basic}/>
+        <Route exact path={routeList.BTB_MENU_EXAMPLE} component={BTBMenu_example}/>
         <Route exact path={routeList.BTB_MENU_ADV} component={BTBMenu_advanced}/>
 
         <Route component={NotFound}/>

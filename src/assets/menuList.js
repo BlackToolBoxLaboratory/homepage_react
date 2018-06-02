@@ -48,6 +48,10 @@ const menuList = new Array(
             'name':   'Basic'
           },
           {
+            'index':  'BTB_MENU_EXAMPLE',
+            'name':   'Example'
+          },
+          {
             'index':  'BTB_MENU_ADV',
             'name':   'Advanced'
           }

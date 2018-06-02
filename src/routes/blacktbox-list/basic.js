@@ -6,14 +6,14 @@ import BTBList from 'blacktbox-list';
 
 import AL from 'components/articleLayout.js';
 
-const mainTitle = (<span>Blacktbox-list <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-list'><FA name='github' fixedWidth/></a></span>);
+const mainTitle = (<span>{`Blacktbox-list `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-list'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `List-maker tool.`;
 
 const installationTitle = `INSTALLATION`;
-const installationContent = (<span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>.</span>);
+const installationContent = (<span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>{`.`}</span>);
 
 const renderTitle = `RENDER`;
-const renderContent = (<span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>.</span>);
+const renderContent = (<span>{`Notice: DOM properties are still work with`} <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>{`.`}</span>);
 
 const nodeTreeTitle = `NODE TREE`;
 const nodeTreeContent = `Here showing the node structure. Each node with className is for convenience to style. You have two way to use it. The first way is used with css selector, and the other way is used component's input: styleObj.`;
@@ -29,9 +29,9 @@ import BTBList from 'blacktbox-list';
 var BTBList = require('blacktbox-list');`;
 const RENDER_PRE = 
 `<BTBList 
-  listArr: [],
-  styleObj: {},
-  inputRefFn: ()=>{}
+  listArr= []
+  styleObj= {}
+  inputRefFn= {()=>{}}
 />`;
 const LISTARR_PRE = 
 `listArr = [{
@@ -55,11 +55,11 @@ const PARAM_HEAD = new Array(
   {name: 'Notice',        index: 'notice'}
 );
 const PARAM_BODY = new Array(
-  {name: 'listArr',     type: 'Array',          default:  '[]',     notice: (<pre className='content-pre'>{LISTARR_PRE}</pre>)},
-  {name: '- name',      type: 'String or Node', default:  '\'\', ()',   notice: 'String or Node to show layer name.'},
-  {name: '- children',  type: 'Array',          default:  '[]',     notice: (<pre className='content-pre'>{SUBLISTARR_PRE}</pre>)},
-  {name: 'styleObj',    type: 'Object',         default:  '{}',     notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name: 'inputRefFn',  type: 'Function',       default:  '()=>{}', notice: 'To catch ref with (ref)=>{variable = ref}.'}
+  {name: 'listArr',     type: 'Array',          default:  '[]',         notice: (<pre className='content-pre'>{LISTARR_PRE}</pre>)},
+  {name: '- name',      type: 'String or Node', default:  '\'\', ()',   notice: `String or Node to show layer name.`},
+  {name: '- children',  type: 'Array',          default:  '[]',         notice: (<pre className='content-pre'>{SUBLISTARR_PRE}</pre>)},
+  {name: 'styleObj',    type: 'Object',         default:  '{}',         notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
+  {name: 'inputRefFn',  type: 'Function',       default:  '(ref)=>{}',  notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
 );
 const NODE_TREE = new Array(
   {

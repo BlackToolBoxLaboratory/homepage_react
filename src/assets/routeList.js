@@ -14,6 +14,7 @@ const routeList = {
   'BTB_TABLE_BASIC':        '/blacktbox-table/basic',
 
   'BTB_MENU_BASIC':         '/blacktbox-menu/basic',
+  'BTB_MENU_EXAMPLE':         '/blacktbox-menu/example',
   'BTB_MENU_ADV':           '/blacktbox-menu/advanced'
 };
 

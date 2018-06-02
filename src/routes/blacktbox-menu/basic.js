@@ -6,14 +6,14 @@ import BTBList from 'blacktbox-list';
 
 import AL from 'components/articleLayout.js';
 
-const mainTitle = (<span>Blacktbox-menu <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA name='github' fixedWidth/></a></span>);
+const mainTitle = (<span>{`Blacktbox-menu `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `Menu-maker tool.`;
 
 const installationTitle = `INSTALLATION`;
-const installationContent = (<span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>.</span>);
+const installationContent = (<span>{`Using with`} <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>{`.`}</span>);
 
 const renderTitle = `RENDER`;
-const renderContent = (<span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>.</span>);
+const renderContent = (<span>{`Notice: DOM properties are still work with`} <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>{`.`}</span>);
 
 const nodeTreeTitle = `NODE TREE`;
 const nodeTreeContent = `Here showing the node structure. Each node with className is for convenience to style. You have two way to use it. The first way is used with css selector, and the other way is used component's input: styleObj.`;
@@ -29,15 +29,18 @@ import BTBMenu from 'blacktbox-menu';
 var BTBMenu = require('blacktbox-menu');`;
 const RENDER_PRE = 
 `<BTBMenu 
-  menuArr: [],
-  styleObj: {},
-  inputRefFn: ()=>{},
-  acticveIndex: '',
-  itemOnClickFn: ()=>{},
-  featureCollapsible: {
-    enable: false,
-    customCollapseButton: '',
-    itemOnCollapseFn: ()=>{}
+  menuArr = []
+  styleObj = {}
+  inputRefFn = {()=>{}}
+  acticveIndex = ''
+  itemOnClickFn = {()=>{}}
+  featureCollapsible={
+    'enable': false,
+    'itemClickWithCollapseEnable': false,
+    'defaultCollapse': true,
+    'customCollapseButton': '',
+    'customExtendButton': '',
+    'itemOnCollapseFn': ()=>{}
   }
 />`;
 const MENUARR_PRE = 
@@ -66,19 +69,22 @@ const PARAM_HEAD = new Array(
   {name: 'Notice',        index: 'notice'}
 );
 const PARAM_BODY = new Array(
-  {name: 'menuArr',                 type: 'Array',          default:  '[]',     notice: (<pre className='content-pre'>{MENUARR_PRE}</pre>)},
-  {name: '- name',                  type: 'String or Node', default:  '\'\', ()',   notice: 'String or Node to show layer name.'},
-  {name: '- index',                 type: 'String',         default:  '\'\'',   notice: 'Menu entry\'s ID.'},
-  {name: '- defaultCollapse',       type: 'Boolean',        default:  'false',  notice: 'Menu entry\'s default collapse status. While featureCollapsible enabled, the default is true'},
-  {name: '- children',              type: 'Array',          default:  '[]',     notice: (<pre className='content-pre'>{SUBMENUARR_PRE}</pre>)},
-  {name: 'acticveIndex',            type: 'String',         default:  '\'\'',   notice: 'Default active menu entry\'s ID.'},
-  {name: 'itemOnClickFn',           type: 'Function',       default:  '()=>{}', notice: 'Menu entry\'s onClick function.'},
-  {name: 'featureCollapsible',      type: 'Object',         default:  '{}',     notice: ''},
-  {name: '- enable',                type: 'Boolean',        default:  'false',  notice: 'Enable collapse function of menu.'},
-  {name: '- customCollapseButton',  type: 'String or Node', default:  '\'\', ()',   notice: 'We have default collapse button, but you can customize our collapse button by using this.'},
-  {name: '- itemOnCollapseFn',      type: 'Function',       default:  '()=>{}', notice: 'Menu entry\'s arrow onClick function.'},
-  {name: 'styleObj',                type: 'Object',         default:  '{}',     notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name: 'inputRefFn',              type: 'Function',       default:  '()=>{}', notice: 'To catch ref with (ref)=>{variable = ref}.'},
+  {name: 'menuArr',                       type: 'Array',          default:  '[]',             notice: (<pre className='content-pre'>{MENUARR_PRE}</pre>)},
+  {name: '- name',                        type: 'String or Node', default:  '\'\', ()',       notice: `String or Node to show layer name.`},
+  {name: '- index',                       type: 'String',         default:  '\'\'',           notice: `Menu entry's ID.`},
+  {name: '- defaultCollapse',             type: 'Boolean',        default:  'false',          notice: `Menu entry's default collapse status. While featureCollapsible enabled, the default is true`},
+  {name: '- children',                    type: 'Array',          default:  '[]',             notice: (<pre className='content-pre'>{SUBMENUARR_PRE}</pre>)},
+  {name: 'acticveIndex',                  type: 'String',         default:  '\'\'',           notice: `Default active menu entry's ID.`},
+  {name: 'itemOnClickFn',                 type: 'Function',       default:  '(eventObj)=>{}', notice: `Menu entry's onClick function.`},
+  {name: 'featureCollapsible',            type: 'Object',         default:  '{}',             notice: ``},
+  {name: '- enable',                      type: 'Boolean',        default:  'false',          notice: `Enable collapse function of menu.`},
+  {name: '- itemClickWithCollapseEnable', type: 'Boolean',        default:  'false',          notice: `The item click and collapse are distinct event. If you prefer to collapse/extend menu while clicking, please use this. When the extensible menu items clicked, it will trigger collapse event before click event.`},
+  {name: '- defaultCollapse',             type: 'Boolean',        default:  'true',           notice: `Default collapse or not of menu, and this is secondary to menuArr's defaultCollapse.`},
+  {name: '- customCollapseButton',        type: 'String or Node', default:  '\'\', ()',       notice: `We have default collapse button, but you can customize collapse button by using this.`},
+  {name: '- customExtendButton',          type: 'String or Node', default:  '\'\', ()',       notice: `We have default collapse button, but you can customize extend button by using this. If you don't need this, you can just use customCollapseButton with style(css) to implement collapse/extend button`},
+  {name: '- itemOnCollapseFn',            type: 'Function',       default:  '(eventObj)=>{}', notice: `Menu entry's arrow onClick function.`},
+  {name: 'styleObj',                      type: 'Object',         default:  '{}',             notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
+  {name: 'inputRefFn',                    type: 'Function',       default:  '(ref)=>{}',      notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
 );
 
 const NODE_TREE = new Array(

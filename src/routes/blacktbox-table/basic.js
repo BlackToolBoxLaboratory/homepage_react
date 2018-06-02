@@ -6,14 +6,14 @@ import BTBList from 'blacktbox-list';
 
 import AL from 'components/articleLayout.js';
 
-const mainTitle = (<span>Blacktbox-table <a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-table'><FA name='github' fixedWidth/></a></span>);
+const mainTitle = (<span>{`Blacktbox-table `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-table'><FA name='github' fixedWidth/></a></span>);
 const mainDescriptionStr = `Table-maker tool.`;
 
 const installationTitle = `INSTALLATION`;
-const installationContent = (<span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>.</span>);
+const installationContent = (<span>{`Using with`} <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>{`.`}</span>);
 
 const renderTitle = `RENDER`;
-const renderContent = (<span>Notice: DOM properties are still work with <a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>.</span>);
+const renderContent = (<span>{`Notice: DOM properties are still work with `}<a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>{`.`}</span>);
 
 const nodeTreeTitle = `NODE TREE`;
 const nodeTreeContent = `Here showing the node structure. Each node with className is for convenience to style. You have two way to use it. The first way is used with css selector, and the other way is used component's input: styleObj. But for blacktbox-table, we have two structure for two mode used.`;
@@ -31,13 +31,13 @@ import BTBTable from 'blacktbox-table';
 var BTBTable = require('blacktbox-table');`;
 const RENDER_PRE = 
 `<BTBTable 
-  tableHeadArr: [],
-  tableBobyArr: [],
+  tableHeadArr = []
+  tableBobyArr = []
   modeObj: {
     mode: 'list'
-  },
-  styleObj: {},
-  inputRefFn: ()=>{}
+  }
+  styleObj: {}
+  inputRefFn: {()=>{}}
 />`;
 // const TABLEHEADARR_PRE = 
 // `tableHeadArr = [{
@@ -69,26 +69,26 @@ const PARAM_HEAD = new Array(
   {name: 'Notice',        index: 'notice'}
 );
 const PARAM_BODY = new Array(
-  {name: 'tableHeadArr',        type: 'Array',          default: '[]',      notice: (<pre className='content-pre'>{TABLEHEADARR_PRE}</pre>)},
-  {name: '- name',              type: 'String or Node', default: '\'\', ()',    notice: 'String or Node to show table head name.'},
-  {name: '- index',             type: 'String',         default: '\'\'',    notice: 'index of tableBobyArr.index.'},
-//   {name: '- sortType',          type: 'String',         default: '\'\'',    notice: '[Unsupported Yet] index\'s sort type. {value: custom, string, number, ip, mac}'},
-//   {name: '- sortFn',            type: 'Function',       default: '()=>{}',  notice: '[Unsupported Yet] define sort function while sortType is custom.'},
-//   {name: '- defaultSortStatus', type: 'String',         default: '\'\'',    notice: '[Unsupported Yet] String to index tableBobyArr[\'index\'].'},
-  {name: 'tableBobyArr',        type: 'Array',          default: '[]',      notice: (<pre className='content-pre'>{TABLEBODYARR_PRE}</pre>)},
-  {name: 'modeObj',             type: 'Object',         default: '{}',      notice: ''},
-  {name: '- mode',              type: 'String',         default: 'list',    notice: 'mode of table. {value: info, list}'},
-//   {name: '- listFeatureSearch', type: 'Object',         default: '{}',      notice: '[Unsupported Yet] Table in list mode can show result with search\'s parameters'},
-//   {name: '- - keyword',         type: 'String',         default: '\'\'',    notice: '[Unsupported Yet] Keyword to search data. Keyword with space can do multiple conditions search.'},
-//   {name: '- - matchAll',        type: 'Boolean',        default: 'false',   notice: '[Unsupported Yet] MatchAll to search data matched with all conditions.'},
-//   {name: '- listFeatureSort',   type: 'Object',         default: '{}',      notice: '[Unsupported Yet] Table in list mode can show result with sort\'s parameters.'},
-//   {name: '- - enable',          type: 'Boolean',        default: 'false',   notice: '[Unsupported Yet] Enable sort feature for table in list mode.'},
-//   {name: '- - defaultSortHead', type: 'String',         default: '\'\'',    notice: '[Unsupported Yet] Default active head to sort table.'},
-//   {name: '- listFeaturePage',   type: 'Object',         default: '{}',      notice: '[Unsupported Yet] Table in list mode can show result with page\'s parameters.'},
-//   {name: '- - perPage',         type: 'Number',         default: '0',       notice: '[Unsupported Yet] Show how many data by per-group.'},
-//   {name: '- - page',            type: 'Number',         default: '0',       notice: '[Unsupported Yet] Index page of table to show'},
-  {name: 'styleObj',            type: 'Object',         default:  '{}',     notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name: 'inputRefFn',          type: 'Function',       default:  '()=>{}', notice: 'To catch ref with (ref)=>{variable = ref}.'}
+  {name: 'tableHeadArr',        type: 'Array',          default: '[]',          notice: (<pre className='content-pre'>{TABLEHEADARR_PRE}</pre>)},
+  {name: '- name',              type: 'String or Node', default: '\'\', ()',    notice: `String or Node to show table head name.`},
+  {name: '- index',             type: 'String',         default: '\'\'',        notice: `index of tableBobyArr.index.`},
+//   {name: '- sortType',          type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] index\'s sort type. {value: custom, string, number, ip, mac}`},
+//   {name: '- sortFn',            type: 'Function',       default: '()=>{}',  notice: `[Unsupported Yet] define sort function while sortType is custom.`},
+//   {name: '- defaultSortStatus', type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] String to index tableBobyArr['index'].`},
+  {name: 'tableBobyArr',        type: 'Array',          default: '[]',          notice: (<pre className='content-pre'>{TABLEBODYARR_PRE}</pre>)},
+  {name: 'modeObj',             type: 'Object',         default: '{}',          notice: ``},
+  {name: '- mode',              type: 'String',         default: 'list',        notice: `mode of table. {value: info, list}`},
+//   {name: '- listFeatureSearch', type: 'Object',         default: '{}',      notice: `[Unsupported Yet] Table in list mode can show result with search's parameters`},
+//   {name: '- - keyword',         type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] Keyword to search data. Keyword with space can do multiple conditions search.`},
+//   {name: '- - matchAll',        type: 'Boolean',        default: 'false',   notice: `[Unsupported Yet] MatchAll to search data matched with all conditions.`},
+//   {name: '- listFeatureSort',   type: 'Object',         default: '{}',      notice: `[Unsupported Yet] Table in list mode can show result with sort's parameters.`},
+//   {name: '- - enable',          type: 'Boolean',        default: 'false',   notice: `[Unsupported Yet] Enable sort feature for table in list mode.`},
+//   {name: '- - defaultSortHead', type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] Default active head to sort table.`},
+//   {name: '- listFeaturePage',   type: 'Object',         default: '{}',      notice: `[Unsupported Yet] Table in list mode can show result with page's parameters.`},
+//   {name: '- - perPage',         type: 'Number',         default: '0',       notice: `[Unsupported Yet] Show how many data by per-group.`},
+//   {name: '- - page',            type: 'Number',         default: '0',       notice: `[Unsupported Yet] Index page of table to show`},
+  {name: 'styleObj',            type: 'Object',         default:  '{}',         notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
+  {name: 'inputRefFn',          type: 'Function',       default:  '()=>{}',     notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
 );
 
 const NODE_TREE_INFO = new Array(
