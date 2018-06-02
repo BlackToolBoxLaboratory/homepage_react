@@ -92,40 +92,45 @@ const NODE_TREE = new Array(
     'name': '<div> .btb-menu',
     'children':[
       {
-        'name': '<ul> .menu-layer-0',
+        'name': '<div> .menu-content',
         'children': [
           {
-            'name': '<li> .layer-item',
+            'name': '<ul> .menu-layer-0',
             'children': [
               {
-                'name': '<div> .iterm-content',
+                'name': '<li> .layer-item',
                 'children': [
                   {
-                    'name': '<div> .content-name',
-                  },
-                  {
-                    'name': '<div> .content-collapse (.collapsed)',
+                    'name': '<div> .iterm-content',
                     'children': [
                       {
-                        'name': '<div> .collapse-arrow'
+                        'name': '<div> .content-name',
+                      },
+                      {
+                        'name': '<div> .content-collapse (.collapsed)',
+                        'children': [
+                          {
+                            'name': '<div> .collapse-arrow'
+                          }
+                        ]
+                      },
+                      {
+                        'name': '<div> .content-custom-collapse (.collapsed)',
+                        'children': [
+                          {
+                            'name': '{customized}'
+                          }
+                        ]
                       }
                     ]
                   },
                   {
-                    'name': '<div> .content-custom-collapse (.collapsed)',
+                    'name': '<div> .item-submenu (.collapsed)',
                     'children': [
                       {
-                        'name': '{customized}'
+                        'name': '<ul> .menu-layer-1'
                       }
                     ]
-                  }
-                ]
-              },
-              {
-                'name': '<div> .item-submenu (.collapsed)',
-                'children': [
-                  {
-                    'name': '<ul> .menu-layer-1'
                   }
                 ]
               }
