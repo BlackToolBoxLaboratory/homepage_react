@@ -1,9 +1,9 @@
 var gulp = require("gulp");
 
-const path_homepage = "../homepage/";
-const path_backup = "../codebase/blacktbox-demo/";
+var path_homepage = "../homepage/";
+var path_backup = "../codebase/blacktbox-demo/";
 
-gulp.task("copy2dist", function() {
+gulp.task("copy2dist", function(done) {
   /* html */
   gulp.src(["src/index.html"])
       .pipe(gulp.dest("dist/"));
@@ -21,13 +21,15 @@ gulp.task("copy2dist", function() {
   /* blacktbox-table */
   gulp.src(["node_modules/blacktbox-table/css/blacktbox-table.min.css"])
       .pipe(gulp.dest("dist/vendor/blacktbox-table/css"));
+  done();
 });       
-gulp.task("copy2homepage", function() { 
+gulp.task("copy2homepage", function(done) { 
   /* all */
   gulp.src(["dist/**/*"])
     .pipe(gulp.dest(path_homepage));
+  done();
 });
-gulp.task("copy2codebase", function() {  
+gulp.task("copy2codebase", function(done) {  
   /* src */
   gulp.src(["src/*"])
     .pipe(gulp.dest(path_backup + "src/"));
@@ -40,14 +42,14 @@ gulp.task("copy2codebase", function() {
   gulp.src([
       "LICENSE",
       "README.md",
-      "CHANGELOGS.md",
       "webpack.config.js",
       "package.json",
       "package-lock.json",
       "gulpfile.js"                  
     ])
     .pipe(gulp.dest(path_backup));
+  done();
 });
-gulp.task("buildup",["copy2dist"]);
-gulp.task("setup", ["copy2homepage"]);
-gulp.task("backup", ["copy2codebase"]);
+gulp.task("buildup", gulp.series("copy2dist"));
+gulp.task("setup", gulp.series("copy2homepage"));
+gulp.task("backup", gulp.series("copy2codebase"));

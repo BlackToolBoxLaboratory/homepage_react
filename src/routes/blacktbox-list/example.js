@@ -21,7 +21,7 @@ const ROURCECODE_RENDER_PRE =
 `<BTBList 
   listArr: listArr,
   styleObj: styleObj,
-  inputRefFn={(ref)=>{this.listRef=ref}}
+  refFn={(ref)=>{this.listRef=ref}}
 />`;
 const ROURCECODE_LIST_PRE = 
 `listArr = [
@@ -169,7 +169,7 @@ class Example extends Component {
             <BTBList
               listArr={listArr}
               styleObj={styleObj}
-              inputRefFn={(ref)=>{this.listRef=ref}}
+              refFn={(ref)=>{this.listRef=ref}}
             />
           </AL.Content>
           <AL.Item>

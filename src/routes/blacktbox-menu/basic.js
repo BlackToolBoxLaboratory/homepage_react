@@ -31,7 +31,7 @@ const RENDER_PRE =
 `<BTBMenu 
   menuArr = []
   styleObj = {}
-  inputRefFn = {()=>{}}
+  refFn = {()=>{}}
   acticveIndex = ''
   itemOnClickFn = {()=>{}}
   featureCollapsible={
@@ -84,7 +84,7 @@ const PARAM_BODY = new Array(
   {name: '- customExtendButton',          type: 'String or Node', default:  '\'\', ()',       notice: `We have default collapse button, but you can customize extend button by using this. If you don't need this, you can just use customCollapseButton with style(css) to implement collapse/extend button`},
   {name: '- itemOnCollapseFn',            type: 'Function',       default:  '(eventObj)=>{}', notice: `Menu entry's arrow onClick function.`},
   {name: 'styleObj',                      type: 'Object',         default:  '{}',             notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name: 'inputRefFn',                    type: 'Function',       default:  '(ref)=>{}',      notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
+  {name: 'refFn',                         type: 'Function',       default:  '(ref)=>{}',      notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
 );
 
 const NODE_TREE = new Array(

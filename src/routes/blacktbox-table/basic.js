@@ -37,7 +37,7 @@ const RENDER_PRE =
     mode: 'list'
   }
   styleObj: {}
-  inputRefFn: {()=>{}}
+  refFn: {()=>{}}
 />`;
 // const TABLEHEADARR_PRE = 
 // `tableHeadArr = [{
@@ -88,7 +88,7 @@ const PARAM_BODY = new Array(
 //   {name: '- - perPage',         type: 'Number',         default: '0',       notice: `[Unsupported Yet] Show how many data by per-group.`},
 //   {name: '- - page',            type: 'Number',         default: '0',       notice: `[Unsupported Yet] Index page of table to show`},
   {name: 'styleObj',            type: 'Object',         default:  '{}',         notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name: 'inputRefFn',          type: 'Function',       default:  '()=>{}',     notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
+  {name: 'refFn',               type: 'Function',       default:  '(ref)=>{}',  notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
 );
 
 const NODE_TREE_INFO = new Array(
@@ -102,13 +102,13 @@ const NODE_TREE_INFO = new Array(
             'name': '<tbody> .info-tbody',
             'children': [
               {
-                'name': '<tr> .tbody-tr',
+                'name': '<tr> .tbody-tr (.tr-{header.index})',
                 'children': [
                   {
-                    'name': '<th> .tr-th (.th-{th.index})'
+                    'name': '<th> .tr-th (.th-{header.index})'
                   },
                   {
-                    'name': '<td> .tr-td (.td-{th.index})'
+                    'name': '<td> .tr-td (.td-{header.index})'
                   }
                 ]
               }
@@ -133,7 +133,7 @@ const NODE_TREE_LIST = new Array(
                 'name': '<tr> .thead-tr',
                 'children': [
                   {
-                    'name': '<th> .tr-th (.th-{th.index})'
+                    'name': '<th> .tr-th (.th-{header.index})'
                   }
                 ]
               }
@@ -146,7 +146,7 @@ const NODE_TREE_LIST = new Array(
                 'name': '<tr> .tbody-tr',
                 'children': [
                   {
-                    'name': '<td> .tr-td (.td-{th.index})'
+                    'name': '<td> .tr-td (.td-{header.index})'
                   }
                 ]
               }

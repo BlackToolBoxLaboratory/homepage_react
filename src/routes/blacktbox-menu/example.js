@@ -28,7 +28,7 @@ const ROURCECODE_RENDER_PRE =
 `<BTBMenu 
   menuArr={menuArr}
   styleObj={styleObj}
-  inputRefFn={(ref)=>{this.menuRef=ref}}
+  refFn={(ref)=>{this.menuRef=ref}}
   acticveIndex={acticveIndex}
   itemOnClickFn={this._itemOnClickFn}
   featureCollapsible= {{
@@ -226,7 +226,7 @@ class Example extends Component {
             <BTBMenu 
               menuArr={menuArr}
               styleObj={styleObj}
-              inputRefFn={(ref)=>{this.menuRef=ref}}
+              refFn={(ref)=>{this.menuRef=ref}}
               acticveIndex={acticveIndex}
               itemOnClickFn={this._itemOnClickFn}
               featureCollapsible= {{

@@ -9,16 +9,24 @@ import routeList from 'assets/routeList.js';
 import hashHistory from 'assets/history.js';
 
 import About from './about.js';
+
 import BTBATCS_index from './articles/index.js';
 import BTBATCS_Flux from './articles/Flux.js';
 import BTBATCS_Redux from './articles/Redux.js';
+
 import BTBDemo_index from './blacktbox-demo/index.js';
+
 import BTBList_basic from './blacktbox-list/basic.js';
 import BTBList_example from './blacktbox-list/example.js';
+
 import BTBTable_basic from './blacktbox-table/basic.js'
+import BTBTable_exampleList from './blacktbox-table/exampleList.js'
+import BTBTable_exampleInfo from './blacktbox-table/exampleInfo.js'
+
 import BTBMenu_basic from './blacktbox-menu/basic.js';
 import BTBMenu_example from './blacktbox-menu/example.js';
 import BTBMenu_advanced from './blacktbox-menu/advanced.js';
+
 import NotFound from './404.js';
 
 let SideContentThis;
@@ -140,10 +148,16 @@ const MainContent = (props) => {
         <Route exact path={routeList.BTB_ATCS} component={BTBATCS_index}/>
         <Route exact path={routeList.BTB_ATCS_FLUX} component={BTBATCS_Flux}/>
         <Route exact path={routeList.BTB_ATCS_REDUX} component={BTBATCS_Redux}/>
+
         <Route exact path={routeList.BTB_DEMO} component={BTBDemo_index}/>
+
         <Route exact path={routeList.BTB_LIST_BASIC} component={BTBList_basic}/>
         <Route exact path={routeList.BTB_LIST_EXAMPLE} component={BTBList_example}/>
+
         <Route exact path={routeList.BTB_TABLE_BASIC} component={BTBTable_basic}/>
+        <Route exact path={routeList.BTB_TABLE_EXAMPLE_LIST} component={BTBTable_exampleList}/>
+        <Route exact path={routeList.BTB_TABLE_EXAMPLE_INFO} component={BTBTable_exampleInfo}/>
+
         <Route exact path={routeList.BTB_MENU_BASIC} component={BTBMenu_basic}/>
         <Route exact path={routeList.BTB_MENU_EXAMPLE} component={BTBMenu_example}/>
         <Route exact path={routeList.BTB_MENU_ADV} component={BTBMenu_advanced}/>

@@ -12,9 +12,11 @@ const routeList = {
   'BTB_LIST_EXAMPLE':       '/blacktbox-list/example',
 
   'BTB_TABLE_BASIC':        '/blacktbox-table/basic',
+  'BTB_TABLE_EXAMPLE_LIST': '/blacktbox-table/exampleList',
+  'BTB_TABLE_EXAMPLE_INFO': '/blacktbox-table/exampleInfo',
 
   'BTB_MENU_BASIC':         '/blacktbox-menu/basic',
-  'BTB_MENU_EXAMPLE':         '/blacktbox-menu/example',
+  'BTB_MENU_EXAMPLE':       '/blacktbox-menu/example',
   'BTB_MENU_ADV':           '/blacktbox-menu/advanced'
 };
 

@@ -31,7 +31,7 @@ const RENDER_PRE =
 `<BTBList 
   listArr= []
   styleObj= {}
-  inputRefFn= {()=>{}}
+  refFn= {()=>{}}
 />`;
 const LISTARR_PRE = 
 `listArr = [{
@@ -59,7 +59,7 @@ const PARAM_BODY = new Array(
   {name: '- name',      type: 'String or Node', default:  '\'\', ()',   notice: `String or Node to show layer name.`},
   {name: '- children',  type: 'Array',          default:  '[]',         notice: (<pre className='content-pre'>{SUBLISTARR_PRE}</pre>)},
   {name: 'styleObj',    type: 'Object',         default:  '{}',         notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name: 'inputRefFn',  type: 'Function',       default:  '(ref)=>{}',  notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
+  {name: 'refFn',       type: 'Function',       default:  '(ref)=>{}',  notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
 );
 const NODE_TREE = new Array(
   {
