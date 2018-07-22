@@ -43,7 +43,7 @@ const productionTitle = `PRODUCTION`;
 const productionContent = `Here we go! This is the example in Redux version.`;
 
 const advancedTitle = `ADVANCED`;
-const advancedContent = `In Flux's, We can update by ourself. However in Redux's, we centralize all state in Redux. So that with difference from Flux's, we need fetch API beneath reducer. And that is reason why we almost use stateless function both in Container and Component.`;
+const advancedContent = `Same as our article of Flux, we will need read / write data by server API. Here is Redux's version.`;
 const advancedServerContent = (<span>{`Then, here is the User List work with server API. And also here is the source code of `}<a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/exampleRedux_server'>{`Redux's example with server`}<FA name='external-link' fixedWidth/></a></span>);
 
 const EXAMPLE_BASIC_ALGORITHM = 

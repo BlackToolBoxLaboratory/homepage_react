@@ -1,26 +1,19 @@
 
 .wrapper {
   @main_color: #61dafb;
-  @background_color: #000;
-  @background_sec_color: #fff;
+  @background_left_color: #000;
+  @background_right_color: #fff;
   @content_left: 200px;
-  @content_right: 100px;
+  @content_right: 130px;
   @text-line-height: 20px;
   @iconbox_size: 50px ; 
 
-  .sideContentBG {
-    background-color: #000;
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 200px;
-  }
   .sideContent {
     width: @content_left;
-    background-color: @background_color;
-    color: @background_sec_color;
-    float: left;
+    background-color: @background_left_color;
+    color: @background_right_color;
+    vertical-align: top;
+    display: inline-block;
     min-height: 100vh;
     .header {
         background-color: @main_color;
@@ -29,7 +22,7 @@
         height: 104px;
     }
     .groupname {
-        background-color: @background_color;
+        background-color: @background_left_color;
         line-height: @text-line-height;
         text-align: right;
         padding: 2px 15px;
@@ -39,7 +32,7 @@
         width: @iconbox_size;
         height: @iconbox_size;
         line-height: @iconbox_size;
-        background-color: @background_color;
+        background-color: @background_left_color;
         text-align: center;
         margin: 15px;
         font-size: 36px;
@@ -59,8 +52,10 @@
     }
   }
   .mainContent {
-    margin: 0 @content_right 0 @content_left;
-    background-color: transparent;
+    width: calc(~"100% - (@{content_left} + @{content_right} )");
+    padding-right: @content_right;
+    background-color: @background_right_color;
+    display: inline-block;
     min-height: 100vh;
   }
 }

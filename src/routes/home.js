@@ -53,7 +53,6 @@ const Home = (props) => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-home'>
-      <div className='sideContentBG' />
       <SideContent />
       <MainContent />
     </div>

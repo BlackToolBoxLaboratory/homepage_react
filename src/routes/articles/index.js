@@ -13,8 +13,8 @@ const articleListTitle = `ARTICLE LIST`;
 const articleListContent = `We would list to introduce you some others masterpiece in conceptual. Hope our articles will do help somehow in algorithmic angle. And if you have problem to use them, welcome to contact me. We can figure it out together.`;
 
 const articleList = new Array(
-  {'name': 'Flux Introduction',                       'link': 'BTB_ATCS_FLUX',          'updated': '2018-05-06'},
-  {'name': 'Redux Introduction',                      'link': 'BTB_ATCS_REDUX',         'updated': '2018-05-06'}
+  {'name': 'Flux Introduction',   'link': 'BTB_ATCS_FLUX',          'updated': '2018-07-22'},
+  {'name': 'Redux Introduction',  'link': 'BTB_ATCS_REDUX',         'updated': '2018-05-06'}
 )
 
 const Index = (props) => {
@@ -35,7 +35,7 @@ const Index = (props) => {
                 <li>
                   <span>{entry.name}</span>
                   <FA className='linkBtn' onClick={()=>{_redirectHandler(entry.link)}} name='link' fixedWidth/>
-                  <AL.Notice>[UPDATED: {entry.updated}]</AL.Notice>
+                  <AL.Notice> [UPDATED: {entry.updated}]</AL.Notice>
                 </li>
               )
               return content_li;

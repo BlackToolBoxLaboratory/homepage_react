@@ -1,9 +1,9 @@
 const webpack = require("webpack");
 const path = require("path");
 
-const babel_config = require(path.join(__dirname, "/configs/babel_config.js"));
-const style_config = require(path.join(__dirname, "/configs/style_config.js"));
-const file_config = require(path.join(__dirname, "/configs/file_config.js"));
+const babel_config = require(path.join(__dirname, "/configs/babel.config.js"));
+const style_config = require(path.join(__dirname, "/configs/style.config.js"));
+const file_config = require(path.join(__dirname, "/configs/file.config.js"));
 
 const sourcehPath = "/src";
 const distributePath = "/dist";

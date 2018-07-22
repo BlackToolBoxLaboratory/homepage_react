@@ -22,7 +22,7 @@ const rourceCodeSubTitle_Style = `Style`;
 const ROURCECODE_RENDER_PRE = 
 `<BTBTable 
   tableHeadArr={tableHeaderArr}
-  tableBobyArr={dataArr}
+  tableBobyArr={tableBodyArr}
   modeObj={modeObj}
   styleObj={styleObj}
   refFn={(ref)=>{this.infoRef=ref}}
@@ -37,10 +37,10 @@ const ROURCECODE_HEADER_PRE =
   {name: 'Statue',      index: 'status'}
 ];`;
 const ROURCECODE_BODY_PRE = 
-`dataArr = [
+`tableBodyArr = [
   {
     name: 'Device 1', 
-    desc: 'My phone', 
+    desc: '', 
     osType: 'IOS', 
     ipAddr: '192.168.0.50', 
     macAddr: '11:22:33:44:55:66', 
@@ -77,15 +77,16 @@ const ROURCECODE_STYLE_PRE =
 };`;
 
 const tableHeaderArr = [
-  {name: 'Name',        index: 'name'},
-  {name: 'Description', index: 'desc'},
-  {name: 'OS Type',     index: 'osType'},
-  {name: 'IP Address',  index: 'ipAddr'},
-  {name: 'MAC Address', index: 'macAddr'},
-  {name: 'Statue',      index: 'status'}
+  {name: 'Name',              index: 'name'},
+  {name: 'Type',              index: 'devType'},
+  {name: 'OS',                index: 'osType'},
+  {name: 'IP Address',        index: 'ipAddr'},
+  {name: 'MAC Address',       index: 'macAddr'},
+  {name: 'Traffic(tx / rx)',  index: 'traffic'},
+  {name: 'Statue',            index: 'statusDesc'}
 ];
-const dataArr = [
-  {name: 'Device 1', desc: 'My phone', osType: 'IOS', ipAddr: '192.168.0.50', macAddr: '11:22:33:44:55:66', status: 'Disconnected'}
+const tableBodyArr = [
+  {name: 'Device 1',  devType: 'phone',   osType: 'ios',      ipAddr: '192.168.0.50',   macAddr: 'B4:A2:07:44:55:2A', traffic: '1.7 MB / 45 KB', status: 0, statusDesc: 'Disconnected'}
 ];
 const modeObj = {
   mode : 'info'
@@ -130,7 +131,7 @@ class Example extends Component {
           <AL.Content>
             <BTBTable 
               tableHeadArr={tableHeaderArr}
-              tableBobyArr={dataArr}
+              tableBobyArr={tableBodyArr}
               modeObj={modeObj}
               styleObj={styleObj}
               refFn={(ref)=>{this.infoRef=ref}}

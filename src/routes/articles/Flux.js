@@ -40,7 +40,7 @@ const productionTitle = `PRODUCTION`;
 const productionContent = `Here we go! This is the example in Flux version.`;
 
 const advancedTitle = `ADVANCED`;
-const advancedContent = `The more usual case. What if our data is coming from server and where should we add server API in the Flux flow? To keep the rule of Flux framework. We use APIs to access server's data before Action. However why it is not added duing Store? Think the definition of "What the data actually is for Flux?". Here in Flux, the data means View's data, not the server's data. So that, we allowed to access server's data directly, then Store will get data from server. The following picture is the flow of Flux with server API.`;
+const advancedContent = `The more usual case. What if our data is coming from server and where should we add server API in the Flux flow? Here is a example added server API to dispatch.`;
 const advancedServerContent = (<span>{`Then, here is the User List work with server API. And also here is the source code of `}<a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleFlux/exampleFlux_server'>{`Flux's example with server`}<FA name='external-link' fixedWidth/></a></span>);
 
 const noticeTitle = `NOTICE`;
