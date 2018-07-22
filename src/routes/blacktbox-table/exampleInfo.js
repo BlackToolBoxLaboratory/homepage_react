@@ -39,12 +39,24 @@ const ROURCECODE_HEADER_PRE =
 const ROURCECODE_BODY_PRE = 
 `tableBodyArr = [
   {
-    name: 'Device 1', 
-    desc: '', 
-    osType: 'IOS', 
-    ipAddr: '192.168.0.50', 
-    macAddr: '11:22:33:44:55:66', 
-    status: 'Disconnected'
+    name: 'Device 1',  
+    devType: 'phone',   
+    osType: 'ios',      
+    ipAddr: '192.168.0.50',   
+    macAddr: 'B4:A2:07:44:55:2A', 
+    traffic: '1.7 MB / 45 KB', 
+    status: 0, 
+    statusDesc: 'Disconnected'
+  },
+  {
+    name: 'Device 2',  
+    devType: 'notebook',   
+    osType: 'windows',      
+    ipAddr: '192.168.0.52',   
+    macAddr: 'B4:A2:07:44:DD:FF', 
+    traffic: '4.8 MB / 27 KB', 
+    status: 0, 
+    statusDesc: 'Disconnected'
   }
 ];`;
 const ROURCECODE_MODE_PRE = 
@@ -86,7 +98,8 @@ const tableHeaderArr = [
   {name: 'Statue',            index: 'statusDesc'}
 ];
 const tableBodyArr = [
-  {name: 'Device 1',  devType: 'phone',   osType: 'ios',      ipAddr: '192.168.0.50',   macAddr: 'B4:A2:07:44:55:2A', traffic: '1.7 MB / 45 KB', status: 0, statusDesc: 'Disconnected'}
+  {name: 'Device 1',  devType: 'phone',   osType: 'ios',      ipAddr: '192.168.0.50',   macAddr: 'B4:A2:07:44:55:2A', traffic: '1.7 MB / 45 KB', status: 0, statusDesc: 'Disconnected'},
+  {name: 'Device 2',  devType: 'notebook',   osType: 'windows',      ipAddr: '192.168.0.52',   macAddr: 'B4:A2:07:44:DD:FF', traffic: '4.8 MB / 27 KB', status: 0, statusDesc: 'Disconnected'}
 ];
 const modeObj = {
   mode : 'info'
