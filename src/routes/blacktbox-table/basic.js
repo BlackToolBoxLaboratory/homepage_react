@@ -34,8 +34,14 @@ const RENDER_PRE =
   tableHeadArr = []
   tableBobyArr = []
   modeObj: {
-    mode: 'list'
-  }
+    mode: 'list',
+    listFeaturePage: {
+      enable: false,
+      dataPerPage: 10,
+      pageIndex: 1
+    }
+  },
+  noDataMessage: '',
   styleObj: {}
   refFn: {()=>{}}
 />`;
@@ -69,26 +75,28 @@ const PARAM_HEAD = new Array(
   {name: 'Notice',        index: 'notice'}
 );
 const PARAM_BODY = new Array(
-  {name: 'tableHeadArr',        type: 'Array',          default: '[]',          notice: (<pre className='content-pre'>{TABLEHEADARR_PRE}</pre>)},
-  {name: '- name',              type: 'String or Node', default: '\'\', ()',    notice: `String or Node to show table head name.`},
-  {name: '- index',             type: 'String',         default: '\'\'',        notice: `index of tableBobyArr.index.`},
+  {name: 'tableHeadArr',        type: 'Array',          default: '[]',                  notice: (<pre className='content-pre'>{TABLEHEADARR_PRE}</pre>)},
+  {name: '- name',              type: 'String or Node', default: '\'\', ()',            notice: `String or Node to show table head name.`},
+  {name: '- index',             type: 'String',         default: '\'\'',                notice: `index of tableBobyArr.index.`},
 //   {name: '- sortType',          type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] index\'s sort type. {value: custom, string, number, ip, mac}`},
 //   {name: '- sortFn',            type: 'Function',       default: '()=>{}',  notice: `[Unsupported Yet] define sort function while sortType is custom.`},
 //   {name: '- defaultSortStatus', type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] String to index tableBobyArr['index'].`},
-  {name: 'tableBobyArr',        type: 'Array',          default: '[]',          notice: (<pre className='content-pre'>{TABLEBODYARR_PRE}</pre>)},
-  {name: 'modeObj',             type: 'Object',         default: '{}',          notice: ``},
-  {name: '- mode',              type: 'String',         default: 'list',        notice: `mode of table. {value: info, list}`},
+  {name: 'tableBobyArr',        type: 'Array',          default: '[]',                  notice: (<pre className='content-pre'>{TABLEBODYARR_PRE}</pre>)},
+  {name: 'modeObj',             type: 'Object',         default: '{}',                  notice: ``},
+  {name: '- mode',              type: 'String',         default: 'list',                notice: `mode of table. {value: info, list}`},
 //   {name: '- listFeatureSearch', type: 'Object',         default: '{}',      notice: `[Unsupported Yet] Table in list mode can show result with search's parameters`},
 //   {name: '- - keyword',         type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] Keyword to search data. Keyword with space can do multiple conditions search.`},
 //   {name: '- - matchAll',        type: 'Boolean',        default: 'false',   notice: `[Unsupported Yet] MatchAll to search data matched with all conditions.`},
 //   {name: '- listFeatureSort',   type: 'Object',         default: '{}',      notice: `[Unsupported Yet] Table in list mode can show result with sort's parameters.`},
 //   {name: '- - enable',          type: 'Boolean',        default: 'false',   notice: `[Unsupported Yet] Enable sort feature for table in list mode.`},
 //   {name: '- - defaultSortHead', type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] Default active head to sort table.`},
-//   {name: '- listFeaturePage',   type: 'Object',         default: '{}',      notice: `[Unsupported Yet] Table in list mode can show result with page's parameters.`},
-//   {name: '- - perPage',         type: 'Number',         default: '0',       notice: `[Unsupported Yet] Show how many data by per-group.`},
-//   {name: '- - page',            type: 'Number',         default: '0',       notice: `[Unsupported Yet] Index page of table to show`},
-  {name: 'styleObj',            type: 'Object',         default:  '{}',         notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name: 'refFn',               type: 'Function',       default:  '(ref)=>{}',  notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
+  {name: '- listFeaturePage',   type: 'Object',         default: '{}',                  notice: `Feature for list mode.`},
+  {name: '- - enable',          type: 'Boolean',        default: 'false',               notice: `Enable paging function.`},
+  {name: '- - dataPerPage',     type: 'Number',         default: '10',                  notice: `Control how many data shown per page.`},
+  {name: '- - pageIndex',       type: 'Number',         default: '1',                   notice: `Index of the page.`},
+  {name: 'noDataMessage',       type: 'String',         default: `'No data avaliable'`, notice: `To show string while there has no date avaliable.`},
+  {name: 'styleObj',            type: 'Object',         default: '{}',                  notice: (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
+  {name: 'refFn',               type: 'Function',       default: '(ref)=>{}',           notice: `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
 );
 
 const NODE_TREE_INFO = new Array(
@@ -109,6 +117,9 @@ const NODE_TREE_INFO = new Array(
                   },
                   {
                     'name': '<td> .tr-td (.td-{header.index})'
+                  },
+                  {
+                    'name': '<td> .tr-noData'
                   }
                 ]
               }
@@ -147,6 +158,9 @@ const NODE_TREE_LIST = new Array(
                 'children': [
                   {
                     'name': '<td> .tr-td (.td-{header.index})'
+                  },
+                  {
+                    'name': '<td> .tr-noData'
                   }
                 ]
               }

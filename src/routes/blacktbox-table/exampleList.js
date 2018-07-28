@@ -16,6 +16,7 @@ const rourceCodeTitle = `SOURCECODE`;
 const rourceCodeSubTitle_Render = `Render`;
 const rourceCodeSubTitle_Header = `Header`;
 const rourceCodeSubTitle_Body = `Body`;
+const rourceCodeSubTitle_Msg = `Message for no data`;
 const rourceCodeSubTitle_Mode = `mode`;
 const rourceCodeSubTitle_Style = `Style`;
 
@@ -24,6 +25,7 @@ const ROURCECODE_RENDER_PRE =
   tableHeadArr={tableHeaderArr}
   tableBobyArr={tableBodyArr}
   modeObj={modeObj}
+  noDataMessage={noDataStr}
   styleObj={styleObj}
   refFn={(ref)=>{this.listRef=ref}}
 />`;
@@ -47,6 +49,8 @@ const ROURCECODE_BODY_PRE =
     status: 'Disconnected'
   }
 ];`;
+const ROURCECODE_MSG_PRE =
+`noDataStr = 'No data.';`;
 const ROURCECODE_MODE_PRE = 
 `modeObj = {
   mode : 'list'
@@ -72,6 +76,9 @@ const ROURCECODE_STYLE_PRE =
   'td-ipAddr': {
     'color': 'blue',
     'text-decoration': 'underline'
+  },
+  'tr-noData': {
+    'color': 'red'
   }
 };`;
 
@@ -108,29 +115,38 @@ const tableBodyArr = [
   {name: 'Device 12', devType: 'phone',   osType: 'android',  ipAddr: '192.168.0.163',  macAddr: 'FE:22:9B:44:26:08', traffic: '0 MB / 0 KB',     status: 2, statusDesc: 'Locked'},
   {name: 'Device 13', devType: 'phone',   osType: 'android',  ipAddr: '192.168.0.84',   macAddr: 'B4:22:27:44:55:B2', traffic: '1.5 MB / 235 KB', status: 1, statusDesc: 'Connected'}
 ];
-const modeObj = {
-  mode : 'list'
+const noDataStr = 'No data.';
+var modeObj = {
+  mode : 'list',
+  listFeaturePage: {
+    enable: true,
+    dataPerPage: 10,
+    pageIndex: 1
+  }
 };
 const styleObj = {
-  'btb-table': {
-    'text-align': 'center'
+  "btb-table": {
+    "text-align": 'center'
   },
-  'table-list': {
-    'box-shadow': '2px 2px 4px 2px #aaa'
+  "table-list": {
+    "box-shadow": '2px 2px 4px 2px #aaa'
   },
-  'tr-th': {
-    'background-color': '#bae7ff',
-    'padding': '2px 5px'
+  "tr-th": {
+    "background-color": '#bae7ff',
+    "padding": '2px 5px'
   },
-  'tr-td': {
-    'padding': '2px 10px'
+  "tr-td": {
+    "padding": '2px 10px'
   },
-  'td-name': {
-    'font-weight': 'bold'
+  "td-name": {
+    "font-weight": 'bold'
   },
-  'td-ipAddr': {
-    'color': 'blue',
-    'text-decoration': 'underline'
+  "td-ipAddr": {
+    "color": 'blue',
+    "text-decoration": 'underline'
+  },
+  "tr-noData": {
+    "color": 'red'
   }
 };
 
@@ -152,9 +168,11 @@ class Example extends Component {
               tableHeadArr={tableHeaderArr}
               tableBobyArr={tableBodyArr}
               modeObj={modeObj}
+              noDataMessage={noDataStr}
               styleObj={styleObj}
               refFn={(ref)=>{this.listRef=ref}}
             />
+            {this.temp_pagingConfigRender()}
           </AL.Content>
           <AL.Item>
             <button onClick={()=>{this._consoleLogRef()}}>{exampleButtonText}</button>
@@ -175,6 +193,10 @@ class Example extends Component {
             <AL.Pre>{ROURCECODE_BODY_PRE}</AL.Pre>
           </AL.Content>
           <AL.Content>
+            <AL.SectionSubtitle>{rourceCodeSubTitle_Msg}</AL.SectionSubtitle>
+            <AL.Pre>{ROURCECODE_MSG_PRE}</AL.Pre>
+          </AL.Content>
+          <AL.Content>
             <AL.SectionSubtitle>{rourceCodeSubTitle_Mode}</AL.SectionSubtitle>
             <AL.Pre>{ROURCECODE_MODE_PRE}</AL.Pre>
           </AL.Content>
@@ -191,6 +213,109 @@ class Example extends Component {
   _consoleLogRef () {
     let listRef = ReactDOM.findDOMNode(this.listRef);
     console.log('listRef', listRef)
+  };
+  
+  temp_pagingConfigRender () {
+    let content = [];
+    let dataTotal = tableBodyArr.length;
+    let pageIndex = modeObj.listFeaturePage.pageIndex;
+    let dataPerPage = modeObj.listFeaturePage.dataPerPage;
+    let pageTotal = Math.ceil(dataTotal/dataPerPage);
+    content.push(
+      <div
+        style={{'margin-top': '10px', 'text-align': 'right'}}
+      >
+      {
+        (()=>{
+          // data information
+          let content_dataInformation = [];
+          content_dataInformation.push(
+            <div>{`The number of total data is ${dataTotal}.`}</div>
+          );
+          return content_dataInformation;
+        })()
+      }
+      {
+        (()=>{
+          // page information
+          let content_pageInformation = [];
+          content_pageInformation.push(
+            <div>{`Now at ${pageIndex} of ${pageTotal} pages.`}</div>
+          );
+          return content_pageInformation;
+        })()
+      }
+      {
+        (()=>{
+          // dataPerPage selector
+          let optionArr = [2,5,10];
+          let content_perPageSelector = [];
+          content_perPageSelector.push(
+            <div>
+            {`Every `}
+              <select 
+                style={{'font-size': '14px'}}
+                value={dataPerPage} 
+                onChange={(event)=>{this._perPageSelectHandler(event)}}
+              >
+              {
+                optionArr.map((entry_value)=>{
+                  let content_perPageOption = [];
+                  content_perPageOption.push(
+                    <option value={entry_value}>{entry_value}</option>
+                  );
+                  return content_perPageOption;
+                })
+              }
+              </select>
+            {` of data per page.`}
+            </div>
+          );
+          return content_perPageSelector;
+        })()
+      }
+      {
+        (()=>{
+          let content_pageIndexButtonGroup = [];
+          content_pageIndexButtonGroup.push(
+            <div>
+            {`Select page to: `}
+            {
+              (()=>{
+                let content_pageIndexButton = [];
+                for(let i=1; i<=pageTotal; i++)
+                {
+                  content_pageIndexButton.push(
+                    <button 
+                      className={(modeObj.listFeaturePage.pageIndex == i)?'active':''}
+                      value={i}
+                      onClick={(event)=>{this._pageIndexButton(event)}}
+                    >
+                      {i}
+                    </button>
+                  )
+                }
+                return content_pageIndexButton;
+              })()
+            }
+            </div>
+          );
+          return content_pageIndexButtonGroup;
+        })()
+      }
+      </div>
+    )
+    return content;
+  };
+
+  _perPageSelectHandler (event) {
+    modeObj.listFeaturePage.dataPerPage = event.target.value;
+    modeObj.listFeaturePage.pageIndex = 1;
+    this.forceUpdate();
+  };
+  _pageIndexButton (event) {
+    modeObj.listFeaturePage.pageIndex = event.target.value;
+    this.forceUpdate();
   };
 };
 
