@@ -35,6 +35,8 @@ gulp.task("copy2codebase", function(done) {
     .pipe(gulp.dest(path_backup + "src/"));
   gulp.src(["src/**/*"])
     .pipe(gulp.dest(path_backup + "src/"));
+  gulp.src(["src/.eslintrc.js"])
+    .pipe(gulp.dest(path_backup + "src/"));
   /* script */
   gulp.src(["configs/*"])
     .pipe(gulp.dest(path_backup + "configs/"));
@@ -45,8 +47,7 @@ gulp.task("copy2codebase", function(done) {
       "webpack.config.js",
       "package.json",
       "package-lock.json",
-      "gulpfile.js",
-      ".eslintrc.js"
+      "gulpfile.js"
     ])
     .pipe(gulp.dest(path_backup));
   done();
