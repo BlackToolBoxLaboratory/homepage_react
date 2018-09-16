@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import FA from 'react-fontawesome';
+import React from 'react';
 
 import AL from 'components/articleLayout.js';
-
-import {SideContent_backdoor} from './home.js';
 
 const notFoundTitle = `404 Page Not Found`;
 const notFoundContent = `Oops, the page of URL is not exist, or we are working on it.`;
 
-const NotFound = (props) => {
+const NotFound = () => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-basic'>

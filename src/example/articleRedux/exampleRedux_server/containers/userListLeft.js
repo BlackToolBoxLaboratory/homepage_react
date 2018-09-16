@@ -6,23 +6,23 @@ import LeftList from '../components/leftList.js';
 
 const mapStateToProps = (state) => {
   return ({
-    'data': {
-      'leftList': state.leftList,
-      'rightList': state.rightList
+    'data' : {
+      'leftList'  : state.leftList,
+      'rightList' : state.rightList
     }
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    'handler':
+    'handler' :
     {
-      '_changeUserHandler': (source) => {
+      '_changeUserHandler' : (source) => {
         dispatch(leftListAction.change(source));
         dispatch(rightListAction.get(source));
       },
-      '_removeUserHandler': (source) => {
-        dispatch(leftListAction.remove(source))
+      '_removeUserHandler' : (source) => {
+        dispatch(leftListAction.remove(source));
       }
     }
   });
@@ -31,4 +31,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LeftList)
+)(LeftList);

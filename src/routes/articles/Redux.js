@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FA from 'react-fontawesome';
 
 import ExampleBasic from 'example/articleRedux/example/index.js';
@@ -153,7 +153,7 @@ const EXAMPLE_REDUX_REDUCER_BRANCH =
 export default ReducerBranch;
 `;
 
-const Index = (props) => {
+const Index = () => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-basic'>

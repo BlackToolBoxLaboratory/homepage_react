@@ -1,6 +1,4 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import FA from 'react-fontawesome';
 
 import leftListAction from '../actions/leftListAction.js';
 import rightListAction from '../actions/rightListAction.js';
@@ -8,21 +6,21 @@ import UserAdder from '../components/userAdder.js';
 
 const mapStateToProps = (state) => {
   return ({
-    'data': {
-      'leftList': state.leftList,
-      'rightList': state.rightList
+    'data' : {
+      'leftList'  : state.leftList,
+      'rightList' : state.rightList
     }
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    'handler':
+    'handler' :
     {
-      '_addUserLeftHandler': (source) => {
+      '_addUserLeftHandler' : (source) => {
         dispatch(leftListAction.add(source));
       },
-      '_addUserRightHandler': (source) => {
+      '_addUserRightHandler' : (source) => {
         dispatch(rightListAction.add(source));
       }
     }
@@ -32,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserAdder)
+)(UserAdder);

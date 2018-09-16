@@ -19,9 +19,9 @@ import BTBDemo_index from './blacktbox-demo/index.js';
 import BTBList_basic from './blacktbox-list/basic.js';
 import BTBList_example from './blacktbox-list/example.js';
 
-import BTBTable_basic from './blacktbox-table/basic.js'
-import BTBTable_exampleList from './blacktbox-table/exampleList.js'
-import BTBTable_exampleInfo from './blacktbox-table/exampleInfo.js'
+import BTBTable_basic from './blacktbox-table/basic.js';
+import BTBTable_exampleList from './blacktbox-table/exampleList.js';
+import BTBTable_exampleInfo from './blacktbox-table/exampleInfo.js';
 
 import BTBMenu_basic from './blacktbox-menu/basic.js';
 import BTBMenu_example from './blacktbox-menu/example.js';
@@ -32,24 +32,24 @@ import NotFound from './404.js';
 let SideContentThis;
 
 export function SideContent_backdoor (type, obj) {
-  switch(type)
+  switch (type)
   {
-    case 'menuRedirect':
-      if(obj.acticveIndex)
+  case 'menuRedirect':
+    if (obj.acticveIndex)
+    {
+      SideContentThis.env.menuActiveIndex = obj.acticveIndex;
+      let path = routeList[obj.acticveIndex];
+      if (path)
       {
-        SideContentThis.env.menuActiveIndex = obj.acticveIndex;
-        let path = routeList[obj.acticveIndex];
-        if(path)
-        {
-          hashHistory.push(path);
-          window.scrollTo(0,0);
-        };
+        hashHistory.push(path);
+        window.scrollTo(0, 0);
       }
-      break;
+    }
+    break;
   }
 }
 
-const Home = (props) => {
+const Home = () => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-home'>
@@ -64,9 +64,9 @@ class SideContent extends Component {
   constructor (props) {
     super(props);
     this.env = {
-      menuActiveIndex: 'ABOUT'
+      menuActiveIndex : 'ABOUT'
     };
-  };
+  }
   componentDidMount () {
     let currentPathname = hashHistory.location.pathname;
     for (let routeIndex in routeList)
@@ -81,26 +81,26 @@ class SideContent extends Component {
         {
           this.env.menuActiveIndex = routeIndex;
         }
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
         this.forceUpdate();
         break;
-      };
+      }
       if ('BTB_ATCS' == routeIndex)
       {
-        if(currentPathname.match(routeList[routeIndex]))
+        if (currentPathname.match(routeList[routeIndex]))
         {
           this.env.menuActiveIndex = routeIndex;
-          window.scrollTo(0,0);
+          window.scrollTo(0, 0);
           this.forceUpdate();
           break;
-        };
-      };
-    };
+        }
+      }
+    }
     SideContentThis = this;
-  };
+  }
   componentDidUpdate () {
     SideContentThis = this;
-  };  
+  }  
   render () {
     let content = [];
     content.push(
@@ -114,29 +114,29 @@ class SideContent extends Component {
           className='menu' 
           menuArr={menuList} 
           acticveIndex={this.env.menuActiveIndex} 
-          itemOnClickFn={(infoObj)=>{this._itemOnClickFn(infoObj);}}
+          itemOnClickFn={(infoObj) => {this._itemOnClickFn(infoObj);}}
           featureCollapsible={{
-            'enable': true,
-            'itemClickWithCollapseEnable': true
+            'enable'                      : true,
+            'itemClickWithCollapseEnable' : true
           }}
         />
       </div>
     );
     return content;
-  };
+  }
 
   _itemOnClickFn (infoObj) {
     this.env.menuActiveIndex = infoObj.index;
     let path = routeList[infoObj.index];
-    if(path)
+    if (path)
     {
       hashHistory.push(path);
-      window.scrollTo(0,0);
-    };
-  };
-};
+      window.scrollTo(0, 0);
+    }
+  }
+}
 
-const MainContent = (props) => {
+const MainContent = () => {
   let content = [];
   content.push(
     <div className='mainContent'>

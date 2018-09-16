@@ -45,7 +45,8 @@ gulp.task("copy2codebase", function(done) {
       "webpack.config.js",
       "package.json",
       "package-lock.json",
-      "gulpfile.js"                  
+      "gulpfile.js",
+      ".eslintrc.js"
     ])
     .pipe(gulp.dest(path_backup));
   done();

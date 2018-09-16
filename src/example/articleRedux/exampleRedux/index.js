@@ -2,12 +2,12 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import App from './containers/app.js'
+import App from './containers/app.js';
 import rootReducer from './reducers/index.js';
 
 const store = createStore(rootReducer);
 
-const Index = (props) => {
+const Index = () => {
   let content = [];
   content.push(
     <Provider store={store}>

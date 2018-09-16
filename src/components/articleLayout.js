@@ -2,7 +2,7 @@ import React from 'react';
 
 export const MainTitle = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout mainTitle ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout mainTitle ${(props.className) ? props.className : ''}`;
   content.push(
     <div {...props}>{props.children}</div>
   );
@@ -10,7 +10,7 @@ export const MainTitle = (props) => {
 };
 export const MainDescription = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout mainDescription ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout mainDescription ${(props.className) ? props.className : ''}`;
   content.push(
     <div {...props}>{props.children}</div>
   );
@@ -18,7 +18,7 @@ export const MainDescription = (props) => {
 };
 export const Section = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout section ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout section ${(props.className) ? props.className : ''}`;
   content.push(
     <div {...props}>{props.children}</div>
   );
@@ -26,7 +26,7 @@ export const Section = (props) => {
 };
 export const SectionTitle = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout sectionTitle ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout sectionTitle ${(props.className) ? props.className : ''}`;
   content.push(
     <div {...props}>{props.children}</div>
   );
@@ -34,7 +34,7 @@ export const SectionTitle = (props) => {
 };
 export const SectionSubtitle = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout sectionSubtitle ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout sectionSubtitle ${(props.className) ? props.className : ''}`;
   content.push(
     <div {...props}>{props.children}</div>
   );
@@ -42,7 +42,7 @@ export const SectionSubtitle = (props) => {
 };
 export const Content = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout content ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout content ${(props.className) ? props.className : ''}`;
   content.push(
     <div {...props}>{props.children}</div>
   );
@@ -50,7 +50,7 @@ export const Content = (props) => {
 };
 export const Pre = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout content-pre ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout content-pre ${(props.className) ? props.className : ''}`;
   content.push(
     <pre {...props}>{props.children}</pre>
   );
@@ -58,7 +58,7 @@ export const Pre = (props) => {
 };
 export const Item = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout content-item ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout content-item ${(props.className) ? props.className : ''}`;
   content.push(
     <div {...props}>{props.children}</div>
   );
@@ -66,7 +66,7 @@ export const Item = (props) => {
 };
 export const Notice = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout notice ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout notice ${(props.className) ? props.className : ''}`;
   content.push(
     <div {...props}>{props.children}</div>
   );
@@ -74,7 +74,7 @@ export const Notice = (props) => {
 };
 export const BtnGroup = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout buttonGroup ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout buttonGroup ${(props.className) ? props.className : ''}`;
   content.push(
     <div {...props}>{props.children}</div>
   );
@@ -82,7 +82,7 @@ export const BtnGroup = (props) => {
 };
 export const Btn = (props) => {
   let content = [];
-  props.className = 'btb-articleLayout button ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleLayout button ${(props.className) ? props.className : ''}`;
   content.push(
     <div {...props}>{props.children}</div>
   );

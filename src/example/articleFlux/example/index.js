@@ -9,7 +9,7 @@ class Index extends Component {
       <App/>
     );
     return content;
-  };
-};
+  }
+}
 
 export default Index;

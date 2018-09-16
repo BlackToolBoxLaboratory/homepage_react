@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FA from 'react-fontawesome';
 
 import {SideContent_backdoor} from '../home.js';
@@ -22,12 +22,12 @@ npm install
 npm start
 `;
 const LibraryList = new Array(
-  {name: 'Blacktbox-list',  link: 'BTB_LIST_BASIC'},
-  {name: 'Blacktbox-table', link: 'BTB_TABLE_BASIC'},
-  {name: 'Blacktbox-menu',  link: 'BTB_MENU_BASIC'}
+  {name : 'Blacktbox-list',  link : 'BTB_LIST_BASIC'},
+  {name : 'Blacktbox-table', link : 'BTB_TABLE_BASIC'},
+  {name : 'Blacktbox-menu',  link : 'BTB_MENU_BASIC'}
 );
 
-const Index = (props) => {
+const Index = () => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-basic'>
@@ -43,15 +43,15 @@ const Index = (props) => {
         <AL.SectionTitle>{libraryListTitle}</AL.SectionTitle>
         <AL.Content>{libraryListContent}</AL.Content>
         <ul>
-        {
-          LibraryList.map((entry)=>{
-            let content_li = [];
-            content_li.push(
-              <li>{entry.name}<FA className='linkBtn' onClick={()=>{_redirectHandler(entry.link)}} name='link' fixedWidth/></li>
-            )
-            return content_li;
-          })
-        }
+          {
+            LibraryList.map((entry) => {
+              let content_li = [];
+              content_li.push(
+                <li>{entry.name}<FA className='linkBtn' onClick={() => {_redirectHandler(entry.link);}} name='link' fixedWidth/></li>
+              );
+              return content_li;
+            })
+          }
         </ul>
       </AL.Section>
     </div>
@@ -60,10 +60,10 @@ const Index = (props) => {
   
   function _redirectHandler (index) {
     let obj = {
-      acticveIndex: index
-    }
-    SideContent_backdoor ('menuRedirect', obj);
-  };
+      acticveIndex : index
+    };
+    SideContent_backdoor('menuRedirect', obj);
+  }
 };
 
 export default Index;

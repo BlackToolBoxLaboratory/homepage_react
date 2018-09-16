@@ -2,21 +2,21 @@ import Dispatcher from 'assets/dispatcher.js';
 
 // dispatch data to store
 const Action = {
-  'fetch': ()=>{
+  'fetch' : () => {
     Dispatcher.dispatch({
-      'actionType': 'fluxServer_fetch'
+      'actionType' : 'fluxServer_fetch'
     });
   },
-  'add': (userName)=>{
+  'add' : (userName) => {
     Dispatcher.dispatch({
-      'actionType': 'fluxServer_add',
-      'userName': userName
+      'actionType' : 'fluxServer_add',
+      'userName'   : userName
     });
   },
-  'remove': (userID)=>{
+  'remove' : (userID) => {
     Dispatcher.dispatch({
-      'actionType': 'fluxServer_remove',
-      'userID': userID
+      'actionType' : 'fluxServer_remove',
+      'userID'     : userID
     });
   }
 };

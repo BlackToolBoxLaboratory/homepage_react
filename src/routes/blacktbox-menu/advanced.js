@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FA from 'react-fontawesome';
 
 import AL from 'components/articleLayout.js';
@@ -61,7 +61,7 @@ _itemOnClickFn (infoObj) {
 };
 `;
 
-const Adavnce = (props) => {
+const Adavnce = () => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-advance'>

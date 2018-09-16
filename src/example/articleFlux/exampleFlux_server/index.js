@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import App from './components/app.js';
 
-const Index = (props) => {
+const Index = () => {
   let content = [];
   content.push(
     <App/>

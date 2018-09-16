@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FA from 'react-fontawesome';
 
 import routeList from 'assets/routeList.js';
@@ -13,11 +13,11 @@ const articleListTitle = `ARTICLE LIST`;
 const articleListContent = `We would list to introduce you some others masterpiece in conceptual. Hope our articles will do help somehow in algorithmic angle. And if you have problem to use them, welcome to contact me. We can figure it out together.`;
 
 const articleList = new Array(
-  {'name': 'Flux Introduction',   'link': 'BTB_ATCS_FLUX',          'updated': '2018-07-22'},
-  {'name': 'Redux Introduction',  'link': 'BTB_ATCS_REDUX',         'updated': '2018-05-06'}
-)
+  {'name' : 'Flux Introduction',   'link' : 'BTB_ATCS_FLUX',          'updated' : '2018-07-22'},
+  {'name' : 'Redux Introduction',  'link' : 'BTB_ATCS_REDUX',         'updated' : '2018-05-06'}
+);
 
-const Index = (props) => {
+const Index = () => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-basic'>
@@ -28,19 +28,19 @@ const Index = (props) => {
         <AL.Content>{articleListContent}</AL.Content>
         <AL.Content>
           <ul>
-          {
-            articleList.map((entry)=>{
-              let content_li = [];
-              content_li.push(
-                <li>
-                  <span>{entry.name}</span>
-                  <FA className='linkBtn' onClick={()=>{_redirectHandler(entry.link)}} name='link' fixedWidth/>
-                  <AL.Notice> [UPDATED: {entry.updated}]</AL.Notice>
-                </li>
-              )
-              return content_li;
-            })
-          }
+            {
+              articleList.map((entry) => {
+                let content_li = [];
+                content_li.push(
+                  <li>
+                    <span>{entry.name}</span>
+                    <FA className='linkBtn' onClick={() => {_redirectHandler(entry.link);}} name='link' fixedWidth/>
+                    <AL.Notice> [UPDATED: {entry.updated}]</AL.Notice>
+                  </li>
+                );
+                return content_li;
+              })
+            }
           </ul>
         </AL.Content>
       </AL.Section>
@@ -50,8 +50,8 @@ const Index = (props) => {
 
   function _redirectHandler ( index ) {
     hashHistory.push(routeList[index]);
-    window.scrollTo(0,0);
-  };
+    window.scrollTo(0, 0);
+  }
 };
 
 export default Index;

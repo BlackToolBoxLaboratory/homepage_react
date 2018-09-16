@@ -89,42 +89,42 @@ const ROURCECODE_STYLE_PRE =
 };`;
 
 const tableHeaderArr = [
-  {name: 'Name',              index: 'name'},
-  {name: 'Type',              index: 'devType'},
-  {name: 'OS',                index: 'osType'},
-  {name: 'IP Address',        index: 'ipAddr'},
-  {name: 'MAC Address',       index: 'macAddr'},
-  {name: 'Traffic(tx / rx)',  index: 'traffic'},
-  {name: 'Statue',            index: 'statusDesc'}
+  {name : 'Name',              index : 'name'},
+  {name : 'Type',              index : 'devType'},
+  {name : 'OS',                index : 'osType'},
+  {name : 'IP Address',        index : 'ipAddr'},
+  {name : 'MAC Address',       index : 'macAddr'},
+  {name : 'Traffic(tx / rx)',  index : 'traffic'},
+  {name : 'Statue',            index : 'statusDesc'}
 ];
 const tableBodyArr = [
-  {name: 'Device 1',  devType: 'phone',   osType: 'ios',      ipAddr: '192.168.0.50',   macAddr: 'B4:A2:07:44:55:2A', traffic: '1.7 MB / 45 KB', status: 0, statusDesc: 'Disconnected'},
-  {name: 'Device 2',  devType: 'notebook',   osType: 'windows',      ipAddr: '192.168.0.52',   macAddr: 'B4:A2:07:44:DD:FF', traffic: '4.8 MB / 27 KB', status: 0, statusDesc: 'Disconnected'}
+  {name : 'Device 1',  devType : 'phone',   osType : 'ios',      ipAddr : '192.168.0.50',   macAddr : 'B4:A2:07:44:55:2A', traffic : '1.7 MB / 45 KB', status : 0, statusDesc : 'Disconnected'},
+  {name : 'Device 2',  devType : 'notebook',   osType : 'windows',      ipAddr : '192.168.0.52',   macAddr : 'B4:A2:07:44:DD:FF', traffic : '4.8 MB / 27 KB', status : 0, statusDesc : 'Disconnected'}
 ];
 const modeObj = {
   mode : 'info'
 };
 const styleObj = {
-  'btb-table': {
-    'text-align': 'center'
+  'btb-table' : {
+    'text-align' : 'center'
   },
-  'table-info': {
-    'margin': 'auto',
-    'box-shadow': '2px 2px 4px 2px #aaa'
+  'table-info' : {
+    'margin'     : 'auto',
+    'box-shadow' : '2px 2px 4px 2px #aaa'
   },
-  'tr-th': {
-    'background-color': '#bae7ff',
-    'padding': '2px 5px'
+  'tr-th' : {
+    'background-color' : '#bae7ff',
+    'padding'          : '2px 5px'
   },
-  'tr-td': {
-    'padding': '2px 10px'
+  'tr-td' : {
+    'padding' : '2px 10px'
   },
-  'tr-name': {
-    'font-weight': 'bold'
+  'tr-name' : {
+    'font-weight' : 'bold'
   },
-  'td-ipAddr': {
-    'color': 'blue',
-    'text-decoration': 'underline'
+  'td-ipAddr' : {
+    'color'           : 'blue',
+    'text-decoration' : 'underline'
   }
 };
 
@@ -132,7 +132,7 @@ class Example extends Component {
   constructor (props) {
     super(props);
     this.infoRef =[];
-  };
+  }
   render () {
     let content = [];
     content.push(
@@ -147,11 +147,11 @@ class Example extends Component {
               tableBobyArr={tableBodyArr}
               modeObj={modeObj}
               styleObj={styleObj}
-              refFn={(ref)=>{this.infoRef=ref}}
+              refFn={(ref) => {this.infoRef=ref;}}
             />
           </AL.Content>
           <AL.Item>
-            <button onClick={()=>{this._consoleLogRef()}}>{exampleButtonText}</button>
+            <button onClick={() => {this._consoleLogRef();}}>{exampleButtonText}</button>
           </AL.Item>
         </AL.Section>
         <AL.Section>
@@ -180,12 +180,14 @@ class Example extends Component {
       </div>
     );
     return content;
-  };
+  }
 
   _consoleLogRef () {
     let infoRef = ReactDOM.findDOMNode(this.infoRef);
-    console.log('infoRef', infoRef)
-  };
-};
+    /* eslint-disable no-console*/
+    console.log('infoRef', infoRef);
+    /* eslint-enable no-console*/
+  }
+}
 
 export default Example;

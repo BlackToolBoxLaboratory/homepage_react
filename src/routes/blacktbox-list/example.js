@@ -87,68 +87,68 @@ const ROURCECODE_STYLE_PRE =
 };`;
 
 const listArr = [
-{
-  'name': 'Tree: 1',
-  'children': [
   {
-    'name': 'Tree: 1-1'
-  },
-  {
-    'name': 'Tree: 1-2',
-    'children': [
-    {
-      'name': 'Tree: 1-2-1'
-    },
-    {
-      'name': 'Tree: 1-2-2'
-    }]
-  },
-  {
-    'name': 'Tree: 1-3'
-  }]
-},
-{
-  'name': 'Tree: 2',
-  'children': [
-  {
-    'name': 'Tree: 2-1',
-    'children': [
-    {
-      'name': 'Tree: 2-1-1',
-      'children': [
+    'name'     : 'Tree: 1',
+    'children' : [
       {
-        'name': 'Tree: 2-1-1-1'
+        'name' : 'Tree: 1-1'
+      },
+      {
+        'name'     : 'Tree: 1-2',
+        'children' : [
+          {
+            'name' : 'Tree: 1-2-1'
+          },
+          {
+            'name' : 'Tree: 1-2-2'
+          }]
+      },
+      {
+        'name' : 'Tree: 1-3'
       }]
-    }]
   },
   {
-    'name': 'Tree: 2-2'
-  }]
-}];
+    'name'     : 'Tree: 2',
+    'children' : [
+      {
+        'name'     : 'Tree: 2-1',
+        'children' : [
+          {
+            'name'     : 'Tree: 2-1-1',
+            'children' : [
+              {
+                'name' : 'Tree: 2-1-1-1'
+              }]
+          }]
+      },
+      {
+        'name' : 'Tree: 2-2'
+      }]
+  }];
 const styleObj = {
-  'btb-list': {
-    'background-color': '#bae7ff',
-    'padding': '2px',
-    'font-weight': 'bold'
+  'btb-list' : {
+    'background-color' : '#bae7ff',
+    'padding'          : '2px',
+    'font-weight'      : 'bold'
   },
-  'layer-item': {
-    'list-style-type': 'square'
+  'layer-item' : {
+    'list-style-type' : 'square'
   },
-  'layer-0': {
-    'color': '#000000',
-    'font-size': '20px',
+  'layer-0' : {
+    'color'     : '#000000',
+    'font-size' : '20px',
   },
-  'layer-1': {
-    'color': '#262626',
-    'font-size': '18px'
+  'layer-1' : {
+    'color'     : '#262626',
+    'font-size' : '18px'
   },
-  'layer-2': {
-    'color': '#595959',
-    'font-size': '16px'
+  'layer-2' : {
+    'color'     : '#595959',
+    'font-size' : '16px'
   },
-  'layer-3': {
-    'color': '#8c8c8c',
-    'font-size': '14px'
+  'layer-3' : {
+    'color'     : '#8c8c8c',
+    'font-size' : '14px'
   }
 };
 
@@ -156,7 +156,7 @@ class Example extends Component {
   constructor (props) {
     super(props);
     this.listRef =[];
-  };
+  }
   render () {
     let content = [];
     content.push(
@@ -169,11 +169,11 @@ class Example extends Component {
             <BTBList
               listArr={listArr}
               styleObj={styleObj}
-              refFn={(ref)=>{this.listRef=ref}}
+              refFn={(ref) => {this.listRef=ref;}}
             />
           </AL.Content>
           <AL.Item>
-            <button onClick={()=>{this._consoleLogRef()}}>{exampleButtonText}</button>
+            <button onClick={() => {this._consoleLogRef();}}>{exampleButtonText}</button>
           </AL.Item>
         </AL.Section>
         <AL.Section>
@@ -194,12 +194,14 @@ class Example extends Component {
       </div>
     );
     return content;
-  };
+  }
 
   _consoleLogRef () {
     let listRef = ReactDOM.findDOMNode(this.listRef);
-    console.log('listRef', listRef)
-  };
-};
+    /* eslint-disable no-console*/
+    console.log('listRef', listRef);
+    /* eslint-enable no-console*/
+  }
+}
 
 export default Example;

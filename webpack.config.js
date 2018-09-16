@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 
+const eslint_config = require(path.join(__dirname, "/configs/eslint.config.js"));
 const babel_config = require(path.join(__dirname, "/configs/babel.config.js"));
 const style_config = require(path.join(__dirname, "/configs/style.config.js"));
 const file_config = require(path.join(__dirname, "/configs/file.config.js"));
@@ -25,6 +26,7 @@ const webpack_config = {
     },
     "module": {
         "loaders": [
+            {...eslint_config},
             {...babel_config},
             {...style_config},
             {...file_config}

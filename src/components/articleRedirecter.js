@@ -8,9 +8,9 @@ const redirectTitle = `To Articles`;
 
 const ArticleRedirecter = ( props ) => {
   let content = [];
-  props.className = 'btb-articleRedirectBtn ' + ((props.className) ? props.className : '');
+  props.className = `btb-articleRedirectBtn ${(props.className) ? props.className : ''}`;
   content.push(
-    <div onClick={()=>{_redirectHandler(props.redirectTo)}} {...props}>
+    <div onClick={() => {_redirectHandler(props.redirectTo);}} {...props}>
       <FA name='arrow-left' fixedWidth />
       <span>{redirectTitle}</span>
     </div>
@@ -19,8 +19,8 @@ const ArticleRedirecter = ( props ) => {
 
   function _redirectHandler ( index ) {
     hashHistory.push(routeList[index]);
-    window.scrollTo(0,0);
-  };
+    window.scrollTo(0, 0);
+  }
 };
 
 export default ArticleRedirecter;

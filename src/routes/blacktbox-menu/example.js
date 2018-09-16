@@ -127,84 +127,84 @@ const ROUCECODE_DEFAULTACTIVE_PRE =
 `acticveIndex = 'M2-1-1-1';`;
 
 const menuArr = [
-{
-  'index': 'M1',
-  'name': 'Menu: 1',
-  'children': [
   {
-    'index': 'M1-1',
-    'name': 'Menu: 1-1'
-  },
-  {
-    'index': 'M1-2',
-    'name': 'Menu: 1-2',
-    'defaultCollapse': true,
-    'children': [
-    {
-      'index': 'M1-2-1',
-      'name': 'Menu: 1-2-1'
-    },
-    {
-      'index': 'M1-2-2',
-      'name': 'Menu: 1-2-2'
-    }]
-  },
-  {
-    'index': 'M1-3',
-    'name': 'Menu: 1-3',
-    'children': [
-    {
-      'index': 'M1-3-1',
-      'name': 'Menu: 1-3-1'
-    },
-    {
-      'index': 'M1-3-2',
-      'name': 'Menu: 1-3-2'
-    }]
-  }]
-},
-{
-  'index': 'M2',
-  'name': 'Menu: 2',
-  'defaultCollapse': true,
-  'children': [
-  {
-    'index': 'M2-1',
-    'name': 'Menu: 2-1',
-    'children': [
-    {
-      'index': 'M2-1-1',
-      'name': 'Menu: 2-1-1',
-      'children': [
+    'index'    : 'M1',
+    'name'     : 'Menu: 1',
+    'children' : [
       {
-        'index': 'M2-1-1-1',
-        'name': 'Menu: 2-1-1-1'
+        'index' : 'M1-1',
+        'name'  : 'Menu: 1-1'
+      },
+      {
+        'index'           : 'M1-2',
+        'name'            : 'Menu: 1-2',
+        'defaultCollapse' : true,
+        'children'        : [
+          {
+            'index' : 'M1-2-1',
+            'name'  : 'Menu: 1-2-1'
+          },
+          {
+            'index' : 'M1-2-2',
+            'name'  : 'Menu: 1-2-2'
+          }]
+      },
+      {
+        'index'    : 'M1-3',
+        'name'     : 'Menu: 1-3',
+        'children' : [
+          {
+            'index' : 'M1-3-1',
+            'name'  : 'Menu: 1-3-1'
+          },
+          {
+            'index' : 'M1-3-2',
+            'name'  : 'Menu: 1-3-2'
+          }]
       }]
-    }]
   },
   {
-    'index': 'M2-2',
-    'name': 'Menu: 2-2'
-  }]
-}];
+    'index'           : 'M2',
+    'name'            : 'Menu: 2',
+    'defaultCollapse' : true,
+    'children'        : [
+      {
+        'index'    : 'M2-1',
+        'name'     : 'Menu: 2-1',
+        'children' : [
+          {
+            'index'    : 'M2-1-1',
+            'name'     : 'Menu: 2-1-1',
+            'children' : [
+              {
+                'index' : 'M2-1-1-1',
+                'name'  : 'Menu: 2-1-1-1'
+              }]
+          }]
+      },
+      {
+        'index' : 'M2-2',
+        'name'  : 'Menu: 2-2'
+      }]
+  }];
 const styleObj = {
-  'btb-menu': {
-    'background-color': '#000',
-    'padding': '1px',
-    'font-weight': 'bold',
-    'color': '#000'
+  'btb-menu' : {
+    'background-color' : '#000',
+    'padding'          : '1px',
+    'font-weight'      : 'bold',
+    'color'            : '#000'
   },
   'layer-0' : {
-    'background-color': '#85a5ff'
+    'background-color' : '#85a5ff'
   },
   'layer-1' : {
-    'background-color': '#adc6ff'
+    'background-color' : '#adc6ff'
   },
   'layer-2' : {
-    'background-color': '#d6e4ff'
+    'background-color' : '#d6e4ff'
   },
   'layer-3' : {
-    'background-color': '#f0f5ff'
+    'background-color' : '#f0f5ff'
   }
 };
 const acticveIndex = 'M2-1-1-1';
@@ -213,7 +213,7 @@ class Example extends Component {
   constructor (props) {
     super(props);
     this.menuRef =[];
-  };
+  }
   render () {
     let content = [];
     content.push(
@@ -226,31 +226,31 @@ class Example extends Component {
             <BTBMenu 
               menuArr={menuArr}
               styleObj={styleObj}
-              refFn={(ref)=>{this.menuRef=ref}}
+              refFn={(ref) => {this.menuRef=ref;}}
               acticveIndex={acticveIndex}
               itemOnClickFn={this._itemOnClickFn}
               featureCollapsible= {{
-                'enable': true,
-                'itemClickWithCollapseEnable': false,
-                'defaultCollapse': false,
-                'customCollapseButton': 'Extend',
-                'customExtendButton': 'Collapse',
-                'itemOnCollapseFn': this._itemOnCollapseFn
+                'enable'                      : true,
+                'itemClickWithCollapseEnable' : false,
+                'defaultCollapse'             : false,
+                'customCollapseButton'        : 'Extend',
+                'customExtendButton'          : 'Collapse',
+                'itemOnCollapseFn'            : this._itemOnCollapseFn
               }}
             />
           </AL.Content>
           <AL.Item>
-            <button onClick={()=>{this._consoleLogRef()}}>{exampleButtonText}</button>
+            <button onClick={() => {this._consoleLogRef();}}>{exampleButtonText}</button>
           </AL.Item>
           <AL.Content>
             <AL.SectionSubtitle>{exampleSubTitle_Notice}</AL.SectionSubtitle>
             <AL.Content>
               <ul>
-              {
-                exampleSubTitle_Notice_Contnet.map((entry)=>(
-                  <li>{entry}</li>
-                ))
-              }
+                {
+                  exampleSubTitle_Notice_Contnet.map((entry) => (
+                    <li>{entry}</li>
+                  ))
+                }
               </ul>
             </AL.Content>
           </AL.Content>
@@ -277,18 +277,24 @@ class Example extends Component {
       </div>
     );
     return content;
-  };
+  }
 
   _itemOnClickFn (eventObj) {
+    /* eslint-disable no-console*/
     console.log('clickEventObj',  eventObj);
-  };
+    /* eslint-enable no-console*/
+  }
   _itemOnCollapseFn (eventObj) {
+    /* eslint-disable no-console*/
     console.log('collapseEventObj',  eventObj);
-  };
+    /* eslint-enable no-console*/
+  }
   _consoleLogRef () {
     let menuRef = ReactDOM.findDOMNode(this.menuRef);
-    console.log('menuRef', menuRef)
-  };
-};
+    /* eslint-disable no-console*/
+    console.log('menuRef', menuRef);
+    /* eslint-enable no-console*/
+  }
+}
 
 export default Example;

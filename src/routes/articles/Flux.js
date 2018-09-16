@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FA from 'react-fontawesome';
 
 import BTBList from 'blacktbox-list';
@@ -188,11 +188,11 @@ ExampleDispatcher.register((event)=>{
 `;
 
 const NOTICE = new Array(
-  {'name': `Dispatcher is unique: In our webside, Dispatcher in at /assets, and it imported in first time at index.js.`},
-  {'name': `All Stores' event functions must named uniquely: Cause all stores use the same EventEmitter, they need to named their event function differently.`}
+  {'name' : `Dispatcher is unique: In our webside, Dispatcher in at /assets, and it imported in first time at index.js.`},
+  {'name' : `All Stores' event functions must named uniquely: Cause all stores use the same EventEmitter, they need to named their event function differently.`}
 );
 
-const Index = (props) => {
+const Index = () => {
   let content = [];
   content.push(
     <div className='wrapper wrapper-basic'>
@@ -254,9 +254,9 @@ const Index = (props) => {
         <AL.Content>
           <BTBList 
             STYLE={{
-              'margin': 'auto',
-              'padding': '15px',
-              'width': 'calc(100% - 75px * 2)'
+              'margin'  : 'auto',
+              'padding' : '15px',
+              'width'   : 'calc(100% - 75px * 2)'
             }}
             listArr={NOTICE}
           />
