@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import EL from 'components/exampleLayout.js';
 
@@ -30,7 +30,7 @@ class Example extends Component {
           <EL.Block>
             <div className='userList-add'>
               <input className='userList-input' type='text' maxLength='10' ref='userName' placeholder='Enter 1-10 character(s).'/>
-              <button className='userList-addButton' onClick={() => {this._addHandler();}}><FA name='plus-square' fixedWidth/></button>
+              <button className='userList-addButton' onClick={() => {this._addHandler();}}><FA icon={['fas', 'plus-square']} fixedWidth/></button>
             </div>
           </EL.Block>
           <EL.Block>
@@ -42,7 +42,7 @@ class Example extends Component {
                     content_datalist_tr.push(
                       <li className='userList-entry'>
                         <div className='userList-info'>{entry['name'].substring(0, 1).toUpperCase() + entry['name'].substring(1)}</div>
-                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler(entry['uId']);}}><FA name='trash' fixedWidth/></div>
+                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler(entry['uId']);}}><FA icon={['fas', 'trash-alt']} fixedWidth/></div>
                       </li>
                     );
                     return content_datalist_tr;

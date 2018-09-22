@@ -1,19 +1,19 @@
 import React from 'react';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import BTBTable from 'blacktbox-table';
 import BTBList from 'blacktbox-list';
 
 import AL from 'components/articleLayout.js';
 
-const mainTitle = (<span>{`Blacktbox-table `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-table'><FA name='github' fixedWidth/></a></span>);
+const mainTitle = (<span>{`Blacktbox-table `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-table'><FA icon={['fab', 'github']} fixedWidth/></a><a target='_blank' className='linkBtn' href='https://www.npmjs.com/package/blacktbox-table'><FA icon={['fab', 'npm']} fixedWidth/></a></span>);
 const mainDescriptionStr = `Table-maker tool. (Latest version: 0.3.1)`;
 
 const installationTitle = `INSTALLATION`;
-const installationContent = (<span>{`Using with`} <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>{`.`}</span>);
+const installationContent = (<span>{`Using with`} <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
 
 const renderTitle = `RENDER`;
-const renderContent = (<span>{`Notice: DOM properties are still work with `}<a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA name='external-link' fixedWidth/></a>{`.`}</span>);
+const renderContent = (<span>{`Notice: DOM properties are still work with `}<a target='_blank' href='https://reactjs.org/docs/dom-elements.html'>{`ReactJS`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
 
 const nodeTreeTitle = `NODE TREE`;
 const nodeTreeContent = `Here showing the node structure. Each node with className is for convenience to style. You have two way to use it. The first way is used with css selector, and the other way is used component's input: styleObj. But for blacktbox-table, we have two structure for two mode used.`;

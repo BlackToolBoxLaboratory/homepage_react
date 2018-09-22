@@ -1,5 +1,5 @@
 import React from 'react';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import routeList from 'assets/routeList.js';
 import hashHistory from 'assets/history.js';
@@ -11,7 +11,7 @@ const ArticleRedirecter = ( props ) => {
   props.className = `btb-articleRedirectBtn ${(props.className) ? props.className : ''}`;
   content.push(
     <div onClick={() => {_redirectHandler(props.redirectTo);}} {...props}>
-      <FA name='arrow-left' fixedWidth />
+      <FA icon={['fas', 'arrow-left']} fixedWidth />
       <span>{redirectTitle}</span>
     </div>
   );

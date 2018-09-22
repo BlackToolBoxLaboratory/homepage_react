@@ -7,11 +7,6 @@ gulp.task("copy2dist", function(done) {
   /* html */
   gulp.src(["src/index.html"])
       .pipe(gulp.dest("dist/"));
-  /* font-awesome */
-  gulp.src(["node_modules/font-awesome/css/font-awesome.min.css"])
-      .pipe(gulp.dest("dist/vendor/font-awesome/css"));
-  gulp.src(["node_modules/font-awesome/fonts/*"])
-      .pipe(gulp.dest("dist/vendor/font-awesome/fonts"));
   /* blacktbox-menu */
   gulp.src(["node_modules/blacktbox-menu/css/blacktbox-menu.min.css"])
       .pipe(gulp.dest("dist/vendor/blacktbox-menu/css"));

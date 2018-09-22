@@ -1,5 +1,5 @@
 import React from 'react';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import ExampleBasic from 'example/articleRedux/example/index.js';
 import ExampleRedux from 'example/articleRedux/exampleRedux/index.js';
@@ -15,7 +15,7 @@ const mainTitle = `Redux Introduction`;
 const mainDescriptionStr = `Conceptual introduction and simple example`;
 
 const introductionTitle = `INTRODUCTION`;
-const introductionContent = (<span>{`After knowing the concept of Flux. We are going to learn the concept of `}<a target='_blank' href='https://www.npmjs.com/package/redux'>{`Redux`}<FA name='external-link' fixedWidth/></a>{` and use in our example for practice. My source code of example is `}<a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/example'>{`here`}<FA name='external-link' fixedWidth/></a>{`.`}</span>);
+const introductionContent = (<span>{`After knowing the concept of Flux. We are going to learn the concept of `}<a target='_blank' href='https://www.npmjs.com/package/redux'>{`Redux`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{` and use in our example for practice. My source code of example is `}<a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/example'>{`here`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
 
 const introductionExampleTitle = `Example`;
 const introductionExampleContent = `For Redux's example, I made a little different from Flux's.`;
@@ -23,7 +23,7 @@ const introductionExampleAlgorithmDescription = `Basically, the code structure i
 
 const introductionReduxTitle = `Redux`;
 const introductionReduxContent = `Here is the picture of Redux's relationship.`;
-const introductionReduxAlgorithmDescription = (<span>{`To simplify our code base, it also works with `}<a target='_blank' href='https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0'>{`Component: Presentational and Container`}<FA name='external-link' fixedWidth/></a>{`. And to implement the example in Redux. We need to install some packages:`}</span>);
+const introductionReduxAlgorithmDescription = (<span>{`To simplify our code base, it also works with `}<a target='_blank' href='https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0'>{`Component: Presentational and Container`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`. And to implement the example in Redux. We need to install some packages:`}</span>);
 
 const introductionReduxViewTitle = `View`;
 const introductionReduxViewContent = `About view, it has three type of view contained pure-container, pure-component and mixed-container-and-component. The pure container is for which view will access data, but not rendered with data. And the pure component is for which view will not access data but rendered with data, or it rendered without data but state for necessary. The last type of view is mixed with container and component means the view can access data and rendered with data. Cause the pure component is used usually. We only show you the pure container view and mixed view here.`;
@@ -44,7 +44,7 @@ const productionContent = `Here we go! This is the example in Redux version.`;
 
 const advancedTitle = `ADVANCED`;
 const advancedContent = `Same as our article of Flux, we will need read / write data by server API. Here is Redux's version.`;
-const advancedServerContent = (<span>{`Then, here is the User List work with server API. And also here is the source code of `}<a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/exampleRedux_server'>{`Redux's example with server`}<FA name='external-link' fixedWidth/></a></span>);
+const advancedServerContent = (<span>{`Then, here is the User List work with server API. And also here is the source code of `}<a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/exampleRedux_server'>{`Redux's example with server`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a></span>);
 
 const EXAMPLE_BASIC_ALGORITHM = 
 `<!-- Require or Import what you need -->

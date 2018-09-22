@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import EL from 'components/exampleLayout.js';
 
@@ -37,12 +37,12 @@ class App extends Component {
           </EL.Block>
           <EL.InlineBlock>
             <div className='userList-add'>
-              <button className='userList-addButton' onClick={() => {this._addHandler('left');}} style={{'vertical-align' : 'bottom'}}><span>Left</span><FA name='plus-square' fixedWidth/></button>
+              <button className='userList-addButton' onClick={() => {this._addHandler('left');}} style={{'vertical-align' : 'bottom'}}><span>Left</span><FA icon={['fas', 'plus-square']} fixedWidth/></button>
             </div>
           </EL.InlineBlock>
           <EL.InlineBlock>
             <div className='userList-add'>
-              <button className='userList-addButton' onClick={() => {this._addHandler('right');}} style={{'vertical-align' : 'bottom'}}><span>Right</span><FA name='plus-square' fixedWidth/></button>
+              <button className='userList-addButton' onClick={() => {this._addHandler('right');}} style={{'vertical-align' : 'bottom'}}><span>Right</span><FA icon={['fas', 'plus-square']} fixedWidth/></button>
             </div>
           </EL.InlineBlock>
         </EL.Part>
@@ -56,8 +56,8 @@ class App extends Component {
                     content_datalist_tr.push(
                       <li className='userList-entry'>
                         <div className='userList-info'>{entry['name']}</div>
-                        <div className='userList-moveButton' onClick={() => {this._moveHandler('right', entry['uId']);}}><FA name='toggle-right' fixedWidth/></div>
-                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler('left', entry['uId']);}}><FA name='trash' fixedWidth/></div>
+                        <div className='userList-moveButton' onClick={() => {this._moveHandler('right', entry['uId']);}}><FA icon={['fas', 'caret-square-right']} fixedWidth/></div>
+                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler('left', entry['uId']);}}><FA icon={['fas', 'trash']} fixedWidth/></div>
                       </li>
                     );
                     return content_datalist_tr;
@@ -75,8 +75,8 @@ class App extends Component {
                     content_datalist_tr.push(
                       <li className='userList-entry'>
                         <div className='userList-info'>{entry['name']}</div>
-                        <div className='userList-moveButton' onClick={() => {this._moveHandler('left', entry['uId']);}}><FA name='toggle-left' fixedWidth/></div>
-                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler('right', entry['uId']);}}><FA name='trash' fixedWidth/></div>
+                        <div className='userList-moveButton' onClick={() => {this._moveHandler('left', entry['uId']);}}><FA icon={['fas', 'caret-square-right']} fixedWidth/></div>
+                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler('right', entry['uId']);}}><FA icon={['fas', 'trash']} fixedWidth/></div>
                       </li>
                     );
                     return content_datalist_tr;

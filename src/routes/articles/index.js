@@ -1,5 +1,5 @@
 import React from 'react';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import routeList from 'assets/routeList.js';
 import hashHistory from 'assets/history.js';
@@ -34,7 +34,7 @@ const Index = () => {
                 content_li.push(
                   <li>
                     <span>{entry.name}</span>
-                    <FA className='linkBtn' onClick={() => {_redirectHandler(entry.link);}} name='link' fixedWidth/>
+                    <FA className='linkBtn' onClick={() => {_redirectHandler(entry.link);}} icon={['fas', 'link']} fixedWidth/>
                     <AL.Notice> [UPDATED: {entry.updated}]</AL.Notice>
                   </li>
                 );

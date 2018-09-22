@@ -1,20 +1,20 @@
 import React from 'react';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import AL from 'components/articleLayout.js';
 
-const mainTitle = (<span>{`Blacktbox-menu `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA name='github' fixedWidth/></a></span>);
+const mainTitle = (<span>{`Blacktbox-menu `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA icon={['fab', 'github']} fixedWidth/></a><a target='_blank' className='linkBtn' href='https://www.npmjs.com/package/blacktbox-menu'><FA icon={['fab', 'npm']} fixedWidth/></a></span>);
 const mainDescriptionStr = `Advanced application with Blacktbox-menu.`;
 
 const redirectTitle = `REDIRECT`;
-const redirectContent = (<span>{`Here, we talk about "How to redirect with Blacktbox-menu". And it will work with `}<a target='_blank' href='https://github.com/ReactTraining/react-router'>{`React-router`}<FA name='external-link' fixedWidth/></a>{`. It is quite enough, if we only need to redirect by clicking menu. However sometimes we need to redirect after function finished or depend on its result. So, we choose a general way to complete the menu system. As we know, there are big different bwteen 2.x/3.x and 4.x. We separate to two part for 2.x/3.x and 4.x. Besides, the way with 4.x is used in our Homepage(Demonstration).`}</span>);
+const redirectContent = (<span>{`Here, we talk about "How to redirect with Blacktbox-menu". And it will work with `}<a target='_blank' href='https://github.com/ReactTraining/react-router'>{`React-router`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`. It is quite enough, if we only need to redirect by clicking menu. However sometimes we need to redirect after function finished or depend on its result. So, we choose a general way to complete the menu system. As we know, there are big different bwteen 2.x/3.x and 4.x. We separate to two part for 2.x/3.x and 4.x. Besides, the way with 4.x is used in our Homepage(Demonstration).`}</span>);
 
 const reactRouterVersion23Title = `2.x/3.x`;
 const reactRouterVersion23RouterListContent = `For 2.x/3.x, we need to build a router list:`;
 const reactRouterVersion23RedirectContent = `And then, we can use <Link> or hashHistory.push to do redirect.`;
 const reactRouterVersion4Title = `4.x`;
 const reactRouterVersion4RouterListContent = `Same as 4.x, we need to build a router list, too:`;
-const reactRouterVersion4RedirectContent = (<span>{`And then, we can use <Link> to do redirect. However if we need to use something like hashHistory.push to do redirect. You can use withRouter. But we prefer to build our history to use. In that way, we need to install `}<a target='_blank' href='https://www.npmjs.com/package/history'>{`History`}<FA name='external-link' fixedWidth/></a>{` additionally.`}</span>);
+const reactRouterVersion4RedirectContent = (<span>{`And then, we can use <Link> to do redirect. However if we need to use something like hashHistory.push to do redirect. You can use withRouter. But we prefer to build our history to use. In that way, we need to install `}<a target='_blank' href='https://www.npmjs.com/package/history'>{`History`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{` additionally.`}</span>);
 const reactRouterVersion4CreateHistoryContent = `Then we need to have a component to create our history.`;
 const reactRouterVersion4HistoryPushContent = `Finally, we can use our history.push to do redirect. Also we can add the history.push to our Blacktbox-menu's parameter: itemOnClickFn with a route list to implement the redirection.`;
 

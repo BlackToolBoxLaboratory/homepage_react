@@ -1,5 +1,5 @@
 import React from 'react';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import AL from 'components/articleLayout.js';
 import {SideContent_backdoor} from './home.js';
@@ -20,8 +20,8 @@ const LibraryList = new Array(
   {name : 'Blacktbox-menu',  link : 'BTB_MENU_BASIC'}
 );
 const ContactList = new Array(
-  {name : 'Email',     linkName : 'vannoel0628@gmail.com',             href : 'mailto://vannoel0628@gmail.com',            FA : 'envelope'},
-  {name : 'Homepage',  linkName : 'blacktoolboxlaboratory.github.io',  href : 'https://blacktoolboxlaboratory.github.io',  FA : 'home'}
+  {name : 'Email',     linkName : 'vannoel0628@gmail.com',             href : 'mailto://vannoel0628@gmail.com',            icon : ['fas', 'envelope']},
+  {name : 'Homepage',  linkName : 'blacktoolboxlaboratory.github.io',  href : 'https://blacktoolboxlaboratory.github.io',  icon : ['fas', 'home']}
 );
 
 const About = () => {
@@ -34,14 +34,14 @@ const About = () => {
         <AL.SectionTitle>{articlesTitle}</AL.SectionTitle>
         <AL.Content>
           <span>{articlesContent}</span>
-          <FA className='linkBtn' onClick={() => {_redirectHandler('BTB_ATCS');}} name='link' fixedWidth/>
+          <FA className='linkBtn' onClick={() => {_redirectHandler('BTB_ATCS');}} icon={['fas', 'link']} fixedWidth/>
         </AL.Content>
       </AL.Section>
       <AL.Section>
         <AL.SectionTitle>{demonstrationTitle}</AL.SectionTitle>
         <AL.Content>
           <span>{demonstrationContent}</span>
-          <FA className='linkBtn' onClick={() => {_redirectHandler('BTB_DEMO');}} name='link' fixedWidth/>
+          <FA className='linkBtn' onClick={() => {_redirectHandler('BTB_DEMO');}} icon={['fas', 'link']} fixedWidth/>
         </AL.Content>
       </AL.Section>
       <AL.Section>
@@ -52,10 +52,7 @@ const About = () => {
             LibraryList.map((entry) => {
               let content_li = [];
               content_li.push(
-                <li>
-                  <span>{entry.name}</span>
-                  <FA className='linkBtn' onClick={() => {_redirectHandler(entry.link);}} name='link' fixedWidth/>
-                </li>
+                <li>{entry.name}<FA className='linkBtn' onClick={() => {_redirectHandler(entry.link);}} icon={['fas', 'link']} fixedWidth/></li>
               );
               return content_li;
             })
@@ -70,10 +67,10 @@ const About = () => {
               let content_li = [];
               content_li.push(
                 <li>
-                  <FA name={entry.FA} fixedWidth/>
+                  <FA icon={entry.icon} fixedWidth/>
                   <span style={{'margin-left' : '5px'}}>{`${entry.name}:`}</span>
                   <span style={{'margin-left' : '5px'}}>
-                    <a target='_blank' href={entry.href}>{entry.linkName} <FA name='external-link' fixedWidth/></a>
+                    <a target='_blank' href={entry.href}>{entry.linkName}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>
                   </span>
                 </li>
               );

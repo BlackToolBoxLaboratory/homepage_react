@@ -1,5 +1,8 @@
 const webpack = require('webpack');
 
+/* eslint-disable no-alert, no-console */
+/* eslint-enable no-alert, no-console */
+
 const eslint_config = {
   'test': /\.js$/,
   'include': /src/,
@@ -7,7 +10,10 @@ const eslint_config = {
   'enforce': 'pre',
   'use': 
   {
-    'loader': 'eslint-loader'
+    'loader': 'eslint-loader',
+    'options': {
+      'fix': true,
+    }
   }
 }
 

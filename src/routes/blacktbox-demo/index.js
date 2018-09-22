@@ -1,16 +1,16 @@
 import React from 'react';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import {SideContent_backdoor} from '../home.js';
 
 import AL from 'components/articleLayout.js';
 
-const mainTitle = (<span>{`Blacktbox-demo `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo'><FA name='github' fixedWidth/></a></span>);
+const mainTitle = (<span>{`Blacktbox-demo `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo'><FA icon={['fab', 'github']} fixedWidth/></a></span>);
 const mainDescriptionStr = `The Blacktbox-demo shows demonstrations for all the BTB Lab's tools.`;
 
 const setupTitle = `SETUP`;
-const setupContent = (<span>{`Firstly, you need `}<a target='_blank' href='https://nodejs.org/en/'>{`Node.js`}<FA name='external-link' fixedWidth/></a> and <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA name='external-link' fixedWidth/></a>{`. And then you can clone our code and run it by these commands:`}</span>);
-const setupFinishedContent = (<span>{`Welcome to `}<a target='_blank' href='http://localhost:9000'>{`http://localhost:9000`}<FA name='external-link' fixedWidth/></a>{`.`}</span>);
+const setupContent = (<span>{`Firstly, you need `}<a target='_blank' href='https://nodejs.org/en/'>{`Node.js`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a> and <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`. And then you can clone our code and run it by these commands:`}</span>);
+const setupFinishedContent = (<span>{`Welcome to `}<a target='_blank' href='http://localhost:9000'>{`http://localhost:9000`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
 
 const libraryListTitle = `BLB LIBRARY LIST`;
 const libraryListContent = `This is the list of BLB Lab's API demonstrated here.`;
@@ -47,7 +47,7 @@ const Index = () => {
             LibraryList.map((entry) => {
               let content_li = [];
               content_li.push(
-                <li>{entry.name}<FA className='linkBtn' onClick={() => {_redirectHandler(entry.link);}} name='link' fixedWidth/></li>
+                <li>{entry.name}<FA className='linkBtn' onClick={() => {_redirectHandler(entry.link);}} icon={['fas', 'link']} fixedWidth/></li>
               );
               return content_li;
             })

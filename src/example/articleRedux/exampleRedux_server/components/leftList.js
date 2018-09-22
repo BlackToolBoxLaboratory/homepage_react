@@ -1,5 +1,5 @@
 import React from 'react';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 const DATAMEMBERS = 5;
 
@@ -14,8 +14,8 @@ const LeftList = ({data, handler}) => {
             content_entry.push(
               <li className='userList-entry'>
                 <div className='userList-info'>{entry['name']}</div>
-                <div className='userList-moveButton' onClick={() => {changeUserHandler(entry);}}><FA name='toggle-right' fixedWidth/></div>
-                <div className='userList-deleteButton' onClick={() => {removeUserHandler(entry);}}><FA name='trash' fixedWidth/></div>
+                <div className='userList-moveButton' onClick={() => {changeUserHandler(entry);}}><FA icon={['fas', 'caret-square-right']} fixedWidth/></div>
+                <div className='userList-deleteButton' onClick={() => {removeUserHandler(entry);}}><FA icon={['fas', 'trash']} fixedWidth/></div>
               </li>
             );
             return content_entry;

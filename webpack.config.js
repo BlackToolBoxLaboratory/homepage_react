@@ -18,7 +18,7 @@ const webpack_config = {
     },
     "entry": {
         "index": path.join(__dirname, sourcehPath+"/index.js"),
-        "vendors": ["react", "react-dom", "react-router-dom", "react-fontawesome"]
+        "vendors": ["react", "react-dom", "react-router-dom", "@fortawesome/react-fontawesome"]
     },
     "output": {
         "path": path.join(__dirname, distributePath),

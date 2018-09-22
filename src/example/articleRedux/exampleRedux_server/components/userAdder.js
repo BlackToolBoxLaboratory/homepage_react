@@ -1,5 +1,5 @@
 import React from 'react';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import EL from 'components/exampleLayout.js';
 
@@ -23,14 +23,14 @@ const UserAdder = ({ data, handler }) => {
   content.push(
     <EL.InlineBlock>
       <div className='userList-add'>
-        <button className='userList-addButton' onClick={() => {addUserLeftHandler();}} style={{'vertical-align' : 'bottom'}}><span>Left</span><FA name='plus-square' fixedWidth/></button>
+        <button className='userList-addButton' onClick={() => {addUserLeftHandler();}} style={{'vertical-align' : 'bottom'}}><span>Left</span><FA icon={['fas', 'plus-square']} fixedWidth/></button>
       </div>
     </EL.InlineBlock>
   );
   content.push(
     <EL.InlineBlock>
       <div className='userList-add'>
-        <button className='userList-addButton' onClick={() => {addUserRightHandler();}} style={{'vertical-align' : 'bottom'}}><span>Right</span><FA name='plus-square' fixedWidth/></button>
+        <button className='userList-addButton' onClick={() => {addUserRightHandler();}} style={{'vertical-align' : 'bottom'}}><span>Right</span><FA icon={['fas', 'plus-square']} fixedWidth/></button>
       </div>
     </EL.InlineBlock>
   );

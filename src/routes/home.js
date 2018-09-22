@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import FA from 'react-fontawesome';
+import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome';
 
 import BTBMenu from 'blacktbox-menu';
 
@@ -107,7 +107,7 @@ class SideContent extends Component {
       <div className='sideContent'>
         <div className='header'>
           <div className='groupname'>BTB Laboratory</div>
-          <div className='icon'><FA name='user-circle-o' fixedWidth/></div>
+          <div className='icon'><FA icon={['fas', 'user-circle']} fixedWidth/></div>
           <div className='welcome'>Hello! Friend.</div>
         </div>
         <BTBMenu 
