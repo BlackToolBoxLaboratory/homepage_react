@@ -7,7 +7,7 @@ import BTBTable from 'blacktbox-table';
 import AL from 'components/articleLayout.js';
 
 const mainTitle = (<span>{`Blacktbox-table `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-table'><FA icon={['fab', 'github']} fixedWidth/></a><a target='_blank' className='linkBtn' href='https://www.npmjs.com/package/blacktbox-table'><FA icon={['fab', 'npm']} fixedWidth/></a></span>);
-const mainDescriptionStr = `Example - Info`;
+const mainDescriptionStr = `Example - List`;
 
 const exampleTitle = `EXAMPLE`;
 const exampleButtonText = `Show listRef to console.log`;
@@ -23,7 +23,7 @@ const rourceCodeSubTitle_Style = `Style`;
 const ROURCECODE_RENDER_PRE = 
 `<BTBTable 
   tableHeadArr={tableHeaderArr}
-  tableBobyArr={tableBodyArr}
+  tableBodyArr={tableBodyArr}
   modeObj={modeObj}
   noDataMessage={noDataStr}
   styleObj={styleObj}
@@ -205,7 +205,7 @@ class Example extends Component {
             {this.searchConfigRender()}
             <BTBTable 
               tableHeadArr={tableHeaderArr}
-              tableBobyArr={tableBodyArr}
+              tableBodyArr={tableBodyArr}
               modeObj={modeObj}
               noDataMessage={noDataStr}
               styleObj={styleObj}

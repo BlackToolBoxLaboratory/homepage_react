@@ -7,7 +7,7 @@ import BTBList from 'blacktbox-list';
 import AL from 'components/articleLayout.js';
 
 const mainTitle = (<span>{`Blacktbox-table `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-table'><FA icon={['fab', 'github']} fixedWidth/></a><a target='_blank' className='linkBtn' href='https://www.npmjs.com/package/blacktbox-table'><FA icon={['fab', 'npm']} fixedWidth/></a></span>);
-const mainDescriptionStr = `Table-maker tool. (Latest version: 0.3.1)`;
+const mainDescriptionStr = `Table-maker tool. (Latest version: 0.3.2)`;
 
 const installationTitle = `INSTALLATION`;
 const installationContent = (<span>{`Using with`} <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
@@ -32,7 +32,7 @@ var BTBTable = require('blacktbox-table');`;
 const RENDER_PRE = 
 `<BTBTable 
   tableHeadArr = []
-  tableBobyArr = []
+  tableBodyArr = []
   modeObj: {
     mode: 'list',
     listFeatureSearch: {
@@ -66,7 +66,7 @@ const TABLEHEADARR_PRE =
   index: ''
 }, ...]`;
 const TABLEBODYARR_PRE = 
-`tableBobyArr = [
+`tableBodyArr = [
   {tableHeadArr.index}: ''
   , ...
 ]`;
@@ -84,19 +84,19 @@ const PARAM_HEAD = new Array(
 const PARAM_BODY = new Array(
   {name : 'tableHeadArr',                  type : 'Array',          default : '[]',                  notice : (<pre className='content-pre'>{TABLEHEADARR_PRE}</pre>)},
   {name : '- name',                        type : 'String or Node', default : '\'\', ()',            notice : `String or Node to show table head name.`},
-  {name : '- index',                       type : 'String',         default : '\'\'',                notice : `index of tableBobyArr.index.`},
+  {name : '- index',                       type : 'String',         default : '\'\'',                notice : `index of tableBodyArr.index.`},
   //   {name: '- sortType',          type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] index\'s sort type. {value: custom, string, number, ip, mac}`},
   //   {name: '- sortFn',            type: 'Function',       default: '()=>{}',  notice: `[Unsupported Yet] define sort function while sortType is custom.`},
-  //   {name: '- defaultSortStatus', type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] String to index tableBobyArr['index'].`},
-  {name : 'tableBobyArr',                  type : 'Array',          default : '[]',                  notice : (<pre className='content-pre'>{TABLEBODYARR_PRE}</pre>)},
+  //   {name: '- defaultSortStatus', type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] String to index tableBodyArr['index'].`},
+  {name : 'tableBodyArr',                  type : 'Array',          default : '[]',                  notice : (<pre className='content-pre'>{TABLEBODYARR_PRE}</pre>)},
   {name : 'modeObj',                       type : 'Object',         default : '{}',                  notice : ``},
   {name : '- mode',                        type : 'String',         default : 'list',                notice : `mode of table. {value: info, list}`},
   {name : '- listFeatureSearch',           type : 'Object',         default : '{}',                  notice : `Feature for list mode.`},
   {name : '- - enable',                    type : 'Boolean',        default : 'false',               notice : `Enable searching feature`},
   {name : '- - searchInputArr',            type : 'Array',          default : '[]',                  notice : `Searched target splited to an array.`},
   {name : '- - searchMatchRateTheshold',   type : 'Float',          default : '1',                   notice : `Theshod of seached match rate which between 0-1.`},
-  {name : '- - searchSpecAttributeEnable', type : 'Boolean',        default : 'false',               notice : `Enable to support search with specific attributes from tableBobyArr.`},
-  {name : '- - searchSpecAttributeArr',    type : 'Array',          default : '[]',                  notice : `List of specific attributes from tableBobyArr.`},
+  {name : '- - searchSpecAttributeEnable', type : 'Boolean',        default : 'false',               notice : `Enable to support search with specific attributes from tableBodyArr.`},
+  {name : '- - searchSpecAttributeArr',    type : 'Array',          default : '[]',                  notice : `List of specific attributes from tableBodyArr.`},
   //   {name: '- listFeatureSort',   type: 'Object',         default: '{}',      notice: `[Unsupported Yet] Table in list mode can show result with sort's parameters.`},
   //   {name: '- - enable',          type: 'Boolean',        default: 'false',   notice: `[Unsupported Yet] Enable sort feature for table in list mode.`},
   //   {name: '- - defaultSortHead', type: 'String',         default: '\'\'',    notice: `[Unsupported Yet] Default active head to sort table.`},
@@ -145,10 +145,10 @@ const NODE_TREE_LIST = new Array(
     'name'     : '<div> .btb-table',
     'children' : [
       {
-        'name'     : '<table> .table-info',
+        'name'     : '<table> .table-list',
         'children' : [
           {
-            'name'     : '<thead> .info-thead',
+            'name'     : '<thead> .list-thead',
             'children' : [
               {
                 'name'     : '<tr> .thead-tr',
@@ -161,7 +161,7 @@ const NODE_TREE_LIST = new Array(
             ]
           },
           {
-            'name'     : '<tbody> .info-tbody',
+            'name'     : '<tbody> .list-tbody',
             'children' : [
               {
                 'name'     : '<tr> .tbody-tr',
@@ -201,7 +201,7 @@ const Basic = () => {
         <AL.Pre>{RENDER_PRE}</AL.Pre>
         <BTBTable
           tableHeadArr={PARAM_HEAD}
-          tableBobyArr={PARAM_BODY}
+          tableBodyArr={PARAM_BODY}
           modeObj={PARAM_MODE}
           className='content-paramlist'
         />

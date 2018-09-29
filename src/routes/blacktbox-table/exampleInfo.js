@@ -21,14 +21,14 @@ const rourceCodeSubTitle_Style = `Style`;
 
 const ROURCECODE_RENDER_PRE = 
 `<BTBTable 
-  tableHeadArr={tableHeaderArr}
-  tableBobyArr={tableBodyArr}
+  tableHeadArr={tableHeadArr}
+  tableBodyArr={tableBodyArr}
   modeObj={modeObj}
   styleObj={styleObj}
   refFn={(ref)=>{this.infoRef=ref}}
 />`;
 const ROURCECODE_HEADER_PRE = 
-`tableHeaderArr = [
+`tableHeadArr = [
   {name: 'Name',        index: 'name'},
   {name: 'Description', index: 'desc'},
   {name: 'OS Type',     index: 'osType'},
@@ -88,7 +88,7 @@ const ROURCECODE_STYLE_PRE =
   }
 };`;
 
-const tableHeaderArr = [
+const tableHeadArr = [
   {name : 'Name',              index : 'name'},
   {name : 'Type',              index : 'devType'},
   {name : 'OS',                index : 'osType'},
@@ -143,8 +143,8 @@ class Example extends Component {
           <AL.SectionTitle>{exampleTitle}</AL.SectionTitle>
           <AL.Content>
             <BTBTable 
-              tableHeadArr={tableHeaderArr}
-              tableBobyArr={tableBodyArr}
+              tableHeadArr={tableHeadArr}
+              tableBodyArr={tableBodyArr}
               modeObj={modeObj}
               styleObj={styleObj}
               refFn={(ref) => {this.infoRef=ref;}}

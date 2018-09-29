@@ -19,9 +19,10 @@ const rourceCodeSubTitle_Style = `Style`;
 
 const ROURCECODE_RENDER_PRE = 
 `<BTBList 
-  listArr: listArr,
-  styleObj: styleObj,
+  listArr: listArr
+  styleObj: styleObj
   refFn={(ref)=>{this.listRef=ref}}
+  itemOnClickFn={this._itemOnClickFn}
 />`;
 const ROURCECODE_LIST_PRE = 
 `listArr = [
@@ -170,6 +171,7 @@ class Example extends Component {
               listArr={listArr}
               styleObj={styleObj}
               refFn={(ref) => {this.listRef=ref;}}
+              itemOnClickFn={this._itemOnClickFn}
             />
           </AL.Content>
           <AL.Item>
@@ -196,6 +198,11 @@ class Example extends Component {
     return content;
   }
 
+  _itemOnClickFn (eventObj) {
+    /* eslint-disable no-console*/
+    console.log('clickEventObj',  eventObj);
+    /* eslint-enable no-console*/
+  }
   _consoleLogRef () {
     let listRef = ReactDOM.findDOMNode(this.listRef);
     /* eslint-disable no-console*/

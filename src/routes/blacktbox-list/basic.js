@@ -7,7 +7,7 @@ import BTBList from 'blacktbox-list';
 import AL from 'components/articleLayout.js';
 
 const mainTitle = (<span>{`Blacktbox-list `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-list'><FA icon={['fab', 'github']} fixedWidth/></a><a target='_blank' className='linkBtn' href='https://www.npmjs.com/package/blacktbox-list'><FA icon={['fab', 'npm']} fixedWidth/></a></span>);
-const mainDescriptionStr = `List-maker tool. (Latest version: 1.1.3)`;
+const mainDescriptionStr = `List-maker tool. (Latest version: 1.2.1)`;
 
 const installationTitle = `INSTALLATION`;
 const installationContent = (<span>Using with <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
@@ -32,6 +32,7 @@ const RENDER_PRE =
   listArr= []
   styleObj= {}
   refFn= {()=>{}}
+  itemOnClickFn = {()=>{}}
 />`;
 const LISTARR_PRE = 
 `listArr = [{
@@ -55,11 +56,12 @@ const PARAM_HEAD = new Array(
   {name : 'Notice',        index : 'notice'}
 );
 const PARAM_BODY = new Array(
-  {name : 'listArr',     type : 'Array',          default :  '[]',         notice : (<pre className='content-pre'>{LISTARR_PRE}</pre>)},
-  {name : '- name',      type : 'String or Node', default :  '\'\', ()',   notice : `String or Node to show layer name.`},
-  {name : '- children',  type : 'Array',          default :  '[]',         notice : (<pre className='content-pre'>{SUBLISTARR_PRE}</pre>)},
-  {name : 'styleObj',    type : 'Object',         default :  '{}',         notice : (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name : 'refFn',       type : 'Function',       default :  '(ref)=>{}',  notice : `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
+  {name : 'listArr',        type : 'Array',          default :  '[]',             notice : (<pre className='content-pre'>{LISTARR_PRE}</pre>)},
+  {name : '- name',         type : 'String or Node', default :  '\'\', ()',       notice : `String or Node to show layer name.`},
+  {name : '- children',     type : 'Array',          default :  '[]',             notice : (<pre className='content-pre'>{SUBLISTARR_PRE}</pre>)},
+  {name : 'styleObj',       type : 'Object',         default :  '{}',             notice : (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
+  {name : 'refFn',          type : 'Function',       default :  '(ref)=>{}',      notice : `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`},
+  {name : 'itemOnClickFn',  type : 'Function',       default :  '(eventObj)=>{}', notice : `List entry's onClick function.`}
 );
 const NODE_TREE = new Array(
   {
@@ -114,7 +116,7 @@ const Basic = () => {
         <AL.Pre>{RENDER_PRE}</AL.Pre>
         <BTBTable
           tableHeadArr={PARAM_HEAD}
-          tableBobyArr={PARAM_BODY}
+          tableBodyArr={PARAM_BODY}
           modeObj={PARAM_MODE}
           className='content-paramlist'
         />

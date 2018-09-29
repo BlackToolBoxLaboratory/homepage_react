@@ -7,7 +7,7 @@ import BTBList from 'blacktbox-list';
 import AL from 'components/articleLayout.js';
 
 const mainTitle = (<span>{`Blacktbox-menu `}<a target='_blank' className='linkBtn' href='https://github.com/BlackToolBoxLaboratory/blacktbox-menu'><FA icon={['fab', 'github']} fixedWidth/></a><a target='_blank' className='linkBtn' href='https://www.npmjs.com/package/blacktbox-menu'><FA icon={['fab', 'npm']} fixedWidth/></a></span>);
-const mainDescriptionStr = `Menu-maker tool. (Latest version: 1.1.3)`;
+const mainDescriptionStr = `Menu-maker tool. (Latest version: 1.1.4)`;
 
 const installationTitle = `INSTALLATION`;
 const installationContent = (<span>{`Using with`} <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
@@ -161,7 +161,7 @@ const Basic = () => {
         <AL.Pre>{RENDER_PRE}</AL.Pre>
         <BTBTable
           tableHeadArr={PARAM_HEAD}
-          tableBobyArr={PARAM_BODY}
+          tableBodyArr={PARAM_BODY}
           modeObj={PARAM_MODE}
           className='content-paramlist'
         />

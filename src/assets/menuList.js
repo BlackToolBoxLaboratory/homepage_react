@@ -38,12 +38,12 @@ const menuList = new Array(
             'name'  : 'Basic'
           },
           {
-            'index' : 'BTB_TABLE_EXAMPLE_LIST',
-            'name'  : 'Example List'
-          },
-          {
             'index' : 'BTB_TABLE_EXAMPLE_INFO',
             'name'  : 'Example Info'
+          },
+          {
+            'index' : 'BTB_TABLE_EXAMPLE_LIST',
+            'name'  : 'Example List'
           }
         ]
       },
