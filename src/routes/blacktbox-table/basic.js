@@ -50,7 +50,7 @@ const RENDER_PRE =
   },
   noDataMessage: '',
   styleObj: {}
-  refFn: {()=>{}}
+  refFn: function(){}
 />`;
 // const TABLEHEADARR_PRE = 
 // `tableHeadArr = [{
@@ -106,7 +106,7 @@ const PARAM_BODY = new Array(
   {name : '- - pageIndex',                 type : 'Number',         default : '1',                   notice : `Index of the page.`},
   {name : 'noDataMessage',                 type : 'String',         default : `'No data avaliable'`, notice : `To show string while there has no date avaliable.`},
   {name : 'styleObj',                      type : 'Object',         default : '{}',                  notice : (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name : 'refFn',                         type : 'Function',       default : '(ref)=>{}',           notice : `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
+  {name : 'refFn',                         type : 'Function',       default : 'function(ref){}',     notice : `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`}
 );
 
 const NODE_TREE_INFO = new Array(
@@ -120,15 +120,13 @@ const NODE_TREE_INFO = new Array(
             'name'     : '<tbody> .info-tbody',
             'children' : [
               {
-                'name'     : '<tr> .tbody-tr (.tr-{header.index})',
+                'name'     : '<tr> .tbody-tr (.tr-{head.index})',
                 'children' : [
                   {
-                    'name' : '<th> .tr-th (.th-{header.index})'
-                  },
-                  {
-                    'name' : '<td> .tr-td (.td-{header.index})'
-                  },
-                  {
+                    'name' : '<th> .tr-th (.th-{head.index})'
+                  }, {
+                    'name' : '<td> .tr-td (.td-{head.index})'
+                  }, {
                     'name' : '<td> .tr-noData'
                   }
                 ]
@@ -154,23 +152,28 @@ const NODE_TREE_LIST = new Array(
                 'name'     : '<tr> .thead-tr',
                 'children' : [
                   {
-                    'name' : '<th> .tr-th (.th-{header.index})'
+                    'name' : '<th> .tr-th (.th-{head.index})'
                   }
                 ]
               }
             ]
-          },
-          {
+          }, {
             'name'     : '<tbody> .list-tbody',
             'children' : [
               {
                 'name'     : '<tr> .tbody-tr',
                 'children' : [
                   {
-                    'name' : '<td> .tr-td (.td-{header.index})'
-                  },
-                  {
+                    'name' : '<td> .tr-td (.td-{body.index})'
+                  }, {
                     'name' : '<td> .tr-noData'
+                  }
+                ]
+              }, {
+                'name'     : '<tr> .tr-noData',
+                'children' : [
+                  {
+                    'name' : '<td> .td-noData'
                   }
                 ]
               }

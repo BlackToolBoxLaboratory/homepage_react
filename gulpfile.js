@@ -16,6 +16,9 @@ gulp.task("copy2dist", function(done) {
   /* blacktbox-table */
   gulp.src(["node_modules/blacktbox-table/css/blacktbox-table.min.css"])
       .pipe(gulp.dest("dist/vendor/blacktbox-table/css"));
+  /* blacktbox-select */
+  gulp.src(["node_modules/blacktbox-select/css/blacktbox-select.min.css"])
+      .pipe(gulp.dest("dist/vendor/blacktbox-select/css"));
   done();
 });       
 gulp.task("copy2homepage", function(done) { 
@@ -30,8 +33,6 @@ gulp.task("copy2codebase", function(done) {
     .pipe(gulp.dest(path_backup + "src/"));
   gulp.src(["src/**/*"])
     .pipe(gulp.dest(path_backup + "src/"));
-  gulp.src(["src/.eslintrc.js"])
-    .pipe(gulp.dest(path_backup + "src/"));
   /* script */
   gulp.src(["configs/*"])
     .pipe(gulp.dest(path_backup + "configs/"));
@@ -42,7 +43,8 @@ gulp.task("copy2codebase", function(done) {
       "webpack.config.js",
       "package.json",
       "package-lock.json",
-      "gulpfile.js"
+      "gulpfile.js",
+      ".eslintrc.js"
     ])
     .pipe(gulp.dest(path_backup));
   done();

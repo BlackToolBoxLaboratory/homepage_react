@@ -1,19 +1,19 @@
 
-.wrapper {
+.wrapper-home {
   @main_color: #61dafb;
   @background_left_color: #000;
   @background_right_color: #fff;
   @content_left: 200px;
   @content_right: 130px;
   @text-line-height: 20px;
-  @iconbox_size: 50px ; 
-
+  @iconbox_size: 50px ;
+  display: table-row;
   .sideContent {
     width: @content_left;
     background-color: @background_left_color;
     color: @background_right_color;
     vertical-align: top;
-    display: inline-block;
+    display: table-cell;
     min-height: 100vh;
     .header {
         background-color: @main_color;
@@ -51,10 +51,10 @@
     }
   }
   .mainContent {
-    width: calc(~"100% - (@{content_left} + @{content_right} )");
+    display: table-cell;
+    width: calc(~"100% - @{content_left}");
     padding-right: @content_right;
     background-color: @background_right_color;
-    display: inline-block;
     min-height: 100vh;
   }
 }

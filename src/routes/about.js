@@ -15,9 +15,10 @@ const libraryTitle = `LIBRARY LIST`;
 const libraryContent = `We express some idea with our library. While to implement a webpage, we tend to more focus on 'definition' and 'style' than 'construct'. It means our library developed on purpose to help you to construct your page on functional part. And you just need to give us your definition of some object, array, string ..., etc, for all you need to show. Then you can spend more time to focus on style page.`;
 
 const LibraryList = new Array(
-  {name : 'Blacktbox-list',  link : 'BTB_LIST_BASIC'},
-  {name : 'Blacktbox-table', link : 'BTB_TABLE_BASIC'},
-  {name : 'Blacktbox-menu',  link : 'BTB_MENU_BASIC'}
+  {name : 'Blacktbox-List',  link : 'BTB_LIST_BASIC'},
+  {name : 'Blacktbox-Table', link : 'BTB_TABLE_BASIC'},
+  {name : 'Blacktbox-Menu',  link : 'BTB_MENU_BASIC'},
+  {name : 'Blacktbox-Select',  link : 'BTB_SELECT_BASIC'}
 );
 const ContactList = new Array(
   {name : 'Email',     linkName : 'vannoel0628@gmail.com',             href : 'mailto://vannoel0628@gmail.com',            icon : ['fas', 'envelope']},

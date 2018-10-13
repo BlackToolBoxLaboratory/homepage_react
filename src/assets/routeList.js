@@ -17,7 +17,10 @@ const routeList = {
 
   'BTB_MENU_BASIC'   : '/blacktbox-menu/basic',
   'BTB_MENU_EXAMPLE' : '/blacktbox-menu/example',
-  'BTB_MENU_ADV'     : '/blacktbox-menu/advanced'
+  'BTB_MENU_ADV'     : '/blacktbox-menu/advanced',
+
+  'BTB_SELECT_BASIC'   : '/blacktbox-select/basic',
+  'BTB_SELECT_EXAMPLE' : '/blacktbox-select/example',
 };
 
 export default routeList;

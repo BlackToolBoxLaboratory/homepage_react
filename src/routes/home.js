@@ -27,6 +27,9 @@ import BTBMenu_basic from './blacktbox-menu/basic.js';
 import BTBMenu_example from './blacktbox-menu/example.js';
 import BTBMenu_advanced from './blacktbox-menu/advanced.js';
 
+import BTBSelect_basic from './blacktbox-select/basic.js';
+import BTBSelect_example from './blacktbox-select/example.js';
+
 import NotFound from './404.js';
 
 let SideContentThis;
@@ -160,6 +163,9 @@ const MainContent = () => {
         <Route exact path={routeList.BTB_MENU_BASIC} component={BTBMenu_basic}/>
         <Route exact path={routeList.BTB_MENU_EXAMPLE} component={BTBMenu_example}/>
         <Route exact path={routeList.BTB_MENU_ADV} component={BTBMenu_advanced}/>
+
+        <Route exact path={routeList.BTB_SELECT_BASIC} component={BTBSelect_basic}/>
+        <Route exact path={routeList.BTB_SELECT_EXAMPLE} component={BTBSelect_example}/>
 
         <Route component={NotFound}/>
       </Switch>

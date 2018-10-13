@@ -199,15 +199,11 @@ class Example extends Component {
   }
 
   _itemOnClickFn (eventObj) {
-    /* eslint-disable no-console*/
     console.log('clickEventObj',  eventObj);
-    /* eslint-enable no-console*/
   }
   _consoleLogRef () {
     let listRef = ReactDOM.findDOMNode(this.listRef);
-    /* eslint-disable no-console*/
     console.log('listRef', listRef);
-    /* eslint-enable no-console*/
   }
 }
 

@@ -64,6 +64,20 @@ const menuList = new Array(
             'name'  : 'Advanced'
           }
         ]
+      },
+      {
+        'index'    : 'BTB_SELECT',
+        'name'     : 'Select',
+        'children' : [
+          {
+            'index' : 'BTB_SELECT_BASIC',
+            'name'  : 'Basic'
+          },
+          {
+            'index' : 'BTB_SELECT_EXAMPLE',
+            'name'  : 'Example'
+          }
+        ]
       }
     ]
   }

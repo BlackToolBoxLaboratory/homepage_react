@@ -184,9 +184,7 @@ class Example extends Component {
 
   _consoleLogRef () {
     let infoRef = ReactDOM.findDOMNode(this.infoRef);
-    /* eslint-disable no-console*/
     console.log('infoRef', infoRef);
-    /* eslint-enable no-console*/
   }
 }
 

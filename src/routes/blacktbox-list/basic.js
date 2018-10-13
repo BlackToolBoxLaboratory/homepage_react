@@ -31,8 +31,8 @@ const RENDER_PRE =
 `<BTBList 
   listArr= []
   styleObj= {}
-  refFn= {()=>{}}
-  itemOnClickFn = {()=>{}}
+  refFn= function(){}
+  itemOnClickFn = function(){}
 />`;
 const LISTARR_PRE = 
 `listArr = [{
@@ -56,12 +56,12 @@ const PARAM_HEAD = new Array(
   {name : 'Notice',        index : 'notice'}
 );
 const PARAM_BODY = new Array(
-  {name : 'listArr',        type : 'Array',          default :  '[]',             notice : (<pre className='content-pre'>{LISTARR_PRE}</pre>)},
-  {name : '- name',         type : 'String or Node', default :  '\'\', ()',       notice : `String or Node to show layer name.`},
-  {name : '- children',     type : 'Array',          default :  '[]',             notice : (<pre className='content-pre'>{SUBLISTARR_PRE}</pre>)},
-  {name : 'styleObj',       type : 'Object',         default :  '{}',             notice : (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
-  {name : 'refFn',          type : 'Function',       default :  '(ref)=>{}',      notice : `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`},
-  {name : 'itemOnClickFn',  type : 'Function',       default :  '(eventObj)=>{}', notice : `List entry's onClick function.`}
+  {name : 'listArr',        type : 'Array',          default :  '[]',                   notice : (<pre className='content-pre'>{LISTARR_PRE}</pre>)},
+  {name : '- name',         type : 'String or Node', default :  '\'\', ()',             notice : `String or Node to show layer name.`},
+  {name : '- children',     type : 'Array',          default :  '[]',                   notice : (<pre className='content-pre'>{SUBLISTARR_PRE}</pre>)},
+  {name : 'styleObj',       type : 'Object',         default :  '{}',                   notice : (<pre className='content-pre'>{STYLEOBJ_PRE}</pre>)},
+  {name : 'refFn',          type : 'Function',       default :  'function(ref){}',      notice : `To catch ref with (ref)=>{variable = ref}. (Only for stateful function)`},
+  {name : 'itemOnClickFn',  type : 'Function',       default :  'function(eventObj){}', notice : `List entry's onClick function.`}
 );
 const NODE_TREE = new Array(
   {
@@ -80,8 +80,7 @@ const NODE_TREE = new Array(
                     'name' : '<div> .content-name',
                   }
                 ]
-              },
-              {
+              }, {
                 'name'     : '<div> .item-sublist',
                 'children' : [
                   {

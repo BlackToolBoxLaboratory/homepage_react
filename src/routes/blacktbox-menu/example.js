@@ -14,7 +14,7 @@ const exampleSubTitle_Notice = `Notice`;
 const exampleSubTitle_Notice_Contnet = [
   `You can see the menuRef, clickEventObj and collapseEventObj from console.log, while triggering events.`,
   `To let the extensible menu items can be collapse/extend while clicked, please set the itemClickWithCollapseEnable true.`,
-  `To mark which menu item is active. You will need to implement it by style(css) with the class group: activeTop, activeParent, active.`
+  `To mark which menu item is active. You will need to implement it by style(CSS) with the class group: activeTop, activeParent, active.`
 ];
 const exampleButtonText = `Show menuRef to console.log`;
 
@@ -233,9 +233,9 @@ class Example extends Component {
                 'enable'                      : true,
                 'itemClickWithCollapseEnable' : false,
                 'defaultCollapse'             : false,
-                'customCollapseButton'        : 'Extend',
-                'customExtendButton'          : 'Collapse',
-                'itemOnCollapseFn'            : this._itemOnCollapseFn
+                'customCollapseButton'        : 'Collapsed',
+                'customExtendButton'          : 'Extended',
+                'itemOnCollapseFn'            : () => {this._itemOnCollapseFn;}
               }}
             />
           </AL.Content>
@@ -280,20 +280,14 @@ class Example extends Component {
   }
 
   _itemOnClickFn (eventObj) {
-    /* eslint-disable no-console*/
     console.log('clickEventObj',  eventObj);
-    /* eslint-enable no-console*/
   }
   _itemOnCollapseFn (eventObj) {
-    /* eslint-disable no-console*/
     console.log('collapseEventObj',  eventObj);
-    /* eslint-enable no-console*/
   }
   _consoleLogRef () {
     let menuRef = ReactDOM.findDOMNode(this.menuRef);
-    /* eslint-disable no-console*/
     console.log('menuRef', menuRef);
-    /* eslint-enable no-console*/
   }
 }
 

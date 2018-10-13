@@ -42,6 +42,7 @@
         "babel-preset-react": "^6.24.1",
         "blacktbox-list": "^1.2.1",
         "blacktbox-menu": "^1.1.4",
+        "blacktbox-select": "^1.0.1",
         "blacktbox-table": "^0.3.2",
         "css-loader": "^0.28.7",
         "eslint": "^5.5.0",

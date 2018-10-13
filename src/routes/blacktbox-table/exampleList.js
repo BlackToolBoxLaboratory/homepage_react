@@ -14,7 +14,7 @@ const exampleButtonText = `Show listRef to console.log`;
 
 const rourceCodeTitle = `SOURCECODE`;
 const rourceCodeSubTitle_Render = `Render`;
-const rourceCodeSubTitle_Header = `Header`;
+const rourceCodeSubTitle_Head = `Header`;
 const rourceCodeSubTitle_Body = `Body`;
 const rourceCodeSubTitle_Msg = `Message for no data`;
 const rourceCodeSubTitle_Mode = `mode`;
@@ -29,7 +29,7 @@ const ROURCECODE_RENDER_PRE =
   styleObj={styleObj}
   refFn={(ref)=>{this.listRef=ref}}
 />`;
-const ROURCECODE_HEADER_PRE = 
+const ROURCECODE_HEAD_PRE = 
 `tableHeaderArr = [
   {name: 'Name',              index: 'name',     },
   {name: 'Type',              index: 'devType',  },
@@ -143,44 +143,30 @@ const tableBodyArr = [
   {name : 'Device 13', devType : 'phone',   osType : 'android',  ipAddr : '192.168.0.84',   macAddr : 'B4:22:27:44:55:B2', traffic : '1.5 MB / 235 KB', status : 1, statusDesc : 'Connected'}
 ];
 const noDataStr = 'No data.';
-var modeObj = {
-  mode              : 'list',
-  listFeatureSearch : {
-    enable                    : true,
-    searchInputArr            : [],
-    searchMatchRateTheshold   : 0,
-    searchSpecAttributeEnable : true,
-    searchSpecAttributeArr    : ['name', 'devType', 'osType', 'ipAddr', 'macAddr', 'status']
-  },
-  listFeaturePage : {
-    enable      : true,
-    dataPerPage : 10,
-    pageIndex   : 1
-  }
-};
+var modeObj = {};
 const styleObj = {
-  "btb-table" : {
-    "text-align" : 'center'
+  'btb-table' : {
+    'text-align' : 'center'
   },
-  "table-list" : {
-    "box-shadow" : '2px 2px 4px 2px #aaa'
+  'table-list' : {
+    'box-shadow' : '2px 2px 4px 2px #aaa'
   },
-  "tr-th" : {
-    "background-color" : '#bae7ff',
-    "padding"          : '2px 5px'
+  'tr-th' : {
+    'background-color' : '#bae7ff',
+    'padding'          : '2px 5px'
   },
-  "tr-td" : {
-    "padding" : '2px 10px'
+  'tr-td' : {
+    'padding' : '2px 10px'
   },
-  "td-name" : {
-    "font-weight" : 'bold'
+  'td-name' : {
+    'font-weight' : 'bold'
   },
-  "td-ipAddr" : {
-    "color"           : 'blue',
-    "text-decoration" : 'underline'
+  'td-ipAddr' : {
+    'color'           : 'blue',
+    'text-decoration' : 'underline'
   },
-  "tr-noData" : {
-    "color" : 'red'
+  'tr-noData' : {
+    'color' : 'red'
   }
 };
 
@@ -192,6 +178,9 @@ class Example extends Component {
       searchInputArr          : [],
       searchMatchRateTheshold : 0
     };
+  }
+  componentWillMount () {
+    initModeObj();
   }
   render () {
     let content = [];
@@ -224,8 +213,8 @@ class Example extends Component {
             <AL.Pre>{ROURCECODE_RENDER_PRE}</AL.Pre>
           </AL.Content>
           <AL.Content>
-            <AL.SectionSubtitle>{rourceCodeSubTitle_Header}</AL.SectionSubtitle>
-            <AL.Pre>{ROURCECODE_HEADER_PRE}</AL.Pre>
+            <AL.SectionSubtitle>{rourceCodeSubTitle_Head}</AL.SectionSubtitle>
+            <AL.Pre>{ROURCECODE_HEAD_PRE}</AL.Pre>
           </AL.Content>
           <AL.Content>
             <AL.SectionSubtitle>{rourceCodeSubTitle_Body}</AL.SectionSubtitle>
@@ -251,9 +240,7 @@ class Example extends Component {
 
   _consoleLogRef () {
     let listRef = ReactDOM.findDOMNode(this.listRef);
-    /* eslint-disable no-console*/
     console.log('listRef', listRef);
-    /* eslint-enable no-console*/
   }
 
   searchConfigRender () {
@@ -431,6 +418,24 @@ class Example extends Component {
     modeObj.listFeaturePage.pageIndex = event.target.value;
     this.forceUpdate();
   }
+}
+
+function initModeObj() {
+  modeObj = {
+    mode              : 'list',
+    listFeatureSearch : {
+      enable                    : true,
+      searchInputArr            : [],
+      searchMatchRateTheshold   : 0,
+      searchSpecAttributeEnable : true,
+      searchSpecAttributeArr    : ['name', 'devType', 'osType', 'ipAddr', 'macAddr', 'status']
+    },
+    listFeaturePage : {
+      enable      : true,
+      dataPerPage : 10,
+      pageIndex   : 1
+    }
+  };
 }
 
 export default Example;
