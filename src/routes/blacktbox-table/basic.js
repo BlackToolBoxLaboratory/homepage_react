@@ -127,7 +127,7 @@ const NODE_TREE_INFO = new Array(
                   }, {
                     'name' : '<td> .tr-td (.td-{head.index})'
                   }, {
-                    'name' : '<td> .tr-noData'
+                    'name' : '<td> .td-noData'
                   }
                 ]
               }
