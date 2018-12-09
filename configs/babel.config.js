@@ -1,19 +1,16 @@
-const webpack = require('webpack');
-
 const babel_config = {
-  'test': /\.js$/,
-  'exclude': /node_modules/,
-  'use': 
+  test:/\.(js|jsx)$/,
+  exclude: /node_modules/,
+  use: 
   {
-    'loader': 'babel-loader',
-    'options': {
-      'presets': [
-        'env',
-        'react'
+    loader: 'babel-loader',
+    options: {
+      presets: [
+        '@babel/preset-env',
+        '@babel/preset-react'
       ],
-      'plugins': [
-        'transform-object-rest-spread',
-        'transform-react-remove-prop-types'  
+      plugins: [
+        '@babel/plugin-proposal-object-rest-spread'
       ]
     }
   }

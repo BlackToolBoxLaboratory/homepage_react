@@ -1,18 +1,16 @@
-const webpack = require('webpack');
-
 const style_config = {
-  'test': /\.less$/,
-  'use': [{
-      'loader': 'style-loader'
+  test: /\.less$/,
+  use: [{
+    loader: 'style-loader'
   }, {
-      'loader': 'css-loader'
+    loader: 'css-loader'
   }, {
-      'loader': 'postcss-loader',
-      'options': {
-        'plugins': () => [require('autoprefixer')]
-      }
+    loader: 'postcss-loader',
+    options: {
+      plugins: () => [require('autoprefixer')]
+    }
   }, {
-      'loader': 'less-loader'
+    loader: 'less-loader'
   }]
 }
 

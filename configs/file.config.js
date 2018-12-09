@@ -1,13 +1,11 @@
-const webpack = require('webpack');
-
 const file_config = {
-  'test': /\.png$/,
-  'use': [
+  test: /\.png$/,
+  use: [
     {
-      'loader': 'file-loader',
-      'options': {
-        'name': '[name].[ext]',
-        'outputPath': './images/'
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        outputPath: './images/'
       }
     }
   ]
