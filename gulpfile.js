@@ -3,31 +3,33 @@ var gulp = require("gulp");
 var path_homepage = "../homepage/";
 var path_backup = "../codebase/blacktbox-demo/";
 
-gulp.task("copy2dist", function(done) {
+gulp.task("updatePublic", function(done) {
   /* html */
   gulp.src(["src/index.html"])
-      .pipe(gulp.dest("dist/"));
+      .pipe(gulp.dest("public/"));
   /* blacktbox-menu */
   gulp.src(["node_modules/blacktbox-menu/css/blacktbox-menu.min.css"])
-      .pipe(gulp.dest("dist/vendor/blacktbox-menu/css"));
+      .pipe(gulp.dest("public/vendor/blacktbox-menu/css"));
   /* blacktbox-list */
   gulp.src(["node_modules/blacktbox-list/css/blacktbox-list.min.css"])
-      .pipe(gulp.dest("dist/vendor/blacktbox-list/css"));
+      .pipe(gulp.dest("public/vendor/blacktbox-list/css"));
   /* blacktbox-table */
   gulp.src(["node_modules/blacktbox-table/css/blacktbox-table.min.css"])
-      .pipe(gulp.dest("dist/vendor/blacktbox-table/css"));
+      .pipe(gulp.dest("public/vendor/blacktbox-table/css"));
   /* blacktbox-select */
   gulp.src(["node_modules/blacktbox-select/css/blacktbox-select.min.css"])
-      .pipe(gulp.dest("dist/vendor/blacktbox-select/css"));
+      .pipe(gulp.dest("public/vendor/blacktbox-select/css"));
   done();
-});       
-gulp.task("copy2homepage", function(done) { 
+});
+
+gulp.task("updateHomePage", function(done) { 
   /* all */
   gulp.src(["dist/**/*"])
     .pipe(gulp.dest(path_homepage));
   done();
 });
-gulp.task("copy2codebase", function(done) {  
+
+gulp.task("backupCodeBase", function(done) {  
   /* src */
   gulp.src(["src/*"])
     .pipe(gulp.dest(path_backup + "src/"));
@@ -49,6 +51,3 @@ gulp.task("copy2codebase", function(done) {
     .pipe(gulp.dest(path_backup));
   done();
 });
-gulp.task("buildup", gulp.series("copy2dist"));
-gulp.task("setup", gulp.series("copy2homepage"));
-gulp.task("backup", gulp.series("copy2codebase"));
