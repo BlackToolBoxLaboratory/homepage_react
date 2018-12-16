@@ -7,12 +7,9 @@ import { Provider } from 'react-redux';
 
 import store  from './store.js';
 
+import './assets/style/index.less';
 
-// import 'css/index.less';
-// import 'components/fontawesomeLibrary.js';
-// import Dispatcher from 'assets/dispatcher.js';
-
-import Main from './routes/Main.jsx';
+import Frame from './routes/Frame.jsx';
 import Refactor from './routes/Refactor.jsx';
 
 const Router = () => {
@@ -20,7 +17,7 @@ const Router = () => {
     <Provider store={store}>
       <HashRouter>
         <Switch>
-          <Route exact path='/v2' component={Main} />
+          <Route exact path='/v2' component={Frame} />
           <Route path='/' component={Refactor} />
         </Switch>
       </HashRouter>

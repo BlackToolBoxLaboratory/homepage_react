@@ -6,13 +6,14 @@ const eslint_config = {
   include: /src/,
   exclude: /node_modules/,
   enforce: 'pre',
-  use: 
-  {
-    loader: 'eslint-loader',
-    options: {
-      fix: true,
+  use: [
+    {
+      loader: 'eslint-loader',
+      options: {
+        fix: true,
+      }
     }
-  }
+  ]
 }
 
 module.exports = eslint_config;

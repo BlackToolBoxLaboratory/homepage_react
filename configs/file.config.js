@@ -1,11 +1,11 @@
 const file_config = {
-  test: /\.png$/,
+  test: /\.(ttf|png)$/,
   use: [
     {
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
-        outputPath: './images/'
+        outputPath: './files/'
       }
     }
   ]
