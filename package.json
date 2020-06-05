@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "cleanModules": "rimraf node_modules",
-    "updateHomepage": "gulp updateHomepage",
+    "updateHomePage": "npm run build-prod && gulp updateHomePage",
     "backupCodebase": "gulp backupCodebase",
     "build-prod": "webpack --progress --color --config webpack.prod.js",
     "build-dev": "webpack --progress --color --config webpack.dev.js",

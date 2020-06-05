@@ -17,4 +17,8 @@ const Layout = (props) => {
   );
 };
 
+function togglePageMenu() {
+  this.env.isHidden = !this.env.isHidden;
+}
+
 export default Layout;

@@ -19,6 +19,10 @@ gulp.task('backupCodebase', function (done) {
     .pipe(gulp.dest(path_backup + '/src/'))
   gulp.src(['public/**/*'])
     .pipe(gulp.dest(path_backup + '/public/'))
+  gulp.src(['configs/**/*'])
+    .pipe(gulp.dest(path_backup + '/configs/'))
+  gulp.src(['utils/**/*'])
+    .pipe(gulp.dest(path_backup + '/utils/'))
   /* others */
   gulp.src([
     '.browserslistrc',
@@ -28,10 +32,8 @@ gulp.task('backupCodebase', function (done) {
     'README.md',
     'package.json',
     'package-lock.json',
-    'babel.config.js',
     'gulpfile.js',
     'sitemap.xml'
-  ])
-    .pipe(gulp.dest(path_backup))
+  ]).pipe(gulp.dest(path_backup))
   done()
 })

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import About from '@src/components/About.jsx';
+import About from '@src/components/about/About.jsx';
 
 const AboutContainer = () => {
   return (
