@@ -1,28 +1,8 @@
-# blacktbox-demo
+# HomePage of BTB Lab. for React
+Home page of Black Toolbox Laboratory for React.
 
-Demo of blacktbox API
+You can see our website [on-line](https://blacktoolboxlaboratory.github.io/react).
 
-## Environment
+If you have any great idea to develop and any question or issue for me, please contact me via [E-mail](mailto://vannoel0628@gmail.com).
 
-Firstly, you need [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com).
-
-## Run
-
-Now you can clone our code and run it by these commands:
-
-    git clone https://github.com/BlackToolBoxLaboratory/blacktbox-demo.git
-    cd blacktbox-demo
-    npm install
-    npm start
-
-Then, welcome to [http://localhost:9000](http://localhost:9000). 
-
-# Issue
-
-Feel free to see around the codebase and share your experience with us. We will be grateful to be given advices. 
-
-Please file [issue](https://github.com/BlackToolBoxLaboratory/blacktbox-demo/issues), if you have any issue or idea.  
-
-# Homepage
-
-You also can see our document website [on-line](https://blacktoolboxlaboratory.github.io/).
+And if you like my works, please click here to [Buy me a coffee](https://www.paypal.me/vannoel0628).

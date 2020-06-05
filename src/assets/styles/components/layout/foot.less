@@ -1,0 +1,47 @@
+.btb-layout-foot{
+  .foot_navbar {
+    .mixin_font-xl;
+    .mixin_padding-x(1rem);
+    .mixin_padding-y(0.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: @color-gray-l;
+
+    .navbar_linkBtn {
+      .mixin_font-lg;
+      color: @color-gray-d;
+
+      &.linkBtn-paypal:hover {
+        color: @color-paypal;
+      }
+      &.linkBtn-github:hover {
+        color: @color-github;
+      }
+      &.linkBtn-npm:hover {
+        color: @color-npm;
+      }
+      &.linkBtn-linkedin:hover {
+        color: @color-linkedin;
+      }
+      &.linkBtn-wordpress:hover {
+        color: @color-wordpress;
+      }
+      &.linkBtn-email:hover {
+        color: @color-email;
+      }
+
+      & + .navbar_linkBtn {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .foot_copyright {
+    .mixin_font-xs;
+    .mixin_padding-md;
+    color: @color-gray-lll;
+    background-color: @color-gray-ddd;
+    text-align: center;
+  }
+}

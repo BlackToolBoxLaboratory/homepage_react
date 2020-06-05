@@ -1,0 +1,66 @@
+// variables 
+// --xs--|576px|--sm--|768px|--lg--|992px|--xl--|1200px|--xl--
+@D-sm : 576px;
+@D-md : 768px;
+@D-lg : 992px;
+@D-xl : 1200px;
+
+// mixin: upper than
+.mixin_breakpoint-up (@content, @value) {
+  @media (min-width : @value) {
+    & {
+      @content();
+    };
+  };
+};
+.mixin_breakpoint-up-sm (@content) {
+  .mixin_breakpoint-up(@content, @D-sm);
+};
+.mixin_breakpoint-up-md (@content) {
+  .mixin_breakpoint-up(@content, @D-md);
+};
+.mixin_breakpoint-up-lg (@content) {
+  .mixin_breakpoint-up(@content, @D-lg);
+};
+.mixin_breakpoint-up-xl (@content) {
+  .mixin_breakpoint-up(@content, @D-xl);
+};
+
+// mixin: lower than
+.mixin_breakpoint-down (@content, @value) {
+  @media (max-width : @value) {
+    & {
+      @content();
+    };
+  };
+};
+.mixin_breakpoint-down-sm (@content) {
+  .mixin_breakpoint-down(@content, @D-sm);
+};
+.mixin_breakpoint-down-md (@content) {
+  .mixin_breakpoint-down(@content, @D-md);
+};
+.mixin_breakpoint-down-lg (@content) {
+  .mixin_breakpoint-down(@content, @D-lg);
+};
+.mixin_breakpoint-down-xl (@content) {
+  .mixin_breakpoint-down(@content, @D-xl);
+};
+
+// mxin: between
+.mixin_breakpoint-only (@content, @min, @max) {
+  @media (min-width: @min) and (max-width: @max) {
+    & {
+      @content();
+    };
+  };
+};
+.mixin_breakpoint-only-sm (@content) {
+  .mixin_breakpoint-only(@content, @D-sm, @D-md);
+};
+.mixin_breakpoint-only-md (@content) {
+  .mixin_breakpoint-only(@content, @D-md, @D-lg);
+};
+.mixin_breakpoint-only-lg (@content) {
+  .mixin_breakpoint-only(@content, @D-lg, @D-xl);
+};

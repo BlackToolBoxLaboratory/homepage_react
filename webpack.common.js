@@ -1,9 +1,7 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const eslint_config = require(path.join(__dirname, '/configs/eslint.config.js'));
 const babel_config = require(path.join(__dirname, '/configs/babel.config.js'));
@@ -12,12 +10,23 @@ const file_config = require(path.join(__dirname, '/configs/file.config.js'));
 
 module.exports = {
   entry: {
-    index: path.join(__dirname, '/src/main.jsx'),
+    index: path.join(__dirname, '/src/index.jsx'),
     vendors: ['react', 'react-dom', 'react-router-dom', '@fortawesome/react-fontawesome']
   },
   output: {
+    publicPath: "/",
     path: path.join(__dirname, '/dist'),
     filename: "[name].js"
+  },
+  devServer: {
+    contentBase: path.join(__dirname, "/dist"),
+    disableHostCheck: true,
+    compress: true,
+    host: '0.0.0.0',
+    useLocalIp: true,
+    port: 9000,
+    inline: true,
+    hot: true
   },
   module: {
     rules: [
@@ -28,6 +37,9 @@ module.exports = {
     ]
   },
   resolve: {
+    alias: {
+      '@src': path.resolve(__dirname, './src')
+    },
     modules: [
       path.resolve(__dirname, './node_modules'),
       path.resolve(__dirname, './src')
@@ -35,12 +47,7 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-          uglifyOptions: {
-              compress: true
-          }
-      }),
-      new OptimizeCSSAssetsPlugin()
+      new OptimizeCSSAssetsPlugin({})
     ],
     splitChunks: {
       chunks: 'async',
@@ -57,7 +64,6 @@ module.exports = {
           priority: -10
         },
         default: {
-          minChunks: 2,
           priority: -20,
           reuseExistingChunk: true
         }
@@ -68,16 +74,22 @@ module.exports = {
     "hints": false
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Black ToolBox Laboratory',
+      title: 'BTB Lab. | React',
+      favicon: path.resolve(__dirname, "public/favicon.ico"),
       inject: true,
       hash: true,
       minify: {
         collapseWhitespace: true
       },
-      template: path.resolve(__dirname, 'public/index.html')
+      chunks: ["index", "vendors"],
+      filename: "index.html",
+      template: path.resolve(__dirname, "public/index.html")
     }),
-    new ExtractTextPlugin('index.css')
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+      ignoreOrder: false
+    })
   ],
 };

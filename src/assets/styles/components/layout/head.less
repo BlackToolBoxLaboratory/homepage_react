@@ -1,0 +1,54 @@
+.btb-layout-head {
+  .mixin_padding-sm;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: @color-black;
+
+  .head_logo {
+    .mixin_margin-sm;
+    .mixin_radius-md;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: @color-primary;
+    flex-shrink: 0;
+
+    .logo_content {
+      .mixin_font-3xl-b;
+      color: @color-black;
+    }
+  }
+
+  .head_title {
+    .mixin_margin-sm;
+    flex-grow: 1;
+
+    .title_main {
+      .mixin_font-lg-b;
+      color: @color-primary;
+    }
+    .title_sub {
+      color: @color-gray-ll;
+    }
+  }
+
+  .head_item {
+    .mixin_margin-md;
+    .mixin_font-lg;
+    flex-shrink: 0;
+
+    .item_button {
+      color: @color-gray-ll;
+      cursor: pointer;
+
+      &:hover {
+        color: @color-gray-lll;
+      }
+    }
+  }
+}

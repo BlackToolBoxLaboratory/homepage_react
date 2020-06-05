@@ -1,0 +1,140 @@
+// variables
+@D-max: 12;
+
+// mixins
+.gridWidth(@num) {
+  flex: 0 0 100% * (@num / @D-max);
+  max-width: 100% * (@num / @D-max);
+}
+
+.grid-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem -1rem;
+
+  &.row-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &.direction-row {
+    flex-direction: row;
+  }
+  &.direction-column {
+    flex-direction: column;
+  }
+
+  &.justify-content-start {
+    justify-content: flex-start;
+  }
+  &.justify-content-center {
+    justify-content: center;
+  }
+  &.justify-content-end {
+    justify-content: flex-end;
+  }
+  &.justify-content-between {
+    justify-content: space-between;
+  }
+
+  // IE > 11
+  &.align-items-start {
+    align-items: flex-start;
+  }
+  &.align-items-center {
+    align-items: center;
+  }
+  &.align-items-end {
+    align-items: flex-end;
+  }
+  &.align-items-stretch {
+    align-items: stretch;
+  }
+}
+
+[class*=grid-col] {
+  position: relative;
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.grid-col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+.gridLoop (@counter) when (@counter > 0) {
+  .grid-col-@{counter} {
+    .gridWidth(@counter);
+  }
+  .gridLoop(@counter - 1);
+}
+.gridLoop(@D-max);
+
+.grid-col-sm {
+  .mixin_breakpoint-up-sm({
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  });
+}
+.gridLoop-sm (@counter) when (@counter > 0) {
+  .grid-col-sm-@{counter} {
+    .mixin_breakpoint-up-sm({
+      .gridWidth(@counter);
+    });
+  }
+  .gridLoop-sm(@counter - 1);
+}
+.gridLoop-sm(@D-max);
+
+.grid-col-md {
+  .mixin_breakpoint-up-md({
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  });
+}
+.gridLoop-md (@counter) when (@counter > 0) {
+  .grid-col-md-@{counter} {
+    .mixin_breakpoint-up-md({
+      .gridWidth(@counter);
+    });
+  }
+  .gridLoop-md(@counter - 1);
+}
+.gridLoop-md(@D-max);
+
+.grid-col-lg {
+  .mixin_breakpoint-up-lg({
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  });
+}
+.gridLoop-lg (@counter) when (@counter > 0) {
+  .grid-col-lg-@{counter} {
+    .mixin_breakpoint-up-lg({
+      .gridWidth(@counter);
+    });
+  }
+  .gridLoop-lg(@counter - 1);
+}
+.gridLoop-lg(@D-max);
+
+.grid-col-xl {
+  .mixin_breakpoint-up-xl({
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  });
+}
+.gridLoop-xl (@counter) when (@counter > 0) {
+  .grid-col-xl-@{counter} {
+    .mixin_breakpoint-up-xl({
+      .gridWidth(@counter);
+    });
+  }
+  .gridLoop-xl(@counter - 1);
+}
+.gridLoop-xl(@D-max);
