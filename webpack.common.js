@@ -14,7 +14,7 @@ module.exports = {
     vendors: ['react', 'react-dom', 'react-router-dom', '@fortawesome/react-fontawesome']
   },
   output: {
-    publicPath: "/",
+    publicPath: "/react/",
     path: path.join(__dirname, '/dist'),
     filename: "[name].js"
   },
