@@ -27,7 +27,7 @@ const Head = (props) => {
         <FAI className="item_button" icon={['fas', 'globe']} fixedWidth />
       </div>
       <div className="head_item">
-        <FAI className="item_button" icon={['fas', 'bars']} fixedWidth />
+        <FAI className="item_button" icon={['fas', 'bars']} fixedWidth onClick={props.toggleMenu}/>
       </div>
     </header>
   );

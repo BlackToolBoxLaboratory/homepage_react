@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const style_config = {
-  test: /\.less$/,
+  test: /\.less|.css$/,
   use: [{
     loader: MiniCssExtractPlugin.loader,
   }, {

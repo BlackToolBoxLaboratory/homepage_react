@@ -1,7 +1,7 @@
 const path = require('path');
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const eslint_config = require(path.join(__dirname, '/configs/eslint.config.js'));
 const babel_config = require(path.join(__dirname, '/configs/babel.config.js'));
@@ -14,12 +14,13 @@ module.exports = {
     vendors: ['react', 'react-dom', 'react-router-dom', '@fortawesome/react-fontawesome']
   },
   output: {
-    publicPath: "/react/",
+    publicPath: '/react/',
     path: path.join(__dirname, '/dist'),
-    filename: "[name].js"
+    filename: '[name].js'
   },
   devServer: {
-    contentBase: path.join(__dirname, "/dist"),
+    contentBase: path.join(__dirname, '/dist'),
+    openPage: 'react/',
     disableHostCheck: true,
     compress: true,
     host: '0.0.0.0',
@@ -71,24 +72,24 @@ module.exports = {
     }
   },
   performance: {
-    "hints": false
+    'hints': false
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'BTB Lab. | React',
-      favicon: path.resolve(__dirname, "public/favicon.ico"),
+      favicon: path.resolve(__dirname, 'public/favicon.ico'),
       inject: true,
       hash: true,
       minify: {
         collapseWhitespace: true
       },
-      chunks: ["index", "vendors"],
-      filename: "index.html",
-      template: path.resolve(__dirname, "public/index.html")
+      chunks: ['index', 'vendors'],
+      filename: 'index.html',
+      template: path.resolve(__dirname, 'public/index.html')
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
+      filename: '[name].css',
+      chunkFilename: '[id].css',
       ignoreOrder: false
     })
   ],
