@@ -1,0 +1,22 @@
+.module-divider {
+  .mixin_margin-md-y;
+  .mixin_opacity-50;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .divider_line {
+    .mixin_margin-x(0.25rem);
+    .mixin_border-dashed-b(1px);
+    border-color: @color-gray;
+    width: 100%;
+    height: 1px;
+    flex-grow: 1;
+  }
+
+  .divider_icon {
+    .mixin_margin-x(0.25rem);
+    .mixin_font-xs;
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,17 @@
+.module-section {
+  & + .module-section {
+    .mixin_margin-t(1.5rem);
+  }
+
+  .section_head {
+    .mixin_font-sm-b;
+    .mixin_border-solid-b(1px);
+    .mixin_margin-lg-b;
+    .mixin_padding-sm-b;
+    border-color: @color-gray-l;
+    color: @color-gray-l;
+  }
+  .section_body {
+    .mixin_margin-lg-l;
+  }
+}
