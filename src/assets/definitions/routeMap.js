@@ -7,7 +7,7 @@ const routeMap = {
   'PACKAGES_LIST_BASIC' : '/packages/list/basic',
 
   'APPLICATIONS'           : '/applications',
-  'APPLICATIONS_LANGUAGES' : '/applications/packages',
+  'APPLICATIONS_LANGUAGES' : '/applications/languages',
   'APPLICATIONS_VALIDATOR' : '/applications/validator'
 };
 

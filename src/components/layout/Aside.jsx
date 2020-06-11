@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { withRouter } from "react-router";
 
 import BTBList from '@blacktoolbox/react-list';
 
-import hashHistory from '@src/history.js';
 import MENU from '@src/assets/definitions/menuList.js';
 import ROUTE from '@src/assets/definitions/routeMap.js';
 
@@ -11,22 +11,29 @@ const Aside = (props) => {
     state_activeID : useActiveState()
   };
 
-  useState(() => {
-    env.state_activeID.onChange(getRouteID());
-  }, []);
+  useEffect(() => {
+    env.state_activeID.onChange(_getRouteID());
+  });
 
   function _clickEntry (event) {
     if (event.id === 'VERSION_1')
     {
       window.open('https://blacktoolboxlaboratory.github.io/react/v1/');
     } else {
-      if (ROUTE[event.id] !== hashHistory.location.pathname)
+      if (ROUTE[event.id] !== props.history.location.pathname)
       {
-        hashHistory.push(ROUTE[event.id]);
+        props.history.push(ROUTE[event.id]);
         env.state_activeID.onChange(event.id);
         props.clickEntry();
       }
     }
+  }
+
+  function _getRouteID () {
+    let result =  Object.keys(ROUTE).find((key) => {
+      return (ROUTE[key] === props.history.location.pathname);
+    });
+    return result;
   }
 
   return (
@@ -35,13 +42,6 @@ const Aside = (props) => {
     </div>
   );
 };
-
-function getRouteID () {
-  let result =  Object.keys(ROUTE).find((key) => {
-    return (ROUTE[key] === hashHistory.location.pathname);
-  });
-  return result;
-}
 
 function useActiveState (defaultSate) {
   const [value, setState] = useState(defaultSate);
@@ -53,4 +53,4 @@ function useActiveState (defaultSate) {
   };
 }
 
-export default Aside;
+export default withRouter(Aside);

@@ -1,0 +1,57 @@
+.page_table.btb-vue-table {
+  margin-bottom: 1rem;
+  .table_container {
+    th {
+      .mixin_border-solid(2px);
+      padding: 0.25rem 1rem;
+      background-color: @color-primary-lll;
+      border-color: @color-primary-lll;
+    }
+    td {
+      .mixin_border-solid(2px);
+      padding: 0.25rem 1rem;
+      border-color: @color-primary-lll;
+      &.td-title {
+        white-space: nowrap;
+      }
+      &.td-type {
+        text-align: center;
+      }
+      &.td-default {
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.page_node_tree.btb-react-list {
+  .mixin_padding-md-y;
+  .mixin_padding-lg-x;
+  background-color: @color-primary-lll;
+  .entry_title {
+    padding: 0.25rem 0;
+    .mixin_padding-sm-y;
+    .mixin_padding-x(0);
+  }
+}
+
+.page_pre {
+  .mixin_padding-md-y;
+  .mixin_padding-lg-x;
+  background-color: @color-gray-ll;
+  overflow: auto;
+
+  pre {
+    margin: 0;
+  }
+
+  .pre_notice {
+    color: @color-gray-l;
+  }
+  .pre_typeof {
+    .mixin_padding-md-x;
+    color: @color-primary;
+    background-color: @color-gray-ddd;
+  }
+}

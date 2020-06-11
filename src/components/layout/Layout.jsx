@@ -9,7 +9,7 @@ import CONST from '@src/assets/definitions/const.js';
 
 const Layout = (props) => {
   const env = {
-    state_hiddenMenu : useMenuState(false)
+    state_hiddenMenu : useMenuState((window.innerWidth < CONST.GRID_MD))
   };
   
   function _clickEntry () {

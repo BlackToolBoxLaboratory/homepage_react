@@ -1,0 +1,29 @@
+.module-page-head {
+  .mixin_margin-md-b;
+
+  .head_title,
+  .head_btn {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .head_title {
+    .mixin_font-xl-b;
+    .mixin_breakpoint-up-md ({
+      .mixin_font-3xl-b;
+    })
+  }
+  .head_btn {
+    .mixin_font-lg;
+    .mixin_margin-md-l;
+    color: @color-gray-d;
+    cursor: pointer;
+
+    &.btn-github:hover {
+      color: @color-github;
+    }
+    &.btn-npm:hover {
+      color: @color-npm;
+    }
+  }
+}

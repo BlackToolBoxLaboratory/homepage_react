@@ -1,15 +1,19 @@
 import React from 'react';
+import { withRouter } from "react-router";
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
 import { Page, Section, Divider } from '@src/modules/pageLayout/index.js';
 import BTBPackage from './package.jsx';
 
-import hashHistory from '@src/history.js';
 import PACKAGE from '@src/assets/definitions/packageObj.js';
 
 import logoPath from '@src/assets/images/BTB_React.png';
 
-const About = () => {
+const About = (props) => {
+  function _redirectRoute(routename) {
+    props.history.push(routename);
+  }
+
   return (
     <Page className="btb-about">
       <Section className="about_title grid-row direction-column align-items-center">
@@ -50,7 +54,7 @@ const About = () => {
                   ) : []
               }
               <Section className="about_package">
-                <BTBPackage info={PACKAGE[entry]} redirectRoute={redirectRoute}/>
+                <BTBPackage info={PACKAGE[entry]} redirectRoute={_redirectRoute}/>
               </Section>
             </div>
           );
@@ -60,8 +64,4 @@ const About = () => {
   );
 };
 
-function redirectRoute(routename) {
-  hashHistory.push(routename);
-}
-
-export default About;
+export default withRouter(About);
