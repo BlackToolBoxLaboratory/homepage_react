@@ -1,8 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 import BTBList from '@blacktoolbox/react-list';
+import BTBTable from '@blacktoolbox/react-table';
 
-import { Page, PageHead, Section } from '@src/modules/pageLayout/index.js';
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 
 import packageObj from '@src/assets/definitions/packageObj';
 import { openLink } from '@src/utils/functions.js';
@@ -98,6 +98,46 @@ const nodeTree = [
   }
 ];
 
+const tableHeadArr_property = [
+  { name : 'Property Name', index : 'title' },
+  { name : 'Type', index : 'type' },
+  { name : 'Default', index : 'default' },
+  { name : 'Notice', index : 'notice' }
+];
+const tableHeadArr_slot = [
+  { name : 'Name', index : 'title' },
+  { name : 'Type', index : 'type' },
+  { name : 'Notice', index : 'notice' }
+];
+const tableBodyArr_basic = [
+  { title : 'dataList', type : 'Array', default : '[]', notice : 'List of dataObj.' },
+  { title : 'activeID', type : 'String', default : 'undefined', notice : 'Actived entry.' },
+  { title : 'defaultActiveID', type : 'String', default : 'undefined', notice : 'Default actived entry.' },
+  { title : 'collapseEnable', type : 'Boolean', default : 'false', notice : 'Width of table.' },
+  { title : 'styleObj', type : 'Object', default : '{}', notice : 'Object of customized style.' },
+  { title : 'slotObj', type : 'Object', default : '{}', notice : 'Object of slot which for render specific entry.' },
+  { title : 'onEntryClick', type : 'Function', default : 'undefined', notice : 'Function for some entry clicked.' },
+  { title : 'onToggle', type : 'Function', default : 'undefined', notice : 'Fuction for while collapseEnable is ture and some collapsing triggered.' }
+];
+
+const tableBodyArr_entry = [
+  { title : 'id', type : 'String', default : 'undefined', notice : 'Identity of entry' },
+  { title : 'title', type : 'String || Node', default : '\'\'', notice : 'Show name of entry.' },
+  { title : 'defaultCollapsed', type : 'String', default : 'undefined', notice : 'Default value to collapsed of extend.' },
+  { title : 'children', type : 'Array', default : '[]', notice : 'sublist' }
+];
+
+const tableBodyArr_slot = [
+  { title  : '[ id of entryObj ]', type   : 'String || Node || Function', notice : (
+    <>
+      Slot for customized entry. Here is the example for function if used. The porps will be entry corresponding the id.
+      <pre className="page_pre">
+        {`(entry) => {}`}
+      </pre>
+    </>)
+  }
+];
+
 const Basic = () => {
   return (
     <Page className="btb-pkg-list-basic">
@@ -123,9 +163,18 @@ const Basic = () => {
         </pre>
       </Section>
       <Section head="PARAMETERS">
-        <pre className="page_pre">
-          {preEntryObj}
-        </pre>
+        <Block title="Basic">
+          <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_basic}/>
+        </Block>
+        <Block title="entryObj">
+          <pre className="page_pre">
+            {preEntryObj}
+          </pre>
+          <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_entry}/>
+        </Block>
+        <Block title="slots">
+          <BTBTable className="page_table" mode="list" headData={tableHeadArr_slot} bodyData={tableBodyArr_slot}/>
+        </Block>
       </Section>
       <Section head="NODE TREE">
         <BTBList className="page_node_tree" dataList={nodeTree}/>

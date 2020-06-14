@@ -14,13 +14,13 @@ module.exports = {
     vendors: ['react', 'react-dom', 'react-router-dom', '@fortawesome/react-fontawesome']
   },
   output: {
-    publicPath: '/react/',
+    publicPath: '/react/v2/',
     path: path.join(__dirname, '/dist'),
     filename: '[name].js'
   },
   devServer: {
     contentBase: path.join(__dirname, '/dist'),
-    openPage: 'react/',
+    openPage: 'react/v2/',
     disableHostCheck: true,
     compress: true,
     host: '0.0.0.0',

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import BTBListBasic from '@src/components/packages/list/Basic.jsx';
+import BTBTableBasic from '@src/components/packages/table/Basic.jsx';
 
 const BasicContaier = () => {
   return (
-    <BTBListBasic/>
+    <BTBTableBasic/>
   );
 };
 

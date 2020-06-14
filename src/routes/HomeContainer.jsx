@@ -14,6 +14,7 @@ const HomeContainer = () => {
         <Route exact path={ROUTE.APPLICATIONS}>
           <Redirect to={ROUTE.APPLICATIONS_LANGUAGES}/>
         </Route>
+        
         <Switch>
           <Route path={ROUTE.ABOUT} component={React.lazy(() => import('@src/routes/AboutContainer.jsx'))}/>
           <Route path={ROUTE.PACKAGES} component={React.lazy(() => import('@src/routes/packages/PackagesContainer.jsx'))}/>

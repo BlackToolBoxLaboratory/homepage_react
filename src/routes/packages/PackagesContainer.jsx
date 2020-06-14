@@ -9,8 +9,12 @@ const PackagesContaier = () => {
       <Route exact path={ROUTE.PACKAGES_LIST}>
         <Redirect to={ROUTE.PACKAGES_LIST_BASIC}/>
       </Route>
+      <Route exact path={ROUTE.PACKAGES_TABLE}>
+        <Redirect to={ROUTE.PACKAGES_TABLE_BASIC}/>
+      </Route>
       <Switch>
         <Route path={ROUTE.PACKAGES_LIST} component={React.lazy(() => import('@src/routes/packages/list/ListContainer.jsx'))}/>
+        <Route path={ROUTE.PACKAGES_TABLE} component={React.lazy(() => import('@src/routes/packages/table/TableContainer.jsx'))}/>
       </Switch>
     </Suspense>
   );

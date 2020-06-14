@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { withRouter } from "react-router";
 import classnames from 'classnames';
 
 import Head from './Head.jsx';
@@ -11,6 +12,10 @@ const Layout = (props) => {
   const env = {
     state_hiddenMenu : useMenuState((window.innerWidth < CONST.GRID_MD))
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [props.history.location.pathname]);
   
   function _clickEntry () {
     if (window.innerWidth < CONST.GRID_MD) {
@@ -43,4 +48,4 @@ function useMenuState (defaultSate) {
   };
 }
 
-export default Layout;
+export default withRouter(Layout);

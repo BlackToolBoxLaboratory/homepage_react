@@ -16,6 +16,33 @@ const menuList = [
           {
             id    : 'PACKAGES_LIST_BASIC',
             title : 'Basic'
+          },
+          {
+            id    : 'PACKAGES_LIST_EXAMPLE_LIST',
+            title : 'Example-List'
+          },
+          {
+            id    : 'PACKAGES_LIST_EXAMPLE_MENU',
+            title : 'Example-Menu'
+          },
+          {
+            id    : 'PACKAGES_LIST_EXAMPLE_STYLE',
+            title : 'Example-Style'
+          },
+          {
+            id    : 'PACKAGES_LIST_EXAMPLE_SLOT',
+            title : 'Example-Slot'
+          }
+        ]
+      },
+      {
+        id               : 'PACKAGES_TABLE',
+        title            : 'Table',
+        defaultCollapsed : true,
+        children         : [
+          {
+            id    : 'PACKAGES_TABLE_BASIC',
+            title : 'Basic'
           }
         ]
       }

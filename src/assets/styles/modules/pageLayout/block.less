@@ -1,0 +1,15 @@
+.module-block {
+  .block_title {
+    .mixin_font-lg-b;
+    .mixin_margin-lg-y;
+  }
+  .block_body {
+    .mixin_margin-lg-l;
+  }
+
+  .block_item {
+    & + .block_item {
+      .mixin_margin-lg-t;
+    }
+  }
+}

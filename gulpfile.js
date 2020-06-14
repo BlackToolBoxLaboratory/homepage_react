@@ -1,9 +1,13 @@
 const gulp = require('gulp')
+const del = require('del');
 
-const path_page = '../blacktoolboxlaboratory.github.io/react'
+const path_page = '../blacktoolboxlaboratory.github.io/react/v2'
 const path_backup = '../codebase/homepage_react'
 
 gulp.task('updateHomePage', function (done) {
+  /* clean files */
+  del([path_page + '/'], {force: true})
+
   /* dist */
   gulp.src(['dist/**/*'])
     .pipe(gulp.dest(path_page))
@@ -33,7 +37,10 @@ gulp.task('backupCodebase', function (done) {
     'package.json',
     'package-lock.json',
     'gulpfile.js',
-    'sitemap.xml'
+    'sitemap.xml',
+    'webpack.common.js',
+    'webpack.dev.js',
+    'webpack.prod.js'
   ]).pipe(gulp.dest(path_backup))
   done()
 })
