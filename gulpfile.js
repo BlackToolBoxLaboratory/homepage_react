@@ -4,9 +4,9 @@ const del = require('del');
 const path_page = '../blacktoolboxlaboratory.github.io/react/v2'
 const path_backup = '../codebase/homepage_react'
 
-gulp.task('updateHomePage', function (done) {
+gulp.task('updateHomePage', async function (done) {
   /* clean files */
-  del([path_page + '/'], {force: true})
+  await del([path_page + '/'], {force: true})
 
   /* dist */
   gulp.src(['dist/**/*'])
@@ -17,7 +17,10 @@ gulp.task('updateHomePage', function (done) {
   done()
 })
 
-gulp.task('backupCodebase', function (done) {
+gulp.task('backupCodebase', async function (done) {
+  /* clean files */
+  await del([path_backup + '/'], {force: true})
+
   /* src */
   gulp.src(['src/**/*'])
     .pipe(gulp.dest(path_backup + '/src/'))
