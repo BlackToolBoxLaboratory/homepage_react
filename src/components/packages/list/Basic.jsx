@@ -15,11 +15,11 @@ const packageInfo = {
     { 
       'id'  : 'github', 
       'fa'  : ['fab', 'github'], 
-      'url' : 'https://github.com/BlackToolBoxLaboratory/react-list' 
+      'url' : packageObj.list.link.github
     }, { 
       'id'  : 'npm', 
       'fa'  : ['fab', 'npm'], 
-      'url' : 'https://www.npmjs.com/package/@blacktoolbox/react-list'
+      'url' : packageObj.list.link.npm
     }
   ]
 };
@@ -31,11 +31,13 @@ import BTBList from '@blacktoolbox/reat-list'
 import '@blacktoolbox/react-list/lib/index.css'`;
 
 const preRender =
-`<BTBList dataList={ Array } 
+`<BTBList
         dataList=" Array of entryObj" 
         defaultActiveID=" String "
         activeID=" String "
         collapseEnable=" Boolean "
+        styleObj=" Object "
+        slotObj=" Object "
         onEntryClick=" function(entryObj){} "
         onToggle=" function(entryObj){} "/>`;
 
@@ -44,7 +46,17 @@ const preEntryObj =
         id: '',
         title: '',
         defaultCollapsed: false,
-        children: [...]
+        children: []
+}`;
+
+const preStyleObj =
+`styleObj = {
+        [ className ]: { inline CSS }
+}`;
+
+const preSlotObj = 
+`slotObj = {
+        [ entryObj.id ]: ''
 }`;
 
 const nodeTree = [
@@ -62,7 +74,7 @@ const nodeTree = [
             children : [
               {
                 id       : 'entry',
-                title    : '<div> .container_entry .entry-[id] .entry-active',
+                title    : '<div> .container_entry .entry-[entryObj.id] .entry-active',
                 children : [
                   {
                     id    : 'title',
@@ -99,15 +111,15 @@ const nodeTree = [
 ];
 
 const tableHeadArr_property = [
-  { name : 'Property Name', index : 'title' },
-  { name : 'Type', index : 'type' },
-  { name : 'Default', index : 'default' },
-  { name : 'Notice', index : 'notice' }
+  { name : 'Property Name', id : 'title' },
+  { name : 'Type', id : 'type' },
+  { name : 'Default', id : 'default' },
+  { name : 'Notice', id : 'notice' }
 ];
-const tableHeadArr_slot = [
-  { name : 'Name', index : 'title' },
-  { name : 'Type', index : 'type' },
-  { name : 'Notice', index : 'notice' }
+const tableHeadArr_entry = [
+  { name : 'Name', id : 'title' },
+  { name : 'Type', id : 'type' },
+  { name : 'Notice', id : 'notice' }
 ];
 const tableBodyArr_basic = [
   { title : 'dataList', type : 'Array', default : '[]', notice : 'List of dataObj.' },
@@ -116,15 +128,14 @@ const tableBodyArr_basic = [
   { title : 'collapseEnable', type : 'Boolean', default : 'false', notice : 'Width of table.' },
   { title : 'styleObj', type : 'Object', default : '{}', notice : 'Object of customized style.' },
   { title : 'slotObj', type : 'Object', default : '{}', notice : 'Object of slot which for render specific entry.' },
-  { title : 'onEntryClick', type : 'Function', default : 'undefined', notice : 'Function for some entry clicked.' },
+  { title : 'onEntryClick', type : 'Function', default : 'undefined', notice : 'Function for entry clicked.' },
   { title : 'onToggle', type : 'Function', default : 'undefined', notice : 'Fuction for while collapseEnable is ture and some collapsing triggered.' }
 ];
-
 const tableBodyArr_entry = [
-  { title : 'id', type : 'String', default : 'undefined', notice : 'Identity of entry' },
-  { title : 'title', type : 'String || Node', default : '\'\'', notice : 'Show name of entry.' },
-  { title : 'defaultCollapsed', type : 'String', default : 'undefined', notice : 'Default value to collapsed of extend.' },
-  { title : 'children', type : 'Array', default : '[]', notice : 'sublist' }
+  { title : 'id', type : 'String', notice : 'Identity of entry.' },
+  { title : 'title', type : 'String || Node', notice : 'Name of entry.' },
+  { title : 'defaultCollapsed', type : 'String', notice : 'Default value to collapsed of extend.' },
+  { title : 'children', type : 'Array', notice : 'sublist' }
 ];
 
 const tableBodyArr_slot = [
@@ -167,13 +178,24 @@ const Basic = () => {
           <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_basic}/>
         </Block>
         <Block title="entryObj">
+          <p>If entry.children is defined. While clicking this entry will trigger onToggle. If not, it will trigger onEntryClick.</p>
           <pre className="page_pre">
             {preEntryObj}
           </pre>
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_entry}/>
+          <BTBTable className="page_table" mode="list" headData={tableHeadArr_entry} bodyData={tableBodyArr_entry}/>
         </Block>
-        <Block title="slots">
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_slot} bodyData={tableBodyArr_slot}/>
+        <Block title="styleObj">
+          <p>Any className in this module could add inline CSS by styleObj.</p>
+          <pre className="page_pre">
+            {preStyleObj}
+          </pre>
+        </Block>
+        <Block title="slotObj">
+          <p>We could replace the default node with entryobj.id by slotObj. </p>
+          <pre className="page_pre">
+            {preSlotObj}
+          </pre>
+          <BTBTable className="page_table" mode="list" headData={tableHeadArr_entry} bodyData={tableBodyArr_slot}/>
         </Block>
       </Section>
       <Section head="NODE TREE">

@@ -14,11 +14,11 @@ const packageInfo = {
     { 
       'id'  : 'github', 
       'fa'  : ['fab', 'github'], 
-      'url' : 'https://github.com/BlackToolBoxLaboratory/react-list' 
+      'url' : packageObj.list.link.github
     }, { 
       'id'  : 'npm', 
       'fa'  : ['fab', 'npm'], 
-      'url' : 'https://www.npmjs.com/package/@blacktoolbox/react-list'
+      'url' : packageObj.list.link.npm
     }
   ]
 };

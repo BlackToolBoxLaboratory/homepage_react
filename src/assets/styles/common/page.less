@@ -1,26 +1,24 @@
 .page_table.btb-react-table {
   margin-bottom: 1rem;
-  .table_container {
-    th {
-      .mixin_border-solid(2px);
-      padding: 0.25rem 1rem;
-      background-color: @color-primary-lll;
-      border-color: @color-primary-lll;
+  .tr_th {
+    .mixin_border-solid(2px);
+    padding: 0.25rem 1rem;
+    background-color: @color-primary-lll;
+    border-color: @color-primary-lll;
+  }
+  .tr_td {
+    .mixin_border-solid(2px);
+    padding: 0.25rem 1rem;
+    border-color: @color-primary-lll;
+    &.td-title {
+      white-space: nowrap;
     }
-    td {
-      .mixin_border-solid(2px);
-      padding: 0.25rem 1rem;
-      border-color: @color-primary-lll;
-      &.td-title {
-        white-space: nowrap;
-      }
-      &.td-type {
-        text-align: center;
-      }
-      &.td-default {
-        text-align: center;
-        white-space: nowrap;
-      }
+    &.td-type {
+      text-align: center;
+    }
+    &.td-default {
+      text-align: center;
+      white-space: nowrap;
     }
   }
 }
