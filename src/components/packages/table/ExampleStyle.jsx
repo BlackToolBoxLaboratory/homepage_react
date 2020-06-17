@@ -128,7 +128,7 @@ const styleObj = {
 const ExampleStyle = () => {
   return (
     <Page className="btb-pkg-table-example-style">
-      <PageHead title={pageInfo.title} clickBtn={openLink} btnList={pageInfo.linkList} />
+      <PageHead title={pageInfo.title} clickBtn={openLink} linkList={pageInfo.linkList} />
       <Section head={(
         <>
           {`Version: ${pageInfo.version}`}<br/>

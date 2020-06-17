@@ -65,7 +65,7 @@ const preListData =
 const ExampleList = () => {
   return (
     <Page className="btb-pkg-list-example-list">
-      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.linkList}/>
+      <PageHead title={PageInfo.title} clickBtn={openLink} linkList={PageInfo.linkList}/>
       <Section head={(
         <>
           {`Version: ${PageInfo.version}`}<br/>

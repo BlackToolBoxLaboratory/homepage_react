@@ -90,7 +90,7 @@ const tableBodyArr_data = [
 const ExampleMode = () => {
   return (
     <Page className="btb-pkg-table-example-compare">
-      <PageHead title={pageInfo.title} clickBtn={openLink} btnList={pageInfo.linkList} />
+      <PageHead title={pageInfo.title} clickBtn={openLink} linkList={pageInfo.linkList} />
       <Section head={(
         <>
           {`Version: ${pageInfo.version}`}<br/>

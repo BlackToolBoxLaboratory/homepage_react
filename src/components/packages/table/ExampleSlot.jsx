@@ -66,7 +66,6 @@ const preSlotObj =
     </span>
   ),
   'td-ipAddr' : (data, column) => {
-    console.log('test', data, column);
     return (
       <a href={\`http://\${data[column.id]}\`} target="_blank">
         {data[column.id]}
@@ -117,7 +116,6 @@ const slotObj = {
     </span>
   ),
   'td-ipAddr' : (data, column) => {
-    console.log('test', data, column);
     return (
       <a href={`http://${data[column.id]}`} target="_blank">
         {data[column.id]}
@@ -129,7 +127,7 @@ const slotObj = {
 const ExampleSlot = () => {
   return (
     <Page className="btb-pkg-table-example-slot">
-      <PageHead title={pageInfo.title} clickBtn={openLink} btnList={pageInfo.linkList} />
+      <PageHead title={pageInfo.title} clickBtn={openLink} linkList={pageInfo.linkList} />
       <Section head={(
         <>
           {`Version: ${pageInfo.version}`}<br/>
