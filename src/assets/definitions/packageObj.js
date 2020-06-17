@@ -16,8 +16,8 @@ const packageObj = {
     name        : 'Table',
     routename   : ROUTE.PACKAGES_TABLE_BASIC,
     description : 'This module of table creator made with React can do the help to make a table component to our page. It has modes in list and info which are different ways to show data.',
-    version     : '1.1.0',
-    updated     : 'Jun, 16, 2020',
+    version     : '1.2.0',
+    updated     : 'Jun, 18, 2020',
     link        : {
       github : 'https://github.com/BlackToolBoxLaboratory/react-table',
       npm    : 'https://www.npmjs.com/package/@blacktoolbox/react-table'

@@ -8,6 +8,11 @@ const PackagesContaier = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
         <Route path={ROUTE.PACKAGES_TABLE_BASIC} component={React.lazy(() => import('@src/routes/packages/table/BasicContainer.jsx'))}/>
+        <Route path={ROUTE.PACKAGES_TABLE_EXAMPLE_LIST} component={React.lazy(() => import('@src/routes/packages/table/ExampleListContainer.jsx'))}/>
+        <Route path={ROUTE.PACKAGES_TABLE_EXAMPLE_INFO} component={React.lazy(() => import('@src/routes/packages/table/ExampleInfoContainer.jsx'))}/>
+        <Route path={ROUTE.PACKAGES_TABLE_EXAMPLE_COMPARE} component={React.lazy(() => import('@src/routes/packages/table/ExampleCompareContainer.jsx'))}/>
+        <Route path={ROUTE.PACKAGES_TABLE_EXAMPLE_STYLE} component={React.lazy(() => import('@src/routes/packages/table/ExampleStyleContainer.jsx'))}/>
+        <Route path={ROUTE.PACKAGES_TABLE_EXAMPLE_SLOT} component={React.lazy(() => import('@src/routes/packages/table/ExampleSlotContainer.jsx'))}/>
       </Switch>
     </Suspense>
   );

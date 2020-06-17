@@ -1,26 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import BTBList from '@blacktoolbox/react-list';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 
-import packageObj from '@src/assets/definitions/packageObj';
 import { openLink } from '@src/utils/functions.js';
 
-const packageInfo = {
-  'version'     : packageObj.list.version,
-  'updated'     : packageObj.list.updated,
-  'description' : 'Sometimes we may want to show the entry from the list by button, input, icon, ... etc. Then we can ultilize this feature about customized slot. To the example as following, I show you how to customized the entry which ID is b2. For the package of list, every single ID corresponding to dataList can be customized by slotObj in String, Node, or Function way.',
-  'btnList'     : [
-    { 
-      'id'  : 'github', 
-      'fa'  : ['fab', 'github'], 
-      'url' : packageObj.list.link.github
-    }, { 
-      'id'  : 'npm', 
-      'fa'  : ['fab', 'npm'], 
-      'url' : packageObj.list.link.npm
-    }
-  ]
+import packageInfo from './packageInfo.js';
+
+const PageInfo = {
+  ...packageInfo,
+  'title'       : 'Example - Slot',
+  'description' : 'Sometimes we may want to show the entry from the list by button, input, icon, ... etc. Then we can ultilize this feature about customized slot. To the example as following, I show you how to customized the entry which ID is b2. For the package of list, every single ID corresponding to dataList can be customized by slotObj in String, Node, or Function way.'
 };
 
 const _listData = [
@@ -108,22 +98,22 @@ const preSlotObj =
 const ExampleSlot = () => {
   return (
     <Page className="btb-pkg-list-example-slot">
-      <PageHead title={'Example - Slot'} clickBtn={openLink} btnList={packageInfo.btnList}/>
+      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.btnList}/>
       <Section head={(
         <>
-          {`Version: ${packageInfo.version}`}<br/>
-          {`Release Date: ${packageInfo.updated}`}
+          {`Version: ${PageInfo.version}`}<br/>
+          {`Release Date: ${PageInfo.updated}`}
         </>
       )}>
         <p>
-          {packageInfo.description}
+          {PageInfo.description}
         </p>
       </Section>
       <Section head="EXAMPLE">
         <BTBList dataList={_listData} slotObj={_slotObj}/>
       </Section>
-      <Section head="CONFIGURATION">
-        <Block title="Render">
+      <Section head="SOURCECODE">
+        <Block title="render">
           <pre className="page_pre">
             {preRender}
           </pre>

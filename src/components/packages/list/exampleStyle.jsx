@@ -3,24 +3,14 @@ import BTBList from '@blacktoolbox/react-list';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 
-import packageObj from '@src/assets/definitions/packageObj';
 import { openLink } from '@src/utils/functions.js';
 
-const packageInfo = {
-  'version'     : packageObj.list.version,
-  'updated'     : packageObj.list.updated,
-  'description' : 'Here is going to show you about how to use the styleObj and the example of defaultActiveID and v-model of activeID. The activeID is used to mark focused entry, but also allowed to used defaultActiveID to mark entry as default in the begin. Then we can modify the style by the styleObj with using the node class name directly.',
-  'btnList'     : [
-    { 
-      'id'  : 'github', 
-      'fa'  : ['fab', 'github'], 
-      'url' : packageObj.list.link.github
-    }, { 
-      'id'  : 'npm', 
-      'fa'  : ['fab', 'npm'], 
-      'url' : packageObj.list.link.npm
-    }
-  ]
+import packageInfo from './packageInfo.js';
+
+const PageInfo = {
+  ...packageInfo,
+  'title'       : 'Example - Style',
+  'description' : 'Here is going to show you about how to use the styleObj and the example of defaultActiveID and v-model of activeID. The activeID is used to mark focused entry, but also allowed to used defaultActiveID to mark entry as default in the begin. Then we can modify the style by the styleObj with using the node class name directly.'
 };
 
 const _listData = [
@@ -113,15 +103,15 @@ const ExampleStyle = () => {
 
   return (
     <Page className="btb-pkg-list-example-style">
-      <PageHead title={'Example - Style'} clickBtn={openLink} btnList={packageInfo.btnList}/>
+      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.btnList}/>
       <Section head={(
         <>
-          {`Version: ${packageInfo.version}`}<br/>
-          {`Release Date: ${packageInfo.updated}`}
+          {`Version: ${PageInfo.version}`}<br/>
+          {`Release Date: ${PageInfo.updated}`}
         </>
       )}>
         <p>
-          {packageInfo.description}
+          {PageInfo.description}
         </p>
       </Section>
       <Section head="EXAMPLE">
@@ -130,8 +120,8 @@ const ExampleStyle = () => {
         </p>
         <BTBList dataList={_listData} styleObj={_styleObj} activeID={activeID.value} onEntryClick={activeID.onChange}/>
       </Section>
-      <Section head="CONFIGURATION">
-        <Block title="Render">
+      <Section head="SOURCECODE">
+        <Block title="render">
           <pre className="page_pre">
             {preRender}
           </pre>

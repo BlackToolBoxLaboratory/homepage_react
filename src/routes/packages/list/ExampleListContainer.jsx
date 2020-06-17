@@ -1,10 +1,10 @@
 import React from 'react';
 
-import BTBListExampleList from '@src/components/packages/list/exampleList.jsx';
+import PKGListExampleList from '@src/components/packages/list/ExampleList.jsx';
 
 const ExampleListContaier = () => {
   return (
-    <BTBListExampleList/>
+    <PKGListExampleList/>
   );
 };
 

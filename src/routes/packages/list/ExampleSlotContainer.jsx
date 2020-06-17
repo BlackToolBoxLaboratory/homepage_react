@@ -1,10 +1,10 @@
 import React from 'react';
 
-import BTBListExampleSlot from '@src/components/packages/list/exampleSlot.jsx';
+import PKGListExampleSlot from '@src/components/packages/list/ExampleSlot.jsx';
 
 const ExampleSlotContaier = () => {
   return (
-    <BTBListExampleSlot/>
+    <PKGListExampleSlot/>
   );
 };
 

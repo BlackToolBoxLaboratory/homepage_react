@@ -43,6 +43,26 @@ const menuList = [
           {
             id    : 'PACKAGES_TABLE_BASIC',
             title : 'Basic'
+          },
+          {
+            id    : 'PACKAGES_TABLE_EXAMPLE_LIST',
+            title : 'Example-List'
+          },
+          {
+            id    : 'PACKAGES_TABLE_EXAMPLE_INFO',
+            title : 'Example-Info'
+          },
+          {
+            id    : 'PACKAGES_TABLE_EXAMPLE_COMPARE',
+            title : 'Example-Compare'
+          },
+          {
+            id    : 'PACKAGES_TABLE_EXAMPLE_STYLE',
+            title : 'Example-Style'
+          },
+          {
+            id    : 'PACKAGES_TABLE_EXAMPLE_SLOT',
+            title : 'Example-Slot'
           }
         ]
       }

@@ -3,24 +3,14 @@ import BTBList from '@blacktoolbox/react-list';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 
-import packageObj from '@src/assets/definitions/packageObj';
 import { openLink } from '@src/utils/functions.js';
 
-const packageInfo = {
-  'version'     : packageObj.list.version,
-  'updated'     : packageObj.list.updated,
-  'description' : 'Here is a very simple example for a list, if we just give a data list.',
-  'btnList'     : [
-    { 
-      'id'  : 'github', 
-      'fa'  : ['fab', 'github'], 
-      'url' : packageObj.list.link.github
-    }, { 
-      'id'  : 'npm', 
-      'fa'  : ['fab', 'npm'], 
-      'url' : packageObj.list.link.npm
-    }
-  ]
+import packageInfo from './packageInfo.js';
+
+const PageInfo = {
+  ...packageInfo,
+  'title'       : 'Example - List',
+  'description' : 'Here is a very simple example for a list, if we just give a data list.'
 };
 
 const _listData = [
@@ -75,21 +65,21 @@ const preListData =
 const ExampleList = () => {
   return (
     <Page className="btb-pkg-list-example-list">
-      <PageHead title={'Example - List'} clickBtn={openLink} btnList={packageInfo.btnList}/>
+      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.btnList}/>
       <Section head={(
         <>
-          {`Version: ${packageInfo.version}`}<br/>
-          {`Release Date: ${packageInfo.updated}`}
+          {`Version: ${PageInfo.version}`}<br/>
+          {`Release Date: ${PageInfo.updated}`}
         </>
       )}>
         <p>
-          {packageInfo.description}
+          {PageInfo.description}
         </p>
       </Section>
       <Section head="EXAMPLE">
         <BTBList dataList={_listData} />
       </Section>
-      <Section head="CONFIGURATION">
+      <Section head="SOURCECODE">
         <Block title="Render">
           <pre className="page_pre">
             {preRender}

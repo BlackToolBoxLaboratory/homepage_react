@@ -4,24 +4,13 @@ import BTBTable from '@blacktoolbox/react-table';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 
-import packageObj from '@src/assets/definitions/packageObj';
 import { openLink } from '@src/utils/functions.js';
 
-const packageInfo = {
-  'version'     : packageObj.table.version,
-  'updated'     : packageObj.table.updated,
-  'description' : packageObj.table.description,
-  'btnList'     : [
-    { 
-      'id'  : 'github', 
-      'fa'  : ['fab', 'github'], 
-      'url' : packageObj.table.link.github
-    }, { 
-      'id'  : 'npm', 
-      'fa'  : ['fab', 'npm'], 
-      'url' : packageObj.table.link.npm
-    }
-  ]
+import packageInfo from './packageInfo.js';
+
+const pageInfo = {
+  ...packageInfo,
+  'title' : 'Table - Basic'
 };
 
 const preInstall = 
@@ -41,7 +30,7 @@ const preRender =
 
 const preHeadObj =
 `headObj = {
-        index: '',
+        id: '',
         name: ''
 }`;
 
@@ -162,7 +151,7 @@ const tableHeadArr_slot = [
 const tableBodyArr_basic = [
   { title : 'headData', type : 'Array', default : '[]', notice : 'List of headObj.' },
   { title : 'bodyData', type : 'Array', default : '[]', notice : 'List of bodyObj.' },
-  { title : 'mode', type : 'String', default : 'list', notice : 'Value in list or info' },
+  { title : 'mode', type : 'String', default : 'list', notice : 'Value in \'list\', \'info\' or \'compare\'' },
   { title : 'styleObj', type : 'Object', default : '{}', notice : 'Object of customized style.' },
   { title : 'slotObj', type : 'Object', default : '{}', notice : 'Object of customized entry of head or body.' },
   { title : 'onDataClick', type : 'Function', default : 'undefined', notice : 'Function for data clicked.' }
@@ -193,15 +182,15 @@ const tableBodyArr_slot = [
 const Basic = () => {
   return (
     <Page className="btb-pkg-table-basic">
-      <PageHead title={'Table basic'} clickBtn={openLink} btnList={packageInfo.btnList}/>
+      <PageHead title={pageInfo.title} clickBtn={openLink} btnList={pageInfo.btnList}/>
       <Section head={(
         <>
-          {`Version: ${packageInfo.version}`}<br/>
-          {`Release Date: ${packageInfo.updated}`}
+          {`Version: ${pageInfo.version}`}<br/>
+          {`Release Date: ${pageInfo.updated}`}
         </>
       )}>
         <p>
-          {packageInfo.description}
+          {pageInfo.description}
         </p>
       </Section>
       <Section head="INSTALLATION">
@@ -216,7 +205,7 @@ const Basic = () => {
       </Section>
       <Section head="PARAMETERS">
         <Block title="Basic">
-          <BTBTable className="page_table" mode="info" headData={tableHeadArr_property} bodyData={tableBodyArr_basic}/>
+          <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_basic}/>
         </Block>
         <Block title="headObj">
           <pre className="page_pre">

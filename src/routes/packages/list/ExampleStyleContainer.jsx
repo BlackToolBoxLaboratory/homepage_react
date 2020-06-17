@@ -1,10 +1,10 @@
 import React from 'react';
 
-import BTBListExampleStyle from '@src/components/packages/list/exampleStyle.jsx';
+import PKGListExampleStyle from '@src/components/packages/list/ExampleStyle.jsx';
 
 const ExampleStyleContaier = () => {
   return (
-    <BTBListExampleStyle/>
+    <PKGListExampleStyle/>
   );
 };
 

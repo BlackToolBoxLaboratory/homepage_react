@@ -4,24 +4,13 @@ import BTBTable from '@blacktoolbox/react-table';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 
-import packageObj from '@src/assets/definitions/packageObj';
 import { openLink } from '@src/utils/functions.js';
 
-const packageInfo = {
-  'version'     : packageObj.list.version,
-  'updated'     : packageObj.list.updated,
-  'description' : packageObj.list.description,
-  'btnList'     : [
-    { 
-      'id'  : 'github', 
-      'fa'  : ['fab', 'github'], 
-      'url' : packageObj.list.link.github
-    }, { 
-      'id'  : 'npm', 
-      'fa'  : ['fab', 'npm'], 
-      'url' : packageObj.list.link.npm
-    }
-  ]
+import packageInfo from './packageInfo.js';
+
+const PageInfo = {
+  ...packageInfo,
+  'title' : 'List Basic'
 };
 
 const preInstall = 
@@ -152,15 +141,15 @@ const tableBodyArr_slot = [
 const Basic = () => {
   return (
     <Page className="btb-pkg-list-basic">
-      <PageHead title={'List Basic'} clickBtn={openLink} btnList={packageInfo.btnList}/>
+      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.btnList}/>
       <Section head={(
         <>
-          {`Version: ${packageInfo.version}`}<br/>
-          {`Release Date: ${packageInfo.updated}`}
+          {`Version: ${PageInfo.version}`}<br/>
+          {`Release Date: ${PageInfo.updated}`}
         </>
       )}>
         <p>
-          {packageInfo.description}
+          {PageInfo.description}
         </p>
       </Section>
       <Section head="INSTALLATION">

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import BTBTableBasic from '@src/components/packages/table/Basic.jsx';
+import PKGTableBasic from '@src/components/packages/table/Basic.jsx';
 
 const BasicContaier = () => {
   return (
-    <BTBTableBasic/>
+    <PKGTableBasic/>
   );
 };
 

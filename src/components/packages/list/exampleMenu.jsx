@@ -3,24 +3,14 @@ import BTBList from '@blacktoolbox/react-list';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 
-import packageObj from '@src/assets/definitions/packageObj';
 import { openLink } from '@src/utils/functions.js';
 
-const packageInfo = {
-  'version'     : packageObj.list.version,
-  'updated'     : packageObj.list.updated,
-  'description' : 'When we enable the collapseEnable with datalist, we will get a simple menu to use. And it will trigger the onToggle event function while clicked for Collapsing or Expending. Every entry can be active status after being clicked. Surely it will trigger the onEntryClick event function too. Besides for a menu, it can tag one as defaultActiveID. Also use the v-model to listen the value from activeID',
-  'btnList'     : [
-    { 
-      'id'  : 'github', 
-      'fa'  : ['fab', 'github'], 
-      'url' : packageObj.list.link.github
-    }, { 
-      'id'  : 'npm', 
-      'fa'  : ['fab', 'npm'], 
-      'url' : packageObj.list.link.npm
-    }
-  ]
+import packageInfo from './packageInfo.js';
+
+const PageInfo = {
+  ...packageInfo,
+  'title'       : 'Example - Menu',
+  'description' : 'When we enable the collapseEnable with datalist, we will get a simple menu to use. And it will trigger the onToggle event function while clicked for Collapsing or Expending. Every entry can be active status after being clicked. Surely it will trigger the onEntryClick event function too. Besides for a menu, it can tag one as defaultActiveID. Also utilize the useState to work with activeID',
 };
 
 const _menuData = [
@@ -63,22 +53,22 @@ const preListData =
 const ExampleMenu = () => {
   return (
     <Page className="btb-pkg-list-example-menu">
-      <PageHead title={'Example - Menu'} clickBtn={openLink} btnList={packageInfo.btnList}/>
+      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.btnList}/>
       <Section head={(
         <>
-          {`Version: ${packageInfo.version}`}<br/>
-          {`Release Date: ${packageInfo.updated}`}
+          {`Version: ${PageInfo.version}`}<br/>
+          {`Release Date: ${PageInfo.updated}`}
         </>
       )}>
         <p>
-          {packageInfo.description}
+          {PageInfo.description}
         </p>
       </Section>
       <Section head="EXAMPLE">
         <BTBList dataList={_menuData} collapseEnable/>
       </Section>
-      <Section head="CONFIGURATION">
-        <Block title="Render">
+      <Section head="SOURCECODE">
+        <Block title="render">
           <pre className="page_pre">
             {preRender}
           </pre>

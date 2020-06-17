@@ -1,10 +1,10 @@
 import React from 'react';
 
-import BTBListBasic from '@src/components/packages/list/Basic.jsx';
+import PKGListBasic from '@src/components/packages/list/Basic.jsx';
 
 const BasicContaier = () => {
   return (
-    <BTBListBasic/>
+    <PKGListBasic/>
   );
 };
 
