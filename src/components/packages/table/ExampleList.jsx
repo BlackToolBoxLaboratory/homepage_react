@@ -70,7 +70,7 @@ const tableBodyArr_data = [
 const ExampleMode = () => {
   return (
     <Page className="btb-pkg-table-example-list">
-      <PageHead title={pageInfo.title} clickBtn={openLink} btnList={pageInfo.btnList} />
+      <PageHead title={pageInfo.title} clickBtn={openLink} btnList={pageInfo.linkList} />
       <Section head={(
         <>
           {`Version: ${pageInfo.version}`}<br/>

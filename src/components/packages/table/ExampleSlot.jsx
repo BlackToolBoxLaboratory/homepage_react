@@ -129,7 +129,7 @@ const slotObj = {
 const ExampleSlot = () => {
   return (
     <Page className="btb-pkg-table-example-slot">
-      <PageHead title={pageInfo.title} clickBtn={openLink} btnList={pageInfo.btnList} />
+      <PageHead title={pageInfo.title} clickBtn={openLink} btnList={pageInfo.linkList} />
       <Section head={(
         <>
           {`Version: ${pageInfo.version}`}<br/>

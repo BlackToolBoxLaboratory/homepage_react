@@ -98,7 +98,7 @@ const preSlotObj =
 const ExampleSlot = () => {
   return (
     <Page className="btb-pkg-list-example-slot">
-      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.btnList}/>
+      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.linkList}/>
       <Section head={(
         <>
           {`Version: ${PageInfo.version}`}<br/>

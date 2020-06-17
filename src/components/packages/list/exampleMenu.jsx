@@ -53,7 +53,7 @@ const preListData =
 const ExampleMenu = () => {
   return (
     <Page className="btb-pkg-list-example-menu">
-      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.btnList}/>
+      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.linkList}/>
       <Section head={(
         <>
           {`Version: ${PageInfo.version}`}<br/>

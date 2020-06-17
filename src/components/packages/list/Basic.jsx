@@ -141,7 +141,7 @@ const tableBodyArr_slot = [
 const Basic = () => {
   return (
     <Page className="btb-pkg-list-basic">
-      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.btnList}/>
+      <PageHead title={PageInfo.title} clickBtn={openLink} btnList={PageInfo.linkList}/>
       <Section head={(
         <>
           {`Version: ${PageInfo.version}`}<br/>
