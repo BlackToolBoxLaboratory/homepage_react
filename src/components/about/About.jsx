@@ -9,7 +9,7 @@ import PACKAGE from '@src/assets/definitions/packageObj.js';
 
 import logoPath from '@src/assets/images/BTB_React.png';
 
-const About = (props) => {
+const About = withRouter((props) => {
   function _redirectRoute(routename) {
     props.history.push(routename);
   }
@@ -62,6 +62,6 @@ const About = (props) => {
       }
     </Page>
   );
-};
+});
 
-export default withRouter(About);
+export default About;

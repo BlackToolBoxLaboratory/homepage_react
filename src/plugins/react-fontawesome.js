@@ -15,7 +15,8 @@ import {
   faBars, 
   faExternalLinkAlt, 
   faTools, 
-  faLink 
+  faLink,
+  faBuilding 
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -35,5 +36,6 @@ library.add(
   faBars,
   faExternalLinkAlt,
   faTools,
-  faLink
+  faLink,
+  faBuilding
 );

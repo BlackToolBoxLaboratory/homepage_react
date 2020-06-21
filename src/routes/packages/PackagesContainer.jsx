@@ -15,6 +15,7 @@ const PackagesContaier = () => {
       <Switch>
         <Route path={ROUTE.PACKAGES_LIST} component={React.lazy(() => import('@src/routes/packages/list/ListContainer.jsx'))}/>
         <Route path={ROUTE.PACKAGES_TABLE} component={React.lazy(() => import('@src/routes/packages/table/TableContainer.jsx'))}/>
+        <Route path={ROUTE.PACKAGES_POPOVER} component={React.lazy(() => import('@src/routes/packages/popover/PopoverContainer.jsx'))}/>
       </Switch>
     </Suspense>
   );

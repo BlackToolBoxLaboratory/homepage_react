@@ -6,7 +6,7 @@ import BTBList from '@blacktoolbox/react-list';
 import MENU from '@src/assets/definitions/menuList.js';
 import ROUTE from '@src/assets/definitions/routeMap.js';
 
-const Aside = (props) => {
+const Aside = withRouter((props) => {
   const env = {
     state_activeID : useActiveState()
   };
@@ -41,7 +41,7 @@ const Aside = (props) => {
       <BTBList className="aside_menu" dataList={MENU} activeID={env.state_activeID.value} collapseEnable onEntryClick={_clickEntry}/>
     </div>
   );
-};
+});
 
 function useActiveState (defaultSate) {
   const [value, setState] = useState(defaultSate);
@@ -53,4 +53,4 @@ function useActiveState (defaultSate) {
   };
 }
 
-export default withRouter(Aside);
+export default Aside;

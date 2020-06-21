@@ -112,7 +112,7 @@ const nodeTree_info = [
             children : [
               {
                 id       : 'tr',
-                title    : '<tr> .tbody_tr .tr-[headObj.id]',
+                title    : '<tr> .body_tr .tr-[headObj.id]',
                 children : [
                   {
                     id    : 'th',
@@ -121,6 +121,40 @@ const nodeTree_info = [
                   {
                     id    : 'td',
                     title : '<td> .tr_td .td-[headObj.id]',
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const nodeTree_compare = [
+  {
+    id       : 'table',
+    title    : '<div> .btb-react-table',
+    children : [
+      {
+        id       : 'compare',
+        title    : '<table> .table_compare',
+        children : [
+          {
+            id       : 'tbody',
+            title    : '<tbody> .compare_body',
+            children : [
+              {
+                id       : 'tr',
+                title    : '<tr> .tbody_tr .tr-[headObj.id]',
+                children : [
+                  {
+                    id    : 'th',
+                    title : '<th> .tr_th .th-[headObj.id]'
+                  }, {
+                    id    : 'td',
+                    title : '<td> .tr_td .td-[headObj.id] .td-[data order]',
                   }
                 ]
               }
@@ -154,7 +188,8 @@ const tableBodyArr_basic = [
   { title : 'mode', type : 'String', default : 'list', notice : 'Value in \'list\', \'info\' or \'compare\'' },
   { title : 'styleObj', type : 'Object', default : '{}', notice : 'Object of customized style.' },
   { title : 'slotObj', type : 'Object', default : '{}', notice : 'Object of customized entry of head or body.' },
-  { title : 'onDataClick', type : 'Function', default : 'undefined', notice : 'Function for data clicked.' }
+  { title : 'onDataClick', type : 'Function', default : 'undefined', notice : 'Function for data clicked.' },
+  { title : 'ref', type : 'useRef', default : 'undefined', notice : 'For the feature of React.ref' }
 ];
 const tableBodyArr_headObj = [
   { title : 'id', type : 'Array', default : '[]', notice : 'Identity of column.' },
@@ -239,6 +274,10 @@ const Basic = () => {
         </Block>
         <Block title="Info Mode">
           <BTBList className="page_node_tree" dataList={nodeTree_info}/>
+          <p>{'Note: The data order is counted base on 0.'}</p>
+        </Block>
+        <Block title="Compare Mode">
+          <BTBList className="page_node_tree" dataList={nodeTree_compare}/>
           <p>{'Note: The data order is counted base on 0.'}</p>
         </Block>
       </Section>

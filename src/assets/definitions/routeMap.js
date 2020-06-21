@@ -16,6 +16,8 @@ const routeMap = {
   'PACKAGES_TABLE_EXAMPLE_COMPARE' : '/packages/table/example/compare',
   'PACKAGES_TABLE_EXAMPLE_STYLE'   : '/packages/table/example/style',
   'PACKAGES_TABLE_EXAMPLE_SLOT'    : '/packages/table/example/slot',
+  'PACKAGES_POPOVER'               : '/packages/popover',
+  'PACKAGES_POPOVER_BASIC'         : '/packages/popover/basic',
 
   'APPLICATIONS'           : '/applications',
   'APPLICATIONS_LANGUAGES' : '/applications/languages',

@@ -1,9 +1,11 @@
-import { initializer } from '@blacktoolbox/prototype-languages';
+import Language, { initializer } from '@blacktoolbox/prototype-languages';
 
-import en_US from '@/assets/languages/en_US';
-import zh_TW from '@/assets/languages/zh_TW';
+import en from '@src/assets/languages/en.js';
+import zh from '@src/assets/languages/zh.js';
 
 initializer([
-  { index : 'en_US', label : 'US', dictionary : en_US },
-  { index : 'zh_TW', label : 'Taiwan', dictionary : zh_TW }
+  { index : 'en', label : 'Eglish', dictionary : en },
+  { index : 'zh', label : '繁體中文', dictionary : zh }
 ]);
+
+export const lang = new Language();

@@ -65,6 +65,17 @@ const menuList = [
             title : 'Example-Slot'
           }
         ]
+      },
+      {
+        id               : 'PACKAGES_POPOVER',
+        title            : 'Popover',
+        defaultCollapsed : true,
+        children         : [
+          {
+            id    : 'PACKAGES_POPOVER_BASIC',
+            title : 'Basic'
+          }
+        ]
       }
     ]
   },

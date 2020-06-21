@@ -51,4 +51,24 @@
       }
     }
   }
+
+  .head_langPopover {
+    .popover_content {
+      .mixin_padding-md-x;
+      white-space: nowrap;
+    }
+    .layer_container {
+      .mixin_font-sm;
+      cursor: pointer;
+      .mixin_padding-sm-y;
+      .mixin_padding-md-x;
+      color: @color-gray-l;
+    }
+    .container_entry {
+      &.entry-active,
+      &:hover {
+        color: @color-gray-ddd;
+      }
+    }
+  }
 }

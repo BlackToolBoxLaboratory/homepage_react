@@ -118,7 +118,8 @@ const tableBodyArr_basic = [
   { title : 'styleObj', type : 'Object', default : '{}', notice : 'Object of customized style.' },
   { title : 'slotObj', type : 'Object', default : '{}', notice : 'Object of slot which for render specific entry.' },
   { title : 'onEntryClick', type : 'Function', default : 'undefined', notice : 'Function for entry clicked.' },
-  { title : 'onToggle', type : 'Function', default : 'undefined', notice : 'Fuction for while collapseEnable is ture and some collapsing triggered.' }
+  { title : 'onToggle', type : 'Function', default : 'undefined', notice : 'Fuction for while collapseEnable is ture and some collapsing triggered.' },
+  { title : 'ref', type : 'useRef', default : 'undefined', notice : 'For the feature of React.ref' }
 ];
 const tableBodyArr_entry = [
   { title : 'id', type : 'String', notice : 'Identity of entry.' },
