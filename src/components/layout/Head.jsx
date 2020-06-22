@@ -72,7 +72,7 @@ const Head = enhance((props) => {
         <FAI className="item_button" icon={['fas', 'home']} fixedWidth onClick={_redirectHome} />
       </div>
       <div className="head_item">
-        <BTBPopover className="head_langPopover" {...env.state_showPopover} showPosition={"bottom"} showAlign={"end"} trigger={<FAI className="item_button" icon={['fas', 'globe']} fixedWidth />}>
+        <BTBPopover className="head_langPopover" {...env.state_showPopover} showPosition={"bottom"} showAlign={"center"} withArrow={true} trigger={<FAI className="item_button" icon={['fas', 'globe']} fixedWidth />}>
           <BTBList dataList={_getLangList()} activeID={lang.get().index} onEntryClick={_switchLang}/>
         </BTBPopover>
       </div>

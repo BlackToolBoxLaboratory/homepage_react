@@ -64,7 +64,7 @@
     "@blacktoolbox/prototype-languages": "^1.1.1",
     "@blacktoolbox/prototype-validator": "^1.0.0",
     "@blacktoolbox/react-list": "^2.2.0",
-    "@blacktoolbox/react-popover": "^1.0.0",
+    "@blacktoolbox/react-popover": "^1.1.1",
     "@blacktoolbox/react-table": "^1.4.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",

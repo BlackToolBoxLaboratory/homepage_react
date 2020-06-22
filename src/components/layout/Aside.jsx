@@ -6,6 +6,8 @@ import BTBList from '@blacktoolbox/react-list';
 import MENU from '@src/assets/definitions/menuList.js';
 import ROUTE from '@src/assets/definitions/routeMap.js';
 
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+
 const Aside = withRouter((props) => {
   const env = {
     state_activeID : useActiveState()
@@ -38,7 +40,7 @@ const Aside = withRouter((props) => {
 
   return (
     <div className={["btb-layout-aside", props.className].join(' ')}>
-      <BTBList className="aside_menu" dataList={MENU} activeID={env.state_activeID.value} collapseEnable onEntryClick={_clickEntry}/>
+      <BTBList className="aside_menu" dataList={translateMenu()} activeID={env.state_activeID.value} collapseEnable onEntryClick={_clickEntry}/>
     </div>
   );
 });
@@ -51,6 +53,25 @@ function useActiveState (defaultSate) {
       setState(data);
     }
   };
+}
+
+function translateMenu () {
+  let result = MENU.map((entry) => {
+    return translateMenuRecursive(entry);
+  });
+  return result;
+}
+function translateMenuRecursive (obj) {
+  let result = {
+    ...obj,
+    title : (obj.langIndex)? lang.translate(obj.langIndex) : obj.title
+  };
+  if (obj.children) {
+    result.children = obj.children.map((entry) => {
+      return translateMenuRecursive(entry);
+    });
+  }
+  return result;
 }
 
 export default Aside;

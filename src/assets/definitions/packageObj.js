@@ -27,8 +27,8 @@ const packageObj = {
     name        : 'Popover',
     routename   : ROUTE.PACKAGES_POPOVER_BASIC,
     description : 'This module of popover creator made with React can do the help to make a popover component to our page. The popover can do th e thing about popover and dropdown.',
-    version     : '1.0.0',
-    updated     : 'Jun, 21, 2020',
+    version     : '1.1.1',
+    updated     : 'Jun, 22, 2020',
     link        : {
       github : 'https://github.com/BlackToolBoxLaboratory/react-popover',
       npm    : 'https://www.npmjs.com/package/@blacktoolbox/react-popover'

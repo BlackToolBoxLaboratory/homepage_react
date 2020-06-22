@@ -21,7 +21,7 @@ import '@blacktoolbox/react-list/lib/index.css'`;
 
 const preRender =
 `<BTBList
-        dataList=" Array of entryObj" 
+        dataList=" Array of entryObj " 
         defaultActiveID=" String "
         activeID=" String "
         collapseEnable=" Boolean "
