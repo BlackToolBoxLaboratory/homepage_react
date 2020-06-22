@@ -57,27 +57,27 @@ const menuList = [
           {
             id        : 'PACKAGES_TABLE_EXAMPLE_LIST',
             title     : 'Example-List',
-            langIndex : 'menu.packages.list.example.list'
+            langIndex : 'menu.packages.table.example.list'
           },
           {
             id        : 'PACKAGES_TABLE_EXAMPLE_INFO',
             title     : 'Example-Info',
-            langIndex : 'menu.packages.list.example.info'
+            langIndex : 'menu.packages.table.example.info'
           },
           {
             id        : 'PACKAGES_TABLE_EXAMPLE_COMPARE',
             title     : 'Example-Compare',
-            langIndex : 'menu.packages.list.example.compare'
+            langIndex : 'menu.packages.table.example.compare'
           },
           {
             id        : 'PACKAGES_TABLE_EXAMPLE_STYLE',
             title     : 'Example-Style',
-            langIndex : 'menu.packages.list.example.style'
+            langIndex : 'menu.packages.table.example.style'
           },
           {
             id        : 'PACKAGES_TABLE_EXAMPLE_SLOT',
             title     : 'Example-Slot',
-            langIndex : 'menu.packages.list.example.slot'
+            langIndex : 'menu.packages.table.example.slot'
           }
         ]
       },
