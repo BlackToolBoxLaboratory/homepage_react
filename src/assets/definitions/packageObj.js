@@ -2,33 +2,33 @@ import ROUTE from './routeMap';
 
 const packageObj = {
   list : {
-    name        : 'List',
+    name        : 'package.list.name',
     routename   : ROUTE.PACKAGES_LIST_BASIC,
-    description : 'This module of list creator made with React can do the help to make a list or mane component to our page. Normally it is a list make. But with some trigger action it can be a menu maker for route redirection or other feature we need.',
+    description : 'package.list.description.basic',
     version     : '2.2.0',
-    updated     : 'Jun, 21, 2020',
+    updated     : '2020-06-21',
     link        : {
       github : 'https://github.com/BlackToolBoxLaboratory/react-list',
       npm    : 'https://www.npmjs.com/package/@blacktoolbox/react-list'
     }
   },
   table : {
-    name        : 'Table',
+    name        : 'package.table.name',
     routename   : ROUTE.PACKAGES_TABLE_BASIC,
-    description : 'This module of table creator made with React can do the help to make a table component to our page. It has modes in list and info which are different ways to show data.',
+    description : 'package.table.description.basic',
     version     : '1.4.0',
-    updated     : 'Jun, 21, 2020',
+    updated     : '2020-06-21',
     link        : {
       github : 'https://github.com/BlackToolBoxLaboratory/react-table',
       npm    : 'https://www.npmjs.com/package/@blacktoolbox/react-table'
     }
   },
   popover : {
-    name        : 'Popover',
+    name        : 'package.popover.name',
     routename   : ROUTE.PACKAGES_POPOVER_BASIC,
-    description : 'This module of popover creator made with React can do the help to make a popover component to our page. The popover can do th e thing about popover and dropdown.',
+    description : 'package.popover.description.basic',
     version     : '1.1.1',
-    updated     : 'Jun, 22, 2020',
+    updated     : '2020-06-22',
     link        : {
       github : 'https://github.com/BlackToolBoxLaboratory/react-popover',
       npm    : 'https://www.npmjs.com/package/@blacktoolbox/react-popover'

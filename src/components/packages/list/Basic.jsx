@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
+
 import BTBList from '@blacktoolbox/react-list';
 import BTBTable from '@blacktoolbox/react-table';
 
@@ -8,9 +11,20 @@ import { openLink } from '@src/utils/functions.js';
 
 import packageInfo from './packageInfo.js';
 
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+
+const enhance = compose(
+  connect(
+    (state) => {
+      return {
+        'languageSetting'  : state.language.languageSetting
+      };
+    }
+  )
+);
+
 const PageInfo = {
-  ...packageInfo,
-  'title' : 'List Basic'
+  ...packageInfo
 };
 
 const preInstall = 
@@ -110,92 +124,101 @@ const tableHeadArr_entry = [
   { name : 'Type', id : 'type' },
   { name : 'Notice', id : 'notice' }
 ];
+
 const tableBodyArr_basic = [
-  { title : 'dataList', type : 'Array', default : '[]', notice : 'List of dataObj.' },
-  { title : 'activeID', type : 'String', default : 'undefined', notice : 'Actived entry.' },
-  { title : 'defaultActiveID', type : 'String', default : 'undefined', notice : 'Default actived entry.' },
-  { title : 'collapseEnable', type : 'Boolean', default : 'false', notice : 'Width of table.' },
-  { title : 'styleObj', type : 'Object', default : '{}', notice : 'Object of customized style.' },
-  { title : 'slotObj', type : 'Object', default : '{}', notice : 'Object of slot which for render specific entry.' },
-  { title : 'onEntryClick', type : 'Function', default : 'undefined', notice : 'Function for entry clicked.' },
-  { title : 'onToggle', type : 'Function', default : 'undefined', notice : 'Fuction for while collapseEnable is ture and some collapsing triggered.' },
-  { title : 'ref', type : 'useRef', default : 'undefined', notice : 'For the feature of React.ref' }
+  { title : 'dataList', type : 'package.paramType.array', default : '[]', notice : 'package.list.property.dataList' },
+  { title : 'activeID', type : 'package.paramType.string', default : 'undefined', notice : 'package.list.property.activeID' },
+  { title : 'defaultActiveID', type : 'package.paramType.string', default : 'undefined', notice : 'package.list.property.defaultActiveID' },
+  { title : 'collapseEnable', type : 'package.paramType.boolean', default : 'false', notice : 'package.list.property.collapseEnable' },
+  { title : 'styleObj', type : 'package.paramType.object', default : '{}', notice : 'package.list.property.styleObj' },
+  { title : 'slotObj', type : 'package.paramType.object', default : '{}', notice : 'package.list.property.slotObj' },
+  { title : 'onEntryClick', type : 'package.paramType.function', default : 'undefined', notice : 'package.list.property.onEntryClick' },
+  { title : 'onToggle', type : 'package.paramType.function', default : 'undefined', notice : 'package.list.property.onToggle' },
+  { title : 'ref', type : 'useRef', default : 'undefined', notice : 'package.list.property.ref' }
 ];
 const tableBodyArr_entry = [
-  { title : 'id', type : 'String', notice : 'Identity of entry.' },
-  { title : 'title', type : 'String || Node', notice : 'Name of entry.' },
-  { title : 'defaultCollapsed', type : 'String', notice : 'Default value to collapsed of extend.' },
-  { title : 'children', type : 'Array', notice : 'sublist' }
+  { title : 'id', type : 'package.paramType.string', notice : 'package.list.entryObj.id' },
+  { title : 'title', type : 'package.paramType.string||package.paramType.node', notice : 'package.list.entryObj.title' },
+  { title : 'defaultCollapsed', type : 'package.paramType.string', notice : 'package.list.entryObj.defaultCollapsed' },
+  { title : 'children', type : 'package.paramType.array', notice : 'package.list.entryObj.children' }
 ];
-
 const tableBodyArr_slot = [
-  { title  : '[ id of entryObj ]', type   : 'String || Node || Function', notice : (
-    <>
-      Slot for customized entry. Here is the example for function if used. The porps will be entry corresponding the id.
-      <pre className="page_pre">
-        {`(entry) => {}`}
-      </pre>
-    </>)
+  { title  : '[ id of entryObj ]', type   : 'package.paramType.string||package.paramType.node||package.paramType.function', notice : 'package.list.slotObj.entryObj'
   }
 ];
 
-const Basic = () => {
+const tableSlotObj = {
+  'td-type' : (data, column) => {
+    let sep = data[column.id].split('||');
+    let result = '';
+    if (sep.length > 0)
+    {
+      result = sep.map((item) => {
+        return lang.translate(item);
+      }).join(' || ');
+    } else {
+      result = (data[column.id] === 'useRef')? 'useRef' : lang.translate(data[column.id]);
+    }
+    return result;
+  },
+  'td-notice' : (data, column) => {
+    return lang.translate(data[column.id]);
+  }
+};
+
+const Basic = enhance(() => {
   return (
     <Page className="btb-pkg-list-basic">
-      <PageHead title={PageInfo.title} clickBtn={openLink} linkList={PageInfo.linkList}/>
+      <PageHead title={lang.translate('package.list.name')} clickBtn={openLink} linkList={PageInfo.linkList}/>
       <Section head={(
         <>
-          {`Version: ${PageInfo.version}`}<br/>
-          {`Release Date: ${PageInfo.updated}`}
+          {`${lang.translate('package.version_colon')}${PageInfo.version}`}<br/>
+          {`${lang.translate('package.release_colon')}${PageInfo.updated}`}
         </>
       )}>
         <p>
           {PageInfo.description}
         </p>
       </Section>
-      <Section head="INSTALLATION">
+      <Section head={lang.translate('package.section.installation')}>
         <pre className="page_pre">
           {preInstall}
         </pre>
       </Section>
-      <Section head="RENDER">
+      <Section head={lang.translate('package.section.render')}>
         <pre className="page_pre">
           {preRender}
         </pre>
       </Section>
-      <Section head="PARAMETERS">
-        <Block title="Basic">
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_basic}/>
-        </Block>
+      <Section head={lang.translate('package.section.parameters')}>
+        <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_basic} slotObj={tableSlotObj}/>
         <Block title="entryObj">
-          <p>If entry.children is defined. While clicking this entry will trigger onToggle. If not, it will trigger onEntryClick.</p>
+          <p>{lang.translate('package.list.parameters.entryObj')}</p>
           <pre className="page_pre">
             {preEntryObj}
           </pre>
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_entry} bodyData={tableBodyArr_entry}/>
+          <BTBTable className="page_table" mode="list" headData={tableHeadArr_entry} bodyData={tableBodyArr_entry} slotObj={tableSlotObj}/>
         </Block>
         <Block title="styleObj">
-          <p>Any className in this module could add inline CSS by styleObj.</p>
+          <p>{lang.translate('package.list.parameters.styleObj')}</p>
           <pre className="page_pre">
             {preStyleObj}
           </pre>
         </Block>
         <Block title="slotObj">
-          <p>We could replace the default node with entryobj.id by slotObj. </p>
+          <p>{lang.translate('package.list.parameters.slotObj')}</p>
           <pre className="page_pre">
             {preSlotObj}
           </pre>
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_entry} bodyData={tableBodyArr_slot}/>
+          <BTBTable className="page_table" mode="list" headData={tableHeadArr_entry} bodyData={tableBodyArr_slot} slotObj={tableSlotObj}/>
         </Block>
       </Section>
-      <Section head="NODE TREE">
+      <Section head={lang.translate('package.section.nodeTree')}>
         <BTBList className="page_node_tree" dataList={nodeTree}/>
-        <p>
-          {'Note: The layer count is counted base on 0.'}
-        </p>
+        <p>{lang.translate('package.list.nodeTree.notice')}</p>
       </Section>
     </Page>
   );
-};
+});
 
 export default Basic;

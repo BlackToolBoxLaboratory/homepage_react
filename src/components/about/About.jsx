@@ -1,15 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
+import { compose } from 'recompose';
 
 import { Page, Section, Divider } from '@src/modules/pageLayout/index.js';
 import BTBPackage from './package.jsx';
 
 import PACKAGE from '@src/assets/definitions/packageObj.js';
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
 
 import logoPath from '@src/assets/images/BTB_React.png';
 
-const About = withRouter((props) => {
+const enhance = compose(
+  connect(
+    (state) => {
+      return {
+        'languageSetting'  : state.language.languageSetting
+      };
+    }
+  ),
+  withRouter
+);
+
+const About = enhance((props) => {
   function _redirectRoute(routename) {
     props.history.push(routename);
   }
@@ -23,9 +37,7 @@ const About = withRouter((props) => {
         <p className="title_sub">With React</p>
       </Section>
       <Section>
-        <span>
-          React is the first framework of javascript when I join to the Frontend develipment club. Before that jQuery of curse is my first using when I am a software engineer. Here I aim to develop packages made with React. They are designed with basic logic for high degrees of freedom of customization and low dependency. While using, if you find some questions, bugs or issues. Or having some great ideas. Please feel free to let me know.
-        </span>
+        <span>{lang.translate('about.description')}</span>
       </Section>
       <Section className="grid-row justify-content-center">
         <a href="mailto://vannoel0628@gmail.com" target="_blank">
@@ -35,12 +47,12 @@ const About = withRouter((props) => {
       </Section>
       <Divider />
       <Section className="grid-row justify-content-center">
-        <span>If you like all the works in BTB Lab. Please </span>
+        <span>{lang.translate('about.donate.1')}</span>
         <a href="https://www.paypal.me/vannoel0628" target="_blank">
           <FAI icon={['fab', 'paypal']} fixedWidth />
-          <span>buy me a coffee</span>
+          <span>{lang.translate('about.donate.2')}</span>
         </a>
-        <span>. </span>
+        <span>{lang.translate('about.donate.3')}</span>
       </Section>
       <Divider />
       {

@@ -1,5 +1,5 @@
-# HomePage of BTB Lab. for React
-Home page of Black Toolbox Laboratory for React.
+# HomePage of BTB Lab. with React
+Home page of Black Toolbox Laboratory with React.
 
 You can see our website [on-line](https://blacktoolboxlaboratory.github.io/react).
 

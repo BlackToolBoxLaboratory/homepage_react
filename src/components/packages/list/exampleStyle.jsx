@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
+
 import BTBList from '@blacktoolbox/react-list';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
@@ -6,6 +9,18 @@ import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js
 import { openLink } from '@src/utils/functions.js';
 
 import packageInfo from './packageInfo.js';
+
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+
+const enhance = compose(
+  connect(
+    (state) => {
+      return {
+        'languageSetting'  : state.language.languageSetting
+      };
+    }
+  )
+);
 
 const PageInfo = {
   ...packageInfo,
@@ -98,7 +113,7 @@ const preStyleObj =
   }
 }`;
 
-const ExampleStyle = () => {
+const ExampleStyle = enhance(() => {
   const activeID = useActiveState('l13');
 
   return (
@@ -144,7 +159,7 @@ const ExampleStyle = () => {
       </Section>
     </Page>
   );
-};
+});
 
 function useActiveState (defaultSate) {
   const [value, setState] = useState(defaultSate);
