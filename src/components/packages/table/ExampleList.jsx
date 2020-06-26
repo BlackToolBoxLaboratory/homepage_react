@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import BTBTable from '@blacktoolbox/react-table';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
@@ -7,11 +9,17 @@ import { openLink } from '@src/utils/functions.js';
 
 import packageInfo from './packageInfo.js';
 
-const pageInfo = {
-  ...packageInfo,
-  'title'       : 'Example - List',
-  'description' : 'Here has very simple example to show how to use the list mode.'
-};
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+
+const enhance = compose(
+  connect(
+    (state) => {
+      return {
+        'languageSetting'  : state.language.languageSetting
+      };
+    }
+  )
+);
 
 const preRender =
 `<BTBTable
@@ -67,29 +75,27 @@ const tableBodyArr_data = [
   {name : 'Device 10', devType : 'switch',  osType : 'linux',    ipAddr : '192.168.0.245',  macAddr : 'E2:BA:33:44:48:AB', traffic : '0 MB / 0 KB',     status : 0, statusDesc : 'Disconnected'}
 ];
 
-const ExampleMode = () => {
+const ExampleList = enhance(() => {
   return (
     <Page className="btb-pkg-table-example-list">
-      <PageHead title={pageInfo.title} clickBtn={openLink} linkList={pageInfo.linkList} />
+      <PageHead title={lang.translate('package.table.example.list.title')} clickBtn={openLink} linkList={packageInfo.linkList} />
       <Section head={(
         <>
-          {`Version: ${pageInfo.version}`}<br/>
-          {`Release Date: ${pageInfo.updated}`}
+          {`${lang.translate('package.version_colon')}${packageInfo.version}`}<br/>
+          {`${lang.translate('package.release_colon')}${packageInfo.updated}`}
         </>
       )}>
         <p>
-          {pageInfo.description}
+          {lang.translate('package.table.example.list.description')}
         </p>
       </Section>
-      <Section head="EXAMPLE">
+      <Section head={lang.translate('package.section.example')}>
         <BTBTable className="table_sample" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_data}/>
       </Section>
-      <Section head="SOURCECODE">
-        <Block title="render">
-          <pre className="page_pre">
-            {preRender}
-          </pre>
-        </Block>
+      <Section head={lang.translate('package.section.sourceCode')}>
+        <pre className="page_pre">
+          {preRender}
+        </pre>
         <Block title="headData">
           <pre className="page_pre">
             {preHeadData}
@@ -103,6 +109,6 @@ const ExampleMode = () => {
       </Section>
     </Page>
   );
-};
+});
 
-export default ExampleMode;
+export default ExampleList;

@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import BTBList from '@blacktoolbox/react-list';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
@@ -7,11 +9,17 @@ import { openLink } from '@src/utils/functions.js';
 
 import packageInfo from './packageInfo.js';
 
-const PageInfo = {
-  ...packageInfo,
-  'title'       : 'Example - List',
-  'description' : 'Here is a very simple example for a list, if we just give a data list.'
-};
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+
+const enhance = compose(
+  connect(
+    (state) => {
+      return {
+        'languageSetting'  : state.language.languageSetting
+      };
+    }
+  )
+);
 
 const _listData = [
   {
@@ -62,29 +70,27 @@ const preListData =
   ]}
 ]`;
 
-const ExampleList = () => {
+const ExampleList = enhance(() => {
   return (
     <Page className="btb-pkg-list-example-list">
-      <PageHead title={PageInfo.title} clickBtn={openLink} linkList={PageInfo.linkList}/>
+      <PageHead title={lang.translate('package.list.example.list.title')} clickBtn={openLink} linkList={packageInfo.linkList}/>
       <Section head={(
         <>
-          {`Version: ${PageInfo.version}`}<br/>
-          {`Release Date: ${PageInfo.updated}`}
+          {`${lang.translate('package.version_colon')}${packageInfo.version}`}<br/>
+          {`${lang.translate('package.release_colon')}${packageInfo.updated}`}
         </>
       )}>
         <p>
-          {PageInfo.description}
+          {lang.translate('package.list.example.list.description')}
         </p>
       </Section>
-      <Section head="EXAMPLE">
+      <Section head={lang.translate('package.section.example')}>
         <BTBList dataList={_listData} />
       </Section>
-      <Section head="SOURCECODE">
-        <Block title="Render">
-          <pre className="page_pre">
-            {preRender}
-          </pre>
-        </Block>
+      <Section head={lang.translate('package.section.sourceCode')}>
+        <pre className="page_pre">
+          {preRender}
+        </pre>
         <Block title="listData">
           <pre className="page_pre">
             {preListData}
@@ -93,6 +99,6 @@ const ExampleList = () => {
       </Section>
     </Page>
   );
-};
+});
 
 export default ExampleList;

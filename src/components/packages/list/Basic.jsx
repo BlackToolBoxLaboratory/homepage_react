@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-
 import BTBList from '@blacktoolbox/react-list';
 import BTBTable from '@blacktoolbox/react-table';
 
@@ -22,10 +21,6 @@ const enhance = compose(
     }
   )
 );
-
-const PageInfo = {
-  ...packageInfo
-};
 
 const preInstall = 
 `$ npm install --save @blacktoolbox/reat-list
@@ -169,15 +164,15 @@ const tableSlotObj = {
 const Basic = enhance(() => {
   return (
     <Page className="btb-pkg-list-basic">
-      <PageHead title={lang.translate('package.list.name')} clickBtn={openLink} linkList={PageInfo.linkList}/>
+      <PageHead title={lang.translate('package.list.name')} clickBtn={openLink} linkList={packageInfo.linkList}/>
       <Section head={(
         <>
-          {`${lang.translate('package.version_colon')}${PageInfo.version}`}<br/>
-          {`${lang.translate('package.release_colon')}${PageInfo.updated}`}
+          {`${lang.translate('package.version_colon')}${packageInfo.version}`}<br/>
+          {`${lang.translate('package.release_colon')}${packageInfo.updated}`}
         </>
       )}>
         <p>
-          {PageInfo.description}
+          {lang.translate(packageInfo.description)}
         </p>
       </Section>
       <Section head={lang.translate('package.section.installation')}>

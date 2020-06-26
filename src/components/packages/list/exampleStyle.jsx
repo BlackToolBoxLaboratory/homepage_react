@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-
 import BTBList from '@blacktoolbox/react-list';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
@@ -21,12 +20,6 @@ const enhance = compose(
     }
   )
 );
-
-const PageInfo = {
-  ...packageInfo,
-  'title'       : 'Example - Style',
-  'description' : 'Here is going to show you about how to use the styleObj and the example of defaultActiveID and v-model of activeID. The activeID is used to mark focused entry, but also allowed to used defaultActiveID to mark entry as default in the begin. Then we can modify the style by the styleObj with using the node class name directly.'
-};
 
 const _listData = [
   {
@@ -118,29 +111,27 @@ const ExampleStyle = enhance(() => {
 
   return (
     <Page className="btb-pkg-list-example-style">
-      <PageHead title={PageInfo.title} clickBtn={openLink} linkList={PageInfo.linkList}/>
+      <PageHead title={lang.translate('package.list.example.style.title')} clickBtn={openLink} linkList={packageInfo.linkList}/>
       <Section head={(
         <>
-          {`Version: ${PageInfo.version}`}<br/>
-          {`Release Date: ${PageInfo.updated}`}
+          {`${lang.translate('package.version_colon')}${packageInfo.version}`}<br/>
+          {`${lang.translate('package.release_colon')}${packageInfo.updated}`}
         </>
       )}>
         <p>
-          {PageInfo.description}
+          {lang.translate('package.list.example.style.description')}
         </p>
       </Section>
-      <Section head="EXAMPLE">
+      <Section head={lang.translate('package.section.example')}>
         <p className="example_activeID">
           {`Active ID: ${activeID.value}`}
         </p>
         <BTBList dataList={_listData} styleObj={_styleObj} activeID={activeID.value} onEntryClick={activeID.onChange}/>
       </Section>
-      <Section head="SOURCECODE">
-        <Block title="render">
-          <pre className="page_pre">
-            {preRender}
-          </pre>
-        </Block>
+      <Section head={lang.translate('package.section.sourceCode')}>
+        <pre className="page_pre">
+          {preRender}
+        </pre>
         <Block title="listData">
           <pre className="page_pre">
             {preListData}

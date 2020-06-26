@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 import BTBTable from '@blacktoolbox/react-table';
 
@@ -8,11 +10,17 @@ import { openLink } from '@src/utils/functions.js';
 
 import packageInfo from './packageInfo.js';
 
-const pageInfo = {
-  ...packageInfo,
-  'title'       : 'Example - Slot',
-  'description' : 'Sometimes we may want to show the entry from the list by button, input, icon, ... etc. Then we can ultilize this feature about customized slot. To the example as following, It shows how to customized by slotObj in String, Node, or Function way.'
-};
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+
+const enhance = compose(
+  connect(
+    (state) => {
+      return {
+        'languageSetting'  : state.language.languageSetting
+      };
+    }
+  )
+);
 
 const preRender =
 `<BTBTable 
@@ -124,29 +132,27 @@ const slotObj = {
   }
 };
 
-const ExampleSlot = () => {
+const ExampleSlot = enhance(() => {
   return (
     <Page className="btb-pkg-table-example-slot">
-      <PageHead title={pageInfo.title} clickBtn={openLink} linkList={pageInfo.linkList} />
+      <PageHead title={lang.translate('package.table.example.slot.title')} clickBtn={openLink} linkList={packageInfo.linkList} />
       <Section head={(
         <>
-          {`Version: ${pageInfo.version}`}<br/>
-          {`Release Date: ${pageInfo.updated}`}
+          {`${lang.translate('package.version_colon')}${packageInfo.version}`}<br/>
+          {`${lang.translate('package.release_colon')}${packageInfo.updated}`}
         </>
       )}>
         <p>
-          {pageInfo.description}
+          {lang.translate('package.table.example.slot.description')}
         </p>
       </Section>
-      <Section head="EXAMPLE">
+      <Section head={lang.translate('package.section.example')}>
         <BTBTable className="table_sample" mode="compare" headData={tableHeadArr_property} bodyData={tableBodyArr_data} slotObj={slotObj}/>
       </Section>
-      <Section head="SOURCECODE">
-        <Block title="render">
-          <pre className="page_pre">
-            {preRender}
-          </pre>
-        </Block>
+      <Section head={lang.translate('package.section.sourceCode')}>
+        <pre className="page_pre">
+          {preRender}
+        </pre>
         <Block title="headData">
           <pre className="page_pre">
             {preHeadData}
@@ -166,6 +172,6 @@ const ExampleSlot = () => {
       </Section>
     </Page>
   );
-};
+});
 
 export default ExampleSlot;

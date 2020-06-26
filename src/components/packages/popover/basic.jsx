@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import BTBList from '@blacktoolbox/react-list';
 import BTBTable from '@blacktoolbox/react-table';
 
@@ -8,10 +10,17 @@ import { openLink } from '@src/utils/functions.js';
 
 import packageInfo from './packageInfo.js';
 
-const PageInfo = {
-  ...packageInfo,
-  'title' : 'Popover Basic'
-};
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+
+const enhance = compose(
+  connect(
+    (state) => {
+      return {
+        'languageSetting'  : state.language.languageSetting
+      };
+    }
+  )
+);
 
 const preInstall = 
 `$ npm install --save @blacktoolbox/reat-popover
@@ -65,60 +74,77 @@ const tableHeadArr_property = [
 ];
 
 const tableBodyArr_basic = [
-  {title : 'showState', type : 'Boolean', default : 'false', notice : 'We could use the parameter to overwrite the showState of popover.'},
-  {title : 'showPosition', type : 'String', default : 'bottom', notice : 'The position of popover. Options in top || right || bottom || left.'},
-  {title : 'showAlign', type : 'String', default : 'begin', notice : 'The align of popover. Options in begin || center || end.'},
-  {title : 'stateLock', type : 'Boolean', default : 'true', notice : 'To keep showState in true or false.'},
-  {title : 'withArrow', type : 'Boolean', default : 'true', notice : 'The tiny caret to let popover become conversation block. Get it false when we prefer a dropdown.'},
-  {title : 'autoDetect', type : 'Boolean', default : 'true', notice : 'Default it will detect the window\'s inner edge of browser. When the popover show overglow to browser, it will adjust by self. We could get it false, if we don\'t need the feature working.'},
-  {title : 'trigger', type : 'String || Node', default : 'Trigger', notice : 'Render the popover toggle trigger node.'},
-  {title : 'styleObj', type : 'Object', default : '{}', notice : 'Object of customized style.'},
-  {title : 'onToggle', type : 'Function', default : 'undefined', notice : 'Event function trigged when popover is toggle no matter showing or hiding.'},
-  {title : 'onShow', type : 'Function', default : 'undefined', notice : 'Event function trigged when popover is going to show.'},
-  {title : 'onHide', type : 'Function', default : 'undefined', notice : 'Event function trigged when popover is going to hidd.'},
-  { title : 'ref', type : 'useRef', default : 'undefined', notice : 'For the feature of React.ref' }
+  {title : 'showState', type : 'package.paramType.boolean', default : 'false', notice : 'package.popover.property.showState'},
+  {title : 'showPosition', type : 'package.paramType.string', default : '"bottom"', notice : 'package.popover.property.showPosition'},
+  {title : 'showAlign', type : 'package.paramType.string', default : '"begin"', notice : 'package.popover.property.showAlign'},
+  {title : 'stateLock', type : 'package.paramType.boolean', default : 'true', notice : 'package.popover.property.stateLock'},
+  {title : 'withArrow', type : 'package.paramType.boolean', default : 'true', notice : 'package.popover.property.withArrow'},
+  {title : 'autoDetect', type : 'package.paramType.boolean', default : 'true', notice : 'package.popover.property.autoDetect'},
+  {title : 'trigger', type : 'package.paramType.string||package.paramType.node', default : '"Trigger"', notice : 'package.popover.property.trigger'},
+  {title : 'styleObj', type : 'package.paramType.object', default : '{}', notice : 'package.popover.property.styleObj'},
+  {title : 'onToggle', type : 'package.paramType.function', default : 'undefined', notice : 'package.popover.property.onToggle'},
+  {title : 'onShow', type : 'package.paramType.function', default : 'undefined', notice : 'package.popover.property.onShow'},
+  {title : 'onHide', type : 'package.paramType.function', default : 'undefined', notice : 'package.popover.property.onHide'},
+  { title : 'ref', type : 'useRef', default : 'undefined', notice : 'package.popover.property.ref' }
 ];
 
-const Basic = () => {
+const tableSlotObj = {
+  'td-type' : (data, column) => {
+    let sep = data[column.id].split('||');
+    let result = '';
+    if (sep.length > 0)
+    {
+      result = sep.map((item) => {
+        return lang.translate(item);
+      }).join(' || ');
+    } else {
+      result = (data[column.id] === 'useRef')? 'useRef' : lang.translate(data[column.id]);
+    }
+    return result;
+  },
+  'td-notice' : (data, column) => {
+    return lang.translate(data[column.id]);
+  }
+};
+
+const Basic = enhance(() => {
   return (
     <Page className="btb-pkg-popover-basic">
-      <PageHead title={PageInfo.title} clickBtn={openLink} linkList={PageInfo.linkList}/>
+      <PageHead title={lang.translate('package.popover.name')} clickBtn={openLink} linkList={packageInfo.linkList}/>
       <Section head={(
         <>
-          {`Version: ${PageInfo.version}`}<br/>
-          {`Release Date: ${PageInfo.updated}`}
+          {`${lang.translate('package.version_colon')}${packageInfo.version}`}<br/>
+          {`${lang.translate('package.release_colon')}${packageInfo.updated}`}
         </>
       )}>
         <p>
-          {PageInfo.description}
+          {lang.translate(packageInfo.description)}
         </p>
       </Section>
-      <Section head="INSTALLATION">
+      <Section head={lang.translate('package.section.installation')}>
         <pre className="page_pre">
           {preInstall}
         </pre>
       </Section>
-      <Section head="RENDER">
+      <Section head={lang.translate('package.section.render')}>
         <pre className="page_pre">
           {preRender}
         </pre>
       </Section>
-      <Section head="PARAMETERS">
-        <Block title="Basic">
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_basic}/>
-        </Block>
+      <Section head={lang.translate('package.section.parameters')}>
+        <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_basic} slotObj={tableSlotObj}/>
         <Block title="styleObj">
-          <p>Any className in this module could add inline CSS by styleObj.</p>
+          <p>{lang.translate('package.popover.parameters.styleObj')}</p>
           <pre className="page_pre">
             {preStyleObj}
           </pre>
         </Block>
       </Section>
-      <Section head="NODE TREE">
+      <Section head={lang.translate('package.section.nodeTree')}>
         <BTBList className="page_node_tree" dataList={nodeTree}/>
       </Section>
     </Page>
   );
-};
+});
 
 export default Basic;

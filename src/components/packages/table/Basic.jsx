@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import BTBList from '@blacktoolbox/react-list';
 import BTBTable from '@blacktoolbox/react-table';
 
@@ -8,10 +10,17 @@ import { openLink } from '@src/utils/functions.js';
 
 import packageInfo from './packageInfo.js';
 
-const pageInfo = {
-  ...packageInfo,
-  'title' : 'Table - Basic'
-};
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+
+const enhance = compose(
+  connect(
+    (state) => {
+      return {
+        'languageSetting'  : state.language.languageSetting
+      };
+    }
+  )
+);
 
 const preInstall = 
 `$ npm install --save @blacktoolbox/reat-table
@@ -172,81 +181,79 @@ const tableHeadArr_property = [
   { name : 'Default', id : 'default' },
   { name : 'Notice', id : 'notice' }
 ];
-const tableHeadArr_headObj = [
-  { name : 'Name', id : 'title' },
-  { name : 'Type', id : 'type' },
-  { name : 'Notice', id : 'notice' }
-];
-const tableHeadArr_slot = [
+const tableHeadArr_entry = [
   { name : 'Name', id : 'title' },
   { name : 'Type', id : 'type' },
   { name : 'Notice', id : 'notice' }
 ];
 const tableBodyArr_basic = [
-  { title : 'headData', type : 'Array', default : '[]', notice : 'List of headObj.' },
-  { title : 'bodyData', type : 'Array', default : '[]', notice : 'List of bodyObj.' },
-  { title : 'mode', type : 'String', default : 'list', notice : 'Value in \'list\', \'info\' or \'compare\'' },
-  { title : 'styleObj', type : 'Object', default : '{}', notice : 'Object of customized style.' },
-  { title : 'slotObj', type : 'Object', default : '{}', notice : 'Object of customized entry of head or body.' },
-  { title : 'onDataClick', type : 'Function', default : 'undefined', notice : 'Function for data clicked.' },
-  { title : 'ref', type : 'useRef', default : 'undefined', notice : 'For the feature of React.ref' }
+  { title : 'headData', type : 'package.paramType.array', default : '[]', notice : 'package.table.property.headData' },
+  { title : 'bodyData', type : 'package.paramType.array', default : '[]', notice : 'package.table.property.bodyData' },
+  { title : 'mode', type : 'package.paramType.string', default : '"list"', notice : 'package.table.property.mode' },
+  { title : 'styleObj', type : 'package.paramType.object', default : '{}', notice : 'package.table.property.styleObj' },
+  { title : 'slotObj', type : 'package.paramType.object', default : '{}', notice : 'package.table.property.slotObj' },
+  { title : 'onDataClick', type : 'package.paramType.function', default : 'undefined', notice : 'package.table.property.onDataClick' },
+  { title : 'ref', type : 'useRef', default : 'undefined', notice : 'package.table.property.ref' }
 ];
 const tableBodyArr_headObj = [
-  { title : 'id', type : 'Array', default : '[]', notice : 'Identity of column.' },
-  { title : 'name', type : 'Array', default : '[]', notice : 'Name of column.' }
+  { title : 'id', type : 'package.paramType.string', default : '[]', notice : 'package.table.headObj.id' },
+  { title : 'name', type : 'package.paramType.string', default : '[]', notice : 'package.table.headObj.name' }
 ];
 const tableBodyArr_slot = [
-  { title  : '[ th_${ headObj.id } ]', type   : 'String || Node || Function', notice : (
-    <>
-      Slot for customized th of data. Here is the example for function if used. The porps will be entry corresponding the id.
-      <pre className="page_pre">
-        {`(headObj) => {}`}
-      </pre>
-    </>)
-  },
-  { title  : '[ td_${ headObj.id } ]', type   : 'String || Node || Function', notice : (
-    <>
-      Slot for customized td of data. Here is the example for function if used. The porps will be entry corresponding the id.
-      <pre className="page_pre">
-        {`(bodyObj, headObj) => {}`}
-      </pre>
-    </>)
-  }
+  { title  : '[ th_${ headObj.id } ]', type   : 'package.paramType.string||package.paramType.node||package.paramType.function', notice : 'package.table.slotObj.th'  },
+  { title  : '[ td_${ headObj.id } ]', type   : 'package.paramType.string||package.paramType.node||package.paramType.function', notice : 'package.table.slotObj.td'}
 ];
 
-const Basic = () => {
+const tableSlotObj = {
+  'td-type' : (data, column) => {
+    let sep = data[column.id].split('||');
+    let result = '';
+    if (sep.length > 0)
+    {
+      result = sep.map((item) => {
+        return lang.translate(item);
+      }).join(' || ');
+    } else {
+      result = (data[column.id] === 'useRef')? 'useRef' : lang.translate(data[column.id]);
+    }
+    return result;
+  },
+  'td-notice' : (data, column) => {
+    return lang.translate(data[column.id]);
+  }
+};
+
+const Basic = enhance(() => {
   return (
     <Page className="btb-pkg-table-basic">
-      <PageHead title={pageInfo.title} clickBtn={openLink} linkList={pageInfo.linkList}/>
+      <PageHead title={lang.translate('package.table.name')} clickBtn={openLink} linkList={packageInfo.linkList}/>
       <Section head={(
         <>
-          {`Version: ${pageInfo.version}`}<br/>
-          {`Release Date: ${pageInfo.updated}`}
+          {`${lang.translate('package.version_colon')}${packageInfo.version}`}<br/>
+          {`${lang.translate('package.release_colon')}${packageInfo.updated}`}
         </>
       )}>
         <p>
-          {pageInfo.description}
+          {lang.translate(packageInfo.description)}
         </p>
       </Section>
-      <Section head="INSTALLATION">
+      <Section head={lang.translate('package.section.installation')}>
         <pre className="page_pre">
           {preInstall}
         </pre>
       </Section>
-      <Section head="RENDER">
+      <Section head={lang.translate('package.section.render')}>
         <pre className="page_pre">
           {preRender}
         </pre>
       </Section>
-      <Section head="PARAMETERS">
-        <Block title="Basic">
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_basic}/>
-        </Block>
+      <Section head={lang.translate('package.section.parameters')}>
+        <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_basic} slotObj={tableSlotObj}/>
         <Block title="headObj">
           <pre className="page_pre">
             {preHeadObj}
           </pre>
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_headObj} bodyData={tableBodyArr_headObj}/>
+          <BTBTable className="page_table" mode="list" headData={tableHeadArr_entry} bodyData={tableBodyArr_headObj} slotObj={tableSlotObj}/>
         </Block>
         <Block title="bodyObj">
           <pre className="page_pre">
@@ -254,35 +261,35 @@ const Basic = () => {
           </pre>
         </Block>
         <Block title="styleObj">
-          <p>Any className in this module could add inline CSS by styleObj.</p>
+          <p>{lang.translate('package.table.parameters.styleObj')}</p>
           <pre className="page_pre">
             {preStyleObj}
           </pre>
         </Block>
         <Block title="slotObj">
-          <p>We could replace the default node with bodyObj.id by slotObj. However we need the prefix to specify which node we want to customized th or td. </p>
+          <p>{lang.translate('package.table.parameters.slotObj')}</p>
           <pre className="page_pre">
             {preSlotObj}
           </pre>
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_slot} bodyData={tableBodyArr_slot}/>
+          <BTBTable className="page_table" mode="list" headData={tableHeadArr_entry} bodyData={tableBodyArr_slot} slotObj={tableSlotObj}/>
         </Block>
       </Section>
-      <Section head="NODE TREE">
-        <Block title="List Mode">
+      <Section head={lang.translate('package.section.nodeTree')}>
+        <Block title={lang.translate('package.table.nodeTree.list')}>
           <BTBList className="page_node_tree" dataList={nodeTree_list}/>
-          <p>{'Note: The data order is counted base on 0.'}</p>
+          <p>{lang.translate('package.table.nodeTree.notice')}</p>
         </Block>
-        <Block title="Info Mode">
+        <Block title={lang.translate('package.table.nodeTree.info')}>
           <BTBList className="page_node_tree" dataList={nodeTree_info}/>
-          <p>{'Note: The data order is counted base on 0.'}</p>
+          <p>{lang.translate('package.table.nodeTree.notice')}</p>
         </Block>
-        <Block title="Compare Mode">
+        <Block title={lang.translate('package.table.nodeTree.compare')}>
           <BTBList className="page_node_tree" dataList={nodeTree_compare}/>
-          <p>{'Note: The data order is counted base on 0.'}</p>
+          <p>{lang.translate('package.table.nodeTree.notice')}</p>
         </Block>
       </Section>
     </Page>
   );
-};
+});
 
 export default Basic;

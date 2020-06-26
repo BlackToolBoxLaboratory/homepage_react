@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 import BTBList from '@blacktoolbox/react-list';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
@@ -7,11 +9,17 @@ import { openLink } from '@src/utils/functions.js';
 
 import packageInfo from './packageInfo.js';
 
-const PageInfo = {
-  ...packageInfo,
-  'title'       : 'Example - Menu',
-  'description' : 'When we enable the collapseEnable with datalist, we will get a simple menu to use. And it will trigger the onToggle event function while clicked for Collapsing or Expending. Every entry can be active status after being clicked. Surely it will trigger the onEntryClick event function too. Besides for a menu, it can tag one as defaultActiveID. Also utilize the useState to work with activeID',
-};
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+
+const enhance = compose(
+  connect(
+    (state) => {
+      return {
+        'languageSetting'  : state.language.languageSetting
+      };
+    }
+  )
+);
 
 const _menuData = [
   {
@@ -50,29 +58,27 @@ const preListData =
   ]}
 ]`;
 
-const ExampleMenu = () => {
+const ExampleMenu = enhance(() => {
   return (
     <Page className="btb-pkg-list-example-menu">
-      <PageHead title={PageInfo.title} clickBtn={openLink} linkList={PageInfo.linkList}/>
+      <PageHead title={lang.translate('package.list.example.menu.title')} clickBtn={openLink} linkList={packageInfo.linkList}/>
       <Section head={(
         <>
-          {`Version: ${PageInfo.version}`}<br/>
-          {`Release Date: ${PageInfo.updated}`}
+          {`${lang.translate('package.version_colon')}${packageInfo.version}`}<br/>
+          {`${lang.translate('package.release_colon')}${packageInfo.updated}`}
         </>
       )}>
         <p>
-          {PageInfo.description}
+          {lang.translate('package.list.example.menu.description')}
         </p>
       </Section>
-      <Section head="EXAMPLE">
+      <Section head={lang.translate('package.section.example')}>
         <BTBList dataList={_menuData} collapseEnable/>
       </Section>
-      <Section head="SOURCECODE">
-        <Block title="render">
-          <pre className="page_pre">
-            {preRender}
-          </pre>
-        </Block>
+      <Section head={lang.translate('package.section.sourceCode')}>
+        <pre className="page_pre">
+          {preRender}
+        </pre>
         <Block title="menuData">
           <pre className="page_pre">
             {preListData}
@@ -81,6 +87,6 @@ const ExampleMenu = () => {
       </Section>
     </Page>
   );
-};
+});
 
 export default ExampleMenu;
