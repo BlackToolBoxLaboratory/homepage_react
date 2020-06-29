@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
-import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 import { compose } from 'recompose';
+import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
 import { Page, Section, Divider } from '@src/modules/pageLayout/index.js';
 import BTBPackage from './package.jsx';

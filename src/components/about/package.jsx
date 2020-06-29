@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 import { compose } from 'recompose';
+import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 

@@ -191,5 +191,28 @@ export default {
         'ref'          : 'For the feature of React.ref.'
       }
     }
+  },
+  'application' : {
+    'section' : {
+      'installation' : 'INSTALLATION',
+      'initializer'  : 'INITIALIZER',
+      'impletement'  : 'IMPLEMENT',
+      'trigger'      : 'TRIGGER'
+    },
+    'languages' : {
+      'name'         : 'Languages',
+      'description'  : 'For developing the website of international services, we usually have the requirement to develop with the feature of multiple-languages supported. We already have a lot of masterpice such like i18n. But here we created our own multiple-languages package for lowing down the dependencies. Here I am going to show you how to ultilize the @blacktoolbox/prototype-languages with React based website.',
+      'installation' : {
+        'description' : 'The more detail is intoduced in JavaScript Lab. The more detail you could see it there. Here it only present how to work with React based website.',
+        'linkName'    : 'Link of Document'
+      },
+      'initializer' : 'As @blacktoolbox/prototype-languages required, it need to be initialized before using.',
+      'impletement' : 'The package has storage itself to save the each dicionary of language which is the thing initializer do. And the other thing to do before using is implement a instance of the package. Most action processed with it: menu(), get(), set(), translate().',
+      'trigger'     : {
+        'description' : 'Here we are talking about how to re-render the page after we change the language settings. Of cause, we can do reload to the browser with localStorage, no matter witch type of website is. However mostly React is used in Single Page Application(SPA) development. We could ultilize the nature of React. Basically we have 2 ways to rerender the page: distpatch triggered and key triggered.',
+        'dispatch'    : 'Combined the package with Store management related package(Flux, Redux, ...). We could re-render page we want after dispatched.',
+        'key'         : 'Here is a unusual way for specific scenario. Sometimes for UX required, it maybe be wanted to be the effect to reload whole page. With React, we do not need to do the reload really. We could use the key the mark the top node. After language is changed, the key will changed too. Then the top node will be re-create like new component. Unless it required the network package re-download actually.'
+      }
+    }
   }
 };
