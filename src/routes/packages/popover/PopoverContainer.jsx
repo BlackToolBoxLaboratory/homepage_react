@@ -8,6 +8,8 @@ const PackagesContaier = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
         <Route path={ROUTE.PACKAGES_POPOVER_BASIC} component={React.lazy(() => import('@src/routes/packages/popover/BasicContainer.jsx'))}/>
+        <Route path={ROUTE.PACKAGES_POPOVER_EXAMPLE_POSITION} component={React.lazy(() => import('@src/routes/packages/popover/ExamplePositionContainer.jsx'))}/>
+        <Route path={ROUTE.PACKAGES_POPOVER_EXAMPLE_ALIGN} component={React.lazy(() => import('@src/routes/packages/popover/ExampleAlignContainer.jsx'))}/>
       </Switch>
     </Suspense>
   );

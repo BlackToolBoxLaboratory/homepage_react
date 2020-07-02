@@ -23,22 +23,22 @@ const menuList = [
           },
           {
             id        : 'PACKAGES_LIST_EXAMPLE_LIST',
-            title     : 'Example-List',
+            title     : 'Example: List',
             langIndex : 'menu.packages.list.example.list'
           },
           {
             id        : 'PACKAGES_LIST_EXAMPLE_MENU',
-            title     : 'Example-Menu',
+            title     : 'Example: Menu',
             langIndex : 'menu.packages.list.example.menu'
           },
           {
             id        : 'PACKAGES_LIST_EXAMPLE_STYLE',
-            title     : 'Example-Style',
+            title     : 'Example: Style',
             langIndex : 'menu.packages.list.example.style'
           },
           {
             id        : 'PACKAGES_LIST_EXAMPLE_SLOT',
-            title     : 'Example-Slot',
+            title     : 'Example: Slot',
             langIndex : 'menu.packages.list.example.slot'
           }
         ]
@@ -56,27 +56,27 @@ const menuList = [
           },
           {
             id        : 'PACKAGES_TABLE_EXAMPLE_LIST',
-            title     : 'Example-List',
+            title     : 'Example: List',
             langIndex : 'menu.packages.table.example.list'
           },
           {
             id        : 'PACKAGES_TABLE_EXAMPLE_INFO',
-            title     : 'Example-Info',
+            title     : 'Example: Info',
             langIndex : 'menu.packages.table.example.info'
           },
           {
             id        : 'PACKAGES_TABLE_EXAMPLE_COMPARE',
-            title     : 'Example-Compare',
+            title     : 'Example: Compare',
             langIndex : 'menu.packages.table.example.compare'
           },
           {
             id        : 'PACKAGES_TABLE_EXAMPLE_STYLE',
-            title     : 'Example-Style',
+            title     : 'Example: Style',
             langIndex : 'menu.packages.table.example.style'
           },
           {
             id        : 'PACKAGES_TABLE_EXAMPLE_SLOT',
-            title     : 'Example-Slot',
+            title     : 'Example: Slot',
             langIndex : 'menu.packages.table.example.slot'
           }
         ]
@@ -91,6 +91,16 @@ const menuList = [
             id        : 'PACKAGES_POPOVER_BASIC',
             title     : 'Basic',
             langIndex : 'menu.packages.basic'
+          },
+          {
+            id        : 'PACKAGES_POPOVER_EXAMPLE_POSITION',
+            title     : 'Example: Position',
+            langIndex : 'menu.packages.popover.example.position'
+          },
+          {
+            id        : 'PACKAGES_POPOVER_EXAMPLE_ALIGN',
+            title     : 'Example: Align',
+            langIndex : 'menu.packages.popover.example.align'
           }
         ]
       }

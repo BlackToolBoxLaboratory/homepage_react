@@ -24,7 +24,11 @@ export default {
         }
       },
       'popover' : {
-        'root' : 'Popover',
+        'root'    : 'Popover',
+        'example' : {
+          'position' : 'Example: Position',
+          'align'    : 'Example: Align'
+        }
       }
     },
     'application' : {
@@ -180,7 +184,6 @@ export default {
         'showState'    : 'We could use the parameter to overwrite the showState of popover.',
         'showPosition' : 'The position of popover. Options in top, right, bottom, left.',
         'showAlign'    : 'The align of popover. Options in begin, center, end.',
-        'stateLock'    : 'To keep showState in true or false.',
         'withArrow'    : 'The tiny caret to let popover become conversation block. Get it false when we prefer a dropdown.',
         'autoDetect'   : 'The feature of auto-detecting window\'s inner edge of browser. When the popover show overglow to browser, it will adjust by self. We could get it false, if we don\'t need the feature working. Default is ture.',
         'trigger'      : 'Render the popover toggle trigger node.',
@@ -189,6 +192,16 @@ export default {
         'onShow'       : 'Event function trigged when popover is going to show.',
         'onHide'       : 'Event function trigged when popover is going to hidd.',
         'ref'          : 'For the feature of React.ref.'
+      },
+      'example' : {
+        'position' : {
+          'title'       : 'Example: Position',
+          'description' : 'Here is simply to show the popover with position configured. The popover is default to enable autoDetect function which means while the popover showing over the boundary of browser. It will adjust automatically.'
+        },
+        'align' : {
+          'title'       : 'Example: Align',
+          'description' : 'Here is simply to show the popover with align configured. The popover is default to enable autoDetect function which means while the popover showing over the boundary of browser. It will adjust automatically.'
+        }
       }
     }
   },

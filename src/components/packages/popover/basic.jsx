@@ -33,7 +33,6 @@ const preRender =
         showState=" Boolean " 
         showPosition=" String "
         showAlign=" String "
-        stateLock=" Boolean "
         withArrow=" Boolean "
         autoDetect=" Boolean "
         trigger=" String || Node "
@@ -77,7 +76,6 @@ const tableBodyArr_basic = [
   {title : 'showState', type : 'package.paramType.boolean', default : 'false', notice : 'package.popover.property.showState'},
   {title : 'showPosition', type : 'package.paramType.string', default : '"bottom"', notice : 'package.popover.property.showPosition'},
   {title : 'showAlign', type : 'package.paramType.string', default : '"begin"', notice : 'package.popover.property.showAlign'},
-  {title : 'stateLock', type : 'package.paramType.boolean', default : 'true', notice : 'package.popover.property.stateLock'},
   {title : 'withArrow', type : 'package.paramType.boolean', default : 'true', notice : 'package.popover.property.withArrow'},
   {title : 'autoDetect', type : 'package.paramType.boolean', default : 'true', notice : 'package.popover.property.autoDetect'},
   {title : 'trigger', type : 'package.paramType.string||package.paramType.node', default : '"Trigger"', notice : 'package.popover.property.trigger'},

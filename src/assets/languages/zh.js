@@ -24,7 +24,11 @@ export default {
         }
       },
       'popover' : {
-        'root' : '氣泡框',
+        'root'    : '氣泡框',
+        'example' : {
+          'position' : '範例：顯示位置',
+          'align'    : '範例：對齊方式'
+        }
       }
     },
     'application' : {
@@ -180,7 +184,6 @@ export default {
         'showState'    : '控制氣泡框顯示狀態。',
         'showPosition' : '控制氣泡框顯示位置：top、right、bottom、left。',
         'showAlign'    : '控制氣泡框對齊位置：begin、center、end。',
-        'stateLock'    : '鎖定目前氣泡框顯示狀態。',
         'withArrow'    : '控制顯示為對話框。',
         'autoDetect'   : '自動偵測式窗邊界功能，並自動切換氣泡框顯示與對齊位置。預設為啟用。',
         'trigger'      : '渲染氣泡框觸發節點。',
@@ -189,6 +192,16 @@ export default {
         'onShow'       : '顯示氣泡框事件函式。',
         'onHide'       : '隱藏氣泡框事件函式。',
         'ref'          : '支援 React.ref。'
+      },
+      'example' : {
+        'position' : {
+          'title'       : '範例：顯示位置',
+          'description' : '簡單地顯示如何控制氣泡框顯示的位置。氣泡框預設啟用瀏覽器邊界偵測（autoDetect），當氣泡框超出瀏覽器邊界時，會依據顯示位置與對齊方式做濤整，此功能也可以關掉。'
+        },
+        'align' : {
+          'title'       : '範例：對齊方式',
+          'description' : '簡單地顯示如何控制氣泡框顯示的位置。氣泡框預設啟用瀏覽器邊界偵測（autoDetect），當氣泡框超出瀏覽器邊界時，會依據顯示位置與對齊方式做濤整，此功能也可以關掉。'
+        }
       }
     }
   },

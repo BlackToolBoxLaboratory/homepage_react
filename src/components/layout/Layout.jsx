@@ -31,7 +31,20 @@ const Layout = enhance((props) => {
 
   useEffect(() => {
     _initialLang();
+    return function cleanup() {
+      window.removeEventListener('click', _clickListener);
+    };
   }, []);
+
+  useEffect(() => {
+    window.removeEventListener('click', _clickListener, false);
+    if (!env.state_hiddenMenu.value) {
+      window.addEventListener('click', _clickListener, false);
+    }
+    return function cleanup() {
+      window.removeEventListener('click', _clickListener, false);
+    };
+  }, [env.state_hiddenMenu.value]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -56,6 +69,21 @@ const Layout = enhance((props) => {
       env.state_hiddenMenu.onToggle(true);
     }
   }
+
+  function _clickListener (event) {
+    window.test = event.path;
+    let result = event.path.find((node) => {
+      if (node.classList)
+      {
+        return node.classList.value.search('layout_aside') > 0 || node.classList.value.search('item-menu') > 0;
+      }
+      return false;
+    });
+    if (typeof result == 'undefined') {
+      _clickEntry();
+    }
+  }
+
   function _toggleMenu() {
     env.state_hiddenMenu.onToggle();
   }
