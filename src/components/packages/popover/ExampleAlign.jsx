@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import BTBList from '@blacktoolbox/react-list';
 import BTBPopover from '@blacktoolbox/react-popover';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
@@ -23,24 +22,31 @@ const enhance = compose(
 );
 
 const preRender = 
-`<BTBPopover showAlign={"begin"} trigger={(<button>Begin</button>)}>
+`<BTBPopover showPosition={"top"} showAlign={"begin"} trigger={(<button>Begin</button>)}>
         Example: Begin
 </BTBPopover>
 
-<BTBPopover showAlign={"center"} trigger={(<button>Center</button>)}>
+<BTBPopover showPosition={"top"} showAlign={"center"} trigger={(<button>Center</button>)}>
         Example: Center
 </BTBPopover>
 
-<BTBPopover showAlign={"end"} trigger={(<button>End</button>)}>
+<BTBPopover showPosition={"top"} showAlign={"end"} trigger={(<button>End</button>)}>
+        Example: End
+</BTBPopover>
+
+<BTBPopover showPosition={"left"} showAlign={"begin"} trigger={(<button>Begin</button>)}>
+        Example: Begin
+</BTBPopover>
+
+<BTBPopover showPosition={"left"} showAlign={"center"} trigger={(<button>Center</button>)}>
+        Example: Center
+</BTBPopover>
+
+<BTBPopover showPosition={"left"} showAlign={"end"} trigger={(<button>End</button>)}>
         Example: End
 </BTBPopover>`;
 
 const ExampleAlign = enhance(() => {
-  const env = {
-    state_showPopover1 : useActiveState(true),
-    state_showPopover2 : useActiveState(true)
-  };
-
   return (
     <Page className="btb-pkg-popover-example-align">
       <PageHead title={lang.translate('package.popover.example.align.title')} clickBtn={openLink} linkList={packageInfo.linkList}/>
@@ -55,15 +61,40 @@ const ExampleAlign = enhance(() => {
         </p>
       </Section>
       <Section head={lang.translate('package.section.example')}>
-        <BTBPopover showAlign={"begin"} trigger={(<button>Begin</button>)}>
+        <Block title={lang.translate('package.popover.example.vertical')}>
+          <div className="align_vertical">
+            <BTBPopover showPosition={"top"} showAlign={"begin"} trigger={(<button>Begin</button>)}>
           Example: Begin
-        </BTBPopover>
-        <BTBPopover showAlign={"center"} trigger={(<button>Center</button>)}>
+            </BTBPopover>
+          </div>
+          <div className="align_vertical">
+            <BTBPopover showPosition={"top"} showAlign={"center"} trigger={(<button>Center</button>)}>
           Example: Center
-        </BTBPopover>
-        <BTBPopover showAlign={"end"} trigger={(<button>End</button>)}>
+            </BTBPopover>
+          </div>
+          <div className="align_vertical">
+            <BTBPopover showPosition={"top"} showAlign={"end"} trigger={(<button>End</button>)}>
           Example: End
-        </BTBPopover>
+            </BTBPopover>
+          </div>  
+        </Block>
+        <Block title={lang.translate('package.popover.example.horizontal')}>
+          <div className="align_horizontal">
+            <BTBPopover showPosition={"left"} showAlign={"begin"} trigger={(<button>Begin</button>)}>
+          Example: Begin
+            </BTBPopover>
+          </div>
+          <div className="align_horizontal">
+            <BTBPopover showPosition={"left"} showAlign={"center"} trigger={(<button>Center</button>)}>
+          Example: Center
+            </BTBPopover>
+          </div>
+          <div className="align_horizontal">
+            <BTBPopover showPosition={"left"} showAlign={"end"} trigger={(<button>End</button>)}>
+          Example: End
+            </BTBPopover>
+          </div>
+        </Block>
       </Section>
       <Section head={lang.translate('package.section.sourceCode')}>
         <pre className="page_pre">
@@ -73,15 +104,5 @@ const ExampleAlign = enhance(() => {
     </Page>
   );
 });
-
-function useActiveState (defaultSate) {
-  const [value, setState] = useState(defaultSate);
-  return {
-    showState : value,
-    onToggle  : (data) => {
-      setState(data);
-    }
-  };
-}
 
 export default ExampleAlign;

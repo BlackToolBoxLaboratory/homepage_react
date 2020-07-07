@@ -1,8 +1,17 @@
 .btb-pkg-popover-example-position,
 .btb-pkg-popover-example-align {
-  .btb-react-popover {
-    & + .btb-react-popover{
+  .align_vertical {
+    display: inline-block;
+    & + .align_vertical {
       .mixin_margin-md-l;
+    }
+    & +.align_horizontal {
+      .mixin_margin-md-t;
+    }
+  }
+  .align_horizontal {
+    & +.align_horizontal {
+      .mixin_margin-md-t;
     }
   }
 }

@@ -194,7 +194,9 @@ export default {
         'ref'          : '支援 React.ref。'
       },
       'example' : {
-        'position' : {
+        'vertical'   : '垂直',
+        'horizontal' : '水平',
+        'position'   : {
           'title'       : '範例：顯示位置',
           'description' : '簡單地顯示如何控制氣泡框顯示的位置。氣泡框預設啟用瀏覽器邊界偵測（autoDetect），當氣泡框超出瀏覽器邊界時，會依據顯示位置與對齊方式做濤整，此功能也可以關掉。'
         },

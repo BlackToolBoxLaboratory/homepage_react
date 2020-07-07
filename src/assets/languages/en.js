@@ -194,7 +194,9 @@ export default {
         'ref'          : 'For the feature of React.ref.'
       },
       'example' : {
-        'position' : {
+        'vertical'   : 'Vertical',
+        'horizontal' : 'Horizontal',
+        'position'   : {
           'title'       : 'Example: Position',
           'description' : 'Here is simply to show the popover with position configured. The popover is default to enable autoDetect function which means while the popover showing over the boundary of browser. It will adjust automatically.'
         },

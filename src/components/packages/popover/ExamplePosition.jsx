@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import BTBList from '@blacktoolbox/react-list';
 import BTBPopover from '@blacktoolbox/react-popover';
 
-import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
+import { Page, PageHead, Section } from '@src/modules/pageLayout/index.js';
 
 import { openLink } from '@src/utils/functions.js';
 
@@ -40,11 +39,6 @@ const preRender =
 </BTBPopover>`;
 
 const ExamplePosition = enhance(() => {
-  const env = {
-    state_showPopover1 : useActiveState(true),
-    state_showPopover2 : useActiveState(true)
-  };
-
   return (
     <Page className="btb-pkg-popover-example-position">
       <PageHead title={lang.translate('package.popover.example.position.title')} clickBtn={openLink} linkList={packageInfo.linkList}/>
@@ -59,18 +53,26 @@ const ExamplePosition = enhance(() => {
         </p>
       </Section>
       <Section head={lang.translate('package.section.example')}>
-        <BTBPopover showPosition={"left"} trigger={(<button>Left</button>)}>
+        <div className="align_vertical">
+          <BTBPopover className="align_vertical" showPosition={"left"} trigger={(<button>Left</button>)}>
           Example: Left
-        </BTBPopover>
-        <BTBPopover showPosition={"top"} trigger={(<button>Top</button>)}>
+          </BTBPopover>
+        </div>
+        <div className="align_vertical">
+          <BTBPopover className="align_vertical" showPosition={"top"} trigger={(<button>Top</button>)}>
           Example: Top
-        </BTBPopover>
-        <BTBPopover showPosition={"bottom"} trigger={(<button>Bottom</button>)}>
+          </BTBPopover>
+        </div>
+        <div className="align_vertical">
+          <BTBPopover className="align_vertical" showPosition={"bottom"} trigger={(<button>Bottom</button>)}>
           Example: Bottom
-        </BTBPopover>
-        <BTBPopover showPosition={"right"} trigger={(<button>Right</button>)}>
+          </BTBPopover>
+        </div>
+        <div className="align_vertical">
+          <BTBPopover className="align_vertical" showPosition={"right"} trigger={(<button>Right</button>)}>
           EXample: Right
-        </BTBPopover>
+          </BTBPopover>
+        </div>
       </Section>
       <Section head={lang.translate('package.section.sourceCode')}>
         <pre className="page_pre">
@@ -80,15 +82,5 @@ const ExamplePosition = enhance(() => {
     </Page>
   );
 });
-
-function useActiveState (defaultSate) {
-  const [value, setState] = useState(defaultSate);
-  return {
-    showState : value,
-    onToggle  : (data) => {
-      setState(data);
-    }
-  };
-}
 
 export default ExamplePosition;
