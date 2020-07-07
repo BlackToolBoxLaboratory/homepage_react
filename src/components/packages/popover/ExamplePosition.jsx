@@ -54,22 +54,22 @@ const ExamplePosition = enhance(() => {
       </Section>
       <Section head={lang.translate('package.section.example')}>
         <div className="align_vertical">
-          <BTBPopover className="align_vertical" showPosition={"left"} trigger={(<button>Left</button>)}>
+          <BTBPopover showPosition={"left"} trigger={(<button>Left</button>)}>
           Example: Left
           </BTBPopover>
         </div>
         <div className="align_vertical">
-          <BTBPopover className="align_vertical" showPosition={"top"} trigger={(<button>Top</button>)}>
+          <BTBPopover showPosition={"top"} trigger={(<button>Top</button>)}>
           Example: Top
           </BTBPopover>
         </div>
         <div className="align_vertical">
-          <BTBPopover className="align_vertical" showPosition={"bottom"} trigger={(<button>Bottom</button>)}>
+          <BTBPopover showPosition={"bottom"} trigger={(<button>Bottom</button>)}>
           Example: Bottom
           </BTBPopover>
         </div>
         <div className="align_vertical">
-          <BTBPopover className="align_vertical" showPosition={"right"} trigger={(<button>Right</button>)}>
+          <BTBPopover showPosition={"right"} trigger={(<button>Right</button>)}>
           EXample: Right
           </BTBPopover>
         </div>
