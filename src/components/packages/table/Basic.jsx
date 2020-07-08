@@ -23,9 +23,9 @@ const enhance = compose(
 );
 
 const preInstall = 
-`$ npm install --save @blacktoolbox/reat-table
+`$ npm install --save @blacktoolbox/react-table
 
-import BTBTable from '@blacktoolbox/reat-table'
+import BTBTable from '@blacktoolbox/react-table'
 import '@blacktoolbox/react-table/lib/index.css'`;
 
 const preRender =

@@ -29,6 +29,15 @@ export default {
           'position' : '範例：顯示位置',
           'align'    : '範例：對齊方式'
         }
+      },
+      'button' : {
+        'root'    : '按鈕',
+        'example' : {
+          'button'     : '範例：按鈕',
+          'group'      : '範例：按鈕組',
+          'pagination' : '範例：分頁按鈕',
+          'style'      : '範例：客製外觀',
+        }
       }
     },
     'application' : {
@@ -205,6 +214,34 @@ export default {
           'description' : '簡單地顯示如何控制氣泡框顯示的位置。氣泡框預設啟用瀏覽器邊界偵測（autoDetect），當氣泡框超出瀏覽器邊界時，會依據顯示位置與對齊方式做濤整，此功能也可以關掉。'
         }
       }
+    },
+    'button' : {
+      'name'      : '按鈕',
+      'component' : {
+        'button' : '按鈕',
+        'group'  : '按鈕組'
+      },
+      'description' : {
+        'basic' : '本套件包含兩個套件，一為按鈕（button），一為按鈕組（button group），其中按鈕為基礎組件，雖然外觀設計並非本實驗室開套件的重點，但為了貼近實際應用，還是會提供一些常見的按鈕外觀作為範例，另外亦會示範如何使用按鈕組實作常配合表使用的分頁按鈕組。'
+      },
+      'parameters' : {
+        'styleObj' : '套件中任何具有 className 的節點，皆能使用 styleObj 定義 inline CSS。'
+      },
+      'property' : {
+        'prependNode'    : '定義按鈕前綴。',
+        'appendNode'     : '定義按鈕後綴。',
+        'direction'      : '按鈕組顯示按鈕方向：horizontal、vertical。',
+        'styleObj'       : '客製化外觀。',
+        'onButtonClick'  : '按鈕整體點擊事件函式。',
+        'onGroupClick'   : '按鈕組整體點擊事件函式。',
+        'onPrependClick' : '按鈕前綴整體點擊事件函式。',
+        'onCoreClick'    : '按鈕內容整體點擊事件函式。',
+        'onAppendClick'  : '按鈕後綴整體點擊事件函式。',
+        'ref'            : '支援 React.ref。'
+      },
+      'nodeTree' : {
+        'notice' : '附註：按鈕的計算係由0開始。'
+      },
     }
   },
   'application' : {

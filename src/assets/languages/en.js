@@ -29,6 +29,15 @@ export default {
           'position' : 'Example: Position',
           'align'    : 'Example: Align'
         }
+      },
+      'button' : {
+        'root'    : 'Button',
+        'example' : {
+          'button'     : 'Example: Button',
+          'group'      : 'Example: Group',
+          'pagination' : 'Example: Pagination',
+          'style'      : 'Example: Style',
+        }
       }
     },
     'application' : {
@@ -205,6 +214,34 @@ export default {
           'description' : 'Here is simply to show the popover with align configured. The popover is default to enable autoDetect function which means while the popover showing over the boundary of browser. It will adjust automatically.'
         }
       }
+    },
+    'button' : {
+      'name'      : 'Button',
+      'component' : {
+        'button' : 'Button',
+        'group'  : 'Button Group'
+      },
+      'description' : {
+        'basic' : 'This module of button / button group creator made with React can do the help to make a button / button group component to our page. Most fancy layout of button could be implemented via CSS. Even though this part is not our target to develop components. I will give some example to show how to implement some layout of button. And I will show how to utilize the button group to implement the pagination which is usually used with table.'
+      },
+      'parameters' : {
+        'styleObj' : 'Any className in this module could add inline CSS by styleObj.'
+      },
+      'property' : {
+        'prependNode'    : 'Definition of the prepend space of the button.',
+        'appendNode'     : 'Definition of the append space of the button.',
+        'direction'      : 'The direction of button group. Options in horizontal, vertical.',
+        'styleObj'       : 'Object of customized style.',
+        'onButtonClick'  : 'Event function trigged when the button is clicked.',
+        'onGroupClick'   : 'Event function trigged when the button group is clicked.',
+        'onPrependClick' : 'Event function trigged when preppend item of the button is clicked.',
+        'onCoreClick'    : 'Event function trigged when main of the button is clicked.',
+        'onAppendClick'  : 'Event function trigged when append item of the button is clicked.',
+        'ref'            : 'For the feature of React.ref.'
+      },
+      'nodeTree' : {
+        'notice'  : 'Note: The button order is counted base on 0.'
+      },
     }
   },
   'application' : {

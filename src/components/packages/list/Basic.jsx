@@ -23,9 +23,9 @@ const enhance = compose(
 );
 
 const preInstall = 
-`$ npm install --save @blacktoolbox/reat-list
+`$ npm install --save @blacktoolbox/react-list
 
-import BTBList from '@blacktoolbox/reat-list'
+import BTBList from '@blacktoolbox/react-list'
 import '@blacktoolbox/react-list/lib/index.css'`;
 
 const preRender =

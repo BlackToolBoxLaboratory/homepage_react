@@ -23,9 +23,9 @@ const enhance = compose(
 );
 
 const preInstall = 
-`$ npm install --save @blacktoolbox/reat-popover
+`$ npm install --save @blacktoolbox/react-popover
 
-import BTBPopover from '@blacktoolbox/reat-popover'
+import BTBPopover from '@blacktoolbox/react-popover'
 import '@blacktoolbox/react-popover/lib/index.css'`;
 
 const preRender =
@@ -40,7 +40,7 @@ const preRender =
         onToggle=" function(){} "
         onShow=" function(){} "
         onHide=" function(){} "/>
-        {popover content}
+        {popover's content}
 </BTBPopover>`;
 
 const preStyleObj =
@@ -51,7 +51,7 @@ const preStyleObj =
 const nodeTree = [
   {
     id       : 'popover',
-    title    : '<div> .btb-react-popover .popover-align-{begin ||center || end} .popover-arrow',
+    title    : '<div> .btb-react-popover .popover-align-{begin || center || end} .popover-arrow',
     children : [
       {
         id    : 'trigger',

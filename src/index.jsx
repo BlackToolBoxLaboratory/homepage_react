@@ -7,6 +7,7 @@ import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 import '@src/plugins/btblab-react-list.js';
 import '@src/plugins/btblab-react-table.js';
 import '@src/plugins/btblab-react-popover.js';
+import '@src/plugins/btblab-react-button.js';
 import '@src/plugins/react-fontawesome.js';
 import '@src/assets/styles/index.less';
 import ROUTE from '@src/assets/definitions/routeMap.js';

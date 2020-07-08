@@ -103,6 +103,19 @@ const menuList = [
             langIndex : 'menu.packages.popover.example.align'
           }
         ]
+      },
+      {
+        id               : 'PACKAGES_BUTTON',
+        title            : 'Button',
+        langIndex        : 'menu.packages.button.root',
+        defaultCollapsed : true,
+        children         : [
+          {
+            id        : 'PACKAGES_BUTTON_BASIC',
+            title     : 'Basic',
+            langIndex : 'menu.packages.basic'
+          }
+        ]
       }
     ]
   },
