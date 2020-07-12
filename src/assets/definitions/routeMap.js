@@ -1,6 +1,7 @@
 const routeMap = {
-  'HOME'  : '/',
-  'ABOUT' : '/about',
+  'HOME'     : '/',
+  'ABOUT'    : '/about',
+  'OVERVIEW' : '/overview',
 
   'PACKAGES'                           : '/packages',
   'PACKAGES_LIST'                      : '/packages/list',

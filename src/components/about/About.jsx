@@ -5,7 +5,7 @@ import { compose } from 'recompose';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
 import { Page, Section, Divider } from '@src/modules/pageLayout/index.js';
-import BTBPackage from './package.jsx';
+import PackageCard from './PackageCard.jsx';
 
 import PACKAGE from '@src/assets/definitions/packageObj.js';
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -66,7 +66,7 @@ const About = enhance((props) => {
                   ) : []
               }
               <Section className="about_package">
-                <BTBPackage info={PACKAGE[entry]} redirectRoute={_redirectRoute}/>
+                <PackageCard info={PACKAGE[entry]} redirectRoute={_redirectRoute}/>
               </Section>
             </div>
           );

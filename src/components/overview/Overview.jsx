@@ -1,0 +1,92 @@
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from "react-router";
+import { compose } from 'recompose';
+
+import { Page, PageHead, Section } from '@src/modules/pageLayout/index.js';
+import { LoadingDiv } from '@src/modules/loadingDiv/index.js';
+import API_npmRegistry from '@src/apis/npmRegistry.js';
+import { openLink } from '@src/utils/functions.js';
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+
+import PackageWidget from './PackageWidget.jsx';
+import pageInfo from './pageInfo.js';
+
+const enhance = compose(
+  connect(
+    (state) => {
+      return {
+        'languageSetting'  : state.language.languageSetting
+      };
+    }
+  ),
+  withRouter
+);
+
+const Overview = enhance(() => {
+  const state_Packages = {
+    'js'    : usePackagesState(),
+    'react' : usePackagesState(),
+    'vue'   : usePackagesState()
+  };
+
+  useEffect(() => {
+    _getPackages('js');
+    _getPackages('react');
+    _getPackages('vue');
+  }, []); 
+
+  function _getPackages (type) {
+    API_npmRegistry.getPackages(type).then(({data}) => {
+      state_Packages[type].update(data.objects);
+    });
+  }
+  function _renderPackages (type) {
+    if (state_Packages[type].packages.length) {
+      return (
+        <div className="grid-row">
+          {
+            state_Packages[type].packages.map((entry) => {
+              return (
+                <div className="grid-col-lg-6" key={entry.package.name}>
+                  <PackageWidget data={entry.package} />
+                </div>
+              );
+            })  
+          }
+        </div>
+      );
+    } else {
+      return (
+        <LoadingDiv />
+      );
+    }
+  }
+
+  return (
+    <Page className="btb-overview">
+      <PageHead title={lang.translate('overview.title')} clickBtn={openLink} linkList={pageInfo.linkList}/>
+      <Section head={'JAVASCRIPT'}>
+        {_renderPackages('js')}
+      </Section>
+      <Section head={'REACT'}>
+        {_renderPackages('react')}
+      </Section>
+      <Section head={'VUE'}>
+        {_renderPackages('vue')}
+      </Section>
+    </Page>
+  );
+});
+
+function usePackagesState () {
+  const [packages, setState] = useState([]);
+  return {
+    packages,
+    update : (data) => {
+      setState(data || []);
+    }
+  };
+}
+
+export default Overview;

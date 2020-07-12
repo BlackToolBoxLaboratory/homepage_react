@@ -17,6 +17,7 @@ const HomeContainer = () => {
         
         <Switch>
           <Route path={ROUTE.ABOUT} component={React.lazy(() => import('@src/routes/AboutContainer.jsx'))}/>
+          <Route path={ROUTE.OVERVIEW} component={React.lazy(() => import('@src/routes/OverviewContainer.jsx'))}/>
           <Route path={ROUTE.PACKAGES} component={React.lazy(() => import('@src/routes/packages/PackagesContainer.jsx'))}/>
           <Route path={ROUTE.APPLICATIONS} component={React.lazy(() => import('@src/routes/applications/ApplicationsContainer.jsx'))}/>
         </Switch>

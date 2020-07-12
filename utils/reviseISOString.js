@@ -1,4 +1,4 @@
-const formatISOString = /((\d{4})-(\d{2})-(\d{2}))T((\d{2}):(\d{2}):(\d{2}))/;
+const formatISOString = /((\d{4})-(\d{2})-(\d{2}))T((\d{2}):(\d{2}):(\d{2})).\d{3}Z/;
 // 0: total
 
 // 1: Date(YYYY-MM-DD)

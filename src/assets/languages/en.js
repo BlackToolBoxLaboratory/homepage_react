@@ -1,6 +1,7 @@
 export default {
   'menu' : {
     'about'    : 'About',
+    'overview' : 'Overview',
     'packages' : {
       'root'  : 'Packages',
       'basic' : 'Basic',
@@ -54,6 +55,12 @@ export default {
       '2' : 'buy me a coffee',
       '3' : '.'
     }
+  },
+  'overview' : {
+    'title'           : 'Overview',
+    'version_colon'   : 'Version: ',
+    'release_colon'   : 'Release Date: ',
+    'downloads_colon' : 'Weekly Downloads: '
   },
   'package' : {
     'version_colon' : 'Version: ',
@@ -266,5 +273,8 @@ export default {
         'key'         : 'Here is a unusual way for specific scenario. Sometimes for UX required, it maybe be wanted to be the effect to reload whole page. With React, we do not need to do the reload really. We could use the key the mark the top node. After language is changed, the key will changed too. Then the top node will be re-create like new component. Unless it required the network package re-download actually.'
       }
     }
+  },
+  'chart' : {
+    'times' : 'Times'
   }
 };

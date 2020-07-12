@@ -4,6 +4,11 @@ const menuList = [
     title     : 'About',
     langIndex : 'menu.about'
   },
+  { 
+    id        : 'OVERVIEW',
+    title     : 'Overview',
+    langIndex : 'menu.overview'
+  },
   {
     id               : 'PACKAGES',
     title            : 'Packages',

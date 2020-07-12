@@ -10,6 +10,7 @@ import {
   faEnvelope 
 } from '@fortawesome/free-regular-svg-icons';
 import { 
+  faSpinner,
   faHome, 
   faGlobe, 
   faBars, 
@@ -31,6 +32,7 @@ library.add(
   faEnvelope,
 
   // fas
+  faSpinner,
   faHome,
   faGlobe,
   faBars,
