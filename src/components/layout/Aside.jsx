@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from "react-router";
-
 import BTBList from '@blacktoolbox/react-list';
 
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import MENU from '@src/assets/definitions/menuList.js';
 import ROUTE from '@src/assets/definitions/routeMap.js';
-
-import { lang } from '@src/plugins/btblab-prototype-languages.js';
 
 const Aside = withRouter((props) => {
   const env = {

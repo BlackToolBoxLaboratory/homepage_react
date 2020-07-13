@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { compose } from 'recompose';
 
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+import { openLink } from '@src/utils/functions.js';
+import API_npmRegistry from '@src/apis/npmRegistry.js';
 import { Page, PageHead, Section } from '@src/modules/pageLayout/index.js';
 import { LoadingDiv } from '@src/modules/loadingDiv/index.js';
-import API_npmRegistry from '@src/apis/npmRegistry.js';
-import { openLink } from '@src/utils/functions.js';
-import { lang } from '@src/plugins/btblab-prototype-languages.js';
 
 import PackageWidget from './PackageWidget.jsx';
 import pageInfo from './pageInfo.js';

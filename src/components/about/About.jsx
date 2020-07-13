@@ -4,13 +4,12 @@ import { withRouter } from "react-router";
 import { compose } from 'recompose';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+import PACKAGE from '@src/assets/definitions/packageObj.js';
+import logoPath from '@src/assets/images/BTB_React.png';
+
 import { Page, Section, Divider } from '@src/modules/pageLayout/index.js';
 import PackageCard from './PackageCard.jsx';
-
-import PACKAGE from '@src/assets/definitions/packageObj.js';
-import { lang } from '@src/plugins/btblab-prototype-languages.js';
-
-import logoPath from '@src/assets/images/BTB_React.png';
 
 const enhance = compose(
   connect(

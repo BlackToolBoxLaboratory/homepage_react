@@ -3,15 +3,12 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import BTBList from '@blacktoolbox/react-list';
 import BTBTable from '@blacktoolbox/react-table';
-// import { Button as BTBButton, ButtonGroup as BTBButtonGroup } from '@blacktoolbox/react-button';
-
-import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
-
-import { openLink } from '@src/utils/functions.js';
-
-import packageInfo from './packageInfo.js';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
+import { openLink } from '@src/utils/functions.js';
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
+
+import packageInfo from './packageInfo.js';
 
 const enhance = compose(
   connect(
@@ -26,10 +23,10 @@ const enhance = compose(
 const preInstall = 
 `$ npm install --save @blacktoolbox/react-button
 
-import BTBButton, { Button, ButtonGroup } from '@blacktoolbox/react-button'
+import BTBButton, { Button } from '@blacktoolbox/react-button'
 import '@blacktoolbox/react-button/lib/index.css'`;
 
-const preRender_button =
+const preRender =
 `<BTBButton 
         prependNode=" String || Node " 
         appendNode=" String || Node "
@@ -41,20 +38,12 @@ const preRender_button =
         {button's content}
 </BTBButton>`;
 
-const preRender_buttonGroup =
-`<BTBButtonGroup 
-        direction=" String "
-        styleObj=" Object " 
-        onClick={_onGroupClick}>
-        {button group's content}
-</BTBButtonGroup>`;
-
 const preStyleObj =
 `styleObj = {
         [ className ]: { inline CSS }
 }`;
 
-const nodeTree_button = [
+const nodeTree = [
   {
     id       : 'button',
     title    : '<div> .btb-react-button',
@@ -75,23 +64,6 @@ const nodeTree_button = [
   }
 ];
 
-const nodeTree_buttonGroup = [
-  {
-    id       : 'buttonGroup',
-    title    : '<div> .btb-react-button-group .gtoup-{horizontal || vertical}',
-    children : [
-      {
-        id    : 'member',
-        title : '<div> .group_member .group-[button count]'
-      },
-      {
-        id    : 'empty',
-        title : '<div> .group_member .group-empty'
-      }
-    ]
-  }
-];
-
 const tableHeadArr_property = [
   { name : 'Property Name', id : 'title' },
   { name : 'Type', id : 'type' },
@@ -99,7 +71,7 @@ const tableHeadArr_property = [
   { name : 'Notice', id : 'notice' }
 ];
 
-const tableBodyArr_button = [
+const tableBodyArr = [
   {title : 'prependNode', type : 'package.paramType.string||package.paramType.node', default : 'undefined', notice : 'package.button.property.prependNode'},
   {title : 'appendNode', type : 'package.paramType.string||package.paramType.node', default : 'undefined', notice : 'package.button.property.appendNode'},
   {title : 'styleObj', type : 'package.paramType.object', default : '{}', notice : 'package.button.property.styleObj'},
@@ -107,13 +79,6 @@ const tableBodyArr_button = [
   {title : 'onPrependClick', type : 'package.paramType.function', default : 'undefined', notice : 'package.button.property.onPrependClick'},
   {title : 'onCoreClick', type : 'package.paramType.function', default : 'undefined', notice : 'package.button.property.onCoreClick'},
   {title : 'onAppendClick', type : 'package.paramType.function', default : 'undefined', notice : 'package.button.property.onAppendClick'},
-  { title : 'ref', type : 'useRef', default : 'undefined', notice : 'package.button.property.ref' }
-];
-
-const tableBodyArr_buttonGroup = [
-  {title : 'direction', type : 'package.paramType.string', default : '"horizontal"', notice : 'package.button.property.direction'},
-  {title : 'styleObj', type : 'package.paramType.object', default : '{}', notice : 'package.button.property.styleObj'},
-  {title : 'onClick', type : 'package.paramType.function', default : 'undefined', notice : 'package.button.property.onGroupClick'},
   { title : 'ref', type : 'useRef', default : 'undefined', notice : 'package.button.property.ref' }
 ];
 
@@ -136,10 +101,10 @@ const tableSlotObj = {
   }
 };
 
-const Basic = enhance(() => {
+const BasicButton = enhance(() => {
   return (
     <Page className="btb-pkg-button-basic">
-      <PageHead title={lang.translate('package.button.name')} clickBtn={openLink} linkList={packageInfo.linkList}/>
+      <PageHead title={lang.translate('package.button.name.button')} clickBtn={openLink} linkList={packageInfo.linkList}/>
       <Section head={(
         <>
           {`${lang.translate('package.version_colon')}${packageInfo.version}`}<br/>
@@ -147,7 +112,7 @@ const Basic = enhance(() => {
         </>
       )}>
         <p>
-          {lang.translate(packageInfo.description)}
+          {lang.translate(packageInfo.descriptionButton)}
         </p>
       </Section>
       <Section head={lang.translate('package.section.installation')}>
@@ -156,24 +121,12 @@ const Basic = enhance(() => {
         </pre>
       </Section>
       <Section head={lang.translate('package.section.render')}>
-        <Block title={lang.translate('package.button.component.button')}>
-          <pre className="page_pre">
-            {preRender_button}
-          </pre>
-        </Block>
-        <Block title={lang.translate('package.button.component.group')}>
-          <pre className="page_pre">
-            {preRender_buttonGroup}
-          </pre>
-        </Block>
+        <pre className="page_pre">
+          {preRender}
+        </pre>
       </Section>
       <Section head={lang.translate('package.section.parameters')}>
-        <Block title={lang.translate('package.button.component.button')}>
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_button} slotObj={tableSlotObj}/>
-        </Block>
-        <Block title={lang.translate('package.button.component.group')}>
-          <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr_buttonGroup} slotObj={tableSlotObj}/>
-        </Block>
+        <BTBTable className="page_table" mode="list" headData={tableHeadArr_property} bodyData={tableBodyArr} slotObj={tableSlotObj}/>
         <Block title="styleObj">
           <p>{lang.translate('package.button.parameters.styleObj')}</p>
           <pre className="page_pre">
@@ -182,43 +135,10 @@ const Basic = enhance(() => {
         </Block>
       </Section>
       <Section head={lang.translate('package.section.nodeTree')}>
-        <Block title={lang.translate('package.button.component.button')}>
-          <BTBList className="page_node_tree" dataList={nodeTree_button}/>
-        </Block>
-        <Block title={lang.translate('package.button.component.group')}>
-          <BTBList className="page_node_tree" dataList={nodeTree_buttonGroup}/>
-          <p>{lang.translate('package.button.nodeTree.notice')}</p>
-        </Block>
+        <BTBList className="page_node_tree" dataList={nodeTree}/>
       </Section>
     </Page>
   );
 });
 
-export default Basic;
-
-{/* <BTBButton prependNode="abc" appendNode="123" styleObj={{'itme-core' : {color : 'red'}}} onClick={_onClick} onPrependClick={_onPrependClick} onCoreClick={_onCoreClick} onAppendClick={_onAppendClick}>
-<FAI className="item_button" icon={['fas', 'external-link-alt']} fixedWidth />
-</BTBButton>
-<BTBButtonGroup onClick={_onGroupClick}>
-<div>1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
-</BTBButtonGroup>
-<BTBButtonGroup onClick={_onGroupClick} direction="horizontal" styleObj={{'member-2' : {color : 'red'}}}>
-<div>1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
-</BTBButtonGroup>
-<BTBButtonGroup onClick={_onGroupClick}>
-</BTBButtonGroup>
-<BTBButtonGroup onClick={_onGroupClick} direction="vertical">
-<div>1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
-</BTBButtonGroup> */}
+export default BasicButton;

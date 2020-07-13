@@ -3,13 +3,11 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import BTBPopover from '@blacktoolbox/react-popover';
 
-import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
-
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
 
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 import packageInfo from './packageInfo.js';
-
-import { lang } from '@src/plugins/btblab-prototype-languages.js';
 
 const enhance = compose(
   connect(

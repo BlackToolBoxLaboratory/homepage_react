@@ -32,12 +32,17 @@ export default {
         }
       },
       'button' : {
-        'root'    : 'Button',
+        'root'  : 'Button',
+        'basic' : {
+          'button' : 'Basic: Button',
+          'group'  : 'Basic: Group'
+        },
         'example' : {
           'button'     : 'Example: Button',
           'group'      : 'Example: Group',
           'pagination' : 'Example: Pagination',
           'style'      : 'Example: Style',
+          'slot'       : 'Example: Slot'
         }
       }
     },
@@ -223,13 +228,13 @@ export default {
       }
     },
     'button' : {
-      'name'      : 'Button',
-      'component' : {
+      'name' : {
         'button' : 'Button',
-        'group'  : 'Button Group'
+        'group'  : 'Button - Group',
       },
       'description' : {
-        'basic' : 'This module of button / button group creator made with React can do the help to make a button / button group component to our page. Most fancy layout of button could be implemented via CSS. Even though this part is not our target to develop components. I will give some example to show how to implement some layout of button. And I will show how to utilize the button group to implement the pagination which is usually used with table.'
+        'button' : 'This module of button / button group creator made with React which can do the help to make a button / button group component to our page. Actually both components are designed totally different. I just put them into one package for utilization with single installation. Here I introduce you how to use the button component. Most fancy layout of button could be implemented via CSS. Even though this part is not my lab\'s target to develop components. I still will give some example to show how to implement some layout of button.',
+        'group'  : 'This module of button / button group creator made with React which can do the help to make a button / button group component to our page. Actually both components are designed totally different. I just put them into one package for utilization with single installation. Here I introduce you how to use the button group component. And I will show you how to utilize the button group to implement the pagination which is usually used with table.'
       },
       'parameters' : {
         'styleObj' : 'Any className in this module could add inline CSS by styleObj.'
@@ -240,7 +245,7 @@ export default {
         'direction'      : 'The direction of button group. Options in horizontal, vertical.',
         'styleObj'       : 'Object of customized style.',
         'onButtonClick'  : 'Event function trigged when the button is clicked.',
-        'onGroupClick'   : 'Event function trigged when the button group is clicked.',
+        'onMemberClick'  : 'Event function trigged when the sub-button(member) group is clicked.',
         'onPrependClick' : 'Event function trigged when preppend item of the button is clicked.',
         'onCoreClick'    : 'Event function trigged when main of the button is clicked.',
         'onAppendClick'  : 'Event function trigged when append item of the button is clicked.',
@@ -249,6 +254,28 @@ export default {
       'nodeTree' : {
         'notice'  : 'Note: The button order is counted base on 0.'
       },
+      'example' : {
+        'button' : {
+          'title'       : 'Example: Button',
+          'description' : 'Here I will show you how to create the button which you can easily add the node in prepend or apprend. And also add the event to them and to whole button. And you can see what happened on console after clicking.'
+        },
+        'group' : {
+          'title'       : 'Example: Group',
+          'description' : 'group'
+        },
+        'pagination' : {
+          'title'       : 'Example: Pagination',
+          'description' : 'pagination'
+        },
+        'style' : {
+          'title'       : 'Example: Style',
+          'description' : 'style'
+        },
+        'slot' : {
+          'title'       : 'Example: Slot',
+          'description' : 'slot'
+        }
+      }
     }
   },
   'application' : {

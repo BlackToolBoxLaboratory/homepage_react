@@ -3,13 +3,11 @@ import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 import { compose } from 'recompose';
-
 import BTBList from '@blacktoolbox/react-list';
 import BTBPopover from '@blacktoolbox/react-popover';
 
-import ROUTE from '@src/assets/definitions/routeMap.js';
-
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
+import ROUTE from '@src/assets/definitions/routeMap.js';
 import { langAction } from '@src/stores/langStore.js';
 
 const enhance = compose(

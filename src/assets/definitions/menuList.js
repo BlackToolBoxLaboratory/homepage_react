@@ -116,9 +116,39 @@ const menuList = [
         defaultCollapsed : true,
         children         : [
           {
-            id        : 'PACKAGES_BUTTON_BASIC',
-            title     : 'Basic',
-            langIndex : 'menu.packages.basic'
+            id        : 'PACKAGES_BUTTON_BASIC_BUTTON',
+            title     : 'Basic: Button',
+            langIndex : 'menu.packages.button.basic.button'
+          },
+          {
+            id        : 'PACKAGES_BUTTON_BASIC_GROUP',
+            title     : 'Basic: Group',
+            langIndex : 'menu.packages.button.basic.group'
+          },
+          {
+            id        : 'PACKAGES_BUTTON_EXAMPLE_BUTTON',
+            title     : 'Example: Button',
+            langIndex : 'menu.packages.button.example.button'
+          },
+          {
+            id        : 'PACKAGES_BUTTON_EXAMPLE_GROUP',
+            title     : 'Example: Group',
+            langIndex : 'menu.packages.button.example.group'
+          },
+          {
+            id        : 'PACKAGES_BUTTON_EXAMPLE_PAGINATION',
+            title     : 'Example: Pagination',
+            langIndex : 'menu.packages.button.example.pagination'
+          },
+          {
+            id        : 'PACKAGES_BUTTON_EXAMPLE_STYLE',
+            title     : 'Example: Style',
+            langIndex : 'menu.packages.button.example.style'
+          },
+          {
+            id        : 'PACKAGES_BUTTON_EXAMPLE_SLOT',
+            title     : 'Example: Slot',
+            langIndex : 'menu.packages.button.example.slot'
           }
         ]
       }

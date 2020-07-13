@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Page, PageHead } from '@src/modules/pageLayout/index.js';
-
 import { openLink } from '@src/utils/functions.js';
+import { Page, PageHead } from '@src/modules/pageLayout/index.js';
 
 const packageInfo = {
   'version'     : '1.0.0',

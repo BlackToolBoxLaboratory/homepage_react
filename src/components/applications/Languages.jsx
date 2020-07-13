@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
-import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
-
-import { openLink } from '@src/utils/functions.js';
-
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
+import { openLink } from '@src/utils/functions.js';
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 
 const enhance = compose(
   connect(

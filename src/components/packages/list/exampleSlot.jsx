@@ -3,13 +3,11 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import BTBList from '@blacktoolbox/react-list';
 
-import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
-
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
 
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 import packageInfo from './packageInfo.js';
-
-import { lang } from '@src/plugins/btblab-prototype-languages.js';
 
 const enhance = compose(
   connect(
@@ -73,35 +71,36 @@ const preRender =
 
 const preListData =
 `const listData = [
-  { id: 'b1', title: 'Branch: 1', children: [
-          { id: 'l11', title: 'Leaf: 1-1' },
-          { id: 'b12', title: 'Branch: 1-2', children: [
-                  { id: 'l121', title: 'Leaf: 1-2-1' },
-                  { id: 'l122', title: 'Leaf: 1-2-2' }
-          ]},
-          { id: 'l13', title: 'Leaf: 1-3' }
-  ]},
-  { id: 'b2', title: 'Branch: 2', children: [
-          { id: 'l21', title: 'Leaf: 2-1' },
-          { id: 'l22', title: 'Leaf: 2-2' }
-  ]}
+        { id: 'b1', title: 'Branch: 1', children: [
+                { id: 'l11', title: 'Leaf: 1-1' },
+                { id: 'b12', title: 'Branch: 1-2', children: [
+                        { id: 'l121', title: 'Leaf: 1-2-1' },
+                        { id: 'l122', title: 'Leaf: 1-2-2' }
+                ]},
+                { id: 'l13', title: 'Leaf: 1-3' }
+        ]},
+        { id: 'b2', title: 'Branch: 2', children: [
+                { id: 'l21', title: 'Leaf: 2-1' },
+                { id: 'l22', title: 'Leaf: 2-2' }
+        ]}
 ]`;
 
 const preSlotObj = 
 `const _slotObj = {
-  'b2': (entry) => {
-    return (
-      <div>
-      {\`\${entry.id} overwrited by Function\`}
-      </div>
-      )
-    },
-    'l22': (
-      <div>
-        {'l22 overwrited by Node'}
-      </div>
-    )
-  }`;
+        'b2': (entry) => {
+                return (
+                        <div>
+                                {\`\${entry.id} overwrited by Function\`}
+                        </div>
+                )
+        },
+                'l22': (
+                        <div>
+                                {'l22 overwrited by Node'}
+                        </div>
+                )
+        }
+}`;
 
 const ExampleSlot = enhance(() => {
   return (

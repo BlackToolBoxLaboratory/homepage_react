@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
 
-import { LoadingDiv } from '@src/modules/loadingDiv/index.js';
-import API_npmAPI from '@src/apis/npmAPI.js';
-import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import reviseISOString from '@src/../utils/reviseISOString.js';
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+import API_npmAPI from '@src/apis/npmAPI.js';
+import { LoadingDiv } from '@src/modules/loadingDiv/index.js';
 
 import chartOptions from './chartOptions.js';
 

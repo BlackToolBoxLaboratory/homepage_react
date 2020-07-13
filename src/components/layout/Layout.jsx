@@ -5,13 +5,12 @@ import classnames from 'classnames';
 import { compose } from 'recompose';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
+import CONST from '@src/assets/definitions/const.js';
 import { langAction } from '@src/stores/langStore.js';
 
 import Head from './Head.jsx';
 import Foot from './Foot.jsx';
 import Aside from './Aside.jsx';
-
-import CONST from '@src/assets/definitions/const.js';
 
 const enhance = compose(
   connect(

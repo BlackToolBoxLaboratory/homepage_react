@@ -4,13 +4,11 @@ import { compose } from 'recompose';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 import BTBTable from '@blacktoolbox/react-table';
 
-import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
-
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
 
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout/index.js';
 import packageInfo from './packageInfo.js';
-
-import { lang } from '@src/plugins/btblab-prototype-languages.js';
 
 const enhance = compose(
   connect(
@@ -31,13 +29,13 @@ const preRender =
 
 const preHeadData = 
 `const headDate = [
-  {name : 'Name', id : 'name' },
-  {name : 'Type', id : 'devType' },
-  {name : 'OS', id : 'osType' },
-  {name : 'IP', id : 'ipAddr' },
-  {name : 'MAC', id : 'macAddr' },
-  {name : 'Traffic(tx / rx)', id : 'traffic' },
-  {name : 'Statue', id : 'statusDesc'}
+        {name : 'Name', id : 'name' },
+        {name : 'Type', id : 'devType' },
+        {name : 'OS', id : 'osType' },
+        {name : 'IP', id : 'ipAddr' },
+        {name : 'MAC', id : 'macAddr' },
+        {name : 'Traffic(tx / rx)', id : 'traffic' },
+        {name : 'Statue', id : 'statusDesc'}
 ];`;
 
 const preBodyData = 
@@ -66,20 +64,20 @@ const preBodyData =
 
 const preSlotObj =
 `const slotObj = {
-  'th-name'   : 'Device Name',
-  'th-ipAddr' : (
-    <span>
-      {'IP Link '}
-      <FAI className="item_button" icon={['fas', 'external-link-alt']} fixedWidth />
-    </span>
-  ),
-  'td-ipAddr' : (data, column) => {
-    return (
-      <a href={\`http://\${data[column.id]}\`} target="_blank">
-        {data[column.id]}
-      </a>
-    );
-  }
+        'th-name'   : 'Device Name',
+        'th-ipAddr' : (
+                <span>
+                        {'IP Link '}
+                        <FAI className="item_button" icon={['fas', 'external-link-alt']} fixedWidth />
+                </span>
+        ),
+        'td-ipAddr' : (data, column) => {
+                return (
+                        <a href={\`http://\${data[column.id]}\`} target="_blank">
+                                {data[column.id]}
+                        </a>
+                );
+        }
 };`;
 
 const tableHeadArr_property = [
