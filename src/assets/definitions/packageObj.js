@@ -35,15 +35,14 @@ const packageObj = {
     }
   },
   button : {
-    name        : 'package.button.name',
-    routename   : ROUTE.PACKAGES_BUTTON_BASIC,
-    description : {
-      button : 'package.button.description.button',
-      group  : 'package.button.description.group'
-    },
-    version : '1.0.0',
-    updated : '2020-07-08',
-    link    : {
+    name               : 'package.button.name',
+    routename          : ROUTE.PACKAGES_BUTTON_BASIC,
+    description        : 'package.button.description.basic',
+    description_button : 'package.button.description.button',
+    description_group  : 'package.button.description.group',
+    version            : '1.0.0',
+    updated            : '2020-07-08',
+    link               : {
       github : 'https://github.com/BlackToolBoxLaboratory/react-button',
       npm    : 'https://www.npmjs.com/package/@blacktoolbox/react-button'
     }
