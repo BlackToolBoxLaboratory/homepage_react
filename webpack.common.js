@@ -1,5 +1,4 @@
 const path = require('path');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -45,31 +44,6 @@ module.exports = {
       path.resolve(__dirname, './node_modules'),
       path.resolve(__dirname, './src')
     ]
-  },
-  optimization: {
-    minimizer: [
-      new OptimizeCSSAssetsPlugin({})
-    ],
-    splitChunks: {
-      chunks: 'async',
-      minSize: 30000,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10
-        },
-        default: {
-          priority: -20,
-          reuseExistingChunk: true
-        }
-      }
-    }
   },
   performance: {
     'hints': false

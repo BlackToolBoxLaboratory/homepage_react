@@ -18,6 +18,9 @@ const PackagesContaier = () => {
       <Route exact path={ROUTE.PACKAGES_BUTTON}>
         <Redirect to={ROUTE.PACKAGES_BUTTON_BASIC_BUTTON}/>
       </Route>
+      <Route exact path={ROUTE.PACKAGES_BUTTON_BASIC}>
+        <Redirect to={ROUTE.PACKAGES_BUTTON_BASIC_BUTTON}/>
+      </Route>
       <Switch>
         <Route path={ROUTE.PACKAGES_LIST} component={React.lazy(() => import('@src/routes/packages/list/ListContainer.jsx'))}/>
         <Route path={ROUTE.PACKAGES_TABLE} component={React.lazy(() => import('@src/routes/packages/table/TableContainer.jsx'))}/>

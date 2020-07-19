@@ -22,6 +22,7 @@ const routeMap = {
   'PACKAGES_POPOVER_EXAMPLE_POSITION'  : '/packages/popover/example/position',
   'PACKAGES_POPOVER_EXAMPLE_ALIGN'     : '/packages/popover/example/align',
   'PACKAGES_BUTTON'                    : '/packages/button',
+  'PACKAGES_BUTTON_BASIC'              : '/packages/button/basic',
   'PACKAGES_BUTTON_BASIC_BUTTON'       : '/packages/button/basic/button',
   'PACKAGES_BUTTON_BASIC_GROUP'        : '/packages/button/basic/group',
   'PACKAGES_BUTTON_EXAMPLE_BUTTON'     : '/packages/button/example/button',
