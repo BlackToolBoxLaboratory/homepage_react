@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from "react-router";
+import { withRouter } from 'react-router';
 import { compose } from 'recompose';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
@@ -8,17 +8,15 @@ import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import PACKAGE from '@src/assets/definitions/packageObj.js';
 import logoPath from '@src/assets/images/BTB_React.png';
 
-import { Page, Section, Divider } from '@src/modules/pageLayout/index.js';
+import { Page, Section, Divider } from '@src/modules/pageLayout';
 import PackageCard from './PackageCard.jsx';
 
 const enhance = compose(
-  connect(
-    (state) => {
-      return {
-        'languageSetting'  : state.language.languageSetting
-      };
-    }
-  ),
+  connect((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  }),
   withRouter
 );
 
@@ -39,7 +37,7 @@ const About = enhance((props) => {
         <span>{lang.translate('about.description')}</span>
       </Section>
       <Section className="grid-row justify-content-center">
-        <a href="mailto://vannoel0628@gmail.com" target="_blank">
+        <a href="mailto://vannoel0628@gmail.com" target="_blank" rel="noreferrer">
           <FAI icon={['far', 'envelope']} fixedWidth />
           <span>vannoel0628@gmail.com</span>
         </a>
@@ -47,30 +45,23 @@ const About = enhance((props) => {
       <Divider />
       <Section className="grid-row justify-content-center">
         <span>{lang.translate('about.donate.1')}</span>
-        <a href="https://www.paypal.me/vannoel0628" target="_blank">
+        <a href="https://www.paypal.me/vannoel0628" target="_blank" rel="noreferrer">
           <FAI icon={['fab', 'paypal']} fixedWidth />
           <span>{lang.translate('about.donate.2')}</span>
         </a>
         <span>{lang.translate('about.donate.3')}</span>
       </Section>
       <Divider />
-      {
-        Object.keys(PACKAGE).map((entry) => {
-          return (
-            <div key={entry}>
-              {
-                (entry !== 'list')?
-                  (
-                    <Divider />
-                  ) : []
-              }
-              <Section className="about_package">
-                <PackageCard info={PACKAGE[entry]} redirectRoute={_redirectRoute}/>
-              </Section>
-            </div>
-          );
-        })
-      }
+      {Object.keys(PACKAGE).map((entry) => {
+        return (
+          <div key={entry}>
+            {entry !== 'list' ? <Divider /> : []}
+            <Section className="about_package">
+              <PackageCard info={PACKAGE[entry]} redirectRoute={_redirectRoute} />
+            </Section>
+          </div>
+        );
+      })}
     </Page>
   );
 });

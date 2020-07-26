@@ -4,8 +4,8 @@ import en from '@src/assets/languages/en.js';
 import zh from '@src/assets/languages/zh.js';
 
 initializer([
-  { index : 'en', label : 'Eglish', dictionary : en },
-  { index : 'zh', label : '繁體中文', dictionary : zh }
+  { index: 'en', label: 'Eglish', dictionary: en },
+  { index: 'zh', label: '繁體中文', dictionary: zh },
 ]);
 
 export const lang = new Language();

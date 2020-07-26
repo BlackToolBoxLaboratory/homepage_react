@@ -1,23 +1,15 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { 
-  faPaypal, 
-  faGithub, 
-  faNpm, 
-  faLinkedin, 
-  faWordpress 
-} from '@fortawesome/free-brands-svg-icons';
-import { 
-  faEnvelope 
-} from '@fortawesome/free-regular-svg-icons';
-import { 
+import { faPaypal, faGithub, faNpm, faLinkedin, faWordpress } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import {
   faSpinner,
-  faHome, 
-  faGlobe, 
-  faBars, 
-  faExternalLinkAlt, 
-  faTools, 
+  faHome,
+  faGlobe,
+  faBars,
+  faExternalLinkAlt,
+  faTools,
   faLink,
-  faBuilding 
+  faBuilding,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(

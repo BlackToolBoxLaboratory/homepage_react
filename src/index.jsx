@@ -10,9 +10,9 @@ import '@src/plugins/btblab-react-popover.js';
 import '@src/plugins/btblab-react-button.js';
 import '@src/plugins/react-fontawesome.js';
 import '@src/assets/styles/index.less';
-import ROUTE from '@src/assets/definitions/routeMap.js';
+import { ROUTE } from '@src/assets/definitions/constants';
 
-import {store, persistor} from '@src/stores/index.js';
+import { store, persistor } from '@src/stores/index.js';
 
 const App = () => {
   return (
@@ -22,9 +22,9 @@ const App = () => {
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
               <Route exact path={ROUTE.HOME}>
-                <Redirect to={ROUTE.ABOUT}/>
+                <Redirect to={ROUTE.ABOUT} />
               </Route>
-              <Route path={ROUTE.HOME} component={React.lazy(() => import('@src/routes/HomeContainer.jsx'))}/>
+              <Route path={ROUTE.HOME} component={React.lazy(() => import('@src/routes/HomeContainer.jsx'))} />
             </Switch>
           </Suspense>
         </HashRouter>
@@ -33,4 +33,4 @@ const App = () => {
   );
 };
 
-render((<App />), document.getElementById('app'));
+render(<App />, document.getElementById('app'));

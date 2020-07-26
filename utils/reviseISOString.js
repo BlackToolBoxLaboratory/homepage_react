@@ -11,22 +11,21 @@ const formatISOString = /((\d{4})-(\d{2})-(\d{2}))T((\d{2}):(\d{2}):(\d{2})).\d{
 // 7: Minute
 // 8: Second
 
-const reviseISOString = function(isoString) {
-  let localISOString = new Date(Date.parse(isoString)-new Date().getTimezoneOffset()*60*1000).toISOString();
+const reviseISOString = function (isoString) {
+  let localISOString = new Date(Date.parse(isoString) - new Date().getTimezoneOffset() * 60 * 1000).toISOString();
   let separateDateTime = formatISOString.exec(localISOString);
   let obj = {};
-  if (separateDateTime)
-  {
+  if (separateDateTime) {
     obj = {
-      'whole'  : separateDateTime[0],
-      'date'   : separateDateTime[1],
-      'year'   : separateDateTime[2],
-      'month'  : separateDateTime[3],
-      'day'    : separateDateTime[4],
-      'time'   : separateDateTime[5],
-      'hour'   : separateDateTime[6],
-      'minute' : separateDateTime[7],
-      'second' : separateDateTime[8]
+      whole: separateDateTime[0],
+      date: separateDateTime[1],
+      year: separateDateTime[2],
+      month: separateDateTime[3],
+      day: separateDateTime[4],
+      time: separateDateTime[5],
+      hour: separateDateTime[6],
+      minute: separateDateTime[7],
+      second: separateDateTime[8],
     };
   }
   return obj;

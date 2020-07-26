@@ -5,10 +5,10 @@ const file_config = {
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
-        outputPath: './files/'
-      }
-    }
-  ]
-}
+        outputPath: './files/',
+      },
+    },
+  ],
+};
 
 module.exports = file_config;

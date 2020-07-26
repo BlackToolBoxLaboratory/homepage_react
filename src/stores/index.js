@@ -5,14 +5,14 @@ import storage from 'redux-persist/lib/storage';
 import { langReducer } from './langStore.js';
 
 const persistConfig = {
-  key       : 'blacktoolboxlaboratory',
+  key: 'blacktoolboxlaboratory',
   storage,
-  whitelist : ['languageSetting']
+  whitelist: ['languageSetting'],
 };
 
 export const store = createStore(
   combineReducers({
-    language    : persistReducer(persistConfig, langReducer),
+    language: persistReducer(persistConfig, langReducer),
   })
 );
 
