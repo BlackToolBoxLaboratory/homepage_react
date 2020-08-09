@@ -261,29 +261,34 @@ export default {
         styleObj: 'Any className in this module could add inline CSS by styleObj.',
       },
       property: {
+        buttonList: 'Textual List of buttons',
+        activeID:
+          'Actived button. If the button came from buttonList, the format of id will be `list_${order}`. And if the buttom came from children, the format of id will be `children_${order}`. And the order is counted base on 0.',
+        defaultActiveID: 'Default actived button.',
         prependNode: 'Definition of the prepend space of the button.',
         appendNode: 'Definition of the append space of the button.',
         direction: 'The direction of button group. Options in horizontal, vertical.',
         styleObj: 'Object of customized style.',
         onButtonClick: 'Event function trigged when the button is clicked.',
-        onMemberClick: 'Event function trigged when the sub-button(member) group is clicked.',
+        onEntryClick: 'Event function trigged when the sub-button(member) group is clicked.',
         onPrependClick: 'Event function trigged when preppend item of the button is clicked.',
         onCoreClick: 'Event function trigged when main of the button is clicked.',
         onAppendClick: 'Event function trigged when append item of the button is clicked.',
         ref: 'For the feature of React.ref.',
       },
       nodeTree: {
-        notice: 'Note: The button order is counted base on 0.',
+        notice: 'Note: The orders both are counted base on 0.',
       },
       example: {
         button: {
           title: 'Example: Button',
           description:
-            'Here I will show you how to create the button which you can easily add the node in prepend or apprend. And also add the event to them and to whole button. And you can see what happened on console after clicking.',
+            'Here showing you how to create the button which you can easily add the node in prepend or apprend. And also add the event to them and to whole button. And you can see what happened on console after clicking.',
         },
         group: {
           title: 'Example: Group',
-          description: 'group',
+          description:
+            "Here showing you how to create the group button. Besides to change the direction of showing buttons. It' able to add the click event function for memeber buttons.",
         },
         pagination: {
           title: 'Example: Pagination',

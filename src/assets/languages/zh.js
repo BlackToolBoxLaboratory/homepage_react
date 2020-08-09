@@ -35,11 +35,11 @@ export default {
         root: '按鈕',
         basic: {
           button: '基本介紹：按鈕',
-          group: '基本介紹：按鈕組',
+          group: '基本介紹：群組按鈕',
         },
         example: {
           button: '範例：按鈕',
-          group: '範例：按鈕組',
+          group: '範例：群組按鈕',
           pagination: '範例：分頁按鈕',
           style: '範例：客製化外觀',
           slot: '範例：客製化渲染',
@@ -100,8 +100,8 @@ export default {
       },
       property: {
         dataList: 'entryObj 的陣列。',
-        activeID: '激活的 entry 的 id。',
-        defaultActiveID: '預設激活的 entry 的 id。',
+        activeID: '指定激活的 entry 之 id。',
+        defaultActiveID: '預設激活的 entry 之 id。',
         collapseEnable: '開啟展開 / 收合功能。',
         styleObj: '客製化外觀。',
         slotObj: '客製化節點。',
@@ -244,43 +244,47 @@ export default {
     button: {
       name: {
         button: '按鈕',
-        group: '按鈕 - 按鈕組',
+        group: '按鈕 - 群組按鈕',
       },
       description: {
         basic:
-          '本套件包含兩個套件，一為按鈕（button），一為按鈕組（button group），事實上兩者開發的結構並無直接相關聯，只是兩者皆為按鈕相關的套件，所以放在同一個套件包裡，方便安裝使用。',
+          '本套件包含兩個套件，一為按鈕（button），一為群組按鈕（button group），事實上兩者開發的結構並無直接相關聯，只是兩者皆為按鈕相關的套件，所以放在同一個套件包裡，方便安裝使用。',
         button:
-          '本套件包含兩個套件，一為按鈕（button），一為按鈕組（button group），事實上兩者開發的結構並無直接相關聯，只是兩者皆為按鈕相關的套件，所以放在同一個套件包裡，方便安裝使用，而這邊為按鈕的基本介紹。雖然外觀設計並非本實驗室開發套件的重點，然為了貼近實際應用，還是會提供一些常見的按鈕外觀作為範例。',
+          '本套件包含兩個套件，一為按鈕（button），一為群組按鈕（button group），事實上兩者開發的結構並無直接相關聯，只是兩者皆為按鈕相關的套件，所以放在同一個套件包裡，方便安裝使用，而這邊為按鈕的基本介紹。雖然外觀設計並非本實驗室開發套件的重點，然為了貼近實際應用，還是會提供一些常見的按鈕外觀作為範例。',
         group:
-          '本套件包含兩個套件，一為按鈕（button），一為按鈕組（button group），事實上兩者開發的結構並無直接相關聯，只是兩者皆為按鈕相關的套件，所以放在同一個套件包裡，方便安裝使用，這邊為按鈕祖的基本介紹。範例的部分，還會展示如何使用按鈕組實作，常與表（table）配合使用的分頁按鈕組。',
+          '本套件包含兩個套件，一為按鈕（button），一為群組按鈕（button group），事實上兩者開發的結構並無直接相關聯，只是兩者皆為按鈕相關的套件，所以放在同一個套件包裡，方便安裝使用，這邊為按鈕祖的基本介紹。範例的部分，還會展示如何使用群組按鈕實作，常與表（table）配合使用的分頁按鈕。',
       },
       parameters: {
         styleObj: '套件中任何具有 className 的節點，皆能使用 styleObj 定義 inline CSS。',
       },
       property: {
+        buttonList: '群組按鈕的按鈕清單，其為文字陣列。',
+        activeID:
+          '指定激活的按鈕之 id。如果按鈕來自 buttonList ，其 id 格式為 `list_${order}`，如果按鈕來自 children ，其 id 格式為 `children_${order}`，並且 order 的計算係由0開始。',
+        defaultActiveID: '預設激活的按鈕之 id。',
         prependNode: '定義按鈕前綴。',
         appendNode: '定義按鈕後綴。',
-        direction: '按鈕組顯示按鈕方向：horizontal、vertical。',
+        direction: '群組按鈕顯示按鈕方向：horizontal、vertical。',
         styleObj: '客製化外觀。',
         onButtonClick: '按鈕整體點擊事件函式。',
-        onMemberClick: '按鈕組下子按鈕的點擊事件函式。',
+        onEntryClick: '群組按鈕下子按鈕的點擊事件函式。',
         onPrependClick: '按鈕前綴整體點擊事件函式。',
         onCoreClick: '按鈕內容整體點擊事件函式。',
         onAppendClick: '按鈕後綴整體點擊事件函式。',
         ref: '支援 React.ref。',
       },
       nodeTree: {
-        notice: '附註：按鈕的計算係由0開始。',
+        notice: '附註：序號的計算係由0開始。',
       },
       example: {
         button: {
           title: '範例：按鈕',
           description:
-            '這邊我們將會示範如何產生按鈕，我們可以增加前綴節點，或後綴節點，並且幫他們，或者整個按鈕增加觸發事件。點擊按鈕後，可以在主控台（console）看看發生什麼事。',
+            '這邊將會示範如何產生按鈕，我們可以增加前綴節點，或後綴節點，並且幫他們，或者整個按鈕增加觸發事件。點擊按鈕後，可以在主控台（console）看看發生什麼事。',
         },
         group: {
-          title: '範例：按鈕組',
-          description: 'group',
+          title: '範例：群組按鈕',
+          description: '這邊將會展示如何產生群組按鈕，除了可以設定排列方向之外，還能設定組員按鈕的點擊事件。',
         },
         pagination: {
           title: '範例：分頁按鈕',

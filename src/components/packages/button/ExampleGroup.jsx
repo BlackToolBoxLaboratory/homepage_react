@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
+import { ButtonGroup  as BTBButtonGroup } from '@blacktoolbox/react-button';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
 
-import { Page, PageHead, Section } from '@src/modules/pageLayout';
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
 const enhance = compose(
@@ -16,7 +17,34 @@ const enhance = compose(
   })
 );
 
+const preRender = `<BTBButtonGroup direction="horizontal" buttonList={buttonList} onEntryClick={onEntryClick} activeID="list_1">
+        Children 1
+        <div>Children 2</div>
+</BTBButtonGroup>
+
+<BTBButtonGroup direction="vertical" buttonList={buttonList} onEntryClick={onEntryClick} defaultActiveID="children_1">
+        Children 1
+        <div>Children 2</div>
+</BTBButtonGroup>`;
+
+const preButtonList = `const buttonList = [
+        'List 1',
+        (<div key="list_2">List 2</div>)
+]`;
+
+const preOnEntryClick = `const onEntryClick = (id, content) => {
+        console.log( id, content)
+}`;
+
+const buttonList = [
+  'List 1',
+  (<div key="list_2">List 2</div>)
+]
+
 const ExampleGroup = enhance(() => {
+  const _onEntryClick = (id, content) => {
+    console.log( id, content)
+  }
   return (
     <Page className="btb-pkg-button-example-group">
       <PageHead
@@ -33,29 +61,31 @@ const ExampleGroup = enhance(() => {
           </>
         }
       >
-        <p>
-          {/* {lang.translate('package.list.example.slot.description')} */}
-          Group
-        </p>
+        <p>{lang.translate('package.button.example.group.description')}</p>
       </Section>
-      {/* <Section head={lang.translate('package.section.example')}>
-        <BTBList dataList={_listData} slotObj={_slotObj}/>
+      <Section head={lang.translate('package.section.example')}>
+        <Block title="Horizontal">
+          <BTBButtonGroup direction="horizontal" buttonList={buttonList} onEntryClick={_onEntryClick} activeID="list_1">
+            Children 1
+            <div id="text2">Children 2</div>
+          </BTBButtonGroup>
+        </Block>
+        <Block title="Vertical">
+          <BTBButtonGroup direction="vertical" buttonList={buttonList} onEntryClick={_onEntryClick} defaultActiveID="children_1">
+            Children 1
+            <div>Children 2</div>
+          </BTBButtonGroup>
+        </Block>
       </Section>
       <Section head={lang.translate('package.section.sourceCode')}>
-        <pre className="page_pre">
-          {preRender}
-        </pre>
-        <Block title="listData">
-          <pre className="page_pre">
-            {preListData}
-          </pre>
+        <pre className="page_pre">{preRender}</pre>
+        <Block title="buttonList">
+          <pre className="page_pre">{preButtonList}</pre>
         </Block>
-        <Block title="styleObj">
-          <pre className="page_pre">
-            {preSlotObj}
-          </pre>
+        <Block title="onEntryClick">
+          <pre className="page_pre">{preOnEntryClick}</pre>
         </Block>
-      </Section> */}
+      </Section>
     </Page>
   );
 });

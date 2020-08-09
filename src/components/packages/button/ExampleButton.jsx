@@ -20,26 +20,26 @@ const enhance = compose(
 const preRender = `<BTBButton 
         prependNode="<<" 
         appendNode={<span>{'>>'}</span>} 
-        onClick={_onClick} 
-        onPrependClick={_onPrependClick} 
-        onCoreClick={_onCoreClick} 
-        onAppendClick={_onAppendClick}>
+        onClick={onClick} 
+        onPrependClick={onPrependClick} 
+        onCoreClick={onCoreClick} 
+        onAppendClick={onAppendClick}>
         {'Click Me!'}
 </BTBButton>`;
 
-const preClick = `function _onClick () {
+const preClick = `function onClick () {
         console.log('onClick');
 };
 
-function _onPrependClick () {
+function onPrependClick () {
         console.log('onPrependClick');
 };
 
-function _onCoreClick () {
+function onCoreClick () {
         console.log('onCoreClick');
 };
 
-function _onAppendClick () {
+function onAppendClick () {
         console.log('onAppendClick');
 };`;
 
@@ -106,30 +106,3 @@ const ExampleButton = enhance(() => {
 });
 
 export default ExampleButton;
-
-{
-  /* 
-<BTBButtonGroup onClick={_onGroupClick}>
-<div>1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
-</BTBButtonGroup>
-<BTBButtonGroup onClick={_onGroupClick} direction="horizontal" styleObj={{'member-2' : {color : 'red'}}}>
-<div>1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
-</BTBButtonGroup>
-<BTBButtonGroup onClick={_onGroupClick}>
-</BTBButtonGroup>
-<BTBButtonGroup onClick={_onGroupClick} direction="vertical">
-<div>1</div>
-<div>2</div>
-<div>3</div>
-<div>4</div>
-<div>5</div>
-</BTBButtonGroup> */
-}

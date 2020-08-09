@@ -24,9 +24,12 @@ import BTBButton, { ButtonGroup } from '@blacktoolbox/react-button'
 import '@blacktoolbox/react-button/lib/index.css'`;
 
 const preRender = `<BTBButtonGroup 
+        buttonList=" Array of String || Node "
+        activeID=" String "
+        defaultActiveID= "String"
         direction=" String "
         styleObj=" Object " 
-        onMemberClick=" function(member){} ">
+        onEntryClick=" function(id, content){} ">
         {button group's content}
 </BTBButtonGroup>`;
 
@@ -40,12 +43,16 @@ const nodeTree = [
     title: '<div> .btb-react-button-group .gtoup-{horizontal || vertical}',
     children: [
       {
-        id: 'member',
-        title: '<div> .group_member .group-[button count]',
+        id: 'list',
+        title: '<div> .group_button .button_list-[order in buttonList]',
+      },
+      {
+        id: 'children',
+        title: '<div> .group_button .button_children-[order in children]',
       },
       {
         id: 'empty',
-        title: '<div> .group_member .group-empty',
+        title: '<div> .group_button .button-empty',
       },
     ],
   },
@@ -59,6 +66,9 @@ const tableHeadArr_property = [
 ];
 
 const tableBodyArr = [
+  { title: 'buttonList', type: 'package.paramType.array', default: 'undefined', notice: 'package.button.property.buttonList' },
+  { title: 'activeID', type: 'package.paramType.string', default: 'undefined', notice: 'package.button.property.activeID' },
+  { title: 'defaultActiveID', type: 'package.paramType.string', default: 'undefined', notice: 'package.button.property.defaultActiveID' },
   {
     title: 'direction',
     type: 'package.paramType.string',
@@ -67,10 +77,10 @@ const tableBodyArr = [
   },
   { title: 'styleObj', type: 'package.paramType.object', default: '{}', notice: 'package.button.property.styleObj' },
   {
-    title: 'onMemberClick',
+    title: 'onEntryClick',
     type: 'package.paramType.function',
     default: 'undefined',
-    notice: 'package.button.property.onMemberClick',
+    notice: 'package.button.property.onEntryClick',
   },
   { title: 'ref', type: 'useRef', default: 'undefined', notice: 'package.button.property.ref' },
 ];
