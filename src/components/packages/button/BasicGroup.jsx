@@ -66,9 +66,24 @@ const tableHeadArr_property = [
 ];
 
 const tableBodyArr = [
-  { title: 'buttonList', type: 'package.paramType.array', default: 'undefined', notice: 'package.button.property.buttonList' },
-  { title: 'activeID', type: 'package.paramType.string', default: 'undefined', notice: 'package.button.property.activeID' },
-  { title: 'defaultActiveID', type: 'package.paramType.string', default: 'undefined', notice: 'package.button.property.defaultActiveID' },
+  {
+    title: 'buttonList',
+    type: 'package.paramType.array',
+    default: 'undefined',
+    notice: 'package.button.property.buttonList',
+  },
+  {
+    title: 'activeID',
+    type: 'package.paramType.string',
+    default: 'undefined',
+    notice: 'package.button.property.activeID',
+  },
+  {
+    title: 'defaultActiveID',
+    type: 'package.paramType.string',
+    default: 'undefined',
+    notice: 'package.button.property.defaultActiveID',
+  },
   {
     title: 'direction',
     type: 'package.paramType.string',

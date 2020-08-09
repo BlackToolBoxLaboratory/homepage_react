@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import { ButtonGroup  as BTBButtonGroup } from '@blacktoolbox/react-button';
+import { ButtonGroup as BTBButtonGroup } from '@blacktoolbox/react-button';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
@@ -36,15 +36,12 @@ const preOnEntryClick = `const onEntryClick = (id, content) => {
         console.log( id, content)
 }`;
 
-const buttonList = [
-  'List 1',
-  (<div key="list_2">List 2</div>)
-]
+const buttonList = ['List 1', <div key="list_2">List 2</div>];
 
 const ExampleGroup = enhance(() => {
   const _onEntryClick = (id, content) => {
-    console.log( id, content)
-  }
+    console.log(id, content);
+  };
   return (
     <Page className="btb-pkg-button-example-group">
       <PageHead
@@ -66,14 +63,17 @@ const ExampleGroup = enhance(() => {
       <Section head={lang.translate('package.section.example')}>
         <Block title="Horizontal">
           <BTBButtonGroup direction="horizontal" buttonList={buttonList} onEntryClick={_onEntryClick} activeID="list_1">
-            Children 1
-            <div id="text2">Children 2</div>
+            Children 1<div id="text2">Children 2</div>
           </BTBButtonGroup>
         </Block>
         <Block title="Vertical">
-          <BTBButtonGroup direction="vertical" buttonList={buttonList} onEntryClick={_onEntryClick} defaultActiveID="children_1">
-            Children 1
-            <div>Children 2</div>
+          <BTBButtonGroup
+            direction="vertical"
+            buttonList={buttonList}
+            onEntryClick={_onEntryClick}
+            defaultActiveID="children_1"
+          >
+            Children 1<div>Children 2</div>
           </BTBButtonGroup>
         </Block>
       </Section>
