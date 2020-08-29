@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
-import { Page, PageHead, Section  } from '@src/modules/pageLayout';
+import { Page, PageHead, Section } from '@src/modules/pageLayout';
 
 const enhance = compose(
   connect((state) => {
@@ -29,7 +29,7 @@ const packageInfo = {
       fa: ['fab', 'npm'],
       url: 'https://www.npmjs.com/package/@blacktoolbox/prototype-validator',
     },
-  ]
+  ],
 };
 
 const Validator = enhance(() => {

@@ -35,14 +35,10 @@ const packageInfo = {
   ],
 };
 
-const FacebookSDK = enhance(() =>{
+const FacebookSDK = enhance(() => {
   return (
     <Page className="btb-app-fb-sdk">
-      <PageHead
-        title={lang.translate('application.fb-sdk.name')}
-        clickBtn={openLink}
-        linkList={packageInfo.linkList}
-      />
+      <PageHead title={lang.translate('application.fb-sdk.name')} clickBtn={openLink} linkList={packageInfo.linkList} />
       <Section
         head={
           <>
@@ -55,7 +51,7 @@ const FacebookSDK = enhance(() =>{
         <p>{lang.translate(packageInfo.description)}</p>
       </Section>
     </Page>
-  )
+  );
 });
 
 export default FacebookSDK;
