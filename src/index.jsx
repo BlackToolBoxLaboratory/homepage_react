@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 
+import '@src/plugins/btblab-react-fb-sdk';
 import '@src/plugins/btblab-react-list.js';
 import '@src/plugins/btblab-react-table.js';
 import '@src/plugins/btblab-react-popover.js';

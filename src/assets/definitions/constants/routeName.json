@@ -32,6 +32,7 @@
   "PACKAGES_BUTTON_EXAMPLE_SLOT": "/packages/button/example/slot",
 
   "APPLICATIONS": "/applications",
+  "APPLICATIONS_FACEBOOK_SDK": "/applications/facebook_sdk",
   "APPLICATIONS_LANGUAGES": "/applications/languages",
   "APPLICATIONS_VALIDATOR": "/applications/validator"
 }

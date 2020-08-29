@@ -8,6 +8,10 @@ const ApplicationsContaier = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
         <Route
+          path={ROUTE.APPLICATIONS_FACEBOOK_SDK}
+          component={React.lazy(() => import('@src/routes/applications/FacebookSDKContainer.jsx'))}
+        />
+        <Route
           path={ROUTE.APPLICATIONS_LANGUAGES}
           component={React.lazy(() => import('@src/routes/applications/LanguagesContainer.jsx'))}
         />

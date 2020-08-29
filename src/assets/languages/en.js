@@ -48,6 +48,7 @@ export default {
     },
     application: {
       root: 'Application',
+      fbsdk: 'Facebook SDK',
       languages: 'Languages',
       validator: 'Validator',
     },
@@ -312,6 +313,11 @@ export default {
       impletement: 'IMPLEMENT',
       trigger: 'TRIGGER',
     },
+    'fb-sdk': {
+      name: 'Facebook SDK',
+      description:
+        "This package basically is not the original package. With purpose to organize all features from Facebook Javascript SDK, all parameters of features will be passed to SDK directly. Therefore all descriptions of parameters could be refered to orginal document. But this web-site also provide a document with organizing all pages of documents from orginal for the convenience to search. Due to it is not orginal package, its marjor number of version will follow to SDK's version. So, please be careful the versions about the document you refered and this package.",
+    },
     languages: {
       name: 'Languages',
       description:
@@ -332,6 +338,11 @@ export default {
         key:
           'Here is a unusual way for specific scenario. Sometimes for UX required, it maybe be wanted to be the effect to reload whole page. With React, we do not need to do the reload really. We could use the key the mark the top node. After language is changed, the key will changed too. Then the top node will be re-create like new component. Unless it required the network package re-download actually.',
       },
+    },
+    validator: {
+      name: 'Validator',
+      description:
+        "Most form UI packages have their own validator to use for convenience. But sometimes we don't use only one UI packages to develop every single project. So we try to create the validator generally to adapt to every kind of form UI packages to allow us using just one type of validator coding patteren to develop with every UI packages.",
     },
   },
   chart: {

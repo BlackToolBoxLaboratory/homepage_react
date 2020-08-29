@@ -22,11 +22,15 @@ module.exports = {
     openPage: 'react/v2/',
     disableHostCheck: true,
     compress: true,
+    https: true,
     host: '0.0.0.0',
     useLocalIp: true,
     port: 9000,
     inline: true,
     hot: true,
+    historyApiFallback: {
+      rewrites: [{ from: /\//, to: '/index.html' }],
+    },
   },
   module: {
     rules: [eslintConfig, babelConfig, styleConfig, fileConfig],

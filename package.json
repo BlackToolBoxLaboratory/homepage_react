@@ -75,6 +75,7 @@
     "@blacktoolbox/prototype-languages": "^1.1.1",
     "@blacktoolbox/prototype-validator": "^1.0.0",
     "@blacktoolbox/react-button": "^1.2.1",
+    "@blacktoolbox/react-facebook-sdk": "^8.0.0",
     "@blacktoolbox/react-list": "^2.2.0",
     "@blacktoolbox/react-popover": "^1.2.1",
     "@blacktoolbox/react-table": "^1.4.0",

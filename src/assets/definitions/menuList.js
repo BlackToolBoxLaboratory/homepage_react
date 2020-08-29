@@ -161,6 +161,11 @@ const menuList = [
     langIndex: 'menu.application.root',
     children: [
       {
+        id: 'APPLICATIONS_FACEBOOK_SDK',
+        title: 'FackBook SDK',
+        langIndex: 'menu.application.fbsdk',
+      },
+      {
         id: 'APPLICATIONS_LANGUAGES',
         title: 'Languages',
         langIndex: 'menu.application.languages',
