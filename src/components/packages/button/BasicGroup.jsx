@@ -11,7 +11,7 @@ import packageInfo from './packageInfo.js';
 
 const preInstall = `$ npm install --save @blacktoolbox/react-button
 
-import BTBButton, { ButtonGroup } from '@blacktoolbox/react-button'
+import { ButtonGroup } from '@blacktoolbox/react-button'
 import '@blacktoolbox/react-button/lib/index.css'`;
 
 const preRender = `<BTBButtonGroup 

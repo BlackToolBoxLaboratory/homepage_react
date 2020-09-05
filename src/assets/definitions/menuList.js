@@ -158,7 +158,24 @@ const menuList = [
       {
         id: 'APPLICATIONS_FACEBOOK_SDK',
         title: 'FackBook SDK',
-        langIndex: 'menu.application.fbsdk',
+        langIndex: 'menu.application.fbsdk.root',
+        children: [
+          {
+            id: 'APPLICATIONS_FACEBOOK_SDK_BASIC',
+            title: 'Basic',
+            langIndex: 'menu.application.fbsdk.basic',
+          },
+          {
+            id: 'APPLICATIONS_FACEBOOK_SDK_API',
+            title: 'APIs',
+            langIndex: 'menu.application.fbsdk.apis',
+          },
+          {
+            id: 'APPLICATIONS_FACEBOOK_SDK_COMPONENTS',
+            title: 'Components',
+            langIndex: 'menu.application.fbsdk.components',
+          },
+        ],
       },
       {
         id: 'APPLICATIONS_LANGUAGES',

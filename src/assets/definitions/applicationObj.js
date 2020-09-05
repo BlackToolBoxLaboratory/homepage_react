@@ -1,19 +1,8 @@
 import { ROUTE } from './constants';
 
 const applicationObj = {
-  'fb-sdk': {
-    name: 'application.fb-sdk.name',
-    routename: ROUTE.APPLICATIONS_FACEBOOK_SDK_BASIC,
-    description: 'application.fb-sdk.description',
-    version: '8.0.0',
-    updated: '2020-08-29',
-    link: {
-      github: 'https://github.com/BlackToolBoxLaboratory/react-facebook-sdk',
-      npm: 'https://www.npmjs.com/package/@blacktoolbox/react-facebook-sdk',
-    },
-  },
   languages: {
-    name: 'application.fb-sdk.name',
+    name: 'application.facebookSDK.name',
     routename: ROUTE.APPLICATIONS_FACEBOOK_SDK_BASIC,
     description: 'application.languages.description',
     version: '1.1.1',

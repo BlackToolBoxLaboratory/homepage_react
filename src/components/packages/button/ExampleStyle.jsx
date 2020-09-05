@@ -20,17 +20,11 @@ const styleObj_button = {
 };
 
 const styleObj_group = {
-  'btb-react-button-group': {
-    backgroundColor: '#cdcdcd',
-  },
-  group_button: {
-    backgroundColor: 'transparent',
-  },
   'button-list_1': {
     color: 'red',
   },
   'button-children_2': {
-    color: 'red',
+    color: 'blue',
   },
 };
 
@@ -60,12 +54,6 @@ const preSlotObj = `const styleObj_button = {
 };
 
 const styleObj_group = {
-        'btb-react-button-group': {
-                backgroundColor: '#cdcdcd',
-        },
-        group_button: {
-                backgroundColor: 'transparent',
-        },
         'button-list_1': {
                 color: 'red',
         },
@@ -96,9 +84,7 @@ const ExampleSlot = () => {
           </>
         }
       >
-        <p>
-          {lang.translate('package.button.example.style.description')}
-        </p>
+        <p>{lang.translate('package.button.example.style.description')}</p>
       </Section>
       <Section head={lang.translate('package.section.example')}>
         <Block title={lang.translate('package.button.name.button')}>

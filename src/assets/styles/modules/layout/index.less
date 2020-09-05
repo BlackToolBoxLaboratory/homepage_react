@@ -8,20 +8,27 @@
   padding-top: 4rem;
   overflow-x: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height:100%;
 
   .layout_head {
+    flex-shrink: 0;
     position: fixed;
     top: 0;
     z-index: 1;
   }
   .layout_content {
     .mixin_transition(margin-right);
+    flex-grow: 1;
     display: flex;
     padding: 1rem;
-    min-height: 100vh;
     .mixin_breakpoint-up-md({
       padding: 0;
     })
+  }
+  .layout_foor {
+    flex-shrink: 0;
   }
   .layout_aside {
     .mixin_transition(right);

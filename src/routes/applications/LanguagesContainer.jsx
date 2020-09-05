@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Languages from '@src/components/applications/languages/bASIC.jsx';
+import Languages from '@src/components/applications/languages/Basic.jsx';
 
 const LanguagesContaier = () => {
   return <Languages />;

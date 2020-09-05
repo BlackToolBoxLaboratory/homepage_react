@@ -48,7 +48,12 @@ export default {
     },
     application: {
       root: 'Application',
-      fbsdk: 'Facebook SDK',
+      fbsdk: {
+        root: 'Facebook SDK',
+        basic: 'Basic',
+        apis: 'APIs',
+        components: 'Social Plugins',
+      },
       languages: 'Languages',
       validator: 'Validator',
     },
@@ -313,10 +318,20 @@ export default {
       impletement: 'IMPLEMENT',
       trigger: 'TRIGGER',
     },
-    'fb-sdk': {
+    facebookSDK: {
       name: 'Facebook SDK',
       description:
-        "This package basically is not the original package. With purpose to organize all features from Facebook Javascript SDK, all parameters of features will be passed to SDK directly. Therefore all descriptions of parameters could be refered to orginal document. But this web-site also provide a document with organizing all pages of documents from orginal for the convenience to search. Due to it is not orginal package, its marjor number of version will follow to SDK's version. So, please be careful the versions about the document you refered and this package.",
+        "This package basically is not the original package. With purpose to organize all features from Facebook Javascript SDK, all parameters of features will be passed to SDK directly. Therefore all descriptions of parameters could be refered to orginal document. But this web-site also provide a document with organizing all pages of documents from orginal for the convenience to search. Due to it is not orginal package, its marjor number of version will follow to SDK's version. So, please be careful the versions about the document you refered and this package. And here we will introduce the package with three parts seperatly: basic, Application Programming Interfaces(APIs), Social Plugins(Components).",
+      apis: {
+        name: 'Application Programming Interfaces',
+        description:
+          'The package has two parts: Application Programming Interfaces(APIs), Components. And here we will revise the documents of APIs. All parameters are same as original. We just adjust a little about how to input them.',
+      },
+      components: {
+        name: 'Social Plugins',
+        description:
+          'The package has two parts: Application Programming Interfaces(APIs), Components. And here we will revise the documents of Social Plugins. All parameters are same as original. We just adjust a little about how to input them.',
+      },
     },
     languages: {
       name: 'Languages',

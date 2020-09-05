@@ -1,19 +1,19 @@
-import applicationObj from '@src/assets/definitions/applicationObj';
+import packageObj from '@src/assets/definitions/packageObj';
 
 const packageInfo = {
-  version: applicationObj['fb-sdk'].version,
-  updated: applicationObj['fb-sdk'].updated,
-  description: applicationObj['fb-sdk'].description,
+  version: packageObj.facebookSDK.version,
+  updated: packageObj.facebookSDK.updated,
+  description: packageObj.facebookSDK.description,
   linkList: [
     {
       id: 'github',
       fa: ['fab', 'github'],
-      url: applicationObj['fb-sdk'].github,
+      url: packageObj.facebookSDK.link.github,
     },
     {
       id: 'npm',
       fa: ['fab', 'npm'],
-      url: applicationObj['fb-sdk'].npm,
+      url: packageObj.facebookSDK.link.npm,
     },
   ],
 };

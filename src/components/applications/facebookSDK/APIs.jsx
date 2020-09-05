@@ -7,16 +7,16 @@ import { Page, PageHead, Section } from '@src/modules/pageLayout';
 
 import packageInfo from './packageInfo.js';
 
-const Components = () => {
+const APIs = () => {
   useSelector((state) => {
     return {
       languageSetting: state.language.languageSetting,
     };
   });
   return (
-    <Page id="btb-app-fb-sdk-components">
+    <Page id="btb-app-fb-sdk-apis">
       <PageHead
-        title={lang.translate('application.facebookSDK.components.name')}
+        title={lang.translate('application.facebookSDK.apis.name')}
         clickBtn={openLink}
         linkList={packageInfo.linkList}
       />
@@ -29,10 +29,10 @@ const Components = () => {
           </>
         }
       >
-        <p>{lang.translate('application.facebookSDK.components.description')}</p>
+        <p>{lang.translate('application.facebookSDK.apis.description')}</p>
       </Section>
     </Page>
   );
 };
 
-export default Components;
+export default APIs;

@@ -1,7 +1,7 @@
-// import { sdk } from '@blacktoolbox/react-facebook-sdk';
+import { apis } from '@blacktoolbox/react-facebook-sdk';
 
-// sdk.init({
-//   appId: process.env.FB_APP_ID,
-//   status     : true,
-//   xfbml      : true,
-// });
+apis.init({
+  appId: process.env.FB_APP_ID,
+  status: true,
+  xfbml: true,
+});
