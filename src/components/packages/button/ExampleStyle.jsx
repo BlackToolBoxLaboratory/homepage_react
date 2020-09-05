@@ -1,11 +1,78 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Button as BTBButton, ButtonGroup as BTBButtonGroup } from '@blacktoolbox/react-button';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
 
-import { Page, PageHead, Section } from '@src/modules/pageLayout';
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
+
+const buttonList = ['1', '2', '3'];
+
+const styleObj_button = {
+  button_item: {
+    color: 'blue',
+  },
+  'itme-core': {
+    color: 'red',
+  },
+};
+
+const styleObj_group = {
+  'btb-react-button-group': {
+    backgroundColor: '#cdcdcd',
+  },
+  group_button: {
+    backgroundColor: 'transparent',
+  },
+  'button-list_1': {
+    color: 'red',
+  },
+  'button-children_2': {
+    color: 'red',
+  },
+};
+
+const preRender = `<BTBButton 
+        prependNode="<<" 
+        appendNode=">>" 
+        styleObj={styleObj_button}
+>
+        Click
+</BTBButton>
+
+<BTBButtonGroup buttonList={buttonList} styleObj={styleObj_group}>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+</BTBButtonGroup>`;
+
+const preButtonList = `const buttonList = ['1', '2', '3'];`;
+
+const preSlotObj = `const styleObj_button = {
+        button_item: {
+                color: 'blue',
+        },
+        'itme-core': {
+                color: 'red',
+        },
+};
+
+const styleObj_group = {
+        'btb-react-button-group': {
+                backgroundColor: '#cdcdcd',
+        },
+        group_button: {
+                backgroundColor: 'transparent',
+        },
+        'button-list_1': {
+                color: 'red',
+        },
+        'button-children_2': {
+                color: 'red',
+        },
+};`;
 
 const ExampleSlot = () => {
   useSelector((state) => {
@@ -30,28 +97,32 @@ const ExampleSlot = () => {
         }
       >
         <p>
-          {/* {lang.translate('package.list.example.slot.description')} */}
-          Style
+          {lang.translate('package.button.example.style.description')}
         </p>
       </Section>
-      {/* <Section head={lang.translate('package.section.example')}>
-        <BTBList dataList={_listData} slotObj={_slotObj}/>
+      <Section head={lang.translate('package.section.example')}>
+        <Block title={lang.translate('package.button.name.button')}>
+          <BTBButton prependNode="<<" appendNode=">>" styleObj={styleObj_button}>
+            Click
+          </BTBButton>
+        </Block>
+        <Block title={lang.translate('package.button.name.group')}>
+          <BTBButtonGroup buttonList={buttonList} styleObj={styleObj_group}>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+          </BTBButtonGroup>
+        </Block>
       </Section>
       <Section head={lang.translate('package.section.sourceCode')}>
-        <pre className="page_pre">
-          {preRender}
-        </pre>
-        <Block title="listData">
-          <pre className="page_pre">
-            {preListData}
-          </pre>
+        <pre className="page_pre">{preRender}</pre>
+        <Block title="buttonList">
+          <pre className="page_pre">{preButtonList}</pre>
         </Block>
         <Block title="styleObj">
-          <pre className="page_pre">
-            {preSlotObj}
-          </pre>
+          <pre className="page_pre">{preSlotObj}</pre>
         </Block>
-      </Section> */}
+      </Section>
     </Page>
   );
 };

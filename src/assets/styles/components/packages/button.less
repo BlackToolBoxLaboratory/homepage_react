@@ -1,11 +1,33 @@
 #btb-pkg-button-example-button {
-  // .btb-react-button {
-  //   & + .btb-react-button {
-  //     .mixin_margin-md-l;
-  //   }
-  // }
+  .btb-react-button {
+    & + .btb-react-button {
+      .mixin_margin-md-l;
+    }
+  }
 }
 
 #btb-pkg-button-example-pagination {
-
+  .pagination_tools {
+    .button_item{
+      &.itme-core {
+        .mixin_border-solid-r(1px);
+        .mixin_border-solid-l(1px);
+        border-color: @color-gray;
+        padding: 0;
+      }
+    }
+  }
+  .pagination_pages {
+    border: none;
+    border-radius: unset;
+    .group_button {
+      &:first-child,
+      &:last-child {
+        padding: 0.25rem;
+      }
+      &.button-active {
+        background-color: @color-gray-ll;
+      }
+    }
+  }
 }

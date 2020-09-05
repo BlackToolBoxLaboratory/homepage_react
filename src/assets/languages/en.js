@@ -248,7 +248,7 @@ export default {
     button: {
       name: {
         button: 'Button',
-        group: 'Button - Group',
+        group: 'Group',
       },
       description: {
         basic:
@@ -289,19 +289,17 @@ export default {
         group: {
           title: 'Example: Group',
           description:
-            "Here showing you how to create the group button. Besides to change the direction of showing buttons. It' able to add the click event function for memeber buttons.",
+            "Here we are going to show you how to create the group button. Besides to change the direction of showing buttons. It' able to add the click event function for memeber buttons.",
         },
         pagination: {
           title: 'Example: Pagination',
-          description: 'pagination',
+          description:
+            'Here we are going to show you how to combine our button and group button to be a pagination button. And here is the point of development from our laboratory. We develop components for some developers who can easily combine our components to be whatever they want to satsfy the requirement of customization. And if they don not need to handle the customized requirement, our components can not help them too much.',
         },
         style: {
           title: 'Example: Style',
-          description: 'style',
-        },
-        slot: {
-          title: 'Example: Slot',
-          description: 'slot',
+          description:
+            'Here is going to show you about how to use the styleObj for inline CSS. Then we can use with the class name of node directly.',
         },
       },
     },

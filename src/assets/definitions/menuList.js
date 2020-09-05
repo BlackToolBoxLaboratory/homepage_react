@@ -145,11 +145,6 @@ const menuList = [
             title: 'Example: Style',
             langIndex: 'menu.packages.button.example.style',
           },
-          {
-            id: 'PACKAGES_BUTTON_EXAMPLE_SLOT',
-            title: 'Example: Slot',
-            langIndex: 'menu.packages.button.example.slot',
-          },
         ],
       },
     ],

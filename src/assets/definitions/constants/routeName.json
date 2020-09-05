@@ -29,7 +29,6 @@
   "PACKAGES_BUTTON_EXAMPLE_GROUP": "/packages/button/example/group",
   "PACKAGES_BUTTON_EXAMPLE_PAGINATION": "/packages/button/example/pagination",
   "PACKAGES_BUTTON_EXAMPLE_STYLE": "/packages/button/example/style",
-  "PACKAGES_BUTTON_EXAMPLE_SLOT": "/packages/button/example/slot",
 
   "APPLICATIONS": "/applications",
   "APPLICATIONS_FACEBOOK_SDK": "/applications/facebook_sdk",

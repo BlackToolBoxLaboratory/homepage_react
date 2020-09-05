@@ -6,7 +6,7 @@ const applicationObj = {
     routename: ROUTE.APPLICATIONS_FACEBOOK_SDK_BASIC,
     description: 'application.fb-sdk.description',
     version: '8.0.0',
-    updated: '2020-06-21',
+    updated: '2020-08-29',
     link: {
       github: 'https://github.com/BlackToolBoxLaboratory/react-facebook-sdk',
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-facebook-sdk',

@@ -31,10 +31,6 @@ const PackagesContaier = () => {
           path={ROUTE.PACKAGES_BUTTON_EXAMPLE_STYLE}
           component={React.lazy(() => import('@src/routes/packages/button/ExampleStyleContainer.jsx'))}
         />
-        <Route
-          path={ROUTE.PACKAGES_BUTTON_EXAMPLE_SLOT}
-          component={React.lazy(() => import('@src/routes/packages/button/ExampleSlotContainer.jsx'))}
-        />
       </Switch>
     </Suspense>
   );

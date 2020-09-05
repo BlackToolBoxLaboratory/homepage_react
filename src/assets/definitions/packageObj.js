@@ -48,14 +48,14 @@ const packageObj = {
     },
   },
   facebookSDK: {
-    name: 'package.list.name',
+    name: 'application.fb-sdk.name',
     routename: ROUTE.PACKAGES_LIST_BASIC,
-    description: 'package.list.description.basic',
-    version: '2.2.0',
-    updated: '2020-06-21',
+    description: 'application.fb-sdk.description',
+    version: '8.0.0',
+    updated: '2020-08-29',
     link: {
-      github: 'https://github.com/BlackToolBoxLaboratory/react-list',
-      npm: 'https://www.npmjs.com/package/@blacktoolbox/react-list',
+      github: 'https://github.com/BlackToolBoxLaboratory/react-facebook-sdk',
+      npm: 'https://www.npmjs.com/package/@blacktoolbox/react-facebook-sdk',
     },
   },
 };
