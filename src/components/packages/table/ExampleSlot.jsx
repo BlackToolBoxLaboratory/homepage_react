@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 import BTBTable from '@blacktoolbox/react-table';
 
@@ -9,14 +8,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const preRender = `<BTBTable 
         mode="compare" 
@@ -124,9 +115,14 @@ const slotObj = {
   },
 };
 
-const ExampleSlot = enhance(() => {
+const ExampleSlot = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-pkg-table-example-slot">
+    <Page id="btb-pkg-table-example-slot">
       <PageHead
         title={lang.translate('package.table.example.slot.title')}
         clickBtn={openLink}
@@ -171,6 +167,6 @@ const ExampleSlot = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default ExampleSlot;

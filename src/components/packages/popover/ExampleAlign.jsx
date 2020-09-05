@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import BTBPopover from '@blacktoolbox/react-popover';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -8,14 +7,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const preRender = `<BTBPopover showPosition={"top"} showAlign={"begin"} trigger={(<button>Begin</button>)}>
         Example: Begin
@@ -41,9 +32,14 @@ const preRender = `<BTBPopover showPosition={"top"} showAlign={"begin"} trigger=
         Example: End
 </BTBPopover>`;
 
-const ExampleAlign = enhance(() => {
+const ExampleAlign = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-pkg-popover-example-align">
+    <Page id="btb-pkg-popover-example-align">
       <PageHead
         title={lang.translate('package.popover.example.align.title')}
         clickBtn={openLink}
@@ -101,6 +97,6 @@ const ExampleAlign = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default ExampleAlign;

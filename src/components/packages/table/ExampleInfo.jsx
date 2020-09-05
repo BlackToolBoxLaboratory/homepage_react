@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import BTBTable from '@blacktoolbox/react-table';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -8,14 +7,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const preRender = `<BTBTable 
         mode="info" 
@@ -87,9 +78,14 @@ const tableBodyArr_data = [
   },
 ];
 
-const ExampleInfo = enhance(() => {
+const ExampleInfo = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-pkg-table-example-info">
+    <Page id="btb-pkg-table-example-info">
       <PageHead
         title={lang.translate('package.table.example.info.title')}
         clickBtn={openLink}
@@ -120,6 +116,6 @@ const ExampleInfo = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default ExampleInfo;

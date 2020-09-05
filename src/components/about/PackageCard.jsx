@@ -9,7 +9,7 @@ const PackageCard = (props) => {
   }
 
   return (
-    <div className={['btb-about-package-card grid-row', props.className].join(' ')}>
+    <div id="btb-about-package-card" className={['grid-row', props.className].join(' ')}>
       <div className="grid-col-md-3">
         <div className="card_title">{lang.translate(props.info.name)}</div>
         <FAI className="card_link" icon={['fas', 'link']} fixedWidth onClick={_redirectRoute} />

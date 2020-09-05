@@ -1,9 +1,11 @@
 import React from 'react';
+import classnames from 'classnames';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
-const LoadingDiv = () => {
+const LoadingDiv = (props) => {
+  const { className, ...loadingDevProps } = props;
   return (
-    <div className="module-loading">
+    <div className={classnames('module-loading', className)} {...loadingDevProps}>
       <FAI className="loading_spinner" icon={['fas', 'spinner']} fixedWidth spin pulse />
     </div>
   );

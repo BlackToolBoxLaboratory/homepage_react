@@ -47,6 +47,17 @@ const packageObj = {
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-button',
     },
   },
+  facebookSDK: {
+    name: 'package.list.name',
+    routename: ROUTE.PACKAGES_LIST_BASIC,
+    description: 'package.list.description.basic',
+    version: '2.2.0',
+    updated: '2020-06-21',
+    link: {
+      github: 'https://github.com/BlackToolBoxLaboratory/react-list',
+      npm: 'https://www.npmjs.com/package/@blacktoolbox/react-list',
+    },
+  },
 };
 
 export default packageObj;

@@ -1,37 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
-
-const packageInfo = {
-  version: '1.1.1',
-  updated: '2020-06-20',
-  description: 'application.languages.description',
-  linkList: [
-    {
-      id: 'github',
-      fa: ['fab', 'github'],
-      url: 'https://github.com/BlackToolBoxLaboratory/prototype-languages',
-    },
-    {
-      id: 'npm',
-      fa: ['fab', 'npm'],
-      url: 'https://www.npmjs.com/package/@blacktoolbox/prototype-languages',
-    },
-  ],
-};
+import packageInfo from './packageInfo.js';
 
 const preInstall = `$ npm install --save @blacktoolbox/prototype-languages`;
 
@@ -49,9 +24,14 @@ const preImplement = `import Language from '@blacktoolbox/prototype-languages';
 
 const lang = new Language()`;
 
-const Languages = enhance(() => {
+const Languages = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-app-languages">
+    <Page id="btb-app-languages">
       <PageHead
         title={lang.translate('application.languages.name')}
         clickBtn={openLink}
@@ -60,9 +40,9 @@ const Languages = enhance(() => {
       <Section
         head={
           <>
-            {`${lang.translate('package.version_colon')}${packageInfo.version}`}
+            {`${lang.translate('application.version_colon')}${packageInfo.version}`}
             <br />
-            {`${lang.translate('package.release_colon')}${packageInfo.updated}`}
+            {`${lang.translate('application.release_colon')}${packageInfo.updated}`}
           </>
         }
       >
@@ -102,6 +82,6 @@ const Languages = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default Languages;

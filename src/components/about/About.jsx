@@ -1,7 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -11,22 +10,19 @@ import logoPath from '@src/assets/images/BTB_React.png';
 import { Page, Section, Divider } from '@src/modules/pageLayout';
 import PackageCard from './PackageCard.jsx';
 
-const enhance = compose(
-  connect((state) => {
+const About = () => {
+  useSelector((state) => {
     return {
       languageSetting: state.language.languageSetting,
     };
-  }),
-  withRouter
-);
-
-const About = enhance((props) => {
+  });
+  const history = useHistory();
   function _redirectRoute(routename) {
-    props.history.push(routename);
+    history.push(routename);
   }
 
   return (
-    <Page className="btb-about">
+    <Page id="btb-about">
       <Section className="about_title grid-row direction-column align-items-center">
         <img className="title_image" src={logoPath} alt="BTB_React" />
         <h1 className="title_main hidden-down-md">Black Tool Box Laboratory</h1>
@@ -64,6 +60,6 @@ const About = enhance((props) => {
       })}
     </Page>
   );
-});
+};
 
 export default About;

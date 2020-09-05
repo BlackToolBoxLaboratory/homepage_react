@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import BTBTable from '@blacktoolbox/react-table';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -8,14 +7,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const preRender = `<BTBTable 
         mode="compare" 
@@ -87,9 +78,14 @@ const tableBodyArr_data = [
   },
 ];
 
-const ExampleCompare = enhance(() => {
+const ExampleCompare = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-pkg-table-example-compare">
+    <Page id="btb-pkg-table-example-compare">
       <PageHead
         title={lang.translate('package.table.example.compare.title')}
         clickBtn={openLink}
@@ -125,6 +121,6 @@ const ExampleCompare = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default ExampleCompare;

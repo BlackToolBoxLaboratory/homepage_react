@@ -3,22 +3,17 @@ import classnames from 'classnames';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
 const PageHead = (props) => {
-  function _clickBtn(event) {
-    if (props.clickBtn) {
-      props.clickBtn(event);
-    }
-  }
-
+  const { id, title = '', linkList, clickBtn = () => {}, ...pageHeadProps } = props;
   return (
-    <div className="module-page-head">
-      <div className="head_title">{props.title || ''}</div>
-      {(props.linkList || []).map((btn) => {
+    <div id={id} className="module-page-head" {...pageHeadProps}>
+      <div className="head_title">{title || ''}</div>
+      {(linkList || []).map((btn) => {
         return (
           <div
-            className={classnames('head_btn', `btn-${btn.id}`)}
+            className={classnames('head_btn', `btn-${id}`)}
             key={btn.id}
             onClick={() => {
-              _clickBtn(btn);
+              clickBtn(btn);
             }}
           >
             <FAI icon={btn.fa} fixedWidth />

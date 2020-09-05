@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import { Button as BTBButton } from '@blacktoolbox/react-button';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -8,14 +7,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const preRender = `<BTBButton 
         prependNode="<<" 
@@ -43,7 +34,12 @@ function onAppendClick () {
         console.log('onAppendClick');
 };`;
 
-const ExampleButton = enhance(() => {
+const ExampleButton = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   function _onClick() {
     /* eslint-disable no-console */
     console.log('onClick');
@@ -66,7 +62,7 @@ const ExampleButton = enhance(() => {
   }
 
   return (
-    <Page className="btb-pkg-button-example-button">
+    <Page id="btb-pkg-button-example-button">
       <PageHead
         title={lang.translate('package.button.example.button.title')}
         clickBtn={openLink}
@@ -103,6 +99,6 @@ const ExampleButton = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default ExampleButton;

@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import BTBTable from '@blacktoolbox/react-table';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -8,14 +7,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const preRender = `<BTBTable 
         mode="compare" 
@@ -124,9 +115,14 @@ const styleObj = {
   },
 };
 
-const ExampleStyle = enhance(() => {
+const ExampleStyle = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-pkg-table-example-style">
+    <Page id="btb-pkg-table-example-style">
       <PageHead
         title={lang.translate('package.table.example.style.title')}
         clickBtn={openLink}
@@ -166,6 +162,6 @@ const ExampleStyle = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default ExampleStyle;

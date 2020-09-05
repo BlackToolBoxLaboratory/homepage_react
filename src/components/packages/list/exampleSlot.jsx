@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import BTBList from '@blacktoolbox/react-list';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -8,14 +7,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const _listData = [
   {
@@ -89,9 +80,14 @@ const preSlotObj = `const _slotObj = {
         }
 }`;
 
-const ExampleSlot = enhance(() => {
+const ExampleSlot = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-pkg-list-example-slot">
+    <Page id="btb-pkg-list-example-slot">
       <PageHead
         title={lang.translate('package.list.example.slot.title')}
         clickBtn={openLink}
@@ -122,6 +118,6 @@ const ExampleSlot = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default ExampleSlot;

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
@@ -12,16 +10,12 @@ import { LoadingDiv } from '@src/modules/loadingDiv';
 import PackageWidget from './PackageWidget.jsx';
 import pageInfo from './pageInfo.js';
 
-const enhance = compose(
-  connect((state) => {
+const Overview = () => {
+  useSelector((state) => {
     return {
       languageSetting: state.language.languageSetting,
     };
-  }),
-  withRouter
-);
-
-const Overview = enhance(() => {
+  });
   const state_Packages = {
     js: usePackagesState(),
     react: usePackagesState(),
@@ -58,14 +52,14 @@ const Overview = enhance(() => {
   }
 
   return (
-    <Page className="btb-overview">
+    <Page id="btb-overview">
       <PageHead title={lang.translate('overview.title')} clickBtn={openLink} linkList={pageInfo.linkList} />
       <Section head={'JAVASCRIPT'}>{_renderPackages('js')}</Section>
       <Section head={'REACT'}>{_renderPackages('react')}</Section>
       <Section head={'VUE'}>{_renderPackages('vue')}</Section>
     </Page>
   );
-});
+};
 
 function usePackagesState() {
   const [packages, setState] = useState([]);

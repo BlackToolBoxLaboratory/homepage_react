@@ -1,9 +1,11 @@
 import React from 'react';
+import classnames from 'classnames';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
-const Aside = (props) => {
+const Foot = (props) => {
+  const { className, ...footProps } = props;
   return (
-    <div className={['btb-layout-foot', props.className].join(' ')}>
+    <div className={classnames('module-layout-foot', className)} {...footProps}>
       <div className="foot_navbar">
         <a
           className="navbar_linkBtn linkBtn-paypal"
@@ -59,4 +61,4 @@ const Aside = (props) => {
   );
 };
 
-export default Aside;
+export default Foot;

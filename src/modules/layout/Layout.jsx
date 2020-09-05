@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import classnames from 'classnames';
-import { compose } from 'recompose';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { GRID } from '@src/assets/definitions/constants';
@@ -12,16 +11,15 @@ import Head from './Head.jsx';
 import Foot from './Foot.jsx';
 import Aside from './Aside.jsx';
 
-const enhance = compose(
-  connect((state) => {
+const Layout = (props) => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const state = useSelector((state) => {
     return {
       languageSetting: state.language.languageSetting,
     };
-  }),
-  withRouter
-);
-
-const Layout = enhance((props) => {
+  });
+  const { className, children, ...layoutProps } = props;
   const env = {
     state_hiddenMenu: useMenuState(window.innerWidth < GRID.MD),
   };
@@ -45,18 +43,18 @@ const Layout = enhance((props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [props.history.location.pathname]);
+  }, [history.location.pathname]);
 
   const _initialLang = () => {
-    if (!props.languageSetting.length) {
+    if (!state.languageSetting.length) {
       const userLang = navigator.language || navigator.userLanguage;
       const result = lang.menu().find((item) => {
         return userLang.search(new RegExp(item.index, 'i')) >= 0;
       });
       lang.set(result.index);
-      props.dispatch(langAction.setLang(result.index));
+      dispatch(langAction.setLang(result.index));
     } else {
-      lang.set(props.languageSetting);
+      lang.set(state.languageSetting);
     }
   };
 
@@ -84,9 +82,9 @@ const Layout = enhance((props) => {
   }
 
   return (
-    <div className="btb-layout">
+    <div className={classnames('module-layout', className)} {...layoutProps}>
       <Head className="layout_head" toggleMenu={_toggleMenu} />
-      <div className="layout_content">{props.children}</div>
+      <div className="layout_content">{children}</div>
       <Foot className="layout_foot" />
       <Aside
         className={classnames('layout_aside', { 'aside-hidden': env.state_hiddenMenu.value })}
@@ -94,7 +92,7 @@ const Layout = enhance((props) => {
       />
     </div>
   );
-});
+};
 
 function useMenuState(defaultSate) {
   const [value, setState] = useState(defaultSate);

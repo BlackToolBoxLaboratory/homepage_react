@@ -303,6 +303,8 @@ export default {
     },
   },
   application: {
+    version_colon: '發布版本：',
+    release_colon: '發布日期：',
     section: {
       installation: '安裝',
       initializer: '初始化',

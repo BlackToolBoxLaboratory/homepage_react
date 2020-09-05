@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { ROUTE } from '@src/assets/definitions/constants';
-import Layout from '@src/components/layout/Layout.jsx';
+import Layout from '@src/modules/layout/Layout.jsx';
 
 const HomeContainer = () => {
   return (

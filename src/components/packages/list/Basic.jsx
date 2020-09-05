@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import BTBList from '@blacktoolbox/react-list';
 import BTBTable from '@blacktoolbox/react-table';
 
@@ -9,14 +8,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const preInstall = `$ npm install --save @blacktoolbox/react-list
 
@@ -181,9 +172,14 @@ const tableSlotObj = {
   },
 };
 
-const Basic = enhance(() => {
+const Basic = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-pkg-list-basic">
+    <Page id="btb-pkg-list-basic">
       <PageHead title={lang.translate('package.list.name')} clickBtn={openLink} linkList={packageInfo.linkList} />
       <Section
         head={
@@ -243,6 +239,6 @@ const Basic = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default Basic;

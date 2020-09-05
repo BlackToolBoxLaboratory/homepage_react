@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import BTBList from '@blacktoolbox/react-list';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -8,14 +7,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const _listData = [
   {
@@ -98,11 +89,15 @@ const preStyleObj = `const _styleObj = {
         }
 }`;
 
-const ExampleStyle = enhance(() => {
+const ExampleStyle = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   const activeID = useActiveState('l13');
-
   return (
-    <Page className="btb-pkg-list-example-style">
+    <Page id="btb-pkg-list-example-style">
       <PageHead
         title={lang.translate('package.list.example.style.title')}
         clickBtn={openLink}
@@ -137,7 +132,7 @@ const ExampleStyle = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 function useActiveState(defaultSate) {
   const [value, setState] = useState(defaultSate);

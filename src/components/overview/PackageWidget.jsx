@@ -32,7 +32,7 @@ const PackageWidget = (props) => {
   }
 
   return (
-    <div className={['btb-overview-package-widget', props.className].join(' ')}>
+    <div id={'btb-overview-package-widget'} className={props.className}>
       <p className="widget_title">{props.data.name}</p>
       <p className="widget_description">{props.data.description}</p>
       <p>

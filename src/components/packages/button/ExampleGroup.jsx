@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import { ButtonGroup as BTBButtonGroup } from '@blacktoolbox/react-button';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -8,14 +7,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const preRender = `<BTBButtonGroup direction="horizontal" buttonList={buttonList} onEntryClick={onEntryClick} activeID="list_1">
         Children 1
@@ -38,12 +29,19 @@ const preOnEntryClick = `const onEntryClick = (id, content) => {
 
 const buttonList = ['List 1', <div key="list_2">List 2</div>];
 
-const ExampleGroup = enhance(() => {
+const ExampleGroup = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   const _onEntryClick = (id, content) => {
+    /* eslint-disable no-console */
     console.log(id, content);
+    /* eslint-rnable no-console */
   };
   return (
-    <Page className="btb-pkg-button-example-group">
+    <Page id="btb-pkg-button-example-group">
       <PageHead
         title={lang.translate('package.button.example.group.title')}
         clickBtn={openLink}
@@ -88,6 +86,6 @@ const ExampleGroup = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default ExampleGroup;

@@ -33,6 +33,9 @@
 
   "APPLICATIONS": "/applications",
   "APPLICATIONS_FACEBOOK_SDK": "/applications/facebook_sdk",
+  "APPLICATIONS_FACEBOOK_SDK_BASIC": "/applications/facebook_sdk/basic",
+  "APPLICATIONS_FACEBOOK_SDK_BASIC_API": "/applications/facebook_sdk/basic/api",
+  "APPLICATIONS_FACEBOOK_SDK_BASIC_COMPONENTS": "/applications/facebook_sdk/basic/components",
   "APPLICATIONS_LANGUAGES": "/applications/languages",
   "APPLICATIONS_VALIDATOR": "/applications/validator"
 }

@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import BTBList from '@blacktoolbox/react-list';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -8,14 +7,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const _listData = [
   {
@@ -64,9 +55,14 @@ const preListData = `const listData = [
         ]}
 ]`;
 
-const ExampleList = enhance(() => {
+const ExampleList = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-pkg-list-example-list">
+    <Page id="btb-pkg-list-example-list">
       <PageHead
         title={lang.translate('package.list.example.list.title')}
         clickBtn={openLink}
@@ -94,6 +90,6 @@ const ExampleList = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default ExampleList;

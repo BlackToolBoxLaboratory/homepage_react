@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
@@ -8,17 +7,14 @@ import { openLink } from '@src/utils/functions.js';
 import { Page, PageHead, Section } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
-const enhance = compose(
-  connect((state) => {
+const ExampleSlot = () => {
+  useSelector((state) => {
     return {
       languageSetting: state.language.languageSetting,
     };
-  })
-);
-
-const ExampleSlot = enhance(() => {
+  });
   return (
-    <Page className="btb-pkg-button-example-slot">
+    <Page id="btb-pkg-button-example-slot">
       <PageHead
         title={lang.translate('package.button.example.slot.title')}
         clickBtn={openLink}
@@ -58,6 +54,6 @@ const ExampleSlot = enhance(() => {
       </Section> */}
     </Page>
   );
-});
+};
 
 export default ExampleSlot;

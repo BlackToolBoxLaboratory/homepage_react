@@ -307,6 +307,8 @@ export default {
     },
   },
   application: {
+    version_colon: 'Version: ',
+    release_colon: 'Release Date: ',
     section: {
       installation: 'INSTALLATION',
       initializer: 'INITIALIZER',

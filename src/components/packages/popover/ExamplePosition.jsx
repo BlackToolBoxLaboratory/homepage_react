@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import BTBPopover from '@blacktoolbox/react-popover';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -8,14 +7,6 @@ import { openLink } from '@src/utils/functions.js';
 
 import { Page, PageHead, Section } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const preRender = `<BTBPopover showPosition={"left"} trigger={(<button>Left</button>)}>
         Example: Left
@@ -33,9 +24,14 @@ const preRender = `<BTBPopover showPosition={"left"} trigger={(<button>Left</but
         EXample: Right
 </BTBPopover>`;
 
-const ExamplePosition = enhance(() => {
+const ExamplePosition = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-pkg-popover-example-position">
+    <Page id="btb-pkg-popover-example-position">
       <PageHead
         title={lang.translate('package.popover.example.position.title')}
         clickBtn={openLink}
@@ -79,6 +75,6 @@ const ExamplePosition = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default ExamplePosition;

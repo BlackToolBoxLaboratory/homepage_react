@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router';
+import classnames from 'classnames';
+import { useHistory } from 'react-router';
 import BTBList from '@blacktoolbox/react-list';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import MENU from '@src/assets/definitions/menuList.js';
 import { ROUTE } from '@src/assets/definitions/constants';
 
-const Aside = withRouter((props) => {
+const Aside = (props) => {
+  const history = useHistory();
+  const { className, clickEntry = () => {}, ...asideProps } = props;
   const env = {
     state_activeID: useActiveState(),
   };
@@ -19,23 +22,23 @@ const Aside = withRouter((props) => {
     if (event.id === 'VERSION_1') {
       window.open('https://blacktoolboxlaboratory.github.io/react/v1/');
     } else {
-      if (ROUTE[event.id] !== props.history.location.pathname) {
-        props.history.push(ROUTE[event.id]);
+      if (ROUTE[event.id] !== history.location.pathname) {
+        history.push(ROUTE[event.id]);
         env.state_activeID.onChange(event.id);
-        props.clickEntry();
+        clickEntry();
       }
     }
   }
 
   function _getRouteID() {
     let result = Object.keys(ROUTE).find((key) => {
-      return ROUTE[key] === props.history.location.pathname;
+      return ROUTE[key] === history.location.pathname;
     });
     return result;
   }
 
   return (
-    <div className={['btb-layout-aside', props.className].join(' ')}>
+    <div className={classnames('module-layout-aside', className)} {...asideProps}>
       <BTBList
         className="aside_menu"
         dataList={translateMenu()}
@@ -45,7 +48,7 @@ const Aside = withRouter((props) => {
       />
     </div>
   );
-});
+};
 
 function useActiveState(defaultSate) {
   const [value, setState] = useState(defaultSate);

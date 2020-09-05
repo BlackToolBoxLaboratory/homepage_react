@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { useSelector } from 'react-redux';
 import BTBList from '@blacktoolbox/react-list';
 import BTBTable from '@blacktoolbox/react-table';
 
@@ -9,14 +8,6 @@ import { openLink } from '@src/utils/functions.js';
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 
 import packageInfo from './packageInfo.js';
-
-const enhance = compose(
-  connect((state) => {
-    return {
-      languageSetting: state.language.languageSetting,
-    };
-  })
-);
 
 const preInstall = `$ npm install --save @blacktoolbox/react-button
 
@@ -127,9 +118,14 @@ const tableSlotObj = {
   },
 };
 
-const BasicButton = enhance(() => {
+const BasicButton = () => {
+  useSelector((state) => {
+    return {
+      languageSetting: state.language.languageSetting,
+    };
+  });
   return (
-    <Page className="btb-pkg-button-basic">
+    <Page id="btb-pkg-button-basic">
       <PageHead
         title={lang.translate('package.button.name.button')}
         clickBtn={openLink}
@@ -170,6 +166,6 @@ const BasicButton = enhance(() => {
       </Section>
     </Page>
   );
-});
+};
 
 export default BasicButton;
