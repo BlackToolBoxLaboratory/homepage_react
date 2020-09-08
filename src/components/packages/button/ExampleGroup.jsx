@@ -8,12 +8,22 @@ import { openLink } from '@src/utils/functions.js';
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
-const preRender = `<BTBButtonGroup direction="horizontal" buttonList={buttonList} onEntryClick={onEntryClick} activeID="list_1">
+const preRender = `<BTBButtonGroup 
+        direction="horizontal" 
+        buttonList={buttonList} 
+        onEntryClick={onEntryClick} 
+        activeID="list_1"
+>
         Children 1
         <div>Children 2</div>
 </BTBButtonGroup>
 
-<BTBButtonGroup direction="vertical" buttonList={buttonList} onEntryClick={onEntryClick} defaultActiveID="children_1">
+<BTBButtonGroup 
+        direction="vertical" 
+        buttonList={buttonList} 
+        onEntryClick={onEntryClick} 
+        defaultActiveID="children_1"
+>
         Children 1
         <div>Children 2</div>
 </BTBButtonGroup>`;

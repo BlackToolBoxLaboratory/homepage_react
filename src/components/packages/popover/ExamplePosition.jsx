@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import BTBPopover from '@blacktoolbox/react-popover';
+import { Button as BTBButton } from '@blacktoolbox/react-button';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
@@ -21,7 +22,7 @@ const preRender = `<BTBPopover showPosition={"left"} trigger={(<button>Left</but
 </BTBPopover>
 
 <BTBPopover showPosition={"right"} trigger={(<button>Right</button>)}>
-        EXample: Right
+        Example: Right
 </BTBPopover>`;
 
 const ExamplePosition = () => {
@@ -50,23 +51,23 @@ const ExamplePosition = () => {
       </Section>
       <Section head={lang.translate('package.section.example')}>
         <div className="align_vertical">
-          <BTBPopover showPosition={'left'} trigger={<button>Left</button>}>
+          <BTBPopover showPosition={'left'} trigger={<BTBButton>Left</BTBButton>}>
             Example: Left
           </BTBPopover>
         </div>
         <div className="align_vertical">
-          <BTBPopover showPosition={'top'} trigger={<button>Top</button>}>
+          <BTBPopover showPosition={'top'} trigger={<BTBButton>Top</BTBButton>}>
             Example: Top
           </BTBPopover>
         </div>
         <div className="align_vertical">
-          <BTBPopover showPosition={'bottom'} trigger={<button>Bottom</button>}>
+          <BTBPopover showPosition={'bottom'} trigger={<BTBButton>Bottom</BTBButton>}>
             Example: Bottom
           </BTBPopover>
         </div>
         <div className="align_vertical">
-          <BTBPopover showPosition={'right'} trigger={<button>Right</button>}>
-            EXample: Right
+          <BTBPopover showPosition={'right'} trigger={<BTBButton>Right</BTBButton>}>
+            Example: Right
           </BTBPopover>
         </div>
       </Section>

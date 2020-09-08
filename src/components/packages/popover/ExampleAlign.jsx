@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import BTBPopover from '@blacktoolbox/react-popover';
+import { Button as BTBButton } from '@blacktoolbox/react-button';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
@@ -59,34 +60,34 @@ const ExampleAlign = () => {
       <Section head={lang.translate('package.section.example')}>
         <Block title={lang.translate('package.popover.example.vertical')}>
           <div className="align_vertical">
-            <BTBPopover showPosition={'top'} showAlign={'begin'} trigger={<button>Begin</button>}>
+            <BTBPopover showPosition={'top'} showAlign={'begin'} trigger={<BTBButton>Begin</BTBButton>}>
               Example: Begin
             </BTBPopover>
           </div>
           <div className="align_vertical">
-            <BTBPopover showPosition={'top'} showAlign={'center'} trigger={<button>Center</button>}>
+            <BTBPopover showPosition={'top'} showAlign={'center'} trigger={<BTBButton>Center</BTBButton>}>
               Example: Center
             </BTBPopover>
           </div>
           <div className="align_vertical">
-            <BTBPopover showPosition={'top'} showAlign={'end'} trigger={<button>End</button>}>
+            <BTBPopover showPosition={'top'} showAlign={'end'} trigger={<BTBButton>End</BTBButton>}>
               Example: End
             </BTBPopover>
           </div>
         </Block>
         <Block title={lang.translate('package.popover.example.horizontal')}>
           <div className="align_horizontal">
-            <BTBPopover showPosition={'left'} showAlign={'begin'} trigger={<button>Begin</button>}>
+            <BTBPopover showPosition={'left'} showAlign={'begin'} trigger={<BTBButton>Begin</BTBButton>}>
               Example: Begin
             </BTBPopover>
           </div>
           <div className="align_horizontal">
-            <BTBPopover showPosition={'left'} showAlign={'center'} trigger={<button>Center</button>}>
+            <BTBPopover showPosition={'left'} showAlign={'center'} trigger={<BTBButton>Center</BTBButton>}>
               Example: Center
             </BTBPopover>
           </div>
           <div className="align_horizontal">
-            <BTBPopover showPosition={'left'} showAlign={'end'} trigger={<button>End</button>}>
+            <BTBPopover showPosition={'left'} showAlign={'end'} trigger={<BTBButton>End</BTBButton>}>
               Example: End
             </BTBPopover>
           </div>

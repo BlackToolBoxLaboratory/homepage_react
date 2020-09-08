@@ -36,7 +36,10 @@ const preRender = `<BTBButton
         Click
 </BTBButton>
 
-<BTBButtonGroup buttonList={buttonList} styleObj={styleObj_group}>
+<BTBButtonGroup 
+        buttonList={buttonList} 
+        styleObj={styleObj_group}
+>
         <span>4</span>
         <span>5</span>
         <span>6</span>
