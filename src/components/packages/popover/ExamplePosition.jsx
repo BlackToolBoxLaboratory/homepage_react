@@ -9,19 +9,31 @@ import { openLink } from '@src/utils/functions.js';
 import { Page, PageHead, Section } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
-const preRender = `<BTBPopover showPosition={"left"} trigger={(<button>Left</button>)}>
+const preRender = `<BTBPopover 
+        showPosition={"left"} 
+        trigger={(<button>Left</button>)}
+>
         Example: Left
 </BTBPopover>
 
-<BTBPopover showPosition={"top"} trigger={(<button>Top</button>)}>
+<BTBPopover 
+        showPosition={"top"} 
+        trigger={(<button>Top</button>)}
+>
         Example: Top
 </BTBPopover>
 
-<BTBPopover showPosition={"bottom"} trigger={(<button>Bottom</button>)}>
+<BTBPopover 
+        showPosition={"bottom"} 
+        trigger={(<button>Bottom</button>)}
+>
         Example: Bottom
 </BTBPopover>
 
-<BTBPopover showPosition={"right"} trigger={(<button>Right</button>)}>
+<BTBPopover 
+        showPosition={"right"} 
+        trigger={(<button>Right</button>)}
+>
         Example: Right
 </BTBPopover>`;
 

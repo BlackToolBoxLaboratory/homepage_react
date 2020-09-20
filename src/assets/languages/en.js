@@ -45,6 +45,14 @@ export default {
           slot: 'Example: Slot',
         },
       },
+      message: {
+        root: 'Message',
+        basic: {
+          message: 'Basic: Message',
+          notice: 'Basic: Notice',
+        },
+      },
+      folder: 'ComponentFolder',
     },
     application: {
       root: 'Application',
@@ -63,9 +71,9 @@ export default {
     description:
       'React is the first framework of javascript when I join to the Frontend develipment club. Before that jQuery of curse is my first using when I am a software engineer. Here I aim to develop packages made with React. They are designed with basic logic for high degrees of freedom of customization and low dependency. While using, if you find some questions, bugs or issues. Or having some great ideas. Please feel free to let me know.',
     donate: {
-      '1': 'If you like all the works in BTB Lab. Please ',
-      '2': 'buy me a coffee',
-      '3': '.',
+      1: 'If you like all the works in BTB Lab. Please ',
+      2: 'buy me a coffee',
+      3: '.',
     },
   },
   overview: {
@@ -305,6 +313,33 @@ export default {
           title: 'Example: Style',
           description:
             'Here is going to show you about how to use the styleObj for inline CSS. Then we can use with the class name of node directly.',
+        },
+      },
+    },
+    message: {
+      name: 'Message',
+      description:
+        'This component is seperate in to two parts: dynamic and static. Because they are used in different way, they will have page to introduce for each.',
+    },
+    folder: {
+      name: 'Component-Folder',
+      description:
+        "This is a very tiny component for foldering components in some scenario. To avoid too much increase indent in HTML's nodes when there are layers and layers of single-children components. This component can do the help.",
+      property: {
+        components: "The components list and each entry will be the previous entry's children",
+      },
+      example: {
+        old: {
+          title: 'Original Nodes',
+          description:
+            'Assume we are using react-redux, react-router, as you see we have to add two provider in out index.js. We will get more layers, if we use components more which are application of context/provider.',
+        },
+        new: {
+          title: 'Folered Nodes',
+          description:
+            'As previous said, this component is made to folder the layers which are single-children components.',
+          notice:
+            'Because of most people will using ES-Lint. Here is suggested to use a temporary disable to react/jsx-key. Due to there are no necessary to render with key, unless you do really need in some special cases.',
         },
       },
     },

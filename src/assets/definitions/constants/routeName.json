@@ -29,6 +29,11 @@
   "PACKAGES_BUTTON_EXAMPLE_GROUP": "/packages/button/example/group",
   "PACKAGES_BUTTON_EXAMPLE_PAGINATION": "/packages/button/example/pagination",
   "PACKAGES_BUTTON_EXAMPLE_STYLE": "/packages/button/example/style",
+  "PACKAGES_MESSAGE": "/packages/message",
+  "PACKAGES_MESSAGE_BASIC": "/packages/message/basic",
+  "PACKAGES_MESSAGE_BASIC_MESSAGE": "/packages/message/basic/message",
+  "PACKAGES_MESSAGE_BASIC_NOTICE": "/packages/message/basic/notice",
+  "PACKAGES_FOLDER": "/packages/folder",
 
   "APPLICATIONS": "/applications",
   "APPLICATIONS_FACEBOOK_SDK": "/applications/facebook_sdk",

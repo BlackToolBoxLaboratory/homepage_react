@@ -147,6 +147,24 @@ const menuList = [
           },
         ],
       },
+      {
+        id: 'PACKAGES_MESSAGE',
+        title: 'Message',
+        langIndex: 'menu.packages.message.root',
+        defaultCollapsed: true,
+        children: [
+          {
+            id: 'PACKAGES_MESSAGE_BASIC_MESSAGE',
+            title: 'Basic',
+            langIndex: 'menu.packages.basic',
+          },
+        ],
+      },
+      {
+        id: 'PACKAGES_FOLDER',
+        title: 'Folder',
+        langIndex: 'menu.packages.folder',
+      },
     ],
   },
   {
@@ -158,6 +176,7 @@ const menuList = [
       {
         id: 'APPLICATIONS_FACEBOOK_SDK',
         title: 'FackBook SDK',
+        defaultCollapsed: true,
         langIndex: 'menu.application.fbsdk.root',
         children: [
           {

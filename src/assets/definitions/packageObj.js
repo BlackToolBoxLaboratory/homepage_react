@@ -27,8 +27,8 @@ const packageObj = {
     name: 'package.popover.name',
     routename: ROUTE.PACKAGES_POPOVER_BASIC,
     description: 'package.popover.description.basic',
-    version: '1.2.1',
-    updated: '2020-07-07',
+    version: '1.2.2',
+    updated: '2020-09-12',
     link: {
       github: 'https://github.com/BlackToolBoxLaboratory/react-popover',
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-popover',
@@ -45,6 +45,28 @@ const packageObj = {
     link: {
       github: 'https://github.com/BlackToolBoxLaboratory/react-button',
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-button',
+    },
+  },
+  message: {
+    name: 'package.message.name',
+    routename: ROUTE.PACKAGES_MESSAGE_BASIC,
+    description: 'package.message.description.basic',
+    version: '1.0.1',
+    updated: '2020-09-20',
+    link: {
+      github: 'https://github.com/BlackToolBoxLaboratory/react-message',
+      npm: 'https://www.npmjs.com/package/@blacktoolbox/react-message',
+    },
+  },
+  folder: {
+    name: 'package.folder.name',
+    routename: ROUTE.PACKAGES_FOLDER,
+    description: 'package.folder.description',
+    version: '1.0.1',
+    updated: '2020-09-20',
+    link: {
+      github: 'https://github.com/BlackToolBoxLaboratory/react-component-folder',
+      npm: 'https://www.npmjs.com/package/@blacktoolbox/react-component-folder',
     },
   },
   facebookSDK: {

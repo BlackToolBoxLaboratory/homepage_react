@@ -9,27 +9,51 @@ import { openLink } from '@src/utils/functions.js';
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
-const preRender = `<BTBPopover showPosition={"top"} showAlign={"begin"} trigger={(<button>Begin</button>)}>
+const preRender = `<BTBPopover 
+        showPosition={"top"} 
+        showAlign={"begin"} 
+        trigger={(<button>Begin</button>)}
+>
         Example: Begin
 </BTBPopover>
 
-<BTBPopover showPosition={"top"} showAlign={"center"} trigger={(<button>Center</button>)}>
+<BTBPopover 
+        showPosition={"top"} 
+        showAlign={"center"} 
+        trigger={(<button>Center</button>)}
+>
         Example: Center
 </BTBPopover>
 
-<BTBPopover showPosition={"top"} showAlign={"end"} trigger={(<button>End</button>)}>
+<BTBPopover 
+        showPosition={"top"} 
+        showAlign={"end"} 
+        trigger={(<button>End</button>)}
+>
         Example: End
 </BTBPopover>
 
-<BTBPopover showPosition={"left"} showAlign={"begin"} trigger={(<button>Begin</button>)}>
+<BTBPopover 
+        showPosition={"left"} 
+        showAlign={"begin"} 
+        trigger={(<button>Begin</button>)}
+>
         Example: Begin
 </BTBPopover>
 
-<BTBPopover showPosition={"left"} showAlign={"center"} trigger={(<button>Center</button>)}>
+<BTBPopover 
+        showPosition={"left"} 
+        showAlign={"center"} 
+        trigger={(<button>Center</button>)}
+>
         Example: Center
 </BTBPopover>
 
-<BTBPopover showPosition={"left"} showAlign={"end"} trigger={(<button>End</button>)}>
+<BTBPopover 
+        showPosition={"left"} 
+        showAlign={"end"} 
+        trigger={(<button>End</button>)}
+>
         Example: End
 </BTBPopover>`;
 

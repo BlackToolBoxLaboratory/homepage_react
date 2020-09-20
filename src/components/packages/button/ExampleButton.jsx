@@ -43,22 +43,22 @@ const ExampleButton = () => {
   function _onClick() {
     /* eslint-disable no-console */
     console.log('onClick');
-    /* eslint-rnable no-console */
+    /* eslint-enable no-console */
   }
   function _onPrependClick() {
     /* eslint-disable no-console */
     console.log('onPrependClick');
-    /* eslint-rnable no-console */
+    /* eslint-enable no-console */
   }
   function _onCoreClick() {
     /* eslint-disable no-console */
     console.log('onCoreClick');
-    /* eslint-rnable no-console */
+    /* eslint-enable no-console */
   }
   function _onAppendClick() {
     /* eslint-disable no-console */
     console.log('onAppendClick');
-    /* eslint-rnable no-console */
+    /* eslint-enable no-console */
   }
 
   return (

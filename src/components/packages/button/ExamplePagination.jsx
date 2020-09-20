@@ -133,13 +133,13 @@ const usePageState = (dafaultPageID) => {
     onEntryClick: (id, content) => {
       /* eslint-disable no-console */
       console.log('page', id, content);
-      /* eslint-rnable no-console */
+      /* eslint-enable no-console */
       updatePageID(id);
     },
     onPrevClick: (event) => {
       /* eslint-disable no-console */
       console.log('prev', event);
-      /* eslint-rnable no-console */
+      /* eslint-enable no-console */
       const minPage = 0;
       const [type, index] = activeID.split('_');
       const page = Math.max(parseInt(index, 10) - 1, minPage);
@@ -148,7 +148,7 @@ const usePageState = (dafaultPageID) => {
     onNextClick: (event) => {
       /* eslint-disable no-console */
       console.log('next', event);
-      /* eslint-rnable no-console */
+      /* eslint-enable no-console */
       const maxPage = 9;
       const [type, index] = activeID.split('_');
       const page = Math.min(parseInt(index, 10) + 1, maxPage);

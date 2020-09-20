@@ -48,7 +48,7 @@ const ExampleGroup = () => {
   const _onEntryClick = (id, content) => {
     /* eslint-disable no-console */
     console.log(id, content);
-    /* eslint-rnable no-console */
+    /* eslint-enable no-console */
   };
   return (
     <Page id="btb-pkg-button-example-group">

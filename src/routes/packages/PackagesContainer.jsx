@@ -21,6 +21,12 @@ const PackagesContaier = () => {
       <Route exact path={ROUTE.PACKAGES_BUTTON_BASIC}>
         <Redirect to={ROUTE.PACKAGES_BUTTON_BASIC_BUTTON} />
       </Route>
+      <Route exact path={ROUTE.PACKAGES_MESSAGE}>
+        <Redirect to={ROUTE.PACKAGES_MESSAGE_BASIC_MESSAGE} />
+      </Route>
+      <Route exact path={ROUTE.PACKAGES_MESSAGE_BASIC}>
+        <Redirect to={ROUTE.PACKAGES_MESSAGE_BASIC_MESSAGE} />
+      </Route>
       <Switch>
         <Route
           path={ROUTE.PACKAGES_LIST}
@@ -37,6 +43,14 @@ const PackagesContaier = () => {
         <Route
           path={ROUTE.PACKAGES_BUTTON}
           component={React.lazy(() => import('@src/routes/packages/button/ButtonContainer.jsx'))}
+        />
+        <Route
+          path={ROUTE.PACKAGES_MESSAGE}
+          component={React.lazy(() => import('@src/routes/packages/message/MessageContainer.jsx'))}
+        />
+        <Route
+          path={ROUTE.PACKAGES_FOLDER}
+          component={React.lazy(() => import('@src/routes/packages/folder/FolderContainer.jsx'))}
         />
       </Switch>
     </Suspense>
