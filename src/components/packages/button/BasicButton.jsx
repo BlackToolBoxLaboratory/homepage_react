@@ -125,7 +125,7 @@ const BasicButton = () => {
     };
   });
   return (
-    <Page id="btb-pkg-button-basic">
+    <Page id="btb-pkg-button-basic-button">
       <PageHead
         title={lang.translate('package.button.name.button')}
         clickBtn={openLink}

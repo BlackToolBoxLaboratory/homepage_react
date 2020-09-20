@@ -317,9 +317,18 @@ export default {
       },
     },
     message: {
-      name: 'Message',
-      description:
-        'This component is seperate in to two parts: dynamic and static. Because they are used in different way, they will have page to introduce for each.',
+      name: {
+        message: 'Message',
+        notice: 'Notice',
+      },
+      description: {
+        basic:
+          'This component is seperate in to two parts: dynamic and static. Because they are used in different way, they will have page to introduce for each.',
+        message:
+          'This component is seperate in to two parts: dynamic and static. And here is going to introduce the part of message.',
+        notice:
+          'This component is seperate in to two parts: dynamic and static. And here is going to introduce the part of notice.',
+      },
     },
     folder: {
       name: 'Component-Folder',

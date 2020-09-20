@@ -29,9 +29,9 @@ const BasicMessage = () => {
   //   });
   // };
   return (
-    <Page id="btb-pkg-message-basic-message">
+    <Page id="btb-pkg-message-basic-notice">
       <PageHead
-        title={lang.translate('package.message.name.message')}
+        title={lang.translate('package.message.name.notice')}
         clickBtn={openLink}
         linkList={packageInfo.linkList}
       />
@@ -44,7 +44,7 @@ const BasicMessage = () => {
           </>
         }
       >
-        <p>{lang.translate(packageInfo.descriptionMessage)}</p>
+        <p>{lang.translate(packageInfo.descriptionNotice)}</p>
       </Section>
       {/* <BTBButtonGroup buttonList={buttonList} onEntryClick={_onEntryClick} />
       <Notice type="red">123456748974915646531536</Notice>

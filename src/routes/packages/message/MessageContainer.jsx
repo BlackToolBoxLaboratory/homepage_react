@@ -11,6 +11,10 @@ const PackagesContaier = () => {
           path={ROUTE.PACKAGES_MESSAGE_BASIC_MESSAGE}
           component={React.lazy(() => import('@src/routes/packages/message/BasicMessageContainer.jsx'))}
         />
+        <Route
+          path={ROUTE.PACKAGES_MESSAGE_BASIC_NOTICE}
+          component={React.lazy(() => import('@src/routes/packages/message/BasicNoticeContainer.jsx'))}
+        />
       </Switch>
     </Suspense>
   );

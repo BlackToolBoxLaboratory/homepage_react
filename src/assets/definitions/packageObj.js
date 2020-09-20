@@ -51,6 +51,8 @@ const packageObj = {
     name: 'package.message.name',
     routename: ROUTE.PACKAGES_MESSAGE_BASIC,
     description: 'package.message.description.basic',
+    description_message: 'package.message.description.message',
+    description_notice: 'package.message.description.notice',
     version: '1.0.1',
     updated: '2020-09-20',
     link: {

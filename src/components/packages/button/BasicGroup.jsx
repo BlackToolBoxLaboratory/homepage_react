@@ -118,7 +118,7 @@ const BasicGroup = () => {
     };
   });
   return (
-    <Page id="btb-pkg-button-basic">
+    <Page id="btb-pkg-button-basic-group">
       <PageHead
         title={lang.translate('package.button.name.group')}
         clickBtn={openLink}

@@ -155,8 +155,13 @@ const menuList = [
         children: [
           {
             id: 'PACKAGES_MESSAGE_BASIC_MESSAGE',
-            title: 'Basic',
-            langIndex: 'menu.packages.basic',
+            title: 'Basic: Message',
+            langIndex: 'menu.packages.message.basic.message',
+          },
+          {
+            id: 'PACKAGES_MESSAGE_BASIC_NOTICE',
+            title: 'Basic: Notice',
+            langIndex: 'menu.packages.message.basic.notice',
           },
         ],
       },

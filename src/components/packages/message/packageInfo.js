@@ -3,7 +3,8 @@ import packageObj from '@src/assets/definitions/packageObj';
 const packageInfo = {
   version: packageObj.message.version,
   updated: packageObj.message.updated,
-  description: packageObj.message.description,
+  descriptionMessage: packageObj.message.description_message,
+  descriptionNotice: packageObj.message.description_notice,
   linkList: [
     {
       id: 'github',
