@@ -53,7 +53,7 @@ const packageObj = {
     description: 'package.message.description.basic',
     description_message: 'package.message.description.message',
     description_notice: 'package.message.description.notice',
-    version: '1.1.0',
+    version: '1.1.1',
     updated: '2020-09-27',
     link: {
       github: 'https://github.com/BlackToolBoxLaboratory/react-message',

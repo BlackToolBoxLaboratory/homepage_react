@@ -78,7 +78,7 @@
     "@blacktoolbox/react-component-folder": "^1.0.1",
     "@blacktoolbox/react-facebook-sdk": "^8.0.1",
     "@blacktoolbox/react-list": "^2.2.0",
-    "@blacktoolbox/react-message": "^1.1.0",
+    "@blacktoolbox/react-message": "^1.1.1",
     "@blacktoolbox/react-popover": "^1.2.2",
     "@blacktoolbox/react-table": "^1.4.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
