@@ -1,16 +1,147 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-// import { Notice, useMessage } from '@blacktoolbox/react-message';
-// import { ButtonGroup as BTBButtonGroup } from '@blacktoolbox/react-button';
-// import BTBTable from '@blacktoolbox/react-table';
+import BTBList from '@blacktoolbox/react-list';
+import BTBTable from '@blacktoolbox/react-table';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
-import { Page, PageHead, Section } from '@src/modules/pageLayout';
-// import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
-// const buttonList = ['blue', 'grey', 'green', 'red', 'yellow', 'light', 'dark'];
+const preInstall = `$ npm install --save @blacktoolbox/react-message
+
+import { MessageProvider, useMessage } from '@blacktoolbox/react-message';
+import '@blacktoolbox/react-message/lib/index.css'`;
+
+const preRender = `<MessageProvider
+        limit = " Number"
+        transitionInDuration = " Number "
+        transitionOutDuration = " Number "
+        duration = " Number "
+        horizontal = " String "
+        vertical = " String "
+        closeable= " Boolean "
+>
+        {page's content}
+</MessageProvider>`;
+
+const preUseMessage = `const message = useMessage();
+
+message.send({
+  type = " String",
+  context = " String || Node",
+  closerNode = " String || Node"
+})`;
+
+const nodeTree = [
+  {
+    id: 'message',
+    title: '<div> .btb-react-notice .notice-type-{type} .message_container',
+    children: [
+      {
+        id: 'context',
+        title: '<div> .content_context',
+      },
+      {
+        id: 'closer',
+        title: '<div> .content_closer',
+      },
+    ],
+  },
+];
+
+const tableHeadArr_property = [
+  { name: 'Property Name', id: 'title' },
+  { name: 'Type', id: 'type' },
+  { name: 'Default', id: 'default' },
+  { name: 'Notice', id: 'notice' },
+];
+
+const tableBodyArr_basic = [
+  {
+    title: 'limit',
+    type: 'package.paramType.number',
+    default: '5',
+    notice: 'package.message.property.limit',
+  },
+  {
+    title: 'transitionInDuration',
+    type: 'package.paramType.number',
+    default: '0.3 * 1000',
+    notice: 'package.message.property.transitionInDuration',
+  },
+  {
+    title: 'transitionOutDuration',
+    type: 'package.paramType.number',
+    default: '0.3 * 1000',
+    notice: 'package.message.property.transitionOutDuration',
+  },
+  {
+    title: 'duration',
+    type: 'package.paramType.number',
+    default: '3 * 1000',
+    notice: 'package.message.property.duration',
+  },
+  {
+    title: 'horizontal',
+    type: 'package.paramType.string',
+    default: "'cneter'",
+    notice: 'package.message.property.horizontal',
+  },
+  {
+    title: 'vertical',
+    type: 'package.paramType.string',
+    default: "'top'",
+    notice: 'package.message.property.vertical',
+  },
+  {
+    title: 'closeable',
+    type: 'package.paramType.boolean',
+    default: 'false',
+    notice: 'package.message.property.closeable',
+  },
+];
+
+const tableBodyArr_useMessage = [
+  {
+    title: 'type',
+    type: 'package.paramType.string',
+    default: "'normal'",
+    notice: 'package.message.property.type',
+  },
+  {
+    title: 'context',
+    type: 'package.paramType.string',
+    default: "'No message left.'",
+    notice: 'package.message.property.context',
+  },
+  {
+    title: 'closerNode',
+    type: 'package.paramType.string',
+    default: '<>&#x2716;</>',
+    notice: 'package.message.property.closerNode',
+  },
+];
+
+const tableSlotObj = {
+  'td-type': (data, column) => {
+    let sep = data[column.id].split('||');
+    let result = '';
+    if (sep.length > 0) {
+      result = sep
+        .map((item) => {
+          return lang.translate(item);
+        })
+        .join(' || ');
+    } else {
+      result = data[column.id] === 'useRef' ? 'useRef' : lang.translate(data[column.id]);
+    }
+    return result;
+  },
+  'td-notice': (data, column) => {
+    return lang.translate(data[column.id]);
+  },
+};
 
 const BasicMessage = () => {
   useSelector((state) => {
@@ -18,16 +149,6 @@ const BasicMessage = () => {
       languageSetting: state.language.languageSetting,
     };
   });
-  // const message = useMessage();
-
-  // const _onEntryClick = (id, content) => {
-  //   message.send({
-  //     type: content,
-  //     context:
-  //       'njophj ob opjbo boboip bpbhjk bfgkngfgsy chljvg fu odct dg kfv gj hgo ff utd  ctdo o vg kv hi uof cug cvt ov cdfo tu fi gjkg dj df dxyc gkh cg otu dc c ukdc utd t kfc gbv j123',
-  //     closerNode: 'V',
-  //   });
-  // };
   return (
     <Page id="btb-pkg-message-basic-message">
       <PageHead
@@ -46,9 +167,35 @@ const BasicMessage = () => {
       >
         <p>{lang.translate(packageInfo.descriptionMessage)}</p>
       </Section>
-      {/* <BTBButtonGroup buttonList={buttonList} onEntryClick={_onEntryClick} />
-      <Notice type="red">123456748974915646531536</Notice>
-      <Notice type="blue" context="nrsjsymgfjrsrt" /> */}
+      <Section head={lang.translate('package.section.installation')}>
+        <pre className="page_pre">{preInstall}</pre>
+      </Section>
+      <Section head={lang.translate('package.section.render')}>
+        <pre className="page_pre">{preRender}</pre>
+      </Section>
+      <Section head={lang.translate('package.section.parameters')}>
+        <BTBTable
+          className="page_table"
+          mode="list"
+          headData={tableHeadArr_property}
+          bodyData={tableBodyArr_basic}
+          slotObj={tableSlotObj}
+        />
+        <Block title="useMessage">
+          <p>{lang.translate('package.message.description.useMessage')}</p>
+          <pre className="page_pre">{preUseMessage}</pre>
+          <BTBTable
+            className="page_table"
+            mode="list"
+            headData={tableHeadArr_property}
+            bodyData={tableBodyArr_useMessage}
+            slotObj={tableSlotObj}
+          />
+        </Block>
+      </Section>
+      <Section head={lang.translate('package.section.nodeTree')}>
+        <BTBList className="page_node_tree" dataList={nodeTree} />
+      </Section>
     </Page>
   );
 };

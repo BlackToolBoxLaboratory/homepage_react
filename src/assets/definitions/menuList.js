@@ -163,6 +163,16 @@ const menuList = [
             title: 'Basic: Notice',
             langIndex: 'menu.packages.message.basic.notice',
           },
+          {
+            id: 'PACKAGES_MESSAGE_EXAMPLE_MESSAGE',
+            title: 'Basic: Message',
+            langIndex: 'menu.packages.message.example.message',
+          },
+          {
+            id: 'PACKAGES_MESSAGE_EXAMPLE_NOTICE',
+            title: 'Basic: Notice',
+            langIndex: 'menu.packages.message.example.notice',
+          },
         ],
       },
       {

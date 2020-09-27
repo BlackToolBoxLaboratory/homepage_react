@@ -51,6 +51,10 @@ export default {
           message: 'Basic: Message',
           notice: 'Basic: Notice',
         },
+        example: {
+          message: 'Example: Message',
+          notice: 'Example: Notice',
+        },
       },
       folder: 'ComponentFolder',
     },
@@ -97,6 +101,7 @@ export default {
       array: 'Array',
       object: 'Object',
       string: 'String',
+      number: 'Number',
       function: 'Function',
       boolean: 'Boolean',
       node: 'Node',
@@ -324,10 +329,39 @@ export default {
       description: {
         basic:
           'This component is seperate in to two parts: dynamic and static. Because they are used in different way, they will have page to introduce for each.',
-        message:
-          'This component is seperate in to two parts: dynamic and static. And here is going to introduce the part of message.',
+        message: "here designing my Message component in React's hook way, to allow showing messages dynamic.",
         notice:
-          'This component is seperate in to two parts: dynamic and static. And here is going to introduce the part of notice.',
+          'And the other side, if we are not using calling way to show the time-short message. Here is the option to render the component on the page directly as static messages.',
+        useMessage: 'The package is the first package to use hook degign of mine. Here introduce you the hook.',
+      },
+      property: {
+        limit: 'The Showing limitation of message.',
+        transitionInDuration: 'transition duration of showing. (miliisecond)',
+        transitionOutDuration: 'transition duration of disapear. (miliisecond)',
+        duration: 'Duration of showing the message. (miliisecond)',
+        horizontal: 'Horizonal position of message: left, center, right.',
+        vertical: 'Vertical position of message: top, middle, bottom.',
+        closeable: 'Able to cancel the message',
+        type:
+          'Type of message. The package included some style to use already. Of course you can customize by self. The type is just control the className. Optiopn: blue, grey, green, red, yello, light, dark.',
+        context: 'Context of message.',
+        closerNode:
+          'It works only if enable the parameter of closeable. The parameter is used to render the button of closer.',
+      },
+      example: {
+        message: {
+          title: 'Example: Message',
+          style: 'style',
+          event: 'Event',
+          description:
+            'Here is showing in the way of hook, to that we can dynamically send messages to inform the page viewer.',
+        },
+        notice: {
+          title: 'Example: Notice',
+          style: 'style',
+          description:
+            'If you do not need the dynamic way of showing message, there is still the way to render the component of message.',
+        },
       },
     },
     folder: {

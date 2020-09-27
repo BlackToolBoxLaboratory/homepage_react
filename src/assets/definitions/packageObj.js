@@ -48,13 +48,13 @@ const packageObj = {
     },
   },
   message: {
-    name: 'package.message.name',
+    name: 'package.message.name.message',
     routename: ROUTE.PACKAGES_MESSAGE_BASIC,
     description: 'package.message.description.basic',
     description_message: 'package.message.description.message',
     description_notice: 'package.message.description.notice',
-    version: '1.0.1',
-    updated: '2020-09-20',
+    version: '1.1.0',
+    updated: '2020-09-27',
     link: {
       github: 'https://github.com/BlackToolBoxLaboratory/react-message',
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-message',

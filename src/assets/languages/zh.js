@@ -51,6 +51,10 @@ export default {
           message: '基本介紹：動態訊息',
           notice: '基本介紹：靜態訊息',
         },
+        example: {
+          message: '範例：動態訊息',
+          notice: '範例：靜態訊息',
+        },
       },
       folder: '組件夾',
     },
@@ -97,6 +101,7 @@ export default {
       array: '陣列',
       object: '物件',
       string: '字串',
+      number: '數字',
       function: '函式',
       boolean: '布林',
       node: '節點',
@@ -313,14 +318,42 @@ export default {
     },
     message: {
       name: {
-        message: '動態訊息',
-        notice: '靜態訊息',
+        message: '訊息',
+        notice: '提醒',
       },
       description: {
         basic:
-          '這個套件主要分成兩種訊息呈現，動態的訊息通知（Message）、以及靜態的資訊提醒（Notice），使用的方式也稍有不同，所以會分別各自成一個頁面介紹之。',
-        message: '這個套件主要分成兩種訊息呈現，動態的訊息通知、以及靜態的資訊提醒。此部分將介紹關於動態訊息的使用。',
-        notice: '這個套件主要分成兩種訊息呈現，動態的訊息通知、以及靜態的資訊提醒。此部分將介紹關於靜態資訊的使用。',
+          '這個套件主要分成兩種訊息呈現，動態的訊息通知（Message）、以及靜態的提醒（Notice），使用的方式也稍有不同，所以會分別各自成一個頁面介紹之。',
+        message: '這個套件主要核心為訊息通知的功能，採用Hook的方式使用，以下介紹使用的方式。',
+        notice:
+          '套件的另外一個部分，則是靜態的提醒，本身的用途是提供訊息通知的基本外觀組件，倘若不是使用訊息通知的方式做動態提醒，亦可用直接渲染套件的方式，做靜態式的提醒。',
+        useMessage: '此套件是我的第一個用hook機制的套件，這邊將介紹關於hook的用法。',
+      },
+      property: {
+        limit: '訊息通知的顯示上限。',
+        transitionInDuration: '顯示的過場動畫時間。（millisecond）',
+        transitionOutDuration: '消失的過場動畫時間。（millisecond）',
+        duration: '訊息通知的存在時間。（millisecond）',
+        horizontal: '訊息通知的水平位置：left、center、right。',
+        vertical: '訊息通知的垂直位置：top、middle、bottom。',
+        closeable: '是否能強制關閉訊息通知。',
+        type:
+          '訊息通知種類，套件本身已經附帶一些基本的樣式，當然您也可以自行客製，這個參數只是用來控制className，現成樣式：blue、grey、green、red、yello、light、dark。',
+        context: '訊息通知的內容',
+        closerNode: '此參數只有當closeable為true的時候才有作用，是用來渲染closer的按鈕顯示。',
+      },
+      example: {
+        message: {
+          title: '範例：動態訊息',
+          style: '樣式',
+          event: '事件',
+          description: '這邊將示範藉由Hook的方式，顯示的動態訊息通知。',
+        },
+        notice: {
+          title: '範例：靜態訊息',
+          style: '樣式',
+          description: '倘若無須動態的訊息通知，亦能採用如一般套件的方式渲染。',
+        },
       },
     },
     folder: {
