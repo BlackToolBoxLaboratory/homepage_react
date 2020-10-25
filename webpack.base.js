@@ -19,6 +19,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, '/dist'),
+    open: true,
     openPage: 'react/v2/',
     disableHostCheck: true,
     compress: true,
@@ -37,9 +38,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@src': path.resolve(__dirname, './src'),
+      '@src': path.join(__dirname, './src'),
     },
-    modules: [path.resolve(__dirname, './node_modules'), path.resolve(__dirname, './src')],
+    modules: [path.join(__dirname, './node_modules'), path.join(__dirname, './src')],
   },
   performance: {
     hints: false,
@@ -47,7 +48,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'BTB Lab. | React',
-      favicon: path.resolve(__dirname, 'public/favicon.ico'),
+      favicon: path.join(__dirname, 'public/favicon.ico'),
       inject: true,
       hash: true,
       minify: {
@@ -55,7 +56,7 @@ module.exports = {
       },
       chunks: ['index', 'vendors'],
       filename: 'index.html',
-      template: path.resolve(__dirname, 'public/index.html'),
+      template: path.join(__dirname, 'public/index.html'),
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

@@ -11,9 +11,6 @@ const style_config = {
     },
     {
       loader: 'postcss-loader',
-      options: {
-        plugins: () => [require('autoprefixer')],
-      },
     },
     {
       loader: 'less-loader',

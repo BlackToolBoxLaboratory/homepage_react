@@ -9,24 +9,28 @@ const envParser = require('./utils/envParser.js');
 
 module.exports = merge(common, {
   mode: 'production',
+  devtool: 'hidden-source-map',
   optimization: {
     minimize: true,
     minimizer: [new OptimizeCSSAssetsPlugin({}), new terserPlugin()],
+    emitOnErrors: true,
     splitChunks: {
       chunks: 'async',
-      minSize: 30000,
+      minSize: 20000,
+      minRemainingSize: 0,
       maxSize: 0,
       minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
       automaticNameDelimiter: '~',
-      name: true,
+      enforceSizeThreshold: 50000,
       cacheGroups: {
-        vendors: {
+        defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
         },
         default: {
+          minChunks: 2,
           priority: -20,
           reuseExistingChunk: true,
         },

@@ -36,7 +36,7 @@ gulp.task('backupCodebase', async function (done) {
       'package-lock.json',
       'gulpfile.js',
       'sitemap.xml',
-      'webpack.base.js',
+      'webpack.common.js',
       'webpack.dev.js',
       'webpack.prod.js',
     ])

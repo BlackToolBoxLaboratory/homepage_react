@@ -7,6 +7,6 @@ const envParser = require('./utils/envParser.js');
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'eval',
   plugins: [new webpack.DefinePlugin(envParser(path.join(__dirname, '.env.development')))],
 });
