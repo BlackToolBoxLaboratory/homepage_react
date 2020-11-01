@@ -9,16 +9,16 @@ const fileConfig = require('./configs/file.config.js');
 
 module.exports = {
   entry: {
-    index: path.join(__dirname, '/src/index.jsx'),
+    index: path.join(__dirname, 'src/index.jsx'),
     vendors: ['react', 'react-dom', 'react-router-dom', '@fortawesome/react-fontawesome'],
   },
   output: {
     publicPath: '/react/v2/',
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, 'dist'),
     filename: '[name].js',
   },
   devServer: {
-    contentBase: path.join(__dirname, '/dist'),
+    contentBase: path.join(__dirname, 'dist'),
     open: true,
     openPage: 'react/v2/',
     disableHostCheck: true,
@@ -38,9 +38,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@src': path.join(__dirname, './src'),
+      '@src': path.join(__dirname, 'src'),
     },
-    modules: [path.join(__dirname, './node_modules'), path.join(__dirname, './src')],
+    modules: [path.join(__dirname, 'node_modules'), path.join(__dirname, 'src')],
   },
   performance: {
     hints: false,

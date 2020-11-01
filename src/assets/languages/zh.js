@@ -56,6 +56,9 @@ export default {
           notice: '範例：靜態訊息',
         },
       },
+      popup: {
+        root: '彈出視窗',
+      },
       folder: '組件夾',
     },
     application: {
@@ -84,6 +87,7 @@ export default {
     title: '套件總覽',
     version_colon: '發布版本：',
     release_colon: '發布日期：',
+    download_colon: '本周下載量：',
     downloads_colon: '每周下載量：',
   },
   package: {

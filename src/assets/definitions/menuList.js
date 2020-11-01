@@ -176,6 +176,19 @@ const menuList = [
         ],
       },
       {
+        id: 'PACKAGES_POPUP',
+        title: 'Popup',
+        langIndex: 'menu.packages.popup.root',
+        defaultCollapsed: true,
+        children: [
+          {
+            id: 'PACKAGES_POPUP_BASIC',
+            title: 'Basic',
+            langIndex: 'menu.packages.basic',
+          },
+        ],
+      },
+      {
         id: 'PACKAGES_FOLDER',
         title: 'Folder',
         langIndex: 'menu.packages.folder',

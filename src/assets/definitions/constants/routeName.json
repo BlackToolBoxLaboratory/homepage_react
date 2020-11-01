@@ -35,6 +35,8 @@
   "PACKAGES_MESSAGE_BASIC_NOTICE": "/packages/message/basic/notice",
   "PACKAGES_MESSAGE_EXAMPLE_MESSAGE": "/packages/message/example/message",
   "PACKAGES_MESSAGE_EXAMPLE_NOTICE": "/packages/message/example/notice",
+  "PACKAGES_POPUP": "/packages/popup",
+  "PACKAGES_POPUP_BASIC": "/packages/popup/basic",
   "PACKAGES_FOLDER": "/packages/folder",
 
   "APPLICATIONS": "/applications",

@@ -56,6 +56,9 @@ export default {
           notice: 'Example: Notice',
         },
       },
+      popup: {
+        root: 'Popup',
+      },
       folder: 'ComponentFolder',
     },
     application: {
@@ -84,6 +87,7 @@ export default {
     title: 'Overview',
     version_colon: 'Version: ',
     release_colon: 'Release Date: ',
+    download_colon: 'Latest Downloads: ',
     downloads_colon: 'Weekly Downloads: ',
   },
   package: {

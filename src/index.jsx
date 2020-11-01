@@ -4,12 +4,14 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { MessageProvider } from '@blacktoolbox/react-message';
+import { PopupProvider } from '@blacktoolbox/react-popup';
 import BTBComponentFolder from '@blacktoolbox/react-component-folder';
 
 import '@src/plugins/btblab-react-fb-sdk.js';
 import '@src/plugins/btblab-react-list.js';
 import '@src/plugins/btblab-react-table.js';
 import '@src/plugins/btblab-react-popover.js';
+import '@src/plugins/btblab-react-popup.js';
 import '@src/plugins/btblab-react-button.js';
 import '@src/plugins/btblab-react-message.js';
 import '@src/plugins/react-fontawesome.js';
@@ -25,6 +27,7 @@ const App = () => {
     <PersistGate persistor={persistor} />,
     <HashRouter />,
     <MessageProvider closeable />,
+    <PopupProvider />
   ];
   /* eslint-enable react/jsx-key */
   return (

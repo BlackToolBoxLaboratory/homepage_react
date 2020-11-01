@@ -44,14 +44,20 @@ const PackageWidget = (props) => {
         <span className="widget_value">{reviseISOString(props.data.date).date}</span>
       </p>
       {series[0].data.length ? (
-        <div className="widget_chart">
-          <p className="widget_row">
-            <span className="widget_entry">{lang.translate('overview.downloads_colon')}</span>
+        <>
+          <p>
+            <span className="widget_entry">{lang.translate('overview.download_colon')}</span>
+            <span className="widget_value">{state_Series.series[state_Series.series.length - 1]}</span>
           </p>
-          <Chart options={chartOptions} series={series} type="area" height="100%" />
-        </div>
+          <div className="widget_chart">
+            <p className="widget_row">
+              <span className="widget_entry">{lang.translate('overview.downloads_colon')}</span>
+            </p>
+            <Chart options={chartOptions} series={series} type="area" height="100%" />
+          </div>
+        </>
       ) : (
-        <div className="widget_chart grid-row justify-content-center align-items-center">
+        <div className="widget_chart chart-loading">
           <LoadingDiv />
         </div>
       )}
