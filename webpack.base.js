@@ -15,10 +15,11 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
-    publicPath: '/',
+    publicPath: '/react/v2/',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
+    contentBasePublicPath :  '/react/v2/',
     open: true,
     openPage: 'react/v2/',
     disableHostCheck: true,
@@ -30,7 +31,7 @@ module.exports = {
     inline: true,
     hot: true,
     historyApiFallback: {
-      rewrites: [{ from: /^\/$/, to: '/index.html' }],
+      rewrites: [{ from: /^\/react\/v2\/$/, to: '/index.html' }],
     },
   },
   module: {
