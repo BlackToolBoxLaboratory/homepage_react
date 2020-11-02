@@ -13,9 +13,9 @@ module.exports = {
     vendors: ['react', 'react-dom', 'react-router-dom', '@fortawesome/react-fontawesome'],
   },
   output: {
-    publicPath: '/react/v2/',
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
+    publicPath: '/',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -30,7 +30,7 @@ module.exports = {
     inline: true,
     hot: true,
     historyApiFallback: {
-      rewrites: [{ from: /\//, to: '/index.html' }],
+      rewrites: [{ from: /^\/$/, to: '/index.html' }],
     },
   },
   module: {
