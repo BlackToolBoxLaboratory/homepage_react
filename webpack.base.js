@@ -14,12 +14,12 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: '[name].[contenthash].js',
     publicPath: '/react/v2/',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    contentBasePublicPath :  '/react/v2/',
+    publicPath: '/react/v2/',
     open: true,
     openPage: 'react/v2/',
     disableHostCheck: true,
@@ -60,8 +60,8 @@ module.exports = {
       template: path.join(__dirname, 'public/index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css',
       ignoreOrder: false,
     }),
   ],
