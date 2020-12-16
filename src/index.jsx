@@ -14,6 +14,7 @@ import '@src/plugins/btblab-react-popover.js';
 import '@src/plugins/btblab-react-popup.js';
 import '@src/plugins/btblab-react-button.js';
 import '@src/plugins/btblab-react-message.js';
+import '@src/plugins/btblab-react-timeline.js';
 import '@src/plugins/react-fontawesome.js';
 import '@src/assets/styles/index.less';
 import { ROUTE } from '@src/assets/definitions/constants';

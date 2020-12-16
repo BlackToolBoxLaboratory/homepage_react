@@ -63,8 +63,8 @@ const Head = (props) => {
         <BTBPopover
           className="head_langPopover"
           {...env.state_showPopover}
-          showPosition={'bottom'}
-          showAlign={'center'}
+          // showPosition={'bottom'}
+          // showAlign={'center'}
           withArrow={true}
           trigger={<FAI className="item_button" icon={['fas', 'globe']} fixedWidth />}
         >

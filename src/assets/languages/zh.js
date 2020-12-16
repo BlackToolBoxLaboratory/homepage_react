@@ -59,6 +59,9 @@ export default {
       popup: {
         root: '彈出視窗',
       },
+      timeline: {
+        root: '時間線',
+      },
       folder: '組件夾',
     },
     application: {

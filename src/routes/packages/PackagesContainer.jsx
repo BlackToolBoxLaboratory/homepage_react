@@ -30,6 +30,9 @@ const PackagesContaier = () => {
       <Route exact path={ROUTE.PACKAGES_POPUP}>
         <Redirect to={ROUTE.PACKAGES_POPUP_BASIC} />
       </Route>
+      <Route exact path={ROUTE.PACKAGES_TIMELINE}>
+        <Redirect to={ROUTE.PACKAGES_TIMELINE_BASIC} />
+      </Route>
       <Switch>
         <Route
           path={ROUTE.PACKAGES_LIST}
@@ -54,6 +57,10 @@ const PackagesContaier = () => {
         <Route
           path={ROUTE.PACKAGES_POPUP}
           component={React.lazy(() => import('@src/routes/packages/popup/PopupContainer.jsx'))}
+        />
+        <Route
+          path={ROUTE.PACKAGES_TIMELINE}
+          component={React.lazy(() => import('@src/routes/packages/timeline/TimelineContainer.jsx'))}
         />
         <Route
           path={ROUTE.PACKAGES_FOLDER}

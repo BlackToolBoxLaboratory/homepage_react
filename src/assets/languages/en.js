@@ -59,6 +59,9 @@ export default {
       popup: {
         root: 'Popup',
       },
+      timeline: {
+        root: 'Timeline',
+      },
       folder: 'ComponentFolder',
     },
     application: {
