@@ -11,6 +11,14 @@ const PackagesContaier = () => {
           path={ROUTE.PACKAGES_TIMELINE_BASIC}
           component={React.lazy(() => import('@src/routes/packages/timeline/BasicContainer.jsx'))}
         />
+        <Route
+          path={ROUTE.PACKAGES_TIMELINE_EXAMPLE_POSITION}
+          component={React.lazy(() => import('@src/routes/packages/timeline/ExamplePositionContainer.jsx'))}
+        />
+        <Route
+          path={ROUTE.PACKAGES_TIMELINE_EXAMPLE_ALIGN}
+          component={React.lazy(() => import('@src/routes/packages/timeline/ExampleAlignContainer.jsx'))}
+        />
       </Switch>
     </Suspense>
   );

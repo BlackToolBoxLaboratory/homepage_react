@@ -28,7 +28,7 @@ const App = () => {
     <PersistGate persistor={persistor} />,
     <HashRouter />,
     <MessageProvider closeable />,
-    <PopupProvider />
+    <PopupProvider />,
   ];
   /* eslint-enable react/jsx-key */
   return (

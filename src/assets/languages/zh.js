@@ -61,6 +61,10 @@ export default {
       },
       timeline: {
         root: '時間線',
+        example: {
+          position: '範例：顯示位置',
+          align: '範例：對齊方式',
+        },
       },
       folder: '組件夾',
     },
@@ -258,12 +262,12 @@ export default {
         position: {
           title: '範例：顯示位置',
           description:
-            '簡單地顯示如何控制氣泡框顯示的位置。氣泡框預設啟用瀏覽器邊界偵測（autoDetect），當氣泡框超出瀏覽器邊界時，會依據顯示位置與對齊方式做濤整，此功能也可以關掉。',
+            '簡單地展示如何控制氣泡框顯示的位置。氣泡框預設啟用瀏覽器邊界偵測（autoDetect），當氣泡框超出瀏覽器邊界時，會依據顯示位置與對齊方式做濤整，此功能也可以關掉。',
         },
         align: {
           title: '範例：對齊方式',
           description:
-            '簡單地顯示如何控制氣泡框顯示的位置。氣泡框預設啟用瀏覽器邊界偵測（autoDetect），當氣泡框超出瀏覽器邊界時，會依據顯示位置與對齊方式做濤整，此功能也可以關掉。',
+            '簡單地展示如何控制氣泡框顯示的位置。氣泡框預設啟用瀏覽器邊界偵測（autoDetect），當氣泡框超出瀏覽器邊界時，會依據顯示位置與對齊方式做濤整，此功能也可以關掉。',
         },
       },
     },
@@ -360,6 +364,39 @@ export default {
           title: '範例：靜態訊息',
           style: '樣式',
           description: '倘若無須動態的訊息通知，亦能採用如一般套件的方式渲染。',
+        },
+      },
+    },
+    timeline: {
+      name: '時間線',
+      description: {
+        basic:
+          '時間線是一個很簡單也很常見的套件，主要用來呈現具有時間概念的資料，搭配一些套件，可以讓資料呈現變得更視覺友善。',
+      },
+      parameters: {
+        nodeObj:
+          '與typeObj搭配著使用，當有客製化渲染特定事件時，可以在nodeList中，將需要客製的事件轉成 nodeObj，以利 typeObj 的呼叫',
+        typeObj: '定義時間線上特定類別事件點的客製化渲染。',
+        styleObj: '套件中任何具有 className 的節點，皆能使用 styleObj 定義 inline CSS。',
+      },
+      property: {
+        nodeList: '時間線的事件清單資料。',
+        showPosition: '控制事件內容在時間線上顯示的位置：left、right、x、top、bottom、y。',
+        showAlign: '控制事件時間點對於時間線上的對齊位置：begin、center、end。',
+        typeObj: '客製化渲染事件顯示方式，搭配nodeList，可依據不同事件類別做不同的外觀渲染。',
+        styleObj: '客製化外觀。',
+        ref: '支援 React.ref。',
+      },
+      example: {
+        vertical: '垂直',
+        horizontal: '水平',
+        position: {
+          title: '範例：顯示位置',
+          description: '簡單地展示如何控制事件資料在時間線上顯示的位置。',
+        },
+        align: {
+          title: '範例：對齊方式',
+          description: '簡單地展示如何控制事件點與事件內容，在時間線上對齊的位置。',
         },
       },
     },

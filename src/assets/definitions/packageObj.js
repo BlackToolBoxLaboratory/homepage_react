@@ -60,6 +60,17 @@ const packageObj = {
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-message',
     },
   },
+  timeline: {
+    name: 'package.message.name.timeline',
+    routename: ROUTE.PACKAGES_TIMELINE_BASIC,
+    description: 'package.timeline.description.basic',
+    version: '1.0.1',
+    updated: '2020-12-20',
+    link: {
+      github: 'https://github.com/BlackToolBoxLaboratory/react-timeline',
+      npm: 'https://www.npmjs.com/package/@blacktoolbox/react-timeline',
+    },
+  },
   folder: {
     name: 'package.folder.name',
     routename: ROUTE.PACKAGES_FOLDER,

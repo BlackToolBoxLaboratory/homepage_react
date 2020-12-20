@@ -61,6 +61,10 @@ export default {
       },
       timeline: {
         root: 'Timeline',
+        example: {
+          position: 'Example: Position',
+          align: 'Example: Align',
+        },
       },
       folder: 'ComponentFolder',
     },
@@ -236,7 +240,7 @@ export default {
       name: 'Popover',
       description: {
         basic:
-          'This module of popover creator made with React can do the help to make a popover component to our page. The popover can do th e thing about popover and dropdown.',
+          'This module of popover creator made with React can do the help to make a popover component to our page. The popover can do the thing about popover and dropdown.',
       },
       parameters: {
         styleObj: 'Any className in this module could add inline CSS by styleObj.',
@@ -368,6 +372,39 @@ export default {
           style: 'style',
           description:
             'If you do not need the dynamic way of showing message, there is still the way to render the component of message.',
+        },
+      },
+    },
+    timeline: {
+      name: 'Timeline',
+      description: {
+        basic:
+          'This module of timeline creator made with React can do the help to make a timeline component to our page.',
+      },
+      parameters: {
+        nodeObj:
+          "Used with typeObj, when required to render some type of event specifically. It's available to defined nodeObj to the node you wanted in the nodeList.",
+        typeObj: 'Define some render function for specific node on timeline.',
+        styleObj: 'Any className in this module could add inline CSS by styleObj.',
+      },
+      property: {
+        nodeList: 'The event list in the timeline.',
+        showPosition: 'The position of node container to the timeline. Options in left, right, x, top, bottom, y.',
+        showAlign: 'The align of node on the timeline. Options in begin, center, end.',
+        typeObj: 'Object of render function for nodeList.',
+        styleObj: 'Object of customized style.',
+        ref: 'For the feature of React.ref.',
+      },
+      example: {
+        vertical: 'Vertical',
+        horizontal: 'Horizontal',
+        position: {
+          title: 'Example: Position',
+          description: 'Here is simply to show the position of node container to the timeline.',
+        },
+        align: {
+          title: 'Example: Align',
+          description: 'Here is simply to show the align of node on the timeline.',
         },
       },
     },

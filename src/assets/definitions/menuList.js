@@ -188,19 +188,29 @@ const menuList = [
       //     },
       //   ],
       // },
-      // {
-      //   id: 'PACKAGES_TIMELINE',
-      //   title: 'Timeline',
-      //   langIndex: 'menu.packages.timeline.root',
-      //   defaultCollapsed: true,
-      //   children: [
-      //     {
-      //       id: 'PACKAGES_TIMELINE_BASIC',
-      //       title: 'Basic',
-      //       langIndex: 'menu.packages.basic',
-      //     },
-      //   ],
-      // },
+      {
+        id: 'PACKAGES_TIMELINE',
+        title: 'Timeline',
+        langIndex: 'menu.packages.timeline.root',
+        defaultCollapsed: true,
+        children: [
+          {
+            id: 'PACKAGES_TIMELINE_BASIC',
+            title: 'Basic',
+            langIndex: 'menu.packages.basic',
+          },
+          {
+            id: 'PACKAGES_TIMELINE_EXAMPLE_POSITION',
+            title: 'Example: Position',
+            langIndex: 'menu.packages.timeline.example.position',
+          },
+          {
+            id: 'PACKAGES_TIMELINE_EXAMPLE_ALIGN',
+            title: 'Example: Align',
+            langIndex: 'menu.packages.timeline.example.align',
+          },
+        ],
+      },
       {
         id: 'PACKAGES_FOLDER',
         title: 'Folder',
