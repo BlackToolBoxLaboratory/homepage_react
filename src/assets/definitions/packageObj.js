@@ -61,7 +61,7 @@ const packageObj = {
     },
   },
   timeline: {
-    name: 'package.message.name.timeline',
+    name: 'package.timeline.name',
     routename: ROUTE.PACKAGES_TIMELINE_BASIC,
     description: 'package.timeline.description.basic',
     version: '1.0.1',
