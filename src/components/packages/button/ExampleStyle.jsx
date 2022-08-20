@@ -39,6 +39,10 @@ const preRender = `<BTBButton
 <BTBButtonGroup 
         buttonList={buttonList} 
         styleObj={styleObj_group}
+        buttonList={buttonList}
+        styleObj={styleObj_group}
+        childrenDisaled={[1]}
+        listDisaled={[0, 2]}
 >
         <span>4</span>
         <span>5</span>
@@ -96,7 +100,11 @@ const ExampleSlot = () => {
           </BTBButton>
         </Block>
         <Block title={lang.translate('package.button.name.group')}>
-          <BTBButtonGroup buttonList={buttonList} styleObj={styleObj_group}>
+          <BTBButtonGroup
+            buttonList={buttonList}
+            styleObj={styleObj_group}
+            childrenDisaled={[1]}
+            listDisaled={[0, 2]}>
             <span>4</span>
             <span>5</span>
             <span>6</span>

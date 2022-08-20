@@ -84,11 +84,6 @@ export default {
   about: {
     description:
       'React 是我入門前端時，第一個學習的JavaScript框架，事實上，在這之前也有使用 jQuery 的開發經驗，當我還是嵌入式系統的軟體工程師時。這邊主要基於 React 的設計思維，利用其 React 特有的性質來開發低依賴性、高自由度的套件，以利於完成客製化需求，如果這些套件在使用上有什麼困難，或者對於套件的開發有其他的想法或期待，還請多多與我分享您的想法。',
-    donate: {
-      1: '如果您喜歡 BTB Lab. 的開發成果與設計方式。您的',
-      2: '小小捐款',
-      3: '是給予我莫大的肯定與鼓勵。',
-    },
   },
   overview: {
     title: '套件總覽',
@@ -295,12 +290,15 @@ export default {
         prependNode: '定義按鈕前綴。',
         appendNode: '定義按鈕後綴。',
         direction: '群組按鈕顯示按鈕方向：horizontal、vertical。',
+        listDisaled: 'buttonList 的停用按鈕清單，內容值為按鈕的 order。',
+        childrenDisaled: 'children 的停用按鈕清單，內容值為按鈕的 order。',
         styleObj: '客製化外觀。',
         onButtonClick: '按鈕整體點擊事件函式。',
         onEntryClick: '群組按鈕下子按鈕的點擊事件函式。',
         onPrependClick: '按鈕前綴整體點擊事件函式。',
         onCoreClick: '按鈕內容整體點擊事件函式。',
         onAppendClick: '按鈕後綴整體點擊事件函式。',
+        disabled: '停用狀態按鈕將不觸發任何點擊事件。',
         ref: '支援 React.ref。',
       },
       nodeTree: {

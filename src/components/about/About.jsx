@@ -39,15 +39,6 @@ const About = () => {
         </a>
       </Section>
       <Divider />
-      <Section className="grid-row justify-content-center">
-        <span>{lang.translate('about.donate.1')}</span>
-        <a href="https://www.paypal.me/vannoel0628" target="_blank" rel="noreferrer">
-          <FAI icon={['fab', 'paypal']} fixedWidth />
-          <span>{lang.translate('about.donate.2')}</span>
-        </a>
-        <span>{lang.translate('about.donate.3')}</span>
-      </Section>
-      <Divider />
       {Object.keys(PACKAGE).map((entry) => {
         return (
           <div key={entry}>

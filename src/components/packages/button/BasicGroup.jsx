@@ -19,6 +19,8 @@ const preRender = `<BTBButtonGroup
         activeID=" String "
         defaultActiveID= "String"
         direction=" String "
+        listDisaled=" Array of String "
+        childrenDisaled=" Array of String "
         styleObj=" Object " 
         onEntryClick=" function(id, content){} ">
         {button group's content}
@@ -35,15 +37,15 @@ const nodeTree = [
     children: [
       {
         id: 'list',
-        title: '<div> .group_button .button_list-[order in buttonList]',
+        title: '<button> .group_button .button-disabled .button-active .button_list-[order in buttonList]',
       },
       {
         id: 'children',
-        title: '<div> .group_button .button_children-[order in children]',
+        title: '<button> .group_button .button-disabled .button-active .button_children-[order in children]',
       },
       {
         id: 'empty',
-        title: '<div> .group_button .button-empty',
+        title: '<button> .group_button .button-empty',
       },
     ],
   },
@@ -80,6 +82,18 @@ const tableBodyArr = [
     type: 'package.paramType.string',
     default: '"horizontal"',
     notice: 'package.button.property.direction',
+  },
+  {
+    title: 'listDisaled',
+    type: 'package.paramType.array',
+    default: '[]',
+    notice: 'package.button.property.listDisaled',
+  },
+  {
+    title: 'childrenDisaled',
+    type: 'package.paramType.array',
+    default: '[]',
+    notice: 'package.button.property.childrenDisaled',
   },
   { title: 'styleObj', type: 'package.paramType.object', default: '{}', notice: 'package.button.property.styleObj' },
   {

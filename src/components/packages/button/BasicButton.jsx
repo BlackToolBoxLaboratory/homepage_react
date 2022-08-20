@@ -21,7 +21,8 @@ const preRender = `<BTBButton
         onClick=" function(props){} " 
         onPrependClick=" function(props){} "
         onCoreClick=" function(props){} "
-        onAppendClick=" function(props){} ">
+        onAppendClick=" function(props){} "
+        disabled=" Boolean ">
         {button's content}
 </BTBButton>`;
 
@@ -32,7 +33,7 @@ const preStyleObj = `styleObj = {
 const nodeTree = [
   {
     id: 'button',
-    title: '<div> .btb-react-button',
+    title: '<button> .btb-react-button .button-disabled',
     children: [
       {
         id: 'prepend',
@@ -94,6 +95,12 @@ const tableBodyArr = [
     type: 'package.paramType.function',
     default: 'undefined',
     notice: 'package.button.property.onAppendClick',
+  },
+  {
+    title: 'disabled',
+    type: 'package.paramType.boolean',
+    default: 'undefined',
+    notice: 'package.button.property.disabled',
   },
   { title: 'ref', type: 'useRef', default: 'undefined', notice: 'package.button.property.ref' },
 ];

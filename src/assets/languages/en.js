@@ -84,11 +84,6 @@ export default {
   about: {
     description:
       'React is the first framework of javascript when I join to the Frontend develipment club. Before that jQuery of curse is my first using when I am a software engineer. Here I aim to develop packages made with React. They are designed with basic logic for high degrees of freedom of customization and low dependency. While using, if you find some questions, bugs or issues. Or having some great ideas. Please feel free to let me know.',
-    donate: {
-      1: 'If you like all the works in BTB Lab. Please ',
-      2: 'buy me a coffee',
-      3: '.',
-    },
   },
   overview: {
     title: 'Overview',
@@ -298,12 +293,15 @@ export default {
         prependNode: 'Definition of the prepend space of the button.',
         appendNode: 'Definition of the append space of the button.',
         direction: 'The direction of button group. Options in horizontal, vertical.',
+        listDisaled: 'List of disabled buttons for buttonList. The value is order of button.',
+        childrenDisaled: 'List of disabled buttons for children.The value is order of button.',
         styleObj: 'Object of customized style.',
         onButtonClick: 'Event function trigged when the button is clicked.',
         onEntryClick: 'Event function trigged when the sub-button(member) group is clicked.',
         onPrependClick: 'Event function trigged when preppend item of the button is clicked.',
         onCoreClick: 'Event function trigged when main of the button is clicked.',
         onAppendClick: 'Event function trigged when append item of the button is clicked.',
+        disabled: 'When button is disabled, it will not trigger any event function.',
         ref: 'For the feature of React.ref.',
       },
       nodeTree: {
