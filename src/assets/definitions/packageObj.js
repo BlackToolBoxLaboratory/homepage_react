@@ -64,8 +64,8 @@ const packageObj = {
     name: 'package.timeline.name',
     routename: ROUTE.PACKAGES_TIMELINE_BASIC,
     description: 'package.timeline.description.basic',
-    version: '1.0.1',
-    updated: '2020-12-20',
+    version: '1.0.2',
+    updated: '2022-08-21',
     link: {
       github: 'https://github.com/BlackToolBoxLaboratory/react-timeline',
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-timeline',
