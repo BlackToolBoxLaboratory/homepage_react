@@ -8,14 +8,6 @@ const Foot = (props) => {
     <div className={classnames('module-layout-foot', className)} {...footProps}>
       <div className="foot_navbar">
         <a
-          className="navbar_linkBtn linkBtn-paypal"
-          href="https://www.paypal.me/vannoel0628"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FAI icon={['fab', 'paypal']} fixedWidth />
-        </a>
-        <a
           className="navbar_linkBtn linkBtn-github"
           href="https://github.com/BlackToolBoxLaboratory"
           target="_blank"
@@ -49,7 +41,7 @@ const Foot = (props) => {
         </a>
         <a
           className="navbar_linkBtn linkBtn-email"
-          href="mailto://vannoel0628@gmail.com"
+          href="mailto:vannoel0628@gmail.com"
           target="_blank"
           rel="noreferrer"
         >

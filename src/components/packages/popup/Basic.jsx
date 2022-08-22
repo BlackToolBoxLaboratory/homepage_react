@@ -1,42 +1,145 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Button } from '@blacktoolbox/react-button';
-// import BTBList from '@blacktoolbox/react-list';
-// import BTBTable from '@blacktoolbox/react-table';
-import { usePopup } from '@blacktoolbox/react-popup';
+import BTBList from '@blacktoolbox/react-list';
+import BTBTable from '@blacktoolbox/react-table';
 
-// import { lang } from '@src/plugins/btblab-prototype-languages.js';
-// import { openLink } from '@src/utils/functions.js';
+import { lang } from '@src/plugins/btblab-prototype-languages.js';
+import { openLink } from '@src/utils/functions.js';
 
-// import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
-// import packageInfo from './packageInfo.js';
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
+import packageInfo from './packageInfo.js';
 
-import { Page } from '@src/modules/pageLayout';
+const preInstall = `$ npm install --save @blacktoolbox/react-popup
+
+import BTBPopup from '@blacktoolbox/react-popup'
+import '@blacktoolbox/react-popup/lib/index.css'`;
+
+const preRender = `<BTBPopup
+        defaultTransitionDuration=" Number "
+        defaultPersistent= " Boolean "
+        onShow=" function(){} "
+        onHide=" function(){} "/>
+        {popover's content}
+</BTBPopup>`;
+
+const preUsePopup = `const popup = usePopup();
+
+popup.show({
+  content: " String || Node"
+})
+
+popup.hide({
+  duration: " Number "
+})`;
+
+const nodeTree = [
+  {
+    id: 'popup',
+    title: '<div> .btb-react-popup .popup-showing',
+    children: [
+      {
+        id: 'mask',
+        title: '<div> .popup_mask',
+      },
+      {
+        id: 'container',
+        title: '<div> .popup_container',
+        children: [
+          {
+            id: 'content',
+            title: '<div> .container_content',
+          },
+        ]
+      },
+    ],
+  },
+];
+
+const tableHeadArr_property = [
+  { name: 'Property Name', id: 'title' },
+  { name: 'Type', id: 'type' },
+  { name: 'Default', id: 'default' },
+  { name: 'Notice', id: 'notice' },
+];
+
+const tableBodyArr_basic = [
+  {
+    title: 'defaultTransitionDuration',
+    type: 'package.paramType.number',
+    default: 'undefined',
+    notice: 'package.popup.property.defaultTransitionDuration',
+  },
+  {
+    title: 'defaultPersistent',
+    type: 'package.paramType.boolean',
+    default: 'false',
+    notice: 'package.popup.property.defaultPersistent',
+  },
+  {
+    title: 'onShow',
+    type: 'package.paramType.function',
+    default: '()=>{}',
+    notice: 'package.popup.property.onShow',
+  },
+  {
+    title: 'onHide',
+    type: 'package.paramType.function',
+    default: '()=>{}',
+    notice: 'package.popup.property.onHide',
+  },
+];
+
+const tableBodyArr_usePopup = [
+  {
+    title: 'content',
+    type: 'package.paramType.node||package.paramType.string',
+    default: "''",
+    notice: 'package.popup.property.content',
+  },
+  {
+    title: 'persistent',
+    type: 'package.paramType.boolean',
+    default: "defaultTransitionDuration",
+    notice: 'package.popup.property.persistent',
+  },
+  {
+    title: 'duration',
+    type: 'package.paramType.number',
+    default: "0.3 * 1000",
+    notice: 'package.popup.property.duration',
+  },
+];
+
+const tableSlotObj = {
+  'td-type': (data, column) => {
+    let sep = data[column.id].split('||');
+    let result = '';
+    if (sep.length > 0) {
+      result = sep
+        .map((item) => {
+          return lang.translate(item);
+        })
+        .join(' || ');
+    } else {
+      result = data[column.id] === 'useRef' ? 'useRef' : lang.translate(data[column.id]);
+    }
+    return result;
+  },
+  'td-notice': (data, column) => {
+    return lang.translate(data[column.id]);
+  },
+};
 
 const Basic = () => {
-  const popup = usePopup();
   useSelector((state) => {
     return {
       languageSetting: state.language.languageSetting,
     };
   });
 
-  const _clickTest = () => {
-    popup.show({
-      content: (
-        <div>
-          <Button onClick={_clickTest2}>Click to Close</Button>
-        </div>
-      ),
-    });
-  };
-  const _clickTest2 = () => {
-    popup.hide();
-  };
   return (
-    <Page id="btb-pkg-popover-basic">
-      <Button onClick={_clickTest}>Click to open</Button>
-      {/* <PageHead title={lang.translate('package.popover.name')} clickBtn={openLink} linkList={packageInfo.linkList} />
+    <Page id="btb-pkg-popup-basic">
+      <PageHead title={lang.translate('package.popup.name')} clickBtn={openLink} linkList={packageInfo.linkList} />
       <Section
         head={
           <>
@@ -62,14 +165,21 @@ const Basic = () => {
           bodyData={tableBodyArr_basic}
           slotObj={tableSlotObj}
         />
-        <Block title="styleObj">
-          <p>{lang.translate('package.popover.parameters.styleObj')}</p>
-          <pre className="page_pre">{preStyleObj}</pre>
+        <Block title="usePopup">
+          <p>{lang.translate('package.popup.description.usePopup')}</p>
+          <pre className="page_pre">{preUsePopup}</pre>
+          <BTBTable
+            className="page_table"
+            mode="list"
+            headData={tableHeadArr_property}
+            bodyData={tableBodyArr_usePopup}
+            slotObj={tableSlotObj}
+          />
         </Block>
       </Section>
       <Section head={lang.translate('package.section.nodeTree')}>
         <BTBList className="page_node_tree" dataList={nodeTree} />
-      </Section> */}
+      </Section>
     </Page>
   );
 };

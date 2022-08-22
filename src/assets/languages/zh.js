@@ -58,6 +58,7 @@ export default {
       },
       popup: {
         root: '彈出視窗',
+        example: '範例',
       },
       timeline: {
         root: '時間線',
@@ -365,11 +366,34 @@ export default {
         },
       },
     },
+    popup: {
+      name: '彈出視窗',
+      description: {
+        basic: '彈出視窗是一個很常見的功能，主要用於確認、提示、警示 ... 等互動操作，或者少量資訊、欄位的內容的顯示。',
+        usePopup: '此套件採用 hook 的方式控制顯示與隱藏，這邊將介紹關於hook的用法。',
+      },
+      property: {
+        defaultTransitionDuration: '預設消失的過場動畫時間。（millisecond）',
+        defaultPersistent: '預設是否鎖定背景點擊後關閉子視窗的功能。',
+        content: '彈出視窗內容。',
+        duration: '消失的過場動畫時間。（millisecond）',
+        persistent: '是否鎖定背景點擊後關閉子視窗的功能。',
+        onShow: '顯示氣泡框事件函式。',
+        onHide: '隱藏氣泡框事件函式。',
+      },
+      example: {
+        basic: {
+          title: '範例',
+          description:
+            '簡單地展示如何控制氣泡框顯示的位置。氣泡框預設啟用瀏覽器邊界偵測（autoDetect），當氣泡框超出瀏覽器邊界時，會依據顯示位置與對齊方式做濤整，此功能也可以關掉。',
+        },
+      },
+    },
     timeline: {
       name: '時間線',
       description: {
         basic:
-          '時間線是一個很簡單也很常見的套件，主要用來呈現具有時間概念的資料，搭配一些套件，可以讓資料呈現變得更視覺友善。',
+          '時間線是一個很簡單也很常見的功能，主要用來呈現具有時間概念的資料，搭配一些套件，可以讓資料呈現變得更視覺友善。',
       },
       parameters: {
         nodeObj:

@@ -99,7 +99,7 @@ const tableBodyArr = [
   {
     title: 'onEntryClick',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.button.property.onEntryClick',
   },
   { title: 'ref', type: 'useRef', default: 'undefined', notice: 'package.button.property.ref' },

@@ -9,9 +9,15 @@ import { openLink } from '@src/utils/functions.js';
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
-const preRender = `<BTBButton
-      onClick={_clickButton}
+const preRender = `<MessageProvider closeable>
+        {page's content}
+</MessageProvider>
+
+<BTBButton
+        onClick={_clickButton}
 >
+  Example
+</BTBButton>
 
 <BTBButtonGroup onEntryClick={_clickGroupButton}>
         <span id="blue"> Blue </span>

@@ -31,6 +31,7 @@ const App = () => {
     <PopupProvider />,
   ];
   /* eslint-enable react/jsx-key */
+
   return (
     <BTBComponentFolder components={componentList}>
       <Suspense fallback={<div>Loading...</div>}>

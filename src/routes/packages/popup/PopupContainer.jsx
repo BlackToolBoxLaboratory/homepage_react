@@ -11,6 +11,10 @@ const PackagesContaier = () => {
           path={ROUTE.PACKAGES_POPUP_BASIC}
           component={React.lazy(() => import('@src/routes/packages/popup/BasicContainer.jsx'))}
         />
+        <Route
+          path={ROUTE.PACKAGES_POPUP_EXAMPLE}
+          component={React.lazy(() => import('@src/routes/packages/popup/ExampleContainer.jsx'))}
+        />
       </Switch>
     </Suspense>
   );

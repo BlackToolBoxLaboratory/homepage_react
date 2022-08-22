@@ -58,6 +58,7 @@ export default {
       },
       popup: {
         root: 'Popup',
+        example: 'Example',
       },
       timeline: {
         root: 'Timeline',
@@ -338,10 +339,11 @@ export default {
       description: {
         basic:
           'This component is seperate in to two parts: dynamic and static. Because they are used in different way, they will have page to introduce for each.',
-        message: "here designing my Message component in React's hook way, to allow showing messages dynamic.",
+        message: "here designing my Message component in React's hook function, to allow showing messages dynamic.",
         notice:
           'And the other side, if we are not using calling way to show the time-short message. Here is the option to render the component on the page directly as static messages.',
-        useMessage: 'The package is the first package to use hook degign of mine. Here introduce you the hook.',
+        useMessage:
+          'The package is the first package to use hook degign of mine. Here introduce you the hook function.',
       },
       property: {
         limit: 'The Showing limitation of message.',
@@ -371,6 +373,23 @@ export default {
           description:
             'If you do not need the dynamic way of showing message, there is still the way to render the component of message.',
         },
+      },
+    },
+    popup: {
+      name: 'Popup',
+      description: {
+        basic:
+          'This module of popup is used for confirm, alert, warning, ... and so on, for interactive sub-windows. Or for showing a few information or form inputs of data.',
+        usePopup: 'The module is controlled to show and hide via hook function. Here introduce you the hook function.',
+      },
+      property: {
+        defaultTransitionDuration: 'Default value to transition duration of disapear. (miliisecond)',
+        defaultPersistent: 'Default value to enable/disable to hide popup after background clicked.',
+        content: 'Content of popup.',
+        duration: 'Transition duration of disapear. (miliisecond)',
+        persistent: 'Enable/disable to hide popup after background clicked.',
+        onShow: 'Event function trigged when popover is going to show.',
+        onHide: 'Event function trigged when popover is going to hidd.',
       },
     },
     timeline: {

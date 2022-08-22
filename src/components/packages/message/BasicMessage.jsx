@@ -28,23 +28,35 @@ const preRender = `<MessageProvider
 const preUseMessage = `const message = useMessage();
 
 message.send({
-  type = " String",
-  context = " String || Node",
-  closerNode = " String || Node"
+  type = " String ",
+  context = " String || Node ",
+  closerNode = " String || Node "
 })`;
 
 const nodeTree = [
   {
     id: 'message',
-    title: '<div> .btb-react-notice .notice-type-{type} .message_container',
+    title: '<div> .btb-react-message .message-horizontal-{horizontal} message-vertical-{vertical}',
     children: [
       {
-        id: 'context',
-        title: '<div> .content_context',
-      },
-      {
-        id: 'closer',
-        title: '<div> .content_closer',
+        id: 'container',
+        title: '<div> .message_container .container-showing',
+        children: [
+          {
+            id: 'notice',
+            title: '<div> .btb-react-notice .container_content .notice-type-{type}',
+            children: [
+              {
+                id: 'context',
+                title: '<div> .content_context',
+              },
+              {
+                id: 'closer',
+                title: '<div> .content_closer',
+              },
+            ]
+          },
+        ]
       },
     ],
   },

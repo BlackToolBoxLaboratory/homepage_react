@@ -126,13 +126,13 @@ const tableBodyArr_basic = [
   {
     title: 'onEntryClick',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.list.property.onEntryClick',
   },
   {
     title: 'onToggle',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.list.property.onToggle',
   },
   { title: 'ref', type: 'useRef', default: 'undefined', notice: 'package.list.property.ref' },

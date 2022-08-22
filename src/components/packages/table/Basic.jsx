@@ -177,7 +177,7 @@ const tableBodyArr_basic = [
   {
     title: 'onDataClick',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.table.property.onDataClick',
   },
   { title: 'ref', type: 'useRef', default: 'undefined', notice: 'package.table.property.ref' },

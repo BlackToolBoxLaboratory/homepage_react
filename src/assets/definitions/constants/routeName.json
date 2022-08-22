@@ -37,6 +37,7 @@
   "PACKAGES_MESSAGE_EXAMPLE_NOTICE": "/packages/message/example/notice",
   "PACKAGES_POPUP": "/packages/popup",
   "PACKAGES_POPUP_BASIC": "/packages/popup/basic",
+  "PACKAGES_POPUP_EXAMPLE": "/packages/popup/example",
   "PACKAGES_TIMELINE": "/packages/timeline",
   "PACKAGES_TIMELINE_BASIC": "/packages/timeline/basic",
   "PACKAGES_TIMELINE_EXAMPLE_POSITION": "/packages/timeline/example/position",

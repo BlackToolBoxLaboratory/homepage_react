@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import BTBTimeline from '@blacktoolbox/react-timeline';
-import { Button as BTBButton } from '@blacktoolbox/react-button';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';

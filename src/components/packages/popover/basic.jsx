@@ -97,19 +97,19 @@ const tableBodyArr_basic = [
   {
     title: 'onToggle',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.popover.property.onToggle',
   },
   {
     title: 'onShow',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.popover.property.onShow',
   },
   {
     title: 'onHide',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.popover.property.onHide',
   },
   { title: 'ref', type: 'useRef', default: 'undefined', notice: 'package.popover.property.ref' },

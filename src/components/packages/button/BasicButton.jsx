@@ -75,25 +75,25 @@ const tableBodyArr = [
   {
     title: 'onClick',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.button.property.onButtonClick',
   },
   {
     title: 'onPrependClick',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.button.property.onPrependClick',
   },
   {
     title: 'onCoreClick',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.button.property.onCoreClick',
   },
   {
     title: 'onAppendClick',
     type: 'package.paramType.function',
-    default: 'undefined',
+    default: '()=>{}',
     notice: 'package.button.property.onAppendClick',
   },
   {
