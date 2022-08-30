@@ -15,7 +15,7 @@ const RightList = ({data, handler}) => {
               <li className='userList-entry'>
                 <div className='userList-info'>{entry['name']}</div>
                 <div className='userList-moveButton' onClick={() => {changeUserHandler(entry);}}><FA icon={['fas', 'caret-square-left']} fixedWidth/></div>
-                <div className='userList-deleteButton' onClick={() => {removeUserHandler(entry);}}><FA icon={['fas', 'trash']} fixedWidth/></div>
+                <div className='userList-deleteButton' onClick={() => {removeUserHandler(entry);}}><FA icon={['fas', 'trash-alt']} fixedWidth/></div>
               </li>
             );
             return content_entry;

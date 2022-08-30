@@ -48,7 +48,7 @@ class Example extends Component {
                     content_datalist_tr.push(
                       <li className='userList-entry'>
                         <div className='userList-info'>{entry['name'].substring(0, 1).toUpperCase() + entry['name'].substring(1)}</div>
-                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler(entry['ID']);}}><FA icon={['fas', 'trash']} fixedWidth/></div>
+                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler(entry['ID']);}}><FA icon={['fas', 'trash-alt']} fixedWidth/></div>
                       </li>
                     );
                     return content_datalist_tr;

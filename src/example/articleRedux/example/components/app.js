@@ -57,7 +57,7 @@ class App extends Component {
                       <li className='userList-entry'>
                         <div className='userList-info'>{entry['name']}</div>
                         <div className='userList-moveButton' onClick={() => {this._moveHandler('right', entry['uId']);}}><FA icon={['fas', 'caret-square-right']} fixedWidth/></div>
-                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler('left', entry['uId']);}}><FA icon={['fas', 'trash']} fixedWidth/></div>
+                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler('left', entry['uId']);}}><FA icon={['fas', 'trash-alt']} fixedWidth/></div>
                       </li>
                     );
                     return content_datalist_tr;
@@ -75,8 +75,8 @@ class App extends Component {
                     content_datalist_tr.push(
                       <li className='userList-entry'>
                         <div className='userList-info'>{entry['name']}</div>
-                        <div className='userList-moveButton' onClick={() => {this._moveHandler('left', entry['uId']);}}><FA icon={['fas', 'caret-square-right']} fixedWidth/></div>
-                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler('right', entry['uId']);}}><FA icon={['fas', 'trash']} fixedWidth/></div>
+                        <div className='userList-moveButton' onClick={() => {this._moveHandler('left', entry['uId']);}}><FA icon={['fas', 'caret-square-left']} fixedWidth/></div>
+                        <div className='userList-deleteButton' onClick={() => {this._deleteHandler('right', entry['uId']);}}><FA icon={['fas', 'trash-alt']} fixedWidth/></div>
                       </li>
                     );
                     return content_datalist_tr;
