@@ -82,6 +82,17 @@ const packageObj = {
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-timeline',
     },
   },
+  localstorage: {
+    name: 'package.localstorage.name',
+    routename: ROUTE.PACKAGES_LOCALSTORAGE,
+    description: 'package.localstorage.description',
+    version: '1.0.2',
+    updated: '2022-08-21',
+    link: {
+      github: 'https://github.com/BlackToolBoxLaboratory/react-sync-localstorage',
+      npm: 'https://www.npmjs.com/package/@blacktoolbox/react-sync-localstorage',
+    },
+  },
   folder: {
     name: 'package.folder.name',
     routename: ROUTE.PACKAGES_FOLDER,

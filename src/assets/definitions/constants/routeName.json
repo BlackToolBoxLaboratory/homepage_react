@@ -42,6 +42,7 @@
   "PACKAGES_TIMELINE_BASIC": "/packages/timeline/basic",
   "PACKAGES_TIMELINE_EXAMPLE_POSITION": "/packages/timeline/example/position",
   "PACKAGES_TIMELINE_EXAMPLE_ALIGN": "/packages/timeline/example/align",
+  "PACKAGES_LOCALSTORAGE": "/packages/localstorage",
   "PACKAGES_FOLDER": "/packages/folder",
 
   "APPLICATIONS": "/applications",

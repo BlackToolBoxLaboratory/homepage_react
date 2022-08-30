@@ -63,6 +63,10 @@ const PackagesContaier = () => {
           component={React.lazy(() => import('@src/routes/packages/timeline/TimelineContainer.jsx'))}
         />
         <Route
+          path={ROUTE.PACKAGES_LOCALSTORAGE}
+          component={React.lazy(() => import('@src/routes/packages/localstorage/LocalstorageContainer.jsx'))}
+        />
+        <Route
           path={ROUTE.PACKAGES_FOLDER}
           component={React.lazy(() => import('@src/routes/packages/folder/FolderContainer.jsx'))}
         />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
+import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
 import reviseISOString from '@src/../utils/reviseISOString.js';
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
@@ -33,7 +34,17 @@ const PackageWidget = (props) => {
 
   return (
     <div id={'btb-overview-package-widget'} className={props.className}>
-      <p className="widget_title">{props.data.name}</p>
+      <p className="widget_title">
+        {props.data.name}
+        <a
+          className="inline-link"
+          href={`https://www.npmjs.com/package/${props.data.name}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FAI icon={['fas', 'external-link-alt']} fixedWidth size="xs"/>
+        </a>
+      </p>
       <p className="widget_description">{props.data.description}</p>
       <p>
         <span className="widget_entry">{lang.translate('overview.version_colon')}</span>

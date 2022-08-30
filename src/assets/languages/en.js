@@ -67,6 +67,7 @@ export default {
           align: 'Example: Align',
         },
       },
+      localstorage: 'SyncLocalstorage',
       folder: 'ComponentFolder',
     },
     application: {
@@ -423,6 +424,16 @@ export default {
           title: 'Example: Align',
           description: 'Here is simply to show the align of node on the timeline.',
         },
+      },
+    },
+    localstorage: {
+      name: 'Sync-Localstorage',
+      description:
+        'We can use original lacalstorage function or using react-redux with redux-persist. However this is a tiny component for some scenario of using lacalstorage without react-redux.',
+      property: {
+        name: 'The key name in localstorage, suggested to use prject or product name for recognization.',
+        useSyncLocalStorage:
+          'The module controll localstorage via hook function. Here introduce you the hook function.',
       },
     },
     folder: {

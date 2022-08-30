@@ -217,6 +217,11 @@ const menuList = [
         ],
       },
       {
+        id: 'PACKAGES_LOCALSTORAGE',
+        title: 'Localstorage',
+        langIndex: 'menu.packages.localstorage',
+      },
+      {
         id: 'PACKAGES_FOLDER',
         title: 'Folder',
         langIndex: 'menu.packages.folder',

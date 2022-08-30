@@ -67,6 +67,7 @@ export default {
           align: '範例：對齊方式',
         },
       },
+      localstorage: '同步本地儲存',
       folder: '組件夾',
     },
     application: {
@@ -420,6 +421,15 @@ export default {
           title: '範例：對齊方式',
           description: '簡單地展示如何控制事件點與事件內容，在時間線上對齊的位置。',
         },
+      },
+    },
+    localstorage: {
+      name: '同步本地儲存',
+      description:
+        '同步存取本地儲存的方式，除了原生操作之外，也可以配合 react-redux，使用 redux-persist，然而這是一個微小的工具性質組件，採用 React Hook 的方式設計，提供給不需要Redux，卻又需要同步存取本地儲存的情境。',
+      property: {
+        name: '本地儲存區儲存的鍵名，可改為產品或專案名稱，以利識別。',
+        useSyncLocalStorage: '此套件採用 hook 的方式存取本地儲存，這邊將介紹關於hook的用法。',
       },
     },
     folder: {

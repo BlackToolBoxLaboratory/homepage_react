@@ -5,6 +5,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { MessageProvider } from '@blacktoolbox/react-message';
 import { PopupProvider } from '@blacktoolbox/react-popup';
+import { SyncLocalStorageProvider } from '@blacktoolbox/react-sync-localstorage';
 import BTBComponentFolder from '@blacktoolbox/react-component-folder';
 
 import '@src/plugins/btblab-react-fb-sdk.js';
@@ -29,6 +30,7 @@ const App = () => {
     <HashRouter />,
     <MessageProvider closeable />,
     <PopupProvider />,
+    <SyncLocalStorageProvider name="btb-react-lib"/>
   ];
   /* eslint-enable react/jsx-key */
 
