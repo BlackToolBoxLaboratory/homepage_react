@@ -15,7 +15,7 @@ Now you can clone our code and run it by these commands:
     npm install
     npm start
 
-Then, welcome to [http://localhost:9000](http://localhost:9000). 
+Then, welcome to [http://localhost:8000](http://localhost:8000). 
 
 # Issue
 

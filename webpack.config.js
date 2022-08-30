@@ -13,7 +13,7 @@ const webpack_config = {
     "devServer": {
         "contentBase": path.join(__dirname, distributePath),
         "compress": true,
-        "port": 9000,
+        "port": 8000,
         "inline": true
     },
     "entry": {

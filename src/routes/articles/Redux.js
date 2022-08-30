@@ -15,7 +15,7 @@ const mainTitle = `Redux Introduction`;
 const mainDescriptionStr = `Conceptual introduction and simple example`;
 
 const introductionTitle = `INTRODUCTION`;
-const introductionContent = (<span>{`After knowing the concept of Flux. We are going to learn the concept of `}<a target='_blank' href='https://www.npmjs.com/package/redux'>{`Redux`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{` and use in our example for practice. My source code of example is `}<a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/example'>{`here`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
+const introductionContent = (<span>{`After knowing the concept of Flux. We are going to learn the concept of `}<a target='_blank' href='https://www.npmjs.com/package/redux'>{`Redux`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{` and use in our example for practice. My source code of example is `}<a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/staging/version-1.0.0/src/example/articleRedux/example'>{`here`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
 
 const introductionExampleTitle = `Example`;
 const introductionExampleContent = `For Redux's example, I made a little different from Flux's.`;
@@ -44,7 +44,7 @@ const productionContent = `Here we go! This is the example in Redux version.`;
 
 const advancedTitle = `ADVANCED`;
 const advancedContent = `Same as our article of Flux, we will need read / write data by server API. Here is Redux's version.`;
-const advancedServerContent = (<span>{`Then, here is the User List work with server API. And also here is the source code of `}<a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/master/src/example/articleRedux/exampleRedux_server'>{`Redux's example with server`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a></span>);
+const advancedServerContent = (<span>{`Then, here is the User List work with server API. And also here is the source code of `}<a target='_blank' href='https://github.com/BlackToolBoxLaboratory/blacktbox-demo/tree/staging/version-1.0.0/src/example/articleRedux/exampleRedux_server'>{`Redux's example with server`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a></span>);
 
 const EXAMPLE_BASIC_ALGORITHM = 
 `<!-- Require or Import what you need -->

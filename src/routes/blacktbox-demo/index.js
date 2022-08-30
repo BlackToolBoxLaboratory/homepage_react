@@ -10,7 +10,7 @@ const mainDescriptionStr = `The Blacktbox-demo shows demonstrations for all the 
 
 const setupTitle = `SETUP`;
 const setupContent = (<span>{`Firstly, you need `}<a target='_blank' href='https://nodejs.org/en/'>{`Node.js`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a> and <a target='_blank' href='https://www.npmjs.com'>{`NPM`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`. And then you can clone our code and run it by these commands:`}</span>);
-const setupFinishedContent = (<span>{`Welcome to `}<a target='_blank' href='http://localhost:9000'>{`http://localhost:9000`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
+const setupFinishedContent = (<span>{`Welcome to `}<a target='_blank' href='http://localhost:8000'>{`http://localhost:8000`}<FA icon={['fas', 'external-link-alt']} fixedWidth/></a>{`.`}</span>);
 
 const libraryListTitle = `BLB LIBRARY LIST`;
 const libraryListContent = `This is the list of BLB Lab's API demonstrated here.`;
