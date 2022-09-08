@@ -23,7 +23,7 @@ const About = () => {
 
   return (
     <Page id="btb-about">
-      <Section className="about_title grid-row direction-column align-items-center">
+      <Section className="about_title">
         <img className="title_image" src={logoPath} alt="BTB_React" />
         <h1 className="title_main hidden-down-md">Black Tool Box Laboratory</h1>
         <h1 className="title_main hidden-up-md">BTB Lab.</h1>
@@ -32,7 +32,7 @@ const About = () => {
       <Section>
         <span>{lang.translate('about.description')}</span>
       </Section>
-      <Section className="grid-row justify-content-center">
+      <Section className="about_link">
         <a href="mailto:vannoel0628@gmail.com" target="_blank" rel="noreferrer">
           <FAI icon={['far', 'envelope']} fixedWidth />
           <span>vannoel0628@gmail.com</span>
