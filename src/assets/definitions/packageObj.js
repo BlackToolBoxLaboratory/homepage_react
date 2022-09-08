@@ -40,8 +40,8 @@ const packageObj = {
     description: 'package.button.description.basic',
     description_button: 'package.button.description.button',
     description_group: 'package.button.description.group',
-    version: '1.3.2',
-    updated: '2022-08-21',
+    version: '1.3.3',
+    updated: '2022-09-08',
     link: {
       github: 'https://github.com/BlackToolBoxLaboratory/react-button',
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-button',
