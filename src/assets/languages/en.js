@@ -140,6 +140,7 @@ export default {
       entryObj: {
         id: 'Identity of entry.',
         title: 'Name of entry.',
+        href: 'Link of entry. Used for menu link',
         defaultCollapsed: 'Default value to collapsed of extend.',
         children: 'sublist.',
       },

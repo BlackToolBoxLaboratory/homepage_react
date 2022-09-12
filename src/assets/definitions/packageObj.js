@@ -5,8 +5,8 @@ const packageObj = {
     name: 'package.list.name',
     routename: ROUTE.PACKAGES_LIST_BASIC,
     description: 'package.list.description.basic',
-    version: '2.2.1',
-    updated: '2022-08-21',
+    version: '2.3,0',
+    updated: '2022-09-12',
     link: {
       github: 'https://github.com/BlackToolBoxLaboratory/react-list',
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-list',

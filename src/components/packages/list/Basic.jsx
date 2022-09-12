@@ -26,6 +26,7 @@ const preRender = `<BTBList
 const preEntryObj = `entryObj = {
         id: '',
         title: '',
+        href: '',
         defaultCollapsed: false,
         children: []
 }`;
@@ -58,6 +59,12 @@ const nodeTree = [
                   {
                     id: 'title',
                     title: '<div> .entry_title',
+                    children: [
+                      {
+                        id: 'link',
+                        title: '<a> .title_link',
+                      }
+                    ]
                   },
                   {
                     id: 'collapseBtn',
@@ -73,13 +80,7 @@ const nodeTree = [
               },
               {
                 id: 'sublayer',
-                title: '<div>.list_sublayer',
-                children: [
-                  {
-                    id: 'next',
-                    title: '<ul>.btb-vue-list-layer.layer-[layer count + 1]',
-                  },
-                ],
+                title: '<ul>.btb-vue-list-layer.layer-[layer count + 1]',
               },
             ],
           },
@@ -140,6 +141,7 @@ const tableBodyArr_basic = [
 const tableBodyArr_entry = [
   { title: 'id', type: 'package.paramType.string', notice: 'package.list.entryObj.id' },
   { title: 'title', type: 'package.paramType.string||package.paramType.node', notice: 'package.list.entryObj.title' },
+  { title: 'href', type: 'package.paramType.string', notice: 'package.list.entryObj.href' },
   { title: 'defaultCollapsed', type: 'package.paramType.string', notice: 'package.list.entryObj.defaultCollapsed' },
   { title: 'children', type: 'package.paramType.array', notice: 'package.list.entryObj.children' },
 ];

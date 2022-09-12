@@ -139,6 +139,7 @@ export default {
       entryObj: {
         id: '項目識別名。',
         title: '項目顯示名。',
+        href: '項目的超連結。主要用於選單連結。',
         defaultCollapsed: '當項目具有子清單，可預設展開 / 收合狀態。',
         children: '子清單。',
       },
