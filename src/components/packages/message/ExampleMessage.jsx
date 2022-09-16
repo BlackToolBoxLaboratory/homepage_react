@@ -9,12 +9,14 @@ import { openLink } from '@src/utils/functions.js';
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
-const preRender = `<MessageProvider closeable>
-        {page's content}
+const preRender = `<MessageProvider 
+        closeable=" Boolean "
+>
+        { children }
 </MessageProvider>
 
 <BTBButton
-        onClick={_clickButton}
+        onClick=" function(){} "
 >
   Example
 </BTBButton>

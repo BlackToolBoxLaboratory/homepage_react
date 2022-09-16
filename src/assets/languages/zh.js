@@ -15,13 +15,30 @@ export default {
         },
       },
       table: {
-        root: '表',
+        root: '表格',
         example: {
           list: '範例：清冊表',
           info: '範例：資料表',
           compare: '範例：比較表',
           style: '範例：客製化外觀',
           slot: '範例：客製化渲染',
+        },
+      },
+      form: {
+        root: '表單',
+        basic: {
+          input: '基本介紹：輸入框',
+          select: '基本介紹：選單',
+          radio: '基本介紹：單選',
+          checkbox: '基本介紹：多選',
+          textarea: '基本介紹：文字區塊',
+        },
+        example: {
+          input: '範例：輸入框',
+          select: '範例：選單',
+          radio: '範例：單選',
+          checkbox: '範例：多選',
+          textarea: '範例：文字區塊',
         },
       },
       popover: {
@@ -113,6 +130,7 @@ export default {
       function: '函式',
       boolean: '布林',
       node: '節點',
+      any: '任何',
     },
     list: {
       name: '清單',
@@ -172,11 +190,71 @@ export default {
         },
       },
     },
-    table: {
-      name: '表',
+    form: {
+      name: {
+        form: '表單',
+        input: '輸入框',
+        select: '選單',
+        radio: '單選',
+        checkbox: '多選',
+        textarea: '文字區塊',
+      },
       description: {
         basic:
-          '表的設計本身分成三種模式：列表、資訊與資訊並列，使用視窗監聽，再配合客製化的外觀。即可完成漂亮的響應式的表顯示。未來還會再擴充表頭的設定功能，讓表可以更輕易地完成：分頁、排序、搜尋、欄位過濾等功能。',
+          '不僅重新包裝表單的標籤，也針對各種表單欄位，加入常需要的功能，以原生標籤為基礎加強的表單欄位物件，未來也會增加一些進階的標籤。',
+      },
+      parameters: {
+        styleObj: '套件中任何具有 className 的節點，皆能使用 styleObj 定義 inline CSS。',
+      },
+      property: {
+        prependNode: '定義表單欄位外前綴。',
+        appendNode: '定義表單欄位外後綴。',
+        beforeNode: '定義表單欄位內前綴。',
+        afterNode: '定義表單欄位內後綴。',
+        input: '輸入框的原生欄位仍可以使用。',
+        select: '選單的原生欄位仍可以使用。',
+        radio: '單選的原生欄位仍可以使用。',
+        checkbox: '多選的原生欄位仍可以使用。',
+        textarea: '文字區塊的原生欄位仍可以使用。',
+        radioValue: '單選選取中的值。',
+        radioSize: '單選的大小。',
+        radioColor: '單選選取中的顏色。',
+        checkboxValue: '多選選取中的值所成陣列。',
+        checkboxSize: '多選的大小。',
+        checkboxColor: '多選選取中的主要顏色。',
+        checkboxSignColor: '多選選取中的符號顏色。',
+        showCounter: '顯示文字長度，另外還可以跟 maxLength 搭配使用。',
+        inline: '並列顯示。',
+      },
+      example: {
+        input: {
+          title: '範例：輸入框',
+          description: '輸入框主要加入通常排版上會使用到的框內與框外的前綴及後綴。',
+        },
+        select: {
+          title: '範例：選單',
+          description:
+            '選單主要加入通常排版上會使用到的框內與框外的前綴及後綴，但由於選單的框內後綴以保留給下拉按鈕，故選單在框內只有開放前綴使用。',
+        },
+        radio: {
+          title: '範例：單選',
+          description: '單選主要設計成能夠提供顏色轉換的功能。',
+        },
+        checkbox: {
+          title: '範例：多選',
+          description: '多選主要設計成能夠提供顏色轉換的功能。',
+        },
+        textarea: {
+          title: '範例：文字區塊',
+          description: '文字區塊主要加入文字計數器，還可以搭配 maxLength 使用。',
+        },
+      },
+    },
+    table: {
+      name: '表格',
+      description: {
+        basic:
+          '表格的設計本身分成三種模式：列表、資訊與資訊並列，使用視窗監聽，再配合客製化的外觀。即可完成漂亮的響應式的表顯示。未來還會再擴充表頭的設定功能，讓表可以更輕易地完成：分頁、排序、搜尋、欄位過濾等功能。',
       },
       parameters: {
         styleObj: '套件中任何具有 className 的節點，皆能使用 styleObj 定義 inline CSS。',
@@ -382,13 +460,6 @@ export default {
         persistent: '是否鎖定背景點擊後關閉子視窗的功能。',
         onShow: '顯示氣泡框事件函式。',
         onHide: '隱藏氣泡框事件函式。',
-      },
-      example: {
-        basic: {
-          title: '範例',
-          description:
-            '簡單地展示如何控制氣泡框顯示的位置。氣泡框預設啟用瀏覽器邊界偵測（autoDetect），當氣泡框超出瀏覽器邊界時，會依據顯示位置與對齊方式做濤整，此功能也可以關掉。',
-        },
       },
     },
     timeline: {

@@ -10,11 +10,11 @@ import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
 const preRender = `<BTBPopup/>
-        {page's content}
+        { children }
 </BTBPopup>
 
 <BTBButton
-      onClick={_clickOpen}
+      onClick=" function(){} "
 >
   Example
 </BTBButton>`;

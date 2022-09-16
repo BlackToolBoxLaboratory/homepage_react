@@ -13,7 +13,7 @@ const preInstall = `$ npm install --save @blacktoolbox/react-component-folder
 import BTBPopover from '@blacktoolbox/react-component-folder'`;
 
 const preRender = `<BTBComponentFolder components=" Array of Node ">
-        {component's content}
+        { children }
 </BTBComponentFolder>`;
 
 const preOldRender = `<Provider store={store} >

@@ -12,6 +12,9 @@ const PackagesContaier = () => {
       <Route exact path={ROUTE.PACKAGES_TABLE}>
         <Redirect to={ROUTE.PACKAGES_TABLE_BASIC} />
       </Route>
+      <Route exact path={ROUTE.PACKAGES_FORM}>
+        <Redirect to={ROUTE.PACKAGES_FORM_BASIC_INPUT} />
+      </Route>
       <Route exact path={ROUTE.PACKAGES_POPOVER}>
         <Redirect to={ROUTE.PACKAGES_POPOVER_BASIC} />
       </Route>
@@ -41,6 +44,10 @@ const PackagesContaier = () => {
         <Route
           path={ROUTE.PACKAGES_TABLE}
           component={React.lazy(() => import('@src/routes/packages/table/TableContainer.jsx'))}
+        />
+        <Route
+          path={ROUTE.PACKAGES_FORM}
+          component={React.lazy(() => import('@src/routes/packages/form/FormContainer.jsx'))}
         />
         <Route
           path={ROUTE.PACKAGES_POPOVER}

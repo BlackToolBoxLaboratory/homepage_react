@@ -11,6 +11,7 @@ import BTBComponentFolder from '@blacktoolbox/react-component-folder';
 import '@src/plugins/btblab-react-fb-sdk.js';
 import '@src/plugins/btblab-react-list.js';
 import '@src/plugins/btblab-react-table.js';
+import '@src/plugins/btblab-react-form.js';
 import '@src/plugins/btblab-react-popover.js';
 import '@src/plugins/btblab-react-popup.js';
 import '@src/plugins/btblab-react-button.js';

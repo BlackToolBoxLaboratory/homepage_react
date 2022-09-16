@@ -87,6 +87,64 @@ const menuList = [
         ],
       },
       {
+        id: 'PACKAGES_FORM',
+        title: 'Form',
+        langIndex: 'menu.packages.form.root',
+        defaultCollapsed: true,
+        children: [
+          {
+            id: 'PACKAGES_FORM_BASIC_INPUT',
+            title: 'Basic: Input',
+            langIndex: 'menu.packages.form.basic.input',
+          },
+          {
+            id: 'PACKAGES_FORM_BASIC_SELECT',
+            title: 'Basic: Select',
+            langIndex: 'menu.packages.form.basic.select',
+          },
+          {
+            id: 'PACKAGES_FORM_BASIC_RADIO',
+            title: 'Basic: Radio',
+            langIndex: 'menu.packages.form.basic.radio',
+          },
+          {
+            id: 'PACKAGES_FORM_BASIC_CHECKBOX',
+            title: 'Basic: Checkbox',
+            langIndex: 'menu.packages.form.basic.checkbox',
+          },
+          {
+            id: 'PACKAGES_FORM_BASIC_TEXTAREA',
+            title: 'Basic: Textarea',
+            langIndex: 'menu.packages.form.basic.textarea',
+          },
+          {
+            id: 'PACKAGES_FORM_EXAMPLE_INPUT',
+            title: 'Example: Input',
+            langIndex: 'menu.packages.form.example.input',
+          },
+          {
+            id: 'PACKAGES_FORM_EXAMPLE_SELECT',
+            title: 'Example: Select',
+            langIndex: 'menu.packages.form.example.select',
+          },
+          {
+            id: 'PACKAGES_FORM_EXAMPLE_RADIO',
+            title: 'Example: Radio',
+            langIndex: 'menu.packages.form.example.radio',
+          },
+          {
+            id: 'PACKAGES_FORM_EXAMPLE_CHECKBOX',
+            title: 'Example: Checkbox',
+            langIndex: 'menu.packages.form.example.checkbox',
+          },
+          {
+            id: 'PACKAGES_FORM_EXAMPLE_TEXTAREA',
+            title: 'Example: Textarea',
+            langIndex: 'menu.packages.form.example.textarea',
+          },
+        ],
+      },
+      {
         id: 'PACKAGES_POPOVER',
         title: 'Popover',
         langIndex: 'menu.packages.popover.root',

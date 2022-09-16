@@ -9,25 +9,20 @@ import { openLink } from '@src/utils/functions.js';
 import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
-const preInstall = `$ npm install --save @blacktoolbox/react-popover
+const preInstall = `$ npm install --save @blacktoolbox/react-form
 
-import BTBPopover from '@blacktoolbox/react-popover'
-import '@blacktoolbox/react-popover/lib/index.css'`;
+import { Select } from '@blacktoolbox/react-form'
+import '@blacktoolbox/react-form/lib/index.css'`;
 
-const preRender = `<BTBPopover
-        showState=" Boolean " 
-        showPosition=" String "
-        showAlign=" String "
-        withArrow=" Boolean "
-        autoDetect=" Boolean "
-        trigger=" String || Node "
+const preRender = `<BTBSelect
+        prependNode=" String || Node " 
+        appendNode=" String || Node " 
+        beforeNode=" String || Node " 
         styleObj=" Object "
-        onToggle=" function(){} "
-        onShow=" function(){} "
-        onHide=" function(){} "
+        { props } 
 >
-        { children } 
-</BTBPopover>`;
+        { children }
+</BTBSelect>`;
 
 const preStyleObj = `styleObj = {
         [ className ]: { inline CSS }
@@ -35,17 +30,37 @@ const preStyleObj = `styleObj = {
 
 const nodeTree = [
   {
-    id: 'popover',
-    title: '<div> .btb-react-popover .popover-align-{begin || center || end} .popover-arrow',
+    id: 'form',
+    title: '<div> .btb-react-form .form-select .select-disabled .select-focused',
     children: [
       {
-        id: 'trigger',
-        title: '<div> .popover_trigger',
-      },
-      {
-        id: 'content',
-        title: '<div> .popover_content .content-show .content-position-{top || bottom || left || right}',
-      },
+        id: 'outer',
+        title: '<div> .select_outer',
+        children: [
+          {
+            id: 'prepend',
+            title: '<div> .outer_item .item-prepend',
+          },
+          {
+            id: 'inner',
+            title: '<div> .outer_item .item-inner',
+            children: [
+              {
+                id: 'before',
+                title: '<div> .inner_item .item-before',
+              },
+              {
+                id: 'select',
+                title: '<select> .inner_item .item-select',
+              },
+            ],
+          },
+          {
+            id: 'append',
+            title: '<div> .outer_item .item-append',
+          },
+        ]
+      }
     ],
   },
 ];
@@ -59,61 +74,30 @@ const tableHeadArr_property = [
 
 const tableBodyArr_basic = [
   {
-    title: 'showState',
-    type: 'package.paramType.boolean',
-    default: 'false',
-    notice: 'package.popover.property.showState',
-  },
-  {
-    title: 'showPosition',
-    type: 'package.paramType.string',
-    default: '"bottom"',
-    notice: 'package.popover.property.showPosition',
-  },
-  {
-    title: 'showAlign',
-    type: 'package.paramType.string',
-    default: '"begin"',
-    notice: 'package.popover.property.showAlign',
-  },
-  {
-    title: 'withArrow',
-    type: 'package.paramType.boolean',
-    default: 'true',
-    notice: 'package.popover.property.withArrow',
-  },
-  {
-    title: 'autoDetect',
-    type: 'package.paramType.boolean',
-    default: 'true',
-    notice: 'package.popover.property.autoDetect',
-  },
-  {
-    title: 'trigger',
+    title: 'prependNode',
     type: 'package.paramType.string||package.paramType.node',
-    default: '"Trigger"',
-    notice: 'package.popover.property.trigger',
-  },
-  { title: 'styleObj', type: 'package.paramType.object', default: '{}', notice: 'package.popover.property.styleObj' },
-  {
-    title: 'onToggle',
-    type: 'package.paramType.function',
-    default: '()=>{}',
-    notice: 'package.popover.property.onToggle',
+    default: 'undefined',
+    notice: 'package.form.property.prependNode',
   },
   {
-    title: 'onShow',
-    type: 'package.paramType.function',
-    default: '()=>{}',
-    notice: 'package.popover.property.onShow',
+    title: 'appendNode',
+    type: 'package.paramType.string||package.paramType.node',
+    default: 'undefined',
+    notice: 'package.form.property.appendNode',
   },
   {
-    title: 'onHide',
-    type: 'package.paramType.function',
-    default: '()=>{}',
-    notice: 'package.popover.property.onHide',
+    title: 'beforeNode',
+    type: 'package.paramType.string||package.paramType.node',
+    default: 'undefined',
+    notice: 'package.form.property.beforeNode',
   },
-  { title: 'ref', type: 'useRef', default: 'undefined', notice: 'package.popover.property.ref' },
+  { title: 'styleObj', type: 'package.paramType.object', default: '{}', notice: 'package.button.property.styleObj' },
+  {
+    title: 'props',
+    type: 'package.paramType.any',
+    default: 'undefined',
+    notice: 'package.form.property.select',
+  },
 ];
 
 const tableSlotObj = {
@@ -142,9 +126,10 @@ const Basic = () => {
       languageSetting: state.language.languageSetting,
     };
   });
+
   return (
-    <Page id="btb-pkg-popover-basic">
-      <PageHead title={lang.translate('package.popover.name')} clickBtn={openLink} linkList={packageInfo.linkList} />
+    <Page id="btb-pkg-form-basic">
+      <PageHead title={lang.translate('package.form.name.select')} clickBtn={openLink} linkList={packageInfo.linkList} />
       <Section
         head={
           <>
@@ -171,7 +156,7 @@ const Basic = () => {
           slotObj={tableSlotObj}
         />
         <Block title="styleObj">
-          <p>{lang.translate('package.popover.parameters.styleObj')}</p>
+          <p>{lang.translate('package.form.parameters.styleObj')}</p>
           <pre className="page_pre">{preStyleObj}</pre>
         </Block>
       </Section>

@@ -5,25 +5,39 @@ import BTBTable from '@blacktoolbox/react-table';
 
 import { lang } from '@src/plugins/btblab-prototype-languages.js';
 import { openLink } from '@src/utils/functions.js';
-import { Page, PageHead, Section } from '@src/modules/pageLayout';
+
+import { Page, PageHead, Section, Block } from '@src/modules/pageLayout';
 import packageInfo from './packageInfo.js';
 
-const preInstall = `$ npm install --save @blacktoolbox/react-message
+const preInstall = `$ npm install --save @blacktoolbox/react-form
 
-import { Notice } from '@blacktoolbox/react-message';
-import '@blacktoolbox/react-message/lib/index.css'`;
+import { Textarea } from '@blacktoolbox/react-form'
+import '@blacktoolbox/react-form/lib/index.css'`;
 
-const preRender = `<Notice
-        type = " String ", 
-        context = " String || Node "
->
-        { children }
-</MessageProvider>`;
+const preRender = `<BTBTextarea
+        showCounter=" Boolean "
+        styleObj=" Object "
+        { props } 
+/>`;
+
+const preStyleObj = `styleObj = {
+  [ className ]: { inline CSS }
+}`;
 
 const nodeTree = [
   {
-    id: 'notice',
-    title: '<div> .btb-react-notice .notice-type-{type}',
+    id: 'form',
+    title: '<div> .btb-react-form .form-textarea .textarea-disabled .textarea-readonly .textarea-focused',
+    children: [
+      {
+        id: 'textarea',
+        title: '<textarea> .textarea_input',
+      },
+      {
+        id: 'counter',
+        title: '<div> .textarea_counter',
+      },
+    ],
   },
 ];
 
@@ -36,16 +50,17 @@ const tableHeadArr_property = [
 
 const tableBodyArr_basic = [
   {
-    title: 'type',
-    type: 'package.paramType.string',
-    default: "''",
-    notice: 'package.message.property.type',
+    title: 'showCounter',
+    type: 'package.paramType.boolean',
+    default: 'false',
+    notice: 'package.form.property.showCounter',
   },
+  { title: 'styleObj', type: 'package.paramType.object', default: '{}', notice: 'package.button.property.styleObj' },
   {
-    title: 'context',
-    type: 'package.paramType.string',
-    default: "''",
-    notice: 'package.message.property.context',
+    title: 'props',
+    type: 'package.paramType.any',
+    default: 'undefined',
+    notice: 'package.form.property.textarea',
   },
 ];
 
@@ -69,19 +84,16 @@ const tableSlotObj = {
   },
 };
 
-const BasicMessage = () => {
+const Basic = () => {
   useSelector((state) => {
     return {
       languageSetting: state.language.languageSetting,
     };
   });
+
   return (
-    <Page id="btb-pkg-message-basic-notice">
-      <PageHead
-        title={lang.translate('package.message.name.notice')}
-        clickBtn={openLink}
-        linkList={packageInfo.linkList}
-      />
+    <Page id="btb-pkg-form-basic">
+      <PageHead title={lang.translate('package.form.name.textarea')} clickBtn={openLink} linkList={packageInfo.linkList} />
       <Section
         head={
           <>
@@ -91,7 +103,7 @@ const BasicMessage = () => {
           </>
         }
       >
-        <p>{lang.translate(packageInfo.descriptionNotice)}</p>
+        <p>{lang.translate(packageInfo.description)}</p>
       </Section>
       <Section head={lang.translate('package.section.installation')}>
         <pre className="page_pre">{preInstall}</pre>
@@ -107,6 +119,10 @@ const BasicMessage = () => {
           bodyData={tableBodyArr_basic}
           slotObj={tableSlotObj}
         />
+        <Block title="styleObj">
+          <p>{lang.translate('package.form.parameters.styleObj')}</p>
+          <pre className="page_pre">{preStyleObj}</pre>
+        </Block>
       </Section>
       <Section head={lang.translate('package.section.nodeTree')}>
         <BTBList className="page_node_tree" dataList={nodeTree} />
@@ -115,4 +131,4 @@ const BasicMessage = () => {
   );
 };
 
-export default BasicMessage;
+export default Basic;

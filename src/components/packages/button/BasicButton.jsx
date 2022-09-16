@@ -22,8 +22,9 @@ const preRender = `<BTBButton
         onPrependClick=" function(props){} "
         onCoreClick=" function(props){} "
         onAppendClick=" function(props){} "
-        disabled=" Boolean ">
-        {button's content}
+        disabled=" Boolean "
+>
+        { children }
 </BTBButton>`;
 
 const preStyleObj = `styleObj = {

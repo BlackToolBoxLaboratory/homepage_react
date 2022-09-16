@@ -18,8 +18,9 @@ const preRender = `<BTBPopup
         defaultTransitionDuration=" Number "
         defaultPersistent= " Boolean "
         onShow=" function(){} "
-        onHide=" function(){} "/>
-        {popover's content}
+        onHide=" function(){} "
+>
+        { children }
 </BTBPopup>`;
 
 const preUsePopup = `const popup = usePopup();

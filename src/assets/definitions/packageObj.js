@@ -23,6 +23,17 @@ const packageObj = {
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-table',
     },
   },
+  form: {
+    name: 'package.form.name.form',
+    routename: ROUTE.PACKAGES_FORM_BASIC,
+    description: 'package.form.description.basic',
+    version: '1.0.1',
+    updated: '2021-09-16',
+    link: {
+      github: 'https://github.com/BlackToolBoxLaboratory/react-form',
+      npm: 'https://www.npmjs.com/package/@blacktoolbox/react-form',
+    },
+  },
   popover: {
     name: 'package.popover.name',
     routename: ROUTE.PACKAGES_POPOVER_BASIC,

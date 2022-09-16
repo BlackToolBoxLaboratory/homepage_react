@@ -24,6 +24,23 @@ export default {
           slot: 'Example: Slot',
         },
       },
+      form: {
+        root: 'Form',
+        basic: {
+          input: 'Basic: Input',
+          select: 'Basic: Select',
+          radio: 'Basic: Radio',
+          checkbox: 'Basic: Checkbox',
+          textarea: 'Basic: Textarea',
+        },
+        example: {
+          input: 'Example: Input',
+          select: 'Example: Select',
+          radio: 'Example: Radio',
+          checkbox: 'Example: Checkbox',
+          textarea: 'Example: Textarea',
+        },
+      },
       popover: {
         root: 'Popover',
         example: {
@@ -113,6 +130,7 @@ export default {
       function: 'Function',
       boolean: 'Boolean',
       node: 'Node',
+      any: 'Any',
     },
     list: {
       name: 'List',
@@ -231,6 +249,66 @@ export default {
           title: 'Example: Slot',
           description:
             'Sometimes we may want to show the entry from the list by button, input, icon, ... etc. Then we can ultilize this feature about customized slot. To the example as following, It shows how to customized by slotObj in String, Node, or Function way.',
+        },
+      },
+    },
+    form: {
+      name: {
+        form: 'Form',
+        input: 'Input',
+        select: 'Select',
+        radio: 'Radio',
+        checkbox: 'Checkbox',
+        textarea: 'Textarea',
+      },
+      description: {
+        basic:
+          'Not only repackage the tags of form. We also add some the features we often add to each form component. Enhance the form component from original form tags. In the future we will create some advanced component for form using.',
+      },
+      parameters: {
+        styleObj: 'Any className in this module could add inline CSS by styleObj.',
+      },
+      property: {
+        prependNode: 'Definition of the prepend space of the form.',
+        appendNode: 'Definition of the append space of the form.',
+        beforeNode: 'Definition of the before space of the form.',
+        afterNode: 'Definition of the after space of the form.',
+        input: 'Original props of input are available.',
+        select: 'Original props of select are available.',
+        radio: 'Original props of radio are available.',
+        checkbox: 'Original props of checkbox are available.',
+        textarea: 'Original props of textarea are available.',
+        radioValue: 'The value of checked from radio.',
+        radioSize: 'The size of radio.',
+        radioColor: 'The color of checked radio.',
+        checkboxValue: 'The list of values checked from checkbox.',
+        checkboxSize: 'The size of checkbox.',
+        checkboxColor: 'The main color of checked checkbox.',
+        checkboxSignColor: 'The sign color of checked checkbox.',
+        showCounter: 'Show the length of text. And it can use with maxLength.',
+        inline: 'Show inline.',
+      },
+      example: {
+        input: {
+          title: 'Example: Input',
+          description: 'Mostly input added the prepend and appened of inner and outer.',
+        },
+        select: {
+          title: 'Example: Select',
+          description:
+            'Select added the the prepend and appened to outer, but only add prepend to inner. Because the appened of inner is reserved to arrow button of select.',
+        },
+        radio: {
+          title: 'Example: Radio',
+          description: 'For customized easiler, the radio is design to be color changable.',
+        },
+        checkbox: {
+          title: 'Example: Checkbox',
+          description: 'For customized easiler, the checkbox is design to be color changable.',
+        },
+        textarea: {
+          title: 'Example: Textarea',
+          description: 'Textarea add the string counter and it can be used with maxLength.',
         },
       },
     },

@@ -12,8 +12,10 @@ const preInstall = `$ npm install --save @blacktoolbox/react-sync-localstorage
 
 import { SyncLocalStorageProvider, useSyncLocalStorage } from '@blacktoolbox/react-sync-localstorage'`;
 
-const preRender = `<SyncLocalStorageProvider name=" String ">
-        {component's content}
+const preRender = `<SyncLocalStorageProvider 
+        name=" String "
+>
+        { children }
 </SyncLocalStorageProvider>`;
 
 const preUseSyncLocalStorage = `const syncLocalstorage = useSyncLocalStorage();

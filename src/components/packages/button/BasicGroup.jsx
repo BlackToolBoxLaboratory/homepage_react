@@ -15,15 +15,16 @@ import { ButtonGroup } from '@blacktoolbox/react-button'
 import '@blacktoolbox/react-button/lib/index.css'`;
 
 const preRender = `<BTBButtonGroup 
-        buttonList=" Array of String || Node "
+        buttonList=" Array of (String || Node) "
         activeID=" String "
         defaultActiveID= "String"
         direction=" String "
         listDisaled=" Array of String "
         childrenDisaled=" Array of String "
         styleObj=" Object " 
-        onEntryClick=" function(id, content){} ">
-        {button group's content}
+        onEntryClick=" function(id, content){} "
+>
+        { children }
 </BTBButtonGroup>`;
 
 const preStyleObj = `styleObj = {

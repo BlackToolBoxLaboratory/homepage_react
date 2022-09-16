@@ -15,7 +15,7 @@ import BTBTimeline from '@blacktoolbox/react-timeline'
 import '@blacktoolbox/react-timeline/lib/index.css'`;
 
 const preRender = `<BTBTimeline
-        nodeList=" Array of String or Object " 
+        nodeList=" Array of (String or Object) " 
         showPosition=" String "
         showAlign=" String "
         typeObj=" Object "

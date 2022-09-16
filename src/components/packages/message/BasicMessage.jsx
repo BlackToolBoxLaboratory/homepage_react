@@ -22,7 +22,7 @@ const preRender = `<MessageProvider
         vertical = " String "
         closeable= " Boolean "
 >
-        {page's content}
+        { children }
 </MessageProvider>`;
 
 const preUseMessage = `const message = useMessage();
