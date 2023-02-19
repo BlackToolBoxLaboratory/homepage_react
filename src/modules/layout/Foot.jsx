@@ -32,16 +32,8 @@ const Foot = (props) => {
           <FAI icon={['fab', 'linkedin']} fixedWidth />
         </a>
         <a
-          className="navbar_linkBtn linkBtn-wordpress"
-          href="https://vannoel0628.wordpress.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FAI icon={['fab', 'wordpress']} fixedWidth />
-        </a>
-        <a
           className="navbar_linkBtn linkBtn-email"
-          href="mailto:vannoel0628@gmail.com"
+          href="mailto:vannoel@cogman.org"
           target="_blank"
           rel="noreferrer"
         >

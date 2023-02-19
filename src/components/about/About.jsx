@@ -33,9 +33,9 @@ const About = () => {
         <span>{lang.translate('about.description')}</span>
       </Section>
       <Section className="about_link">
-        <a href="mailto:vannoel0628@gmail.com" target="_blank" rel="noreferrer">
+        <a href="mailto:vannoel@cogman.org" target="_blank" rel="noreferrer">
           <FAI icon={['far', 'envelope']} fixedWidth />
-          <span>vannoel0628@gmail.com</span>
+          <span>vannoel@cogman.org</span>
         </a>
       </Section>
       <Divider />
