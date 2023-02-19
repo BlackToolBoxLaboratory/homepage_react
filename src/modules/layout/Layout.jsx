@@ -64,17 +64,8 @@ const Layout = (props) => {
     }
   }
 
-  function _clickListener(event) {
-    window.test = event.path;
-    let result = event.path.find((node) => {
-      if (node.classList) {
-        return node.classList.value.search('layout_aside') > 0 || node.classList.value.search('item-menu') > 0;
-      }
-      return false;
-    });
-    if (typeof result == 'undefined') {
-      _clickEntry();
-    }
+  function _clickListener() {
+    _clickEntry();
   }
 
   function _toggleMenu() {

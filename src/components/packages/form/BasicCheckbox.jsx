@@ -14,14 +14,14 @@ const preInstall = `$ npm install --save @blacktoolbox/react-form
 import { Checkbox } from '@blacktoolbox/react-form'
 import '@blacktoolbox/react-form/lib/index.css'`;
 
-const preRender = `<BTBPopup
+const preRender = `<BTBCheckbox
         formValue=" Array of (Number || String) "
         size= " String "
         color=" String "
         inline=" Boolean "
         styleObj=" Object "
         { props }
-</BTBPopup>`;
+</BTBCheckbox>`;
 
 const preStyleObj = `styleObj = {
   [ className ]: { inline CSS }

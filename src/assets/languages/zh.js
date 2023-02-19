@@ -461,6 +461,11 @@ export default {
         onShow: '顯示氣泡框事件函式。',
         onHide: '隱藏氣泡框事件函式。',
       },
+      example: {
+        basic: {
+          title: '範例',
+        },
+      },
     },
     timeline: {
       name: '時間線',
