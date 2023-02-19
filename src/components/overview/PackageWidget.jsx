@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import classnames from 'classnames';
 import Chart from 'react-apexcharts';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 
@@ -33,7 +34,7 @@ const PackageWidget = (props) => {
   }
 
   return (
-    <div id={'btb-overview-package-widget'} className={props.className}>
+    <div className={classnames('btb-overview-package-widget', props.className)}>
       <p className="widget_title">
         {props.data.name}
         <a
