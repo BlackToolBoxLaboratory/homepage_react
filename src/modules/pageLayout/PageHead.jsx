@@ -10,7 +10,7 @@ const PageHead = (props) => {
       {(linkList || []).map((btn) => {
         return (
           <div
-            className={classnames('head_btn', `btn-${id}`)}
+            className={classnames('head_btn', `btn-${btn.id}`)}
             key={btn.id}
             onClick={() => {
               clickBtn(btn);
