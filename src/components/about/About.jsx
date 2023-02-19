@@ -27,7 +27,7 @@ const About = () => {
         <img className="title_image" src={logoPath} alt="BTB_React" />
         <h1 className="title_main hidden-down-md">Black Tool Box Laboratory</h1>
         <h1 className="title_main hidden-up-md">BTB Lab.</h1>
-        <p className="title_sub">With React</p>
+        <p className="title_sub">For React</p>
       </Section>
       <Section>
         <span>{lang.translate('about.description')}</span>

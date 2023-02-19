@@ -1,48 +1,68 @@
-const chartOptions = {
-  colors: ['#00d8ff'],
-  chart: {
-    animations: {
+const createChartOptions = (type) => {
+  let color = '';
+  switch (type) {
+    case 'js':
+      color = '#f0db4f';
+      break;
+    case 'react':
+      color = '#61dafb';
+      break;
+    case 'vue':
+      color = '#41b883';
+      break;
+    case 'angular':
+      color = '#b52e31';
+      break;
+    default:
+      color = '#000000';
+      break;
+  }
+  return {
+    colors: [color],
+    chart: {
+      animations: {
+        enabled: false,
+      },
+      toolbar: {
+        show: false,
+      },
+      zoom: {
+        enabled: false,
+      },
+      sparkline: {
+        enabled: true,
+      },
+    },
+    dataLabels: {
       enabled: false,
-    },
-    toolbar: {
-      show: false,
-    },
-    zoom: {
-      enabled: false,
-    },
-    sparkline: {
-      enabled: true,
-    },
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  tooltip: {
-    x: {
-      show: false,
-    },
-  },
-  grid: {
-    show: false,
-  },
-  xaxis: {
-    labels: {
-      show: false,
     },
     tooltip: {
-      enabled: false,
+      x: {
+        show: false,
+      },
     },
-  },
-  yaxis: {
-    forceNiceScale: true,
-    labels: {
+    grid: {
       show: false,
     },
-    max: function (max) {
-      return max + 10;
+    xaxis: {
+      labels: {
+        show: false,
+      },
+      tooltip: {
+        enabled: false,
+      },
     },
-    min: -10,
-  },
+    yaxis: {
+      forceNiceScale: true,
+      labels: {
+        show: false,
+      },
+      max: function (max) {
+        return max + 10;
+      },
+      min: -10,
+    },
+  };
 };
 
-export default chartOptions;
+export default createChartOptions;

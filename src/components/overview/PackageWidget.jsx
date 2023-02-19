@@ -9,7 +9,7 @@ import API_npmAPI from '@src/apis/npmAPI.js';
 
 import { LoadingDiv } from '@src/modules/loadingDiv';
 
-import chartOptions from './chartOptions.js';
+import createChartOptions from './chartOptions.js';
 
 const WEEK = 7;
 
@@ -65,7 +65,7 @@ const PackageWidget = (props) => {
             <p className="widget_row">
               <span className="widget_entry">{lang.translate('overview.downloads_colon')}</span>
             </p>
-            <Chart options={chartOptions} series={series} type="area" height="100%" />
+            <Chart options={createChartOptions(props.type)} series={series} type="area" height="100%" />
           </div>
         </>
       ) : (

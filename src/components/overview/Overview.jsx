@@ -40,7 +40,7 @@ const Overview = () => {
           {state_Packages[type].packages.map((entry) => {
             return (
               <div className="grid-col-lg-6" key={entry.package.name}>
-                <PackageWidget data={entry.package} />
+                <PackageWidget data={entry.package} type={type} />
               </div>
             );
           })}
