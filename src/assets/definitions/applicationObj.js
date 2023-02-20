@@ -2,8 +2,8 @@ import { ROUTE } from './constants';
 
 const applicationObj = {
   languages: {
-    name: 'application.facebookSDK.name',
-    routename: ROUTE.APPLICATIONS_FACEBOOK_SDK_BASIC,
+    name: 'application.languages.name',
+    routename: ROUTE.APPLICATIONS_LANGUAGES,
     description: 'application.languages.description',
     version: '1.1.1',
     updated: '2020-06-20',
@@ -14,7 +14,7 @@ const applicationObj = {
   },
   validator: {
     name: 'application.validator.name',
-    routename: ROUTE.APPLICATIONS_FACEBOOK_SDK_BASIC,
+    routename: ROUTE.APPLICATIONS_VALIDATOR,
     description: 'application.validator.description',
     version: '1.0.0',
     updated: '2020-01-20',
