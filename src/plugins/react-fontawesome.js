@@ -1,5 +1,5 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGithub, faNpm, faLinkedin, faWordpress } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faNpm, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import {
   faSpinner,
@@ -17,7 +17,6 @@ library.add(
   faGithub,
   faNpm,
   faLinkedin,
-  faWordpress,
 
   // far
   faEnvelope,
