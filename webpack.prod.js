@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const terserPlugin = require('terser-webpack-plugin');
 
 const common = require('./webpack.base.js');
@@ -12,7 +12,7 @@ module.exports = merge(common, {
   devtool: 'hidden-source-map',
   optimization: {
     minimize: true,
-    minimizer: [new OptimizeCSSAssetsPlugin({}), new terserPlugin()],
+    minimizer: [new CssMinimizerPlugin(), new terserPlugin()],
     emitOnErrors: true,
     splitChunks: {
       chunks: 'async',

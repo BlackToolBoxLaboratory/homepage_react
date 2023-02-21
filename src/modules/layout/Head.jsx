@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router';
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
 import BTBList from '@blacktoolbox/react-list';
 import BTBPopover from '@blacktoolbox/react-popover';
@@ -11,20 +10,11 @@ import { ROUTE } from '@src/assets/definitions/constants';
 import { langAction } from '@src/stores/langStore.js';
 
 const Head = (props) => {
-  const history = useHistory();
   const dispatch = useDispatch();
   const { toggleMenu, className, ...headProps } = props;
   const env = {
     state_showPopover: useActiveState(false),
   };
-
-  function _openLab() {
-    window.open('https://blacktoolboxlaboratory.github.io/');
-  }
-
-  function _redirectHome() {
-    history.push(ROUTE['ABOUT']);
-  }
 
   function _switchLang(event) {
     dispatch(langAction.setLang(event.index));
@@ -53,12 +43,20 @@ const Head = (props) => {
         <div className="title_main hidden-up-md">BTB</div>
         <div className="title_sub">For React</div>
       </div>
-      <div className="head_item item-org">
-        <FAI className="item_button" icon={['fas', 'building']} fixedWidth onClick={_openLab} />
-      </div>
-      <div className="head_item item-home">
-        <FAI className="item_button" icon={['fas', 'home']} fixedWidth onClick={_redirectHome} />
-      </div>
+      <a
+        className="head_item item-org"
+        href="https://blacktoolboxlaboratory.github.io/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FAI className="item_button" icon={['fas', 'building']} fixedWidth />
+      </a>
+      <a
+        className="head_item item-home"
+        href={`/react/v2/#${ROUTE['ABOUT']}`}
+      >
+        <FAI className="item_button" icon={['fas', 'home']} fixedWidth />
+      </a>
       <div className="head_item item-lang">
         <BTBPopover
           className="head_langPopover"

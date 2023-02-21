@@ -21,7 +21,7 @@ module.exports = {
   },
   ignorePatterns: ['node_modules/', '.cache/', 'dist/'],
   rules: {
-    'no-console': ['warn'],
+    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     'no-unused-vars': ['warn'],
 
     'react/prop-types': ['off'],

@@ -26,20 +26,7 @@ const Layout = (props) => {
 
   useEffect(() => {
     _initialLang();
-    return function cleanup() {
-      window.removeEventListener('click', _clickListener);
-    };
   }, []);
-
-  useEffect(() => {
-    window.removeEventListener('click', _clickListener, false);
-    if (!env.state_hiddenMenu.value) {
-      window.addEventListener('click', _clickListener, false);
-    }
-    return function cleanup() {
-      window.removeEventListener('click', _clickListener, false);
-    };
-  }, [env.state_hiddenMenu.value]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,10 +49,6 @@ const Layout = (props) => {
     if (window.innerWidth < GRID.MD) {
       env.state_hiddenMenu.onToggle(true);
     }
-  }
-
-  function _clickListener() {
-    _clickEntry();
   }
 
   function _toggleMenu() {

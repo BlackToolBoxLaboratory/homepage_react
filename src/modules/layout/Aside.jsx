@@ -23,8 +23,6 @@ const Aside = (props) => {
       window.open('https://blacktoolboxlaboratory.github.io/react/v1/');
     } else {
       if (ROUTE[event.id] !== history.location.pathname) {
-        history.push(ROUTE[event.id]);
-        env.state_activeID.onChange(event.id);
         clickEntry();
       }
     }
