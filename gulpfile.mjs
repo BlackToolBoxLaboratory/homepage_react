@@ -1,12 +1,12 @@
-const gulp = require('gulp');
-const del = require('del');
+import gulp from 'gulp';
+import { deleteAsync } from 'del';
 
 const path_page = '../blacktoolboxlaboratory.github.io/react/v2';
 const path_backup = '../codebase/homepage_react';
 
 gulp.task('updateHomePage', async function (done) {
   /* clean files */
-  await del([path_page + '/'], { force: true });
+  await deleteAsync([path_page + '/'], { force: true });
 
   /* dist */
   gulp.src(['dist/**/*']).pipe(gulp.dest(path_page));
@@ -17,7 +17,7 @@ gulp.task('updateHomePage', async function (done) {
 
 gulp.task('backupCodebase', async function (done) {
   /* clean files */
-  await del([path_backup + '/'], { force: true });
+  await deleteAsync([path_backup + '/'], { force: true });
 
   /* src */
   gulp.src(['src/**/*']).pipe(gulp.dest(path_backup + '/src/'));
