@@ -28,7 +28,7 @@ const preHeadObj = `headObj = {
 }`;
 
 const preBodyObj = `bodyObj = {
-        [ headObj.index ] : ''
+        [ headObj.id ] : ''
 }`;
 
 const preStyleObj = `styleObj = {
@@ -47,7 +47,7 @@ const nodeTree_list = [
     children: [
       {
         id: 'table',
-        title: '<table> .table_list]',
+        title: '<table> .table_list',
         children: [
           {
             id: 'thead',
