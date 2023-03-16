@@ -10,6 +10,8 @@ gulp.task('updateHomePage', async function (done) {
 
   /* dist */
   gulp.src(['dist/**/*']).pipe(gulp.dest(path_page));
+  /* og:image */
+  gulp.src(['public/logo_React.png']).pipe(gulp.dest(path_page));
   /* sitemap */
   gulp.src(['sitemap.xml']).pipe(gulp.dest(path_page));
   done();
