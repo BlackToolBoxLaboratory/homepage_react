@@ -195,7 +195,7 @@ export default {
       name: 'Table',
       description: {
         basic:
-          'This module of table creator made with React can do the help to make a table component to our page. It has modes in list and info which are different ways to show data.',
+          'This module of table creator made with React can do the help to make a table component to our page. It has modes of list, info and compare which are different ways to show data.',
       },
       parameters: {
         styleObj: 'Any className in this module could add inline CSS by styleObj.',
@@ -216,10 +216,8 @@ export default {
         name: 'Name of column.',
       },
       slotObj: {
-        th:
-          'Slot for customized entry. Here is the example for function if used. The porps will be entry corresponding the id. If you are using function to slot, the function will be (headObj) => {}. And the entry is the head data.',
-        td:
-          'Slot for customized entry. Here is the example for function if used. The porps will be entry corresponding the id. If you are using function to slot, the function will be (bodyObj, headObj) => {}. And the entry is the source data and head data.',
+        th: 'Slot for customized entry. Here is the example for function if used. The porps will be entry corresponding the id. If you are using function to slot, the function will be (headObj) => {}. And the entry is the head data.',
+        td: 'Slot for customized entry. Here is the example for function if used. The porps will be entry corresponding the id. If you are using function to slot, the function will be (bodyObj, headObj) => {}. And the entry is the source data and head data.',
       },
       nodeTree: {
         notice: 'Note: The data order is counted base on 0.',
@@ -433,8 +431,7 @@ export default {
         horizontal: 'Horizonal position of message: left, center, right.',
         vertical: 'Vertical position of message: top, middle, bottom.',
         closeable: 'Able to cancel the message',
-        type:
-          'Type of message. The package included some style to use already. Of course you can customize by self. The type is just control the className. Optiopn: blue, grey, green, red, yello, light, dark.',
+        type: 'Type of message. The package included some style to use already. Of course you can customize by self. The type is just control the className. Optiopn: blue, grey, green, red, yello, light, dark.',
         context: 'Context of message.',
         closerNode:
           'It works only if enable the parameter of closeable. The parameter is used to render the button of closer.',
@@ -579,8 +576,7 @@ export default {
           'Here we are talking about how to re-render the page after we change the language settings. Of cause, we can do reload to the browser with localStorage, no matter witch type of website is. However mostly React is used in Single Page Application(SPA) development. We could ultilize the nature of React. Basically we have 2 ways to rerender the page: distpatch triggered and key triggered.',
         dispatch:
           'Combined the package with Store management related package(Flux, Redux, ...). We could re-render page we want after dispatched.',
-        key:
-          'Here is a unusual way for specific scenario. Sometimes for UX required, it maybe be wanted to be the effect to reload whole page. With React, we do not need to do the reload really. We could use the key the mark the top node. After language is changed, the key will changed too. Then the top node will be re-create like new component. Unless it required the network package re-download actually.',
+        key: 'Here is a unusual way for specific scenario. Sometimes for UX required, it maybe be wanted to be the effect to reload whole page. With React, we do not need to do the reload really. We could use the key the mark the top node. After language is changed, the key will changed too. Then the top node will be re-create like new component. Unless it required the network package re-download actually.',
       },
     },
     validator: {

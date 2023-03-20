@@ -1,5 +1,4 @@
 const pageInfo = {
-  description: 'overview.description',
   linkList: [
     {
       id: 'github',
