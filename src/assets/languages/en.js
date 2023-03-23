@@ -191,65 +191,6 @@ export default {
         },
       },
     },
-    table: {
-      name: 'Table',
-      description: {
-        basic:
-          'This module of table creator made with React can do the help to make a table component to our page. It has modes of list, info and compare which are different ways to show data.',
-      },
-      parameters: {
-        styleObj: 'Any className in this module could add inline CSS by styleObj.',
-        slotObj:
-          'We could replace the default node with bodyObj.id by slotObj. However we need the prefix to specify which node we want to customized th or td.',
-      },
-      property: {
-        headData: 'List of headObj.',
-        bodyData: 'List of bodyObj.',
-        mode: 'Value in list, info or compare.',
-        styleObj: 'Object of customized style.',
-        slotObj: 'Object of customized entry of head or body.',
-        onDataClick: 'Function for data clicked.',
-        ref: 'For the feature of React.ref.',
-      },
-      headObj: {
-        id: 'Identity of column.',
-        name: 'Name of column.',
-      },
-      slotObj: {
-        th: 'Slot for customized entry. Here is the example for function if used. The porps will be entry corresponding the id. If you are using function to slot, the function will be (headObj) => {}. And the entry is the head data.',
-        td: 'Slot for customized entry. Here is the example for function if used. The porps will be entry corresponding the id. If you are using function to slot, the function will be (bodyObj, headObj) => {}. And the entry is the source data and head data.',
-      },
-      nodeTree: {
-        notice: 'Note: The data order is counted base on 0.',
-        list: 'List Mode',
-        info: 'Info Mode',
-        compare: 'Compare Mode',
-      },
-      example: {
-        list: {
-          title: 'Example: List',
-          description: 'Here has very simple example to show how to use the list mode.',
-        },
-        info: {
-          title: 'Example: Info',
-          description: 'Here has very simple example to show how to use the info mode.',
-        },
-        compare: {
-          title: 'Example: Compare',
-          description: 'Here has very simple example to show how to use the compare mode.',
-        },
-        style: {
-          title: 'Example: Style',
-          description:
-            'Here is going to show you about how to use the styleObj for inline CSS. Then we can use with the class name of node directly.',
-        },
-        slot: {
-          title: 'Example: Slot',
-          description:
-            'Sometimes we may want to show the entry from the list by button, input, icon, ... etc. Then we can ultilize this feature about customized slot. To the example as following, It shows how to customized by slotObj in String, Node, or Function way.',
-        },
-      },
-    },
     form: {
       name: {
         form: 'Form',
@@ -307,6 +248,65 @@ export default {
         textarea: {
           title: 'Example: Textarea',
           description: 'Textarea add the string counter and it can be used with maxLength.',
+        },
+      },
+    },
+    table: {
+      name: 'Table',
+      description: {
+        basic:
+          'This module of table creator made with React can do the help to make a table component to our page. It has modes of list, info and compare which are different ways to show data.',
+      },
+      parameters: {
+        styleObj: 'Any className in this module could add inline CSS by styleObj.',
+        slotObj:
+          'We could replace the default node with bodyObj.id by slotObj. However we need the prefix to specify which node we want to customized th or td.',
+      },
+      property: {
+        headData: 'List of headObj.',
+        bodyData: 'List of bodyObj.',
+        mode: 'Value in list, info or compare.',
+        styleObj: 'Object of customized style.',
+        slotObj: 'Object of customized entry of head or body.',
+        onDataClick: 'Function for data clicked.',
+        ref: 'For the feature of React.ref.',
+      },
+      headObj: {
+        id: 'Identity of column.',
+        name: 'Name of column.',
+      },
+      slotObj: {
+        th: 'Slot for customized entry. Here is the example for function if used. The porps will be entry corresponding the id. If you are using function to slot, the function will be (headObj) => {}. And the entry is the head data.',
+        td: 'Slot for customized entry. Here is the example for function if used. The porps will be entry corresponding the id. If you are using function to slot, the function will be (bodyObj, headObj) => {}. And the entry is the source data and head data.',
+      },
+      nodeTree: {
+        notice: 'Note: The data order is counted base on 0.',
+        list: 'List Mode',
+        info: 'Info Mode',
+        compare: 'Compare Mode',
+      },
+      example: {
+        list: {
+          title: 'Example: List',
+          description: 'Here has very simple example to show how to use the list mode.',
+        },
+        info: {
+          title: 'Example: Info',
+          description: 'Here has very simple example to show how to use the info mode.',
+        },
+        compare: {
+          title: 'Example: Compare',
+          description: 'Here has very simple example to show how to use the compare mode.',
+        },
+        style: {
+          title: 'Example: Style',
+          description:
+            'Here is going to show you about how to use the styleObj for inline CSS. Then we can use with the class name of node directly.',
+        },
+        slot: {
+          title: 'Example: Slot',
+          description:
+            'Sometimes we may want to show the entry from the list by button, input, icon, ... etc. Then we can ultilize this feature about customized slot. To the example as following, It shows how to customized by slotObj in String, Node, or Function way.',
         },
       },
     },

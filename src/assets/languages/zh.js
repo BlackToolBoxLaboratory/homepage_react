@@ -264,7 +264,7 @@ export default {
       property: {
         headData: 'headObj 的陣列。',
         bodyData: 'bodyObj 的陣列。',
-        mode: '切換表的顯示方式：list、info、compare.',
+        mode: '切換表的顯示方式：list、info、compare。',
         styleObj: '客製化外觀。',
         slotObj: '客製化表頭、資料。',
         onDataClick: '資料點擊事件函式。',
