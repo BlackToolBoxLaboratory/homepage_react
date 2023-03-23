@@ -576,7 +576,7 @@ export default {
           'Here we are talking about how to re-render the page after we change the language settings. Of cause, we can do reload to the browser with localStorage, no matter witch type of website is. However mostly React is used in Single Page Application(SPA) development. We could ultilize the nature of React. Basically we have 2 ways to rerender the page: distpatch triggered and key triggered.',
         dispatch:
           'Combined the package with Store management related package(Flux, Redux, ...). We could re-render page we want after dispatched.',
-        key: 'Here is a unusual way for specific scenario. Sometimes for UX required, it maybe be wanted to be the effect to reload whole page. With React, we do not need to do the reload really. We could use the key the mark the top node. After language is changed, the key will changed too. Then the top node will be re-create like new component. Unless it required the network package re-download actually.',
+        key: 'Here is a unusual way for specific scenario. Sometimes for UX required, it maybe be wanted to be the effect to reload whole page. With React, we do not need to do the reload really. We could use the key the mark the top node. After language is changed, the key will be changed too. Then the top node will be re-create like new component. Unless it required the network package re-download actually.',
       },
     },
     validator: {
