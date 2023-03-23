@@ -536,6 +536,7 @@ export default {
       initializer: '初始化',
       impletement: '實體',
       trigger: '觸發',
+      result: '結果',
     },
     facebookSDK: {
       name: '臉書軟體開發套件',
@@ -575,6 +576,13 @@ export default {
       name: '驗證器',
       description:
         '大多數的排版框架皆含有驗證表單的功能，但各自排版框架的驗證器使用方式不盡相同，對於有些需要對於不同的案子，使用不同的排版框架的團隊而言，已經存在的驗證邏輯在移植上，可能就不是這麼方便，因此，我試著開發一般化的表單驗證器，或者可以更深一層地說它是變數驗證器，因為即使不與排版框架合用，單純寫在函數裡的變數格式驗證也是可以的，如此期望，應用此套件的人，可以一致地整合表單的驗證與函數的驗證。',
+      installation: {
+        description: '比較詳細的操作說明在我的 JavaScript Lab，這邊著重在如何與基於 React 開發的網站使用。',
+        linkName: '說明文件連結',
+      },
+      initializer: '@blacktoolbox/prototype-validator 需要在使用前執行初始化的動作。',
+      result:
+        '每一個驗證事件的驗證狀態的物件結構。每一個驗證事件的狀態包含 null、false、true 。而 null 表示尚未觸發驗證的狀態。這些狀態可以透過 reset() 做初始化。',
     },
   },
   chart: {

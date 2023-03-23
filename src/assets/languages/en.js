@@ -543,6 +543,7 @@ export default {
       initializer: 'INITIALIZER',
       impletement: 'IMPLEMENT',
       trigger: 'TRIGGER',
+      result: 'RESULT',
     },
     facebookSDK: {
       name: 'Facebook SDK',
@@ -583,6 +584,14 @@ export default {
       name: 'Validator',
       description:
         "Most form UI packages have their own validator to use for convenience. But sometimes we don't use only one UI packages to develop every single project. So we try to create the validator generally to adapt to every kind of form UI packages to allow us using just one type of validator coding patteren to develop with every UI packages.",
+      installation: {
+        description:
+          'The more detail is intoduced in JavaScript Lab. The more detail you could see it there. Here it only present how to work with React based website.',
+        linkName: 'Link of Document',
+      },
+      initializer: 'As @blacktoolbox/prototype-validator required, it need to be initialized before using.',
+      result:
+        'The structure of status for each event. Every event could be the three type of status: null, false, true. And null means the status is initialized. You can clean all via reset()',
     },
   },
   chart: {
