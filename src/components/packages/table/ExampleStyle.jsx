@@ -14,7 +14,7 @@ const preRender = `<BTBTable
         bodyData={bodyData}
         styleObj={styleObj}/>`;
 
-const preHeadData = `const headDate = [
+const preHeadData = `const headData = [
         {name : 'Name', id : 'name' },
         {name : 'Type', id : 'devType' },
         {name : 'OS', id : 'osType' },
