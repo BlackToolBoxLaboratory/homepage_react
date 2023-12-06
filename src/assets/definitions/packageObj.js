@@ -38,8 +38,8 @@ const packageObj = {
     name: 'package.popover.name',
     routename: ROUTE.PACKAGES_POPOVER_BASIC,
     description: 'package.popover.description.basic',
-    version: '1.2.4',
-    updated: '2022-08-21',
+    version: '1.2.5',
+    updated: '2023-12-06',
     link: {
       github: 'https://github.com/BlackToolBoxLaboratory/react-popover',
       npm: 'https://www.npmjs.com/package/@blacktoolbox/react-popover',

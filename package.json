@@ -79,7 +79,7 @@
     "@blacktoolbox/react-form": "^1.0.1",
     "@blacktoolbox/react-list": "^2.3.1",
     "@blacktoolbox/react-message": "^1.1.2",
-    "@blacktoolbox/react-popover": "^1.2.4",
+    "@blacktoolbox/react-popover": "^1.2.5",
     "@blacktoolbox/react-popup": "^1.2.0",
     "@blacktoolbox/react-sync-localstorage": "^1.0.2",
     "@blacktoolbox/react-table": "^1.4.2",
